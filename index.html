@@ -1,0 +1,2324 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Riu de la Vida | Projecte d'Orientació i Autoconeixement (4t d'ESO)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-deep: #0c4a6e;
+      --river-blue: #0284c7;
+      --teal-river: #0d9488;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      
+      /* 5 Habilitats colors */
+      --color-resp: #2563eb;
+      --color-coop: #059669;
+      --color-auto: #d97706;
+      --color-emoc: #e11d48;
+      --color-pens: #7c3aed;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 14px rgba(0,0,0,0.07);
+      --shadow-lg: 0 10px 25px rgba(2,132,199,0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .font-serif {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+    }
+
+    .quote-serif {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* HEADER & HERO */
+    header {
+      background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #0d9488 100%);
+      color: white;
+      padding: 3rem 1.5rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -20%;
+      width: 140%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 10%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .badge-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      padding: 0.35rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .hero-title {
+      font-size: 2.8rem;
+      line-height: 1.15;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      font-weight: 300;
+      max-width: 760px;
+      opacity: 0.92;
+      margin-bottom: 1.5rem;
+    }
+
+    /* NAV TABS */
+    nav.main-nav {
+      background: white;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding: 0.5rem 1rem;
+      scrollbar-width: none;
+    }
+
+    .nav-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.15rem;
+      border-radius: var(--radius-sm);
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      color: var(--primary);
+      background: #f0f9ff;
+    }
+
+    .nav-btn.active {
+      color: var(--primary-deep);
+      background: #e0f2fe;
+      border-bottom: 2px solid var(--primary);
+    }
+
+    /* MAIN CONTENT */
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* CARDS & CONTAINERS */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      padding: 1.8rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.8rem;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+      color: var(--primary-deep);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* GRIDS */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .grid-5 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    /* RIVER CARDS (Quin riu ets avui?) */
+    .river-grid-10 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .river-card {
+      background: white;
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .river-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .river-card.selected {
+      border-color: var(--primary-dark);
+      background: #f0f9ff;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .river-card-img-container {
+      position: relative;
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+      background: #e2e8f0;
+    }
+
+    .river-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .river-card:hover .river-card-img {
+      transform: scale(1.06);
+    }
+
+    .river-zoom-btn {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(15, 23, 42, 0.75);
+      color: white;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+
+    .river-card:hover .river-zoom-btn {
+      opacity: 1;
+      background: var(--primary);
+    }
+
+    .river-card-body {
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .river-badge {
+      align-self: flex-start;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      margin-bottom: 0.6rem;
+    }
+
+    .river-card h4 {
+      font-size: 1.15rem;
+      margin-bottom: 0.4rem;
+      color: var(--primary-deep);
+    }
+
+    .river-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .river-question {
+      background: #f8fafc;
+      padding: 0.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      border-left: 3px solid var(--primary);
+      font-style: italic;
+    }
+
+    /* MODAL PROJECCIÓ / LIGHTBOX */
+    .river-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .river-modal.active {
+      display: flex;
+    }
+
+    .modal-dialog {
+      background: white;
+      border-radius: var(--radius-lg);
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-img-wrap {
+      width: 100%;
+      height: 380px;
+      position: relative;
+      background: #0f172a;
+    }
+
+    .modal-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .modal-close-btn:hover {
+      background: rgba(220, 38, 38, 0.9);
+    }
+
+    .modal-nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .modal-nav-arrow:hover {
+      background: var(--primary);
+    }
+
+    .modal-nav-prev { left: 15px; }
+    .modal-nav-next { right: 15px; }
+
+    .modal-body {
+      padding: 1.8rem;
+    }
+
+    .modal-title {
+      font-size: 1.8rem;
+      color: var(--primary-deep);
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-question-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-left: 4px solid var(--color-coop);
+      padding: 1rem 1.2rem;
+      border-radius: var(--radius-sm);
+      margin-top: 1.2rem;
+    }
+
+    /* RIVER METAPHOR MAP */
+    .metaphor-map {
+      background: linear-gradient(to bottom, #ecfeff, #f0f9ff 50%, #eff6ff);
+      border: 1px solid #bae6fd;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      position: relative;
+      margin: 1.5rem 0;
+    }
+
+    .metaphor-node {
+      background: white;
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s;
+    }
+
+    .metaphor-node:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    .metaphor-node-title {
+      font-weight: 700;
+      color: var(--primary-deep);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
+    }
+
+    /* TRAMS CAROUSEL / TIMELINE */
+    .tram-banner {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tram-pill {
+      flex: 1;
+      min-width: 220px;
+      padding: 1.2rem;
+      background: white;
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tram-pill.active {
+      border-color: var(--primary);
+      background: #f0f9ff;
+      box-shadow: var(--shadow-md);
+    }
+
+    .tram-pill-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .tram-pill h3 {
+      font-size: 1.15rem;
+      color: var(--primary-deep);
+      margin-bottom: 0.2rem;
+    }
+
+    /* BADGES HABILITATS */
+    .badge-resp { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
+    .badge-coop { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+    .badge-auto { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+    .badge-emoc { background: #ffe4e6; color: #9f1239; border: 1px solid #fda4af; }
+    .badge-pens { background: #ede9fe; color: #5b21b6; border: 1px solid #c4b5fd; }
+
+    .tag-skill {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      margin-right: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    /* BEHAVIOR SELECTOR */
+    .behavior-selector-box {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .selector-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .selector-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .select-card {
+      border: 2px dashed #cbd5e1;
+      padding: 1.2rem;
+      border-radius: var(--radius-sm);
+      background: #f8fafc;
+    }
+
+    .select-card.filled {
+      border-style: solid;
+      border-color: var(--primary);
+      background: #f0f9ff;
+    }
+
+    /* FORMS & INPUTS */
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: var(--text-main);
+    }
+
+    select, input[type="text"], textarea {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: white;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+    }
+
+    select:focus, input[type="text"]:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(2,132,199,0.15);
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.2rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: #f1f5f9;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: #e2e8f0;
+    }
+
+    .btn-print {
+      background: #0d9488;
+      color: white;
+    }
+
+    .btn-print:hover {
+      background: #0f766e;
+    }
+
+    /* TABLE */
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 1rem 0;
+    }
+
+    .styled-table th, .styled-table td {
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--border-color);
+      text-align: left;
+    }
+
+    .styled-table th {
+      background: #f1f5f9;
+      color: var(--primary-deep);
+      font-weight: 700;
+    }
+
+    .styled-table tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    /* AUSTIN BUTTERFLY BOX */
+    .butterfly-box {
+      background: #fffbeb;
+      border: 1px solid #fef3c7;
+      border-left: 5px solid #f59e0b;
+      padding: 1.2rem;
+      border-radius: var(--radius-sm);
+      margin: 1.2rem 0;
+    }
+
+    .butterfly-title {
+      font-weight: 700;
+      color: #92400e;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* PRINT SECTION */
+    .printable-sheet {
+      display: none;
+    }
+
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+      }
+
+      header, nav.main-nav, .no-print, .btn, .nav-btn {
+        display: none !important;
+      }
+
+      main {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .tab-content {
+        display: none !important;
+      }
+
+      .printable-sheet.active-print {
+        display: block !important;
+        page-break-after: always;
+      }
+
+      .card {
+        border: 1px solid #94a3b8 !important;
+        box-shadow: none !important;
+        padding: 1rem !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER HERO -->
+  <header>
+    <div class="header-container">
+      <div class="badge-hero">🧭 4t d'ESO · Orientació i Trajectòria Vital</div>
+      <h1 class="hero-title">El Riu de la Vida</h1>
+      <p class="hero-subtitle">
+        Una exploració d'autoconeixement, navegació vital i presa de decisions. Perquè el futur després de l'ESO no és una autopista recta, sinó un riu ple d'afluents, meandres, cascades i retorns.
+      </p>
+    </div>
+  </header>
+
+  <!-- MAIN NAVIGATION TABS -->
+  <nav class="main-nav no-print">
+    <div class="nav-container">
+      <button class="nav-btn active" onclick="switchTab('tab-metàfora')">🌊 1. La Metàfora & Sessió</button>
+      <button class="nav-btn" onclick="switchTab('tab-trams')">🗺️ 2. Els 3 Trams del Riu</button>
+      <button class="nav-btn" onclick="switchTab('tab-referents')">🗣️ 3. Converses amb Referents</button>
+      <button class="nav-btn" onclick="switchTab('tab-bitacola')">🧭 4. Quadern de Bitàcola</button>
+      <button class="nav-btn" onclick="switchTab('tab-docent')">📋 5. Eina Docent (Graella)</button>
+      <button class="nav-btn" onclick="switchTab('tab-print')">🖨️ 6. Kit d'Aula Imprimible</button>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTAINER -->
+  <main>
+
+    <!-- ============================================================= -->
+    <!-- TAB 1: LA METÀFORA & SESSIÓ INICIAL -->
+    <!-- ============================================================= -->
+    <section id="tab-metàfora" class="tab-content active">
+      
+      <!-- INTRO CARD -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">🌊 Sessió de Llançament: «Quin Riu ets Avui?»</h2>
+          <span class="tag-skill badge-resp">Durada: 2 hores</span>
+        </div>
+        <p>
+          Sovint se'ns diu que a 4t d'ESO hem d'escollir un sol camí i no sortir-ne mai. Però les trajectòries de les persones reals són com rius: s'alimenten d'afluents inesperats, s'eixamplen, troben pedres i roques, viuen moments de sequera o cascades sobtades, i poden tornar a confluir amb nous aprenentatges.
+        </p>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0 1rem;">
+          <div>
+            <h3 style="margin: 0; color: var(--primary-deep);">1. L'espurna d'autoconeixement: Els 10 Rius de la Vida</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0.2rem 0 0;">
+              Explora les fotografies i fes clic sobre el riu que millor descriu la teva energia o el teu moment vital actual:
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+            <button class="btn btn-primary" onclick="openRiverModal(0)">🖥️ Projecció a Pantalla Completa</button>
+            <button class="btn btn-print" onclick="printDoc('print-targetes-rius')">🖨️ Imprimir Targetes dels Rius</button>
+          </div>
+        </div>
+
+        <!-- 10 RIVER TYPES GRID WITH REAL PHOTOGRAPHY -->
+        <div class="river-grid-10" id="river-cards-container">
+          
+          <!-- 1. MUNTANYA -->
+          <div class="river-card" onclick="selectRiverType(this, 'muntanya', 0)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80" alt="Riu d'alta muntanya" loading="lazy">
+              <span class="river-zoom-btn">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-auto">Impuls i força</span>
+              <h4>1. Riu d'Alta Muntanya</h4>
+              <p>Baixa ràpid, impetuós i transparent entre penya-segats. Té molta força però encara busca el seu llit definitiu.</p>
+              <div class="river-question">«Tens molta energia i ganes de fer coses noves, encara que a vegades sentis vertigen?»</div>
+            </div>
+          </div>
+
+          <!-- 2. MEANDRES -->
+          <div class="river-card" onclick="selectRiverType(this, 'meandres', 1)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" alt="Riu amb meandres" loading="lazy">
+              <span class="river-zoom-btn">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-coop">Calma i reflexió</span>
+              <h4>2. Riu de Plana (Meandres)</h4>
+              <p>Avança sinuós, lent i segur per terreny pla. Fa grans corbes sense pressa, explorant cada pam de paisatge.</p>
+              <div class="river-question">«Et prens les coses amb tranquil·litat i prefereixes pensar bé abans d'actuar?»</div>
+            </div>
+          </div>
+
+          <!-- 3. CASCADA -->
+          <div class="river-card" onclick="selectRiverType(this, 'cascada', 2)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=80" alt="Riu amb gran cascada" loading="lazy">
+              <span class="river-zoom-btn">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-emoc">Canvi brusc</span>
+              <h4>3. Riu amb Gran Cascada</h4>
+              <p>Un desnivell sobtat que trenca la continuïtat. L'aigua cau amb estrèpit a un gorg profund abans de recomençar.</p>
+              <div class="river-question">«Estàs vivint un canvi o un imprevist gran que et fa replantejar-ho tot?»</div>
+            </div>
+          </div>
+
+          <!-- 4. TRENAT -->
+          <div class="river-card" onclick="selectRiverType(this, 'trenat', 3)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80" alt="Riu trenat glacial" loading="lazy">
+              <span class="river-zoom-btn">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-pens">Múltiples opcions</span>
+              <h4>4. Riu Trenat Glacial</h4>
+              <p>Es divideix en múltiples rierols que s'entrellacen sobre graves. No hi ha un curs únic, sinó molts camins alhora.</p>
+              <div class="river-question">«T'agraden massa coses alhora i et costa escollir un sol itinerari?»</div>
+            </div>
+          </div>
+
+          <!-- 5. GORG -->
+          <div class="river-card" onclick="selectRiverType(this, 'gorg', 4)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80" alt="Gorg d'estiatge" loading="lazy">
+              <span class="river-zoom-btn">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-resp">Pausa i recàrrega</span>
+              <h4>5. Gorg d'Estiatge (Bassa de calma)</h4>
+              <p>Aigua aturada en una bassa fonda i fresca. Sembla que no es mogui, però acumula vida i espera la pluja.</p>
+              <div class="river-question">«Sents que necessites una aturada per agafar forces i escoltar-te de debò?»</div>
+            </div>
+          </div>
+
+          <!-- 6. CONGOST -->
+          <div class="river-card" onclick="selectRiverType(this, 'congost', 5)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80" alt="Congost o canyó estret" loading="lazy">
+              <span class="river-zoom-btn">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-auto">Determinació</span>
+              <h4>6. Congost Estret (Canyó)</h4>
+              <p>S'obre pas perforant parets verticals de roca. Tota la seva força està concentrada en un sol punt estret.</p>
+              <div class="river-question">«Tens un objectiu molt clar o sents que els obstacles t'han fet més fort/a i enfocat/da?»</div>
+            </div>
+          </div>
+
+          <!-- 7. DELTA -->
+          <div class="river-card" onclick="selectRiverType(this, 'delta', 6)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Delta fluvial" loading="lazy">
+              <span class="river-zoom-btn">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-coop">Obertura al mar</span>
+              <h4>7. Delta Fluvial (Desembocadura)</h4>
+              <p>S'eixampla en una xarxa de canals fèrtils abans de fondre's harmònicament amb el mar immens.</p>
+              <div class="river-question">«T'importa especialment com el que facis en el futur pot ajudar els altres i connectar amb el món?»</div>
+            </div>
+          </div>
+
+          <!-- 8. SUBTERRANI -->
+          <div class="river-card" onclick="selectRiverType(this, 'subterrani', 7)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="Riu subterrani" loading="lazy">
+              <span class="river-zoom-btn">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-pens">Món interior</span>
+              <h4>8. Riu Subterrani (Cenote)</h4>
+              <p>Flueix sota terra en coves secretes. Ningú el veu des de la superfície, però porta un cabal pur i profund.</p>
+              <div class="river-question">«Sents que tens capacitats o interessos que no mostres a tothom i que encara estan per brollar?»</div>
+            </div>
+          </div>
+
+          <!-- 9. GLACAT -->
+          <div class="river-card" onclick="selectRiverType(this, 'glacat', 8)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?auto=format&fit=crop&w=800&q=80" alt="Riu glaçat d'hivern" loading="lazy">
+              <span class="river-zoom-btn">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-resp">Paciència</span>
+              <h4>9. Riu Glaçat d'Hivern</h4>
+              <p>Protegit sota una capa de gel. Sembla aturat pel fred, però per sota l'aigua continua corrent esperant la primavera.</p>
+              <div class="river-question">«Estàs aguantant una etapa difícil amb paciència, sabent que aviat arribarà el moment de florir?»</div>
+            </div>
+          </div>
+
+          <!-- 10. CONFLUÈNCIA -->
+          <div class="river-card" onclick="selectRiverType(this, 'confluencia', 9)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" alt="Aiguabarreig de dos rius" loading="lazy">
+              <span class="river-zoom-btn">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-coop">Trobada i diàleg</span>
+              <h4>10. Aiguabarreig (Confluència)</h4>
+              <p>Dos corrents de colors diferents s'ajunten i caminen de costat fins a fondre's en un cabal el doble de potent.</p>
+              <div class="river-question">«Sents que les teves amistats o les teves arrels diverses són la teva font principal de força?»</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="selected-river-feedback" style="display: none; margin-top: 1.5rem; padding: 1.2rem; background: #e0f2fe; border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+          <strong style="color: var(--primary-deep); font-size: 1rem;">🌊 Connexió amb el teu riu:</strong> <span id="selected-river-text"></span>
+        </div>
+      </div>
+
+      <!-- METAPHOR ELEMENTS ACCORDION -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">🗺️ El Diccionari Simbòlic del Riu</h2>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Com traduir la teva vida en geografia</span>
+        </div>
+
+        <div class="grid-2">
+          <div class="metaphor-node">
+            <div class="metaphor-node-title">🌱 El Naixement (La Font)</div>
+            <p style="font-size: 0.88rem;">Les teves arrels, el lloc on vas néixer o créixer, la teva família i els valors que et van transmetre de petit/a.</p>
+          </div>
+          <div class="metaphor-node">
+            <div class="metaphor-node-title">🌊 El Curs Principal</div>
+            <p style="font-size: 0.88rem;">Allò que et defineix: els teus interessos essencials, el que et fa gaudir de veritat i que roman en tu encara que l'entorn canviï.</p>
+          </div>
+          <div class="metaphor-node">
+            <div class="metaphor-node-title">🌿 Els Afluents</div>
+            <p style="font-size: 0.88rem;">Noves persones decisives, aficions descobertes, viatges o activitats que van sumar cabal i riquesa al teu camí.</p>
+          </div>
+          <div class="metaphor-node">
+            <div class="metaphor-node-title">🪨 Les Pedres i els Ràpids</div>
+            <p style="font-size: 0.88rem;">Moments difícils, exàmens fallits, conflictes amb amics o pors. No aturen el riu: l'obliguen a agafar agilitat.</p>
+          </div>
+          <div class="metaphor-node">
+            <div class="metaphor-node-title">⚡ La Cascada i el Gorg</div>
+            <p style="font-size: 0.88rem;">L'imprevist radical. Un salt inesperat que espanta, però que acaba en una bassa tranquil·la per recomençar amb una altra perspectiva.</p>
+          </div>
+          <div class="metaphor-node">
+            <div class="metaphor-node-title">🔄 La Bifurcació i el Retorn</div>
+            <p style="font-size: 0.88rem;">Prendre un desviament formatiu o professional i, temps després, tornar al teu fil conductor amb més experiència i maduresa.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BEHAVIOR SELECTION DYNAMICS -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">⚓ Dinàmica: «El meu Equipatge per Navegar»</h2>
+          <span class="tag-skill badge-auto">Autoconeixement Socioemocional</span>
+        </div>
+        <p>
+          Per navegar pel riu de la vida cal conèixer el propi vaixell. A partir de les <strong>5 habilitats socioemocionals</strong> del centre, cada alumne escull la seva <strong>Àncora</strong> (una fortalesa que ja té) i el seu <strong>Timó</strong> (un comportament que es compromet a entrenar durant aquest projecte).
+        </p>
+
+        <div class="behavior-selector-box">
+          <div class="selector-grid">
+            <!-- ANCORA -->
+            <div class="select-card" id="card-ancora">
+              <h3 style="color: var(--color-coop); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.8rem;">
+                ⚓ La Meva Àncora (La fortalesa que ja tinc)
+              </h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+                Un comportament en el qual et sents sòlid/a i segur/a.
+              </p>
+              <label for="select-skill-ancora">Tria l'Habilitat:</label>
+              <select id="select-skill-ancora" onchange="updateBehaviorOptions('ancora')">
+                <option value="">-- Selecciona una Habilitat --</option>
+                <option value="resp">🔵 Responsabilitat</option>
+                <option value="coop">🟢 Cooperació i Treball en Equip</option>
+                <option value="auto">🟠 Autonomia i Iniciativa</option>
+                <option value="emoc">🔴 Gestió Emocional</option>
+                <option value="pens">🟣 Habilitats de Pensament</option>
+              </select>
+
+              <label for="select-comp-ancora">Comportament concret:</label>
+              <select id="select-comp-ancora">
+                <option value="">-- Primer tria l'habilitat --</option>
+              </select>
+
+              <label for="evidence-ancora">Com ajuda aquesta fortalesa al teu grup o a tu mateix/a?</label>
+              <input type="text" id="evidence-ancora" placeholder="Ex: Sempre escolto tothom abans de decidir...">
+            </div>
+
+            <!-- TIMO -->
+            <div class="select-card" id="card-timo">
+              <h3 style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.8rem;">
+                🧭 El Meu Timó (El repte que vull entrenar)
+              </h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+                Un comportament que et costa i que practicaràs conscientment a l'aula.
+              </p>
+              <label for="select-skill-timo">Tria l'Habilitat:</label>
+              <select id="select-skill-timo" onchange="updateBehaviorOptions('timo')">
+                <option value="">-- Selecciona una Habilitat --</option>
+                <option value="resp">🔵 Responsabilitat</option>
+                <option value="coop">🟢 Cooperació i Treball en Equip</option>
+                <option value="auto">🟠 Autonomia i Iniciativa</option>
+                <option value="emoc">🔴 Gestió Emocional</option>
+                <option value="pens">🟣 Habilitats de Pensament</option>
+              </select>
+
+              <label for="select-comp-timo">Comportament concret:</label>
+              <select id="select-comp-timo">
+                <option value="">-- Primer tria l'habilitat --</option>
+              </select>
+
+              <label for="evidence-timo">Quina acció concreta faràs per demostrar que l'estàs entrenant?</label>
+              <input type="text" id="evidence-timo" placeholder="Ex: Quan m'encalli, en comptes de mirar el mòbil, demanaré ajuda...">
+            </div>
+          </div>
+
+          <div style="margin-top: 1.2rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <button class="btn btn-primary" onclick="saveEquipatge()">💾 Desar el meu Equipatge Personal</button>
+            <span id="equipatge-status" style="font-size: 0.85rem; color: var(--color-coop); font-weight: 600;"></span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- TAB 2: ELS 3 TRAMS DEL RIU -->
+    <!-- ============================================================= -->
+    <section id="tab-trams" class="tab-content">
+      
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">🗺️ L'Arquitectura del Projecte: Els 3 Trams</h2>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Tres perspectives temporals d'autoconeixement</span>
+        </div>
+        <p>
+          Al llarg del projecte, cada estudiant dibuixarà una gran cartografia dividida en 3 trams temporals complementaris:
+        </p>
+
+        <!-- TRAM SWITCHER PILLS -->
+        <div class="tram-banner" style="margin-top: 1.2rem;">
+          <div class="tram-pill active" id="pill-tram1" onclick="showTramDetail(1)">
+            <div class="tram-pill-tag">Tram 1 · Mirada enrere</div>
+            <h3>Dels 0 als 16 anys</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">D'on vinc? Arrels, moments clau, pedres i afluents fins avui.</p>
+          </div>
+          <div class="tram-pill" id="pill-tram2" onclick="showTramDetail(2)">
+            <div class="tram-pill-tag">Tram 2 · Saviesa retrospectiva</div>
+            <h3>Dels 80 als 18 anys</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Mirar enrere des del futur després de parlar amb referents.</p>
+          </div>
+          <div class="tram-pill" id="pill-tram3" onclick="showTramDetail(3)">
+            <div class="tram-pill-tag">Tram 3 · La lupa d'acció</div>
+            <h3>Postobligatòria (16 a 18/20)</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Recerca profunda: Batxillerat, CFGM, PFI. Plans A, B i C.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRAM 1 DETAIL -->
+      <div id="tram-detail-1" class="card">
+        <div class="card-header">
+          <h3 class="card-title" style="color: var(--primary);">🌊 Tram 1: «El meu riu fins avui» (0 a 16 anys)</h3>
+          <span class="tag-skill badge-resp">Fase Individual i Creativa</span>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <h4 style="color: var(--primary-deep); margin-bottom: 0.6rem;">Instruccions de creació pas a pas</h4>
+            <ol style="margin-left: 1.2rem; font-size: 0.9rem; line-height: 1.7;">
+              <li><strong>Pluja d'idees inicial:</strong> Escriu en brut 3 moments feliços, 2 dificultats superades, 2 persones afluents i 1 afició constant.</li>
+              <li><strong>El curs del riu (Suport A3 o digital):</strong> Dibuixa un riu que comenci a un extrem (naixement) i arribi fins a l'altre (4t d'ESO). Fes que el riu s'eixampli en moments d'energia i s'estrenyi en moments de dubte.</li>
+              <li><strong>Afegeix la simbologia:</strong> Dibuixa afluents amb noms de persones o aficions, roques amb etiquetes de dificultats superades, i gorgs de reflexió.</li>
+              <li><strong>La Llegenda:</strong> Crea a una cantonada una llegenda que expliqui els colors de l'aigua i els símbols emprats.</li>
+            </ol>
+          </div>
+
+          <div>
+            <div class="butterfly-box">
+              <div class="butterfly-title">🦋 Revisió entre iguals: La Papallona d'Austin</div>
+              <p style="font-size: 0.85rem; color: #78350f; margin-bottom: 0.6rem;">
+                Intercanvia el teu esbós amb una parella de classe. El retorn ha de complir 3 condicions indispensables:
+              </p>
+              <ul style="font-size: 0.85rem; color: #78350f; margin-left: 1.2rem;">
+                <li><strong>Amable:</strong> Destaca primer allò que funciona molt bé (ex: <em>«M'agrada molt com has representat el canvi d'institut...»</em>).</li>
+                <li><strong>Específic:</strong> Assenyala un punt exacte que no quedi clar (ex: <em>«Entre els 10 i els 12 anys no s'entén per què l'aigua és fosca»</em>).</li>
+                <li><strong>Útil:</strong> Proposa una acció clara de millora (ex: <em>«Si afegeixes una etiqueta al costat de la roca s'entendrà de seguida»</em>).</li>
+              </ul>
+            </div>
+
+            <h4 style="font-size: 0.95rem; color: var(--primary-deep); margin-top: 1rem;">Checklist de Criteris d'Èxit:</h4>
+            <div style="font-size: 0.85rem; line-height: 1.8;">
+              <label><input type="checkbox"> S'aprecia l'evolució temporal clara dels 0 als 16 anys.</label><br>
+              <label><input type="checkbox"> S'inclouen com a mínim 4 elements simbòlics diferents (afluents, roques, etc.).</label><br>
+              <label><input type="checkbox"> Té una llegenda comprensible i cura estètica.</label><br>
+              <label><input type="checkbox"> S'ha aplicat com a mínim un canvi després del feedback de la parella.</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRAM 2 DETAIL -->
+      <div id="tram-detail-2" class="card" style="display: none;">
+        <div class="card-header">
+          <h3 class="card-title" style="color: var(--color-pens);">🔭 Tram 2: «Mirada retrospectiva des dels 80 anys»</h3>
+          <span class="tag-skill badge-pens">Després de les converses amb referents</span>
+        </div>
+        <p style="margin-bottom: 1rem;">
+          Després d'haver conversat amb persones de diferents edats i haver vist com la vida dóna voltes inesperades, ens posem a la pell d'un mateix/a amb 80 anys mirant enrere.
+        </p>
+
+        <div class="grid-2">
+          <div class="metaphor-node">
+            <div class="metaphor-node-title">🧓 La perspectiva de la vellesa</div>
+            <p style="font-size: 0.88rem;">
+              Des dels 80 anys, cap decisió presa als 16 anys és una condemna. Les equivocacions esdevenen anècdotes o aprenentatges fonamentals.
+            </p>
+            <ul style="font-size: 0.85rem; margin-left: 1.2rem; margin-top: 0.5rem; color: var(--text-muted);">
+              <li>Quin tipus de vida t'agradaria haver viscut en conjunt?</li>
+              <li>Quines experiències, viatges o causes col·lectives voldries que haguessin estat els teus grans afluents?</li>
+              <li>Com hauràs afrontat les cascades imprevistes sense rendir-te?</li>
+            </ul>
+          </div>
+
+          <div class="metaphor-node">
+            <div class="metaphor-node-title">🎨 Com es dibuixa aquest tram?</div>
+            <p style="font-size: 0.88rem;">
+              El riu continua des dels 18 fins als 80 anys amb un traç més lliure i poètic:
+            </p>
+            <ul style="font-size: 0.85rem; margin-left: 1.2rem; margin-top: 0.5rem; color: var(--text-muted);">
+              <li>Dibuixa les grans fites que voldries celebrar (estudis, projectes, vincles, feines amb sentit).</li>
+              <li>Afegeix com a mínim 1 gran cascada o revolt sobtat imaginat i com el teu jo futur aconsegueix tirar endavant.</li>
+              <li>La desembocadura: com connecta el teu riu amb el mar (la comunitat, el món, el llegat).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRAM 3 DETAIL -->
+      <div id="tram-detail-3" class="card" style="display: none;">
+        <div class="card-header">
+          <h3 class="card-title" style="color: var(--color-auto);">🔍 Tram 3: «La lupa a la Postobligatòria» (16 a 18/20 anys)</h3>
+          <span class="tag-skill badge-auto">Recerca d'opcions reals i Plans A, B i C</span>
+        </div>
+        <p style="margin-bottom: 1rem;">
+          Ara que tenim la mirada àmplia de la vida, posem la lupa d'alta definició al tram immediat que tenim davant dels nassos: els propers 2 o 4 anys.
+        </p>
+
+        <div class="grid-3">
+          <div class="card" style="border-top: 4px solid var(--primary); margin-bottom: 0;">
+            <h4 style="color: var(--primary-deep); margin-bottom: 0.5rem;">🌟 Pla A (La primera il·lusió)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+              L'opció que ara mateix et motiva més (modalitat concreta de Batxillerat, cicle formatiu de grau mitjà específic, etc.).
+            </p>
+            <p style="font-size: 0.8rem;"><strong>Què he d'investigar:</strong> Centres on s'imparteix, codi del cicle/itinerari, notes de tall de l'any passat, matèries clau.</p>
+          </div>
+
+          <div class="card" style="border-top: 4px solid var(--color-coop); margin-bottom: 0;">
+            <h4 style="color: var(--color-coop); margin-bottom: 0.5rem;">🌿 Pla B (L'alternativa sòlida)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+              Una segona opció realment atractiva si no aconsegueixes plaça al Pla A o si canvies d'interès a última hora.
+            </p>
+            <p style="font-size: 0.8rem;"><strong>L'afluent de retorn:</strong> Com et permet aquest Pla B arribar més endavant al mateix àmbit professional que volies?</p>
+          </div>
+
+          <div class="card" style="border-top: 4px solid var(--color-auto); margin-bottom: 0;">
+            <h4 style="color: var(--color-auto); margin-bottom: 0.5rem;">🛡️ Pla C (La xarxa de seguretat)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+              Una sortida formativa pràctica (CFGM alternatiu, PFI, Ensenyaments Esportius/Artístics) que et manté en moviment i aprenent.
+            </p>
+            <p style="font-size: 0.8rem;"><strong>Sense sequeres:</strong> Saber que mai et quedaràs encallat/da perquè tens opcions previstes.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- TAB 3: CONVERSES AMB REFERENTS -->
+    <!-- ============================================================= -->
+    <section id="tab-referents" class="tab-content">
+      
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">🗣️ Bastida de Converses: «Navegants Reals»</h2>
+          <span class="tag-skill badge-pens">Entrevistes Àgils i Significatives</span>
+        </div>
+        <p>
+          A 4t d'ESO no farem una entrevista formal i pesada amb gravacions eternes i pòsters. Volem que tinguis <strong>dues converses autèntiques</strong> amb persones que ja naveguen per la vida:
+        </p>
+
+        <div class="grid-2" style="margin: 1.2rem 0;">
+          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 1.2rem; border-radius: var(--radius-sm);">
+            <h4 style="color: #166534; margin-bottom: 0.3rem;">🧑‍🎓 Referent 1: Jove (19 a 28 anys)</h4>
+            <p style="font-size: 0.85rem; color: #14532d;">
+              Algú que fa pocs anys va viure exactament el que tu estàs vivint ara: la decisió de sortir de l'ESO, canvis de cicle o universitat, primeres feines.
+            </p>
+          </div>
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; padding: 1.2rem; border-radius: var(--radius-sm);">
+            <h4 style="color: #1e40af; margin-bottom: 0.3rem;">🧑‍💼 Referent 2: Adult / Gran (més de 40 anys)</h4>
+            <p style="font-size: 0.85rem; color: #1e3a8a;">
+              Algú amb perspectiva llarga: pares, familiars, veïns, professors o professionals que hagin viscut canvis d'ocupació o imprevistos de vida.
+            </p>
+          </div>
+        </div>
+
+        <h3 style="color: var(--primary-deep); margin: 1.5rem 0 0.8rem;">🧭 Les 4 Preguntes Cardinals per a la Conversa</h3>
+
+        <div class="grid-2">
+          <div class="card" style="margin-bottom: 1rem; border-left: 4px solid var(--primary);">
+            <h4 style="color: var(--primary-deep);">1. El Moment d'Inflexió (La Cruïlla)</h4>
+            <p style="font-style: italic; font-size: 0.9rem; margin: 0.4rem 0;">
+              «Quan tenies 15 o 16 anys, quina decisió vas haver de prendre? Ho tenies clar o estaves ple/na de dubtes com molts de nosaltres ara?»
+            </p>
+          </div>
+
+          <div class="card" style="margin-bottom: 1rem; border-left: 4px solid var(--color-auto);">
+            <h4 style="color: var(--color-auto);">2. L'Afluent Inesperat (El canvi de rumb)</h4>
+            <p style="font-style: italic; font-size: 0.9rem; margin: 0.4rem 0;">
+              «Hi ha hagut algun moment on la teva vida fes un gir que no havies planejat (un treball que et va sorprendre, una oportunitat nova, una persona clau)?»
+            </p>
+          </div>
+
+          <div class="card" style="margin-bottom: 1rem; border-left: 4px solid var(--color-emoc);">
+            <h4 style="color: var(--color-emoc);">3. La Cascada o Sequera (L'obstacle)</h4>
+            <p style="font-style: italic; font-size: 0.9rem; margin: 0.4rem 0;">
+              «T'has trobat mai bloquejat/da, sense saber cap on anar o adonant-te que t'havies equivocat d'estudis? Com te'n vas sortir?»
+            </p>
+          </div>
+
+          <div class="card" style="margin-bottom: 1rem; border-left: 4px solid var(--color-coop);">
+            <h4 style="color: var(--color-coop);">4. La Mirada Retrospectiva (El consell)</h4>
+            <p style="font-style: italic; font-size: 0.9rem; margin: 0.4rem 0;">
+              «Amb tot el que saps avui... què et diries a tu mateix/a si tornessis a tenir 16 anys davant de la tria de 4t d'ESO?»
+            </p>
+          </div>
+        </div>
+
+        <div class="card" style="background: #f8fafc; border: 1px dashed #cbd5e1; margin-top: 1.2rem;">
+          <h3 style="color: var(--primary-deep); margin-bottom: 0.5rem;">🎨 La Dinàmica a l'Aula: «El Mural Col·lectiu d'Afluents i Tempestes»</h3>
+          <p style="font-size: 0.9rem; margin-bottom: 0.8rem;">
+            Després de fer les converses a casa, compartim les troballes en grups de 4 i creem a la paret de l'aula un gran mural col·lectiu amb post-its:
+          </p>
+          <div class="grid-3" style="font-size: 0.85rem;">
+            <div>🟡 <strong>Post-it Groc:</strong> Tipus de decisions que van prendre els nostres referents (per vocació, per família, per provar...).</div>
+            <div>🔴 <strong>Post-it Rosa:</strong> Imprevistos i cascades reals (notes de tall, canvis de feina, crisis...).</div>
+            <div>🟢 <strong>Post-it Verd:</strong> Retorns al curs principal i estratègies de superació.</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- TAB 4: QUADERN DE BITÀCOLA (METACOGNICIÓ) -->
+    <!-- ============================================================= -->
+    <section id="tab-bitacola" class="tab-content">
+      
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">🧭 Quadern de Bitàcola: Parades de Navegació</h2>
+          <span class="tag-skill badge-pens">Reflexió Metacognitiva de l'Alumnat</span>
+        </div>
+        <p>
+          El teu quadern de bitàcola és l'espai per anotar les teves coordenades interiors. Respon a les preguntes de cada aturada per reflexionar sobre el teu procés i el teu comportament «Timó».
+        </p>
+
+        <!-- ATURADES TABS -->
+        <div style="display: flex; gap: 0.5rem; margin: 1.2rem 0; flex-wrap: wrap;">
+          <button class="btn btn-secondary active" id="btn-at1" onclick="showAturada(1)">Aturada 1 · Obertura</button>
+          <button class="btn btn-secondary" id="btn-at2" onclick="showAturada(2)">Aturada 2 · Post Tram 1</button>
+          <button class="btn btn-secondary" id="btn-at3" onclick="showAturada(3)">Aturada 3 · Post Referents</button>
+          <button class="btn btn-secondary" id="btn-at4" onclick="showAturada(4)">Aturada 4 · Tancament</button>
+        </div>
+
+        <!-- ATURADA 1 -->
+        <div id="aturada-content-1" class="aturada-panel">
+          <h3 style="color: var(--primary-deep); margin-bottom: 0.8rem;">Aturada 1: Inici de la Travessia</h3>
+          
+          <label>1. Quina és la primera paraula o emoció que et ve al cap quan penses en el curs vinent?</label>
+          <input type="text" id="bit-at1-q1" placeholder="Ex: Incertesa, il·lusió, mandra, curiositat...">
+
+          <label>2. Quin riu has triat a la dinàmica inicial i per què creus que representa el teu moment actual?</label>
+          <textarea id="bit-at1-q2" rows="3" placeholder="Explica com et sents a 4t d'ESO..."></textarea>
+
+          <label>3. Quin és el teu comportament «Timó» i quin compromís concret adoptes a l'aula?</label>
+          <input type="text" id="bit-at1-q3" placeholder="El meu timó és... i faré...">
+        </div>
+
+        <!-- ATURADA 2 -->
+        <div id="aturada-content-2" class="aturada-panel" style="display: none;">
+          <h3 style="color: var(--primary-deep); margin-bottom: 0.8rem;">Aturada 2: Després de dibuixar el Tram 1 (0 als 16 anys)</h3>
+          
+          <label>1. Mirant el teu riu fins avui, quina pedra o dificultat que semblava molt gran ara veus que et va fer madurar?</label>
+          <textarea id="bit-at2-q1" rows="3"></textarea>
+
+          <label>2. Quin feedback útil i concret vas rebre del teu company/a (Papallona d'Austin) i com vas millorar el dibuix?</label>
+          <textarea id="bit-at2-q2" rows="3"></textarea>
+
+          <label>3. Valoració del teu Timó: Posa't una nota de l'1 al 4 sobre com l'has entrenat aquests dies i justifica-la.</label>
+          <input type="text" id="bit-at2-q3" placeholder="Ex: 3/4 perquè en dues classes he preguntat al docent quan m'he bloquejat...">
+        </div>
+
+        <!-- ATURADA 3 -->
+        <div id="aturada-content-3" class="aturada-panel" style="display: none;">
+          <h3 style="color: var(--primary-deep); margin-bottom: 0.8rem;">Aturada 3: Després de les converses amb referents</h3>
+          
+          <label>1. Quina història o consell dels teus referents t'ha sorprès o tranquil·litzat més?</label>
+          <textarea id="bit-at3-q1" rows="3"></textarea>
+
+          <label>2. Imagina't amb 80 anys mirant enrere (Tram 2): Què voldries poder dir que has fet amb el teu riu?</label>
+          <textarea id="bit-at3-q2" rows="3"></textarea>
+        </div>
+
+        <!-- ATURADA 4 -->
+        <div id="aturada-content-4" class="aturada-panel" style="display: none;">
+          <h3 style="color: var(--primary-deep); margin-bottom: 0.8rem;">Aturada 4: Tancament i reflexió final</h3>
+          
+          <label>1. Defineix breument el teu Pla A (prioritari) i com el teu Pla B (alternatiu) es manté connectat amb el que t'agrada:</label>
+          <textarea id="bit-at4-q1" rows="3"></textarea>
+
+          <label>2. En què sents que has millorat com a persona o estudiant gràcies al treball del teu comportament «Timó»?</label>
+          <textarea id="bit-at4-q2" rows="3"></textarea>
+
+          <label>3. Què li diries a un noi o noia de 3r d'ESO per explicar-li que la vida és un riu i no una autopista?</label>
+          <textarea id="bit-at4-q3" rows="3"></textarea>
+        </div>
+
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+          <button class="btn btn-primary" onclick="saveBitacola()">💾 Desar les respostes de Bitàcola</button>
+          <span id="bitacola-save-status" style="font-size: 0.85rem; color: var(--color-coop); font-weight: 600;"></span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- TAB 5: EINA DOCENT (GRAELLA D'OBSERVACIÓ) -->
+    <!-- ============================================================= -->
+    <section id="tab-docent" class="tab-content">
+      
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">📋 Graella d'Observació Docent: Habilitats Socioemocionals</h2>
+          <span class="tag-skill badge-resp">Avaluació Formativa i d'Aula</span>
+        </div>
+        <p>
+          Eina ràpida per registrar les observacions dels comportaments seleccionats per cada alumne/a durant les sessions de treball. Pots afegir nous estudiants o desar les dades al teu dispositiu.
+        </p>
+
+        <!-- ADD STUDENT CONTROLS -->
+        <div style="background: #f8fafc; border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-sm); margin: 1.2rem 0;">
+          <h4 style="font-size: 0.95rem; color: var(--primary-deep); margin-bottom: 0.6rem;">➕ Afegir Alumne/a al Registre</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) 120px; gap: 0.8rem; align-items: flex-end;">
+            <div>
+              <label>Nom i Cognom:</label>
+              <input type="text" id="docent-new-name" placeholder="Ex: Laura M.">
+            </div>
+            <div>
+              <label>Grup / Taula:</label>
+              <input type="text" id="docent-new-group" placeholder="Grup 1">
+            </div>
+            <div>
+              <label>Comportament Àncora:</label>
+              <input type="text" id="docent-new-ancora" placeholder="C1 (Treball constant)">
+            </div>
+            <div>
+              <label>Comportament Timó (Repte):</label>
+              <input type="text" id="docent-new-timo" placeholder="C16 (Pregunta si s'encalla)">
+            </div>
+            <div>
+              <button class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="addDocentStudent()">Afegir</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- OBSERVATION TABLE -->
+        <div style="overflow-x: auto;">
+          <table class="styled-table" id="docent-table">
+            <thead>
+              <tr>
+                <th>Grup</th>
+                <th>Alumne/a</th>
+                <th>Àncora (Fortalesa)</th>
+                <th>Timó (Repte entrenat)</th>
+                <th style="text-align: center;">S1-2 (Tram 1)</th>
+                <th style="text-align: center;">S3-4 (Referents)</th>
+                <th style="text-align: center;">S5-6 (Tram 2-3)</th>
+                <th>Notes breus / Evidències d'aula</th>
+                <th>Acció</th>
+              </tr>
+            </thead>
+            <tbody id="docent-tbody">
+              <!-- Dynamically populated via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top: 1.2rem; display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+          <div style="font-size: 0.82rem; color: var(--text-muted);">
+            Escala: <strong>1</strong> (En procés inicial) · <strong>2</strong> (Amb recordatori) · <strong>3</strong> (Assolit habitualment) · <strong>4</strong> (Consolidat/Referent)
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn btn-secondary" onclick="exportDocentCSV()">📥 Exportar dades (CSV)</button>
+            <button class="btn btn-primary" onclick="saveDocentData()">💾 Desar observacions</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- TAB 6: KIT D'AULA IMPRIMIBLE -->
+    <!-- ============================================================= -->
+    <section id="tab-print" class="tab-content">
+      
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">🖨️ Zona d'Impressió: Kit de Treball per a l'Aula</h2>
+          <span class="tag-skill badge-coop">Formats A4 Preparats per Imprimir</span>
+        </div>
+        <p style="margin-bottom: 1.5rem;">
+          Fes clic a qualsevol dels botons per previsualitzar i imprimir directament la fitxa corresponent amb format professional net (sense menús ni elements digitals):
+        </p>
+
+        <div class="grid-2">
+          <!-- CARD 1 -->
+          <div class="card" style="border: 1px solid var(--border-color); margin-bottom: 0;">
+            <h3 style="color: var(--primary-deep); margin-bottom: 0.4rem;">1. Fitxa de Creació: Tram 1 + Llegenda Fluvial</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+              Full de treball individual amb la taula de símbols fluvials, pautes de dibuix i la rúbrica d'èxit de la Papallona d'Austin.
+            </p>
+            <button class="btn btn-print" onclick="printDoc('print-tram1')">🖨️ Imprimir Fitxa Tram 1</button>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="card" style="border: 1px solid var(--border-color); margin-bottom: 0;">
+            <h3 style="color: var(--primary-deep); margin-bottom: 0.4rem;">2. Targeta de Conversa amb Referents</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+              La bastida de les 4 preguntes cardinals amb espai per anotar dades i respostes dels 2 referents entrevistats.
+            </p>
+            <button class="btn btn-print" onclick="printDoc('print-referents')">🖨️ Imprimir Fitxa Referents</button>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="card" style="border: 1px solid var(--border-color); margin-bottom: 0;">
+            <h3 style="color: var(--primary-deep); margin-bottom: 0.4rem;">3. Targeta d'Equipatge: Àncora i Timó</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+              Targeta individual de compromís socioemocional amb el llistat de les 5 habilitats i comportaments de referència.
+            </p>
+            <button class="btn btn-print" onclick="printDoc('print-equipatge')">🖨️ Imprimir Targeta Equipatge</button>
+          </div>
+
+          <!-- CARD 4 -->
+          <div class="card" style="border: 1px solid var(--border-color); margin-bottom: 0;">
+            <h3 style="color: var(--primary-deep); margin-bottom: 0.4rem;">4. Quadern de Bitàcola d'Aprenentatge</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+              Document amb les 4 aturades de navegació i la rúbrica d'un sol punt per a l'autoavaluació final del projecte.
+            </p>
+            <button class="btn btn-print" onclick="printDoc('print-bitacola')">🖨️ Imprimir Quadern de Bitàcola</button>
+          </div>
+
+          <!-- CARD 5 -->
+          <div class="card" style="border: 1px solid var(--border-color); margin-bottom: 0;">
+            <h3 style="color: var(--primary-deep); margin-bottom: 0.4rem;">5. Targetes dels 10 Rius de la Vida</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+              Kit visual amb imatges, descripcions i preguntes dels 10 rius preparat per imprimir i repartir per l'aula.
+            </p>
+            <button class="btn btn-print" onclick="printDoc('print-targetes-rius')">🖨️ Imprimir Targetes dels Rius</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ============================================================= -->
+  <!-- HIDDEN PRINTABLE SHEETS (RENDERED ONLY ON PRINT) -->
+  <!-- ============================================================= -->
+
+  <!-- SHEET 1: FITXA TRAM 1 -->
+  <div id="print-tram1" class="printable-sheet">
+    <div style="border: 2px solid #0369a1; padding: 25px; font-family: sans-serif; max-width: 800px; margin: 0 auto;">
+      <div style="display: flex; justify-content: space-between; border-bottom: 2px solid #0369a1; padding-bottom: 10px; margin-bottom: 15px;">
+        <div>
+          <h1 style="font-size: 20px; color: #0369a1; margin: 0;">EL RIU DE LA VIDA · TRAM 1 (0 ALS 16 ANYS)</h1>
+          <p style="font-size: 12px; margin: 3px 0 0;">Orientació i Autoconeixement · 4t d'ESO</p>
+        </div>
+        <div style="text-align: right; font-size: 12px;">
+          <p><strong>Alumne/a:</strong> _________________________________</p>
+          <p><strong>Grup:</strong> _______  <strong>Data:</strong> ______________</p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 14px; color: #0c4a6e; margin-bottom: 8px;">1. Llegenda Simbòlica per al teu Dibuix</h3>
+      <table style="width: 100%; border-collapse: collapse; font-size: 11px; margin-bottom: 15px;">
+        <tr style="background: #f1f5f9;">
+          <th style="border: 1px solid #ccc; padding: 6px;">Element fluvial</th>
+          <th style="border: 1px solid #ccc; padding: 6px;">Significat vital</th>
+          <th style="border: 1px solid #ccc; padding: 6px;">El que has d'indicar</th>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #ccc; padding: 6px;"><strong>La Font / Naixement</strong></td>
+          <td style="border: 1px solid #ccc; padding: 6px;">Arrels, família, lloc d'origen, infantesa.</td>
+          <td style="border: 1px solid #ccc; padding: 6px;">D'on brolla la teva aigua?</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #ccc; padding: 6px;"><strong>Cabal / Amplada</strong></td>
+          <td style="border: 1px solid #ccc; padding: 6px;">Moments de molta energia vs. moments de dubte.</td>
+          <td style="border: 1px solid #ccc; padding: 6px;">Eixampla o estreny el riu segons la teva força vital.</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #ccc; padding: 6px;"><strong>Afluents</strong></td>
+          <td style="border: 1px solid #ccc; padding: 6px;">Amics clau, professors, aficions o canvis positius.</td>
+          <td style="border: 1px solid #ccc; padding: 6px;">Noms de persones o passions que s'uneixen a tu.</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #ccc; padding: 6px;"><strong>Roques i Ràpids</strong></td>
+          <td style="border: 1px solid #ccc; padding: 6px;">Reptes, exàmens difícils, pors superades.</td>
+          <td style="border: 1px solid #ccc; padding: 6px;">Quines dificultats vas sortejar i com?</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #ccc; padding: 6px;"><strong>Gorgs de calma</strong></td>
+          <td style="border: 1px solid #ccc; padding: 6px;">Moments de parada per reflexionar i agafar aire.</td>
+          <td style="border: 1px solid #ccc; padding: 6px;">Quan et vas aturar a pensar qui eres?</td>
+        </tr>
+      </table>
+
+      <h3 style="font-size: 14px; color: #0c4a6e; margin-bottom: 8px;">2. Espai d'Esbós i Pluja d'Idees Prèvia</h3>
+      <div style="border: 1px dashed #94a3b8; height: 180px; padding: 10px; font-size: 11px; color: #64748b; margin-bottom: 15px;">
+        <em>(Fes aquí el teu esquema preliminar abans de passar al paper gran A3 o suport artístic definitiu)</em>
+      </div>
+
+      <div style="background: #fffbeb; border: 1px solid #fef3c7; border-left: 4px solid #f59e0b; padding: 10px; font-size: 11px;">
+        <strong>🦋 Papallona d'Austin (Feedback del company/a):</strong>
+        <p style="margin: 3px 0 0;">Nom del revisor/a: _______________________ | Comentari amable i acció concreta de millora: ____________________________________________________________________________________</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHEET 2: FITXA REFERENTS -->
+  <div id="print-referents" class="printable-sheet">
+    <div style="border: 2px solid #0d9488; padding: 25px; font-family: sans-serif; max-width: 800px; margin: 0 auto;">
+      <div style="display: flex; justify-content: space-between; border-bottom: 2px solid #0d9488; padding-bottom: 10px; margin-bottom: 15px;">
+        <div>
+          <h1 style="font-size: 20px; color: #0d9488; margin: 0;">BASTIDA DE CONVERSES AMB REFERENTS</h1>
+          <p style="font-size: 12px; margin: 3px 0 0;">Navegants Reals · El Riu de la Vida (4t d'ESO)</p>
+        </div>
+        <div style="text-align: right; font-size: 12px;">
+          <p><strong>Alumne/a:</strong> _________________________________</p>
+        </div>
+      </div>
+
+      <!-- REFERENT 1 -->
+      <div style="border: 1px solid #cbd5e1; padding: 12px; border-radius: 6px; margin-bottom: 15px;">
+        <h3 style="font-size: 13px; color: #0f766e; margin-bottom: 5px;">REFERENT 1 (Jove: 19 a 28 anys)</h3>
+        <p style="font-size: 11px; margin-bottom: 8px;"><strong>Nom:</strong> _________________________ <strong>Edat:</strong> _____ <strong>Ocupació/Estudis actuals:</strong> _________________________</p>
+        
+        <p style="font-size: 11px; margin: 4px 0;"><strong>1. Cruïlla als 16:</strong> Què vas decidir a la meva edat? Ho tenies clar o anaves amb dubtes?</p>
+        <div style="border-bottom: 1px dotted #ccc; height: 35px;"></div>
+
+        <p style="font-size: 11px; margin: 4px 0;"><strong>2. L'afluent inesperat:</strong> Quin canvi de plans vas viure i com va reorientar el teu camí?</p>
+        <div style="border-bottom: 1px dotted #ccc; height: 35px;"></div>
+
+        <p style="font-size: 11px; margin: 4px 0;"><strong>3. El consell retrospectiu:</strong> Què et diries avui si tornessis a estar a 4t d'ESO?</p>
+        <div style="border-bottom: 1px dotted #ccc; height: 35px;"></div>
+      </div>
+
+      <!-- REFERENT 2 -->
+      <div style="border: 1px solid #cbd5e1; padding: 12px; border-radius: 6px;">
+        <h3 style="font-size: 13px; color: #0369a1; margin-bottom: 5px;">REFERENT 2 (Adult / Gran: +40 anys)</h3>
+        <p style="font-size: 11px; margin-bottom: 8px;"><strong>Nom:</strong> _________________________ <strong>Edat:</strong> _____ <strong>Trajectòria vital:</strong> _________________________</p>
+        
+        <p style="font-size: 11px; margin: 4px 0;"><strong>1. Moments de canvi:</strong> Quants cops has canviat de professió o direcció al llarg de la vida?</p>
+        <div style="border-bottom: 1px dotted #ccc; height: 35px;"></div>
+
+        <p style="font-size: 11px; margin: 4px 0;"><strong>2. Cascades i sequeres:</strong> Com vas gestionar un moment difícil o una porta que es va tancar?</p>
+        <div style="border-bottom: 1px dotted #ccc; height: 35px;"></div>
+
+        <p style="font-size: 11px; margin: 4px 0;"><strong>3. Mirada des de l'experiència:</strong> Quina és la lliçó més valuosa que has après sobre prendre decisions?</p>
+        <div style="border-bottom: 1px dotted #ccc; height: 35px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHEET 3: FITXA EQUIPATGE (ANCORA I TIMO) -->
+  <div id="print-equipatge" class="printable-sheet">
+    <div style="border: 2px solid #2563eb; padding: 25px; font-family: sans-serif; max-width: 800px; margin: 0 auto;">
+      <div style="display: flex; justify-content: space-between; border-bottom: 2px solid #2563eb; padding-bottom: 10px; margin-bottom: 15px;">
+        <div>
+          <h1 style="font-size: 20px; color: #2563eb; margin: 0;">EL MEU EQUIPATGE PER NAVEGAR</h1>
+          <p style="font-size: 12px; margin: 3px 0 0;">Compromís Socioemocional · El Riu de la Vida (4t d'ESO)</p>
+        </div>
+        <div style="text-align: right; font-size: 12px;">
+          <p><strong>Alumne/a:</strong> _________________________________</p>
+          <p><strong>Grup / Taula:</strong> _______  <strong>Data:</strong> ______________</p>
+        </div>
+      </div>
+
+      <!-- ANCORA -->
+      <div style="border: 2px solid #059669; padding: 14px; border-radius: 8px; margin-bottom: 15px; background: #f0fdf4;">
+        <h3 style="font-size: 15px; color: #065f46; margin: 0 0 6px;">⚓ LA MEVA ÀNCORA (La fortalesa que ja tinc)</h3>
+        <p style="font-size: 11px; color: #166534; margin-bottom: 8px;">
+          Un comportament en el qual et sents fort/a i segur/a (Responsabilitat, Cooperació, Autonomia, Emocions o Pensament).
+        </p>
+        <p style="font-size: 12px; margin: 6px 0;"><strong>Habilitat i Comportament escollit:</strong> __________________________________________________</p>
+        <p style="font-size: 12px; margin: 6px 0;"><strong>Com ajuda aquesta fortalesa al meu grup o a mi mateix/a:</strong></p>
+        <div style="border-bottom: 1px dotted #059669; height: 35px;"></div>
+      </div>
+
+      <!-- TIMO -->
+      <div style="border: 2px solid #0284c7; padding: 14px; border-radius: 8px; margin-bottom: 15px; background: #f0f9ff;">
+        <h3 style="font-size: 15px; color: #0369a1; margin: 0 0 6px;">🧭 EL MEU TIMÓ (El comportament que entrenaré)</h3>
+        <p style="font-size: 11px; color: #0c4a6e; margin-bottom: 8px;">
+          Un comportament que em costa i que em comprometo a practicar activament a l'aula durant aquest projecte.
+        </p>
+        <p style="font-size: 12px; margin: 6px 0;"><strong>Habilitat i Comportament escollit:</strong> __________________________________________________</p>
+        <p style="font-size: 12px; margin: 6px 0;"><strong>Quina acció concreta faré a l'aula quan tingui un bloqueig o dificultat?</strong></p>
+        <div style="border-bottom: 1px dotted #0284c7; height: 40px;"></div>
+      </div>
+
+      <div style="border: 1px solid #cbd5e1; padding: 10px; border-radius: 6px; font-size: 10px; color: #475569;">
+        <strong>Les 5 Habilitats del Centre:</strong> 🔵 Responsabilitat · 🟢 Cooperació · 🟠 Autonomia i Iniciativa · 🔴 Gestió Emocional · 🟣 Habilitats de Pensament
+      </div>
+    </div>
+  </div>
+
+  <!-- SHEET 4: FITXA BITACOLA -->
+  <div id="print-bitacola" class="printable-sheet">
+    <div style="border: 2px solid #7c3aed; padding: 25px; font-family: sans-serif; max-width: 800px; margin: 0 auto;">
+      <div style="display: flex; justify-content: space-between; border-bottom: 2px solid #7c3aed; padding-bottom: 10px; margin-bottom: 15px;">
+        <div>
+          <h1 style="font-size: 20px; color: #7c3aed; margin: 0;">QUADERN DE BITÀCOLA DEL RIU</h1>
+          <p style="font-size: 12px; margin: 3px 0 0;">Parades de Navegació i Metacognició · 4t d'ESO</p>
+        </div>
+        <div style="text-align: right; font-size: 12px;">
+          <p><strong>Alumne/a:</strong> _________________________________</p>
+        </div>
+      </div>
+
+      <!-- ATURADA 1 -->
+      <div style="margin-bottom: 12px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;">
+        <h4 style="font-size: 12px; color: #6d28d9; margin: 0 0 4px;">ATURADA 1: OBERTURA DEL VIATGE</h4>
+        <p style="font-size: 11px; margin: 3px 0;">1. Primera paraula o emoció davant la postobligatòria: __________________________________</p>
+        <p style="font-size: 11px; margin: 3px 0;">2. Quin tipus de riu ets avui i per què? __________________________________________________</p>
+      </div>
+
+      <!-- ATURADA 2 -->
+      <div style="margin-bottom: 12px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;">
+        <h4 style="font-size: 12px; color: #6d28d9; margin: 0 0 4px;">ATURADA 2: POST TRAM 1 (0-16 ANYS)</h4>
+        <p style="font-size: 11px; margin: 3px 0;">1. Quina pedra o dificultat has dibuixat que et va fer madurar? ____________________________</p>
+        <p style="font-size: 11px; margin: 3px 0;">2. Feedback rebut (Papallona d'Austin) i millora aplicada: ________________________________</p>
+      </div>
+
+      <!-- ATURADA 3 -->
+      <div style="margin-bottom: 12px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;">
+        <h4 style="font-size: 12px; color: #6d28d9; margin: 0 0 4px;">ATURADA 3: POST CONVERSES AMB REFERENTS</h4>
+        <p style="font-size: 11px; margin: 3px 0;">1. Quina lliçó sobre canvis de rumb o imprevistos t'ha sorprès més? __________________________</p>
+        <p style="font-size: 11px; margin: 3px 0;">2. Mirada des dels 80 anys (Tram 2): Què voldries poder celebrar del teu riu? ________________</p>
+      </div>
+
+      <!-- ATURADA 4 -->
+      <div style="margin-bottom: 12px;">
+        <h4 style="font-size: 12px; color: #6d28d9; margin: 0 0 4px;">ATURADA 4: TANCAMENT I PROJECCIÓ</h4>
+        <p style="font-size: 11px; margin: 3px 0;">1. El meu Pla A (prioritari): __________________ | El meu Pla B (alternatiu): __________________</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHEET 5: TARGETES DELS 10 RIUS (IMPRIMIBLE PER RETALLAR) -->
+  <div id="print-targetes-rius" class="printable-sheet">
+    <div style="padding: 15px; font-family: sans-serif; max-width: 900px; margin: 0 auto;">
+      <div style="text-align: center; border-bottom: 2px solid #0369a1; padding-bottom: 10px; margin-bottom: 15px;">
+        <h1 style="font-size: 22px; color: #0369a1; margin: 0;">ELS 10 RIUS DE LA VIDA · TARGETES D'AULA</h1>
+        <p style="font-size: 12px; color: #64748b; margin: 4px 0 0;">Orientació i Autoconeixement · 4t d'ESO (Retalla per la línia discontínua)</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+        <!-- Card 1 -->
+        <div style="border: 2px dashed #94a3b8; border-radius: 8px; padding: 12px; page-break-inside: avoid;">
+          <span style="background: #fef3c7; color: #92400e; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">1. Impuls i força</span>
+          <h3 style="font-size: 15px; color: #0369a1; margin: 4px 0;">Riu d'Alta Muntanya</h3>
+          <p style="font-size: 11px; color: #334155; margin-bottom: 6px;">Baixa ràpid, impetuós i transparent entre roques. Té molta força però encara busca el seu llit definitiu.</p>
+          <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 6px; font-size: 11px; font-style: italic;">
+            «Tens molta energia i ganes de fer coses noves, encara que a vegades sentis vertigen?»
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div style="border: 2px dashed #94a3b8; border-radius: 8px; padding: 12px; page-break-inside: avoid;">
+          <span style="background: #d1fae5; color: #065f46; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">2. Calma i reflexió</span>
+          <h3 style="font-size: 15px; color: #0369a1; margin: 4px 0;">Riu de Plana (Meandres)</h3>
+          <p style="font-size: 11px; color: #334155; margin-bottom: 6px;">Avança sinuós, lent i segur per terreny pla. Fa grans corbes sense pressa, explorant cada pam de paisatge.</p>
+          <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 6px; font-size: 11px; font-style: italic;">
+            «Et prens les coses amb tranquil·litat i prefereixes pensar bé abans d'actuar?»
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div style="border: 2px dashed #94a3b8; border-radius: 8px; padding: 12px; page-break-inside: avoid;">
+          <span style="background: #ffe4e6; color: #9f1239; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">3. Canvi brusc</span>
+          <h3 style="font-size: 15px; color: #0369a1; margin: 4px 0;">Riu amb Gran Cascada</h3>
+          <p style="font-size: 11px; color: #334155; margin-bottom: 6px;">Un desnivell sobtat que trenca la continuïtat. L'aigua cau amb estrèpit a un gorg profund abans de recomençar.</p>
+          <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 6px; font-size: 11px; font-style: italic;">
+            «Estàs vivint un canvi o un imprevist gran que et fa replantejar-ho tot?»
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div style="border: 2px dashed #94a3b8; border-radius: 8px; padding: 12px; page-break-inside: avoid;">
+          <span style="background: #ede9fe; color: #5b21b6; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">4. Múltiples opcions</span>
+          <h3 style="font-size: 15px; color: #0369a1; margin: 4px 0;">Riu Trenat Glacial</h3>
+          <p style="font-size: 11px; color: #334155; margin-bottom: 6px;">Múltiples rierols interconnectats que s'entrellacen. No hi ha un curs únic, sinó molts camins alhora.</p>
+          <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 6px; font-size: 11px; font-style: italic;">
+            «T'agraden massa coses alhora i et costa escollir un sol itinerari?»
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div style="border: 2px dashed #94a3b8; border-radius: 8px; padding: 12px; page-break-inside: avoid;">
+          <span style="background: #dbeafe; color: #1e40af; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">5. Pausa i recàrrega</span>
+          <h3 style="font-size: 15px; color: #0369a1; margin: 4px 0;">Gorg d'Estiatge (Bassa de calma)</h3>
+          <p style="font-size: 11px; color: #334155; margin-bottom: 6px;">Aigua aturada en una bassa fonda i fresca. Sembla que no es mogui, però acumula vida i espera la pluja.</p>
+          <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 6px; font-size: 11px; font-style: italic;">
+            «Sents que necessites una aturada per agafar forces i escoltar-te de debò?»
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div style="border: 2px dashed #94a3b8; border-radius: 8px; padding: 12px; page-break-inside: avoid;">
+          <span style="background: #fef3c7; color: #92400e; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">6. Determinació</span>
+          <h3 style="font-size: 15px; color: #0369a1; margin: 4px 0;">Congost Estret (Canyó)</h3>
+          <p style="font-size: 11px; color: #334155; margin-bottom: 6px;">S'obre pas perforant parets de roca immenses. Tota la seva força està canalitzada en un sol punt estret.</p>
+          <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 6px; font-size: 11px; font-style: italic;">
+            «Tens un objectiu molt clar o sents que els obstacles t'han fet més fort/a?»
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div style="border: 2px dashed #94a3b8; border-radius: 8px; padding: 12px; page-break-inside: avoid;">
+          <span style="background: #d1fae5; color: #065f46; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">7. Obertura al mar</span>
+          <h3 style="font-size: 15px; color: #0369a1; margin: 4px 0;">Delta Fluvial (Desembocadura)</h3>
+          <p style="font-size: 11px; color: #334155; margin-bottom: 6px;">S'eixampla en una xarxa de canals fèrtils abans de fondre's harmònicament amb el mar immens.</p>
+          <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 6px; font-size: 11px; font-style: italic;">
+            «T'importa especialment com el teu futur pot ajudar els altres i connectar amb el món?»
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div style="border: 2px dashed #94a3b8; border-radius: 8px; padding: 12px; page-break-inside: avoid;">
+          <span style="background: #ede9fe; color: #5b21b6; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">8. Món interior</span>
+          <h3 style="font-size: 15px; color: #0369a1; margin: 4px 0;">Riu Subterrani (Cenote)</h3>
+          <p style="font-size: 11px; color: #334155; margin-bottom: 6px;">Flueix sota terra en coves secretes. Ningú el veu des de fora, però porta un cabal pur i profund.</p>
+          <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 6px; font-size: 11px; font-style: italic;">
+            «Sents que tens capacitats que no mostres a tothom i que esperen el moment de brollar?»
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div style="border: 2px dashed #94a3b8; border-radius: 8px; padding: 12px; page-break-inside: avoid;">
+          <span style="background: #dbeafe; color: #1e40af; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">9. Paciència</span>
+          <h3 style="font-size: 15px; color: #0369a1; margin: 4px 0;">Riu Glaçat d'Hivern</h3>
+          <p style="font-size: 11px; color: #334155; margin-bottom: 6px;">Protegit sota una capa de gel. Sembla aturat pel fred, però per sota l'aigua viva segueix corrent.</p>
+          <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 6px; font-size: 11px; font-style: italic;">
+            «Estàs aguantant una etapa difícil amb paciència, sabent que aviat arribarà la primavera?»
+          </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div style="border: 2px dashed #94a3b8; border-radius: 8px; padding: 12px; page-break-inside: avoid;">
+          <span style="background: #d1fae5; color: #065f46; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">10. Trobada i diàleg</span>
+          <h3 style="font-size: 15px; color: #0369a1; margin: 4px 0;">Aiguabarreig (Confluència)</h3>
+          <p style="font-size: 11px; color: #334155; margin-bottom: 6px;">Dos corrents de colors diferents s'ajunten i caminen de costat fins a fondre's en un cabal doblement fort.</p>
+          <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 6px; font-size: 11px; font-style: italic;">
+            «Sents que les teves amistats o les teves arrels diverses són la font de la teva força?»
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIVER FULLSCREEN / PROJECTION MODAL -->
+  <div id="river-modal" class="river-modal" onclick="if(event.target === this) closeRiverModal()">
+    <div class="modal-dialog">
+      <div class="modal-img-wrap">
+        <img id="modal-river-img" class="modal-img" src="" alt="Riu gran">
+        <button class="modal-close-btn" onclick="closeRiverModal()">✕</button>
+        <button class="modal-nav-arrow modal-nav-prev" onclick="prevRiverModal()">❮</button>
+        <button class="modal-nav-arrow modal-nav-next" onclick="nextRiverModal()">❯</button>
+      </div>
+      <div class="modal-body">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <span id="modal-river-badge" class="river-badge"></span>
+          <span id="modal-river-counter" style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;"></span>
+        </div>
+        <h2 id="modal-river-title" class="modal-title"></h2>
+        <p id="modal-river-desc" style="font-size: 1.05rem; color: var(--text-main); line-height: 1.6;"></p>
+        <div class="modal-question-box">
+          <strong style="color: #166534; font-size: 0.95rem;">💬 Pregunta de reflexió per a l'alumne/a:</strong>
+          <p id="modal-river-question" style="font-size: 1.15rem; color: #14532d; font-style: italic; margin-top: 0.4rem;"></p>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
+          <button class="btn btn-secondary" onclick="prevRiverModal()">❮ Riu Anterior</button>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Pots prémer ⬅️ i ➡️ del teclat per canviar de riu</span>
+          <button class="btn btn-primary" onclick="nextRiverModal()">Riu Següent ❯</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // TAB SWITCHING
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+
+      const target = document.getElementById(tabId);
+      if (target) target.classList.add('active');
+
+      const clickedBtn = Array.from(document.querySelectorAll('.nav-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (clickedBtn) clickedBtn.classList.add('active');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // RIVER DATA (10 RIVERS)
+    const riversData = [
+      {
+        id: 'muntanya',
+        title: "1. Riu d'Alta Muntanya",
+        badge: "Impuls i força",
+        badgeClass: "badge-auto",
+        img: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+        desc: "Baixa ràpid, impetuós i transparent entre penya-segats. Té molta força però encara busca el seu llit definitiu. L'aigua blanca xoca amb les pedres i agafa velocitat a cada tram.",
+        question: "«Tens molta energia i ganes de fer coses noves, encara que a vegades sentis vertigen perquè tot va massa de pressa?»",
+        feedback: "Tens força i ganes d'accelerar! Aquest projecte t'ajudarà a canalitzar aquesta energia perquè no et cremis i trobis el camí que realment et motiva."
+      },
+      {
+        id: 'meandres',
+        title: "2. Riu de Plana (Meandres)",
+        badge: "Calma i reflexió",
+        badgeClass: "badge-coop",
+        img: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80",
+        desc: "Avança sinuós, lent i segur per terreny pla. Fa grans corbes sense pressa, explorant cada pam de paisatge i deixant sediments rics als marges.",
+        question: "«Et prens les coses amb tranquil·litat i prefereixes pensar bé abans d'actuar, gaudint del camí sense angoixar-te pel final?»",
+        feedback: "Molt bona actitud! Els meandres permeten observar el paisatge amb detall. Aprofitaràs molt la recerca d'itineraris per triar amb criteri sòlid i reflexiu."
+      },
+      {
+        id: 'cascada',
+        title: "3. Riu amb Gran Cascada",
+        badge: "Canvi brusc",
+        badgeClass: "badge-emoc",
+        img: "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80",
+        desc: "Un desnivell sobtat que trenca la continuïtat. L'aigua cau amb estrèpit a un gorg profund abans de recomençar el seu viatge amb una nova perspectiva.",
+        question: "«Estàs vivint un canvi o un imprevist gran que et fa por però que saps que obrirà una nova etapa a la teva vida?»",
+        feedback: "Sentir vertigen és completament natural davant dels salts vitals. La cascada impressiona, però a sota sempre es forma una bassa serena per continuar navegant."
+      },
+      {
+        id: 'trenat',
+        title: "4. Riu Trenat Glacial",
+        badge: "Múltiples opcions",
+        badgeClass: "badge-pens",
+        img: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80",
+        desc: "Es divideix en múltiples rierols que s'entrellacen sobre un llit de graves. No hi ha un curs únic, sinó molts camins que s'ajunten i se separen constantment.",
+        question: "«T'agraden massa coses alhora i et costa escollir un sol itinerari perquè no vols renunciar a cap dels teus interessos?»",
+        feedback: "La curiositat polivalent és una gran riquesa! Dibuixar el riu t'ajudarà a veure com pots combinar aquests interessos o quins afluents guardar per a més endavant."
+      },
+      {
+        id: 'gorg',
+        title: "5. Gorg d'Estiatge (Bassa de calma)",
+        badge: "Pausa i recàrrega",
+        badgeClass: "badge-resp",
+        img: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
+        desc: "Aigua aturada en una bassa fonda, fresca i ombrívola durant la calor. Sembla que no es mogui, però acumula vida, guarda l'oxigen i espera la propera pluja.",
+        question: "«Sents que necessites una aturada per respirar, agafar forces i escoltar-te de debò abans de prendre cap decisió important?»",
+        feedback: "Aturar-se és un acte de saviesa. Pren-te aquest projecte com el teu espai d'introspecció i recàrrega per decidir amb calma i seguretat."
+      },
+      {
+        id: 'congost',
+        title: "6. Congost Estret (Canyó)",
+        badge: "Determinació",
+        badgeClass: "badge-auto",
+        img: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80",
+        desc: "S'obre pas perforant parets de roca immenses i verticals. No es dispersa cap als costats; tota la seva energia està concentrada en avançar per un sol punt.",
+        question: "«Tens un objectiu molt clar al cap o sents que els obstacles t'han fet més fort/a, decidit/da i enfocat/da?»",
+        feedback: "Tens determinació i caràcter! Utilitza aquest enfocament clar per investigar a fons els requisits del teu Pla A sense perdre la flexibilitat si apareix una roca."
+      },
+      {
+        id: 'delta',
+        title: "7. Delta Fluvial (Desembocadura)",
+        badge: "Obertura al mar",
+        badgeClass: "badge-coop",
+        img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+        desc: "S'eixampla en una xarxa de canals fèrtils i amples abans de fondre's harmònicament amb el mar immens. Connecta la terra amb l'horitzó obert.",
+        question: "«T'importa especialment com el que facis en el futur pot ajudar els altres, millorar el teu entorn i connectar amb la comunitat?»",
+        feedback: "La teva mirada és generosa i comunitària! El projecte t'ajudarà a explorar itineraris on el treball amb persones i l'impacte social siguin protagonistes."
+      },
+      {
+        id: 'subterrani',
+        title: "8. Riu Subterrani (Cenote)",
+        badge: "Món interior",
+        badgeClass: "badge-pens",
+        img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+        desc: "Flueix sota terra en coves secretes de roca calcària. Ningú el veu des de la superfície, però porta un cabal pur, net i profund que brolla de sobte.",
+        question: "«Sents que tens capacitats, aficions o interessos molt teus que no mostres a tothom i que encara estan esperant el moment de brollar?»",
+        feedback: "El món interior és una mina de talents! Aquest projecte és una oportunitat d'or per donar veu a aquestes passions amagades i fer-les aflorar al teu riu."
+      },
+      {
+        id: 'glacat',
+        title: "9. Riu Glaçat d'Hivern",
+        badge: "Paciència",
+        badgeClass: "badge-resp",
+        img: "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?auto=format&fit=crop&w=1200&q=80",
+        desc: "Protegit sota una cuirassa de gel i neu. Sembla aturat pel fred, però per sota la vida i el corrent continuen fluint en silenci esperant el desgel.",
+        question: "«Estàs aguantant una etapa d'incertesa amb paciència i constància, sabent que amb temps les coses tornaran a brollar amb força?»",
+        feedback: "La perseverança és una fortalesa clau. Sota el gel sempre hi ha vida: el treball de recerca i reflexió t'ajudarà a preparar el teu propi desgel vital."
+      },
+      {
+        id: 'confluencia',
+        title: "10. Aiguabarreig (Confluència)",
+        badge: "Trobada i diàleg",
+        badgeClass: "badge-coop",
+        img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
+        desc: "Dos corrents de colors, orígens i densitats diferents s'ajunten i avancen costat a costat fins a fondre's en un cabal el doble de poderós.",
+        question: "«Sents que les teves amistats, la cooperació o les teves arrels familiars diverses són la teva font principal d'energia per avançar?»",
+        feedback: "El mestissatge i la col·laboració multipliquen la teva força! Trobaràs molta inspiració en les converses amb referents per aprendre de com altres han sumat afluents."
+      }
+    ];
+
+    let currentModalIndex = 0;
+
+    function selectRiverType(cardElement, typeKey, index) {
+      document.querySelectorAll('.river-card').forEach(c => c.classList.remove('selected'));
+      cardElement.classList.add('selected');
+
+      const river = riversData[index] || riversData.find(r => r.id === typeKey);
+      const feedbackBox = document.getElementById('selected-river-feedback');
+      const feedbackText = document.getElementById('selected-river-text');
+      if (river) {
+        feedbackText.textContent = `Has triat ${river.title}. ${river.feedback}`;
+        feedbackBox.style.display = 'block';
+      }
+    }
+
+    // MODAL LIGHTBOX CONTROLS
+    function openRiverModal(index) {
+      currentModalIndex = index;
+      updateModalContent();
+      document.getElementById('river-modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeRiverModal() {
+      document.getElementById('river-modal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function nextRiverModal() {
+      currentModalIndex = (currentModalIndex + 1) % riversData.length;
+      updateModalContent();
+    }
+
+    function prevRiverModal() {
+      currentModalIndex = (currentModalIndex - 1 + riversData.length) % riversData.length;
+      updateModalContent();
+    }
+
+    function updateModalContent() {
+      const river = riversData[currentModalIndex];
+      if (!river) return;
+
+      document.getElementById('modal-river-img').src = river.img;
+      document.getElementById('modal-river-title').textContent = river.title;
+      document.getElementById('modal-river-badge').textContent = river.badge;
+      document.getElementById('modal-river-badge').className = `river-badge ${river.badgeClass}`;
+      document.getElementById('modal-river-counter').textContent = `Riu ${currentModalIndex + 1} de ${riversData.length}`;
+      document.getElementById('modal-river-desc').textContent = river.desc;
+      document.getElementById('modal-river-question').textContent = river.question;
+    }
+
+    // KEYBOARD NAVIGATION FOR MODAL
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('river-modal');
+      if (modal && modal.classList.contains('active')) {
+        if (e.key === 'ArrowRight') nextRiverModal();
+        if (e.key === 'ArrowLeft') prevRiverModal();
+        if (e.key === 'Escape') closeRiverModal();
+      }
+    });
+
+    // TRAM SWITCHER
+    function showTramDetail(tramNum) {
+      for (let i = 1; i <= 3; i++) {
+        const detail = document.getElementById('tram-detail-' + i);
+        const pill = document.getElementById('pill-tram' + i);
+        if (detail) detail.style.display = (i === tramNum) ? 'block' : 'none';
+        if (pill) pill.classList.toggle('active', i === tramNum);
+      }
+    }
+
+    // ATURADA SWITCHER
+    function showAturada(num) {
+      for (let i = 1; i <= 4; i++) {
+        const panel = document.getElementById('aturada-content-' + i);
+        const btn = document.getElementById('btn-at' + i);
+        if (panel) panel.style.display = (i === num) ? 'block' : 'none';
+        if (btn) btn.classList.toggle('active', i === num);
+      }
+    }
+
+    // BEHAVIORS DATA (35 Behaviors across 5 Skills)
+    const behaviorsData = {
+      resp: [
+        "C1: Treballa de forma constant durant la sessió",
+        "C2: Realitza les tasques amb cura, detall i netedat",
+        "C3: Fa comentaris i/o accions relacionats amb la tasca",
+        "C4: Persevera davant les dificultats i bloquejos",
+        "C5: Respecta les normes d'aula i el material comú",
+        "C6: Compleix els terminis acordats per a cada fase",
+        "C7: Assumeix el rol o càrrec assignat dins del grup"
+      ],
+      coop: [
+        "C8: Escolta activament els altres i respecta el torn de paraula",
+        "C9: Fomenta la participació activa de tots els membres del grup",
+        "C10: Participa en la presa de decisions consensuades",
+        "C11: Reconeix les seves responsabilitats i les dels altres",
+        "C12: Ajuda els companys/es de forma desinteressada",
+        "C13: Facilita la resolució constructiva de conflictes",
+        "C14: Incorpora les aportacions dels altres per millorar el comú"
+      ],
+      auto: [
+        "C15: Aporta idees noves i creatives relacionades amb el repte",
+        "C16: Fa preguntes pertinents quan s'encalla",
+        "C17: Pren decisions amb criteri propi i justificació",
+        "C18: Sap argumentar i convèncer el grup respectuosament",
+        "C19: Treballa amb determinació i independència de supervisió",
+        "C20: Creu que pot iniciar canvis i millores en el seu entorn",
+        "C21: Gestiona el temps de manera autònoma i eficient"
+      ],
+      emoc: [
+        "C22: Es mostra tranquil/la en situacions de pressió",
+        "C23: Controla les emocions en situacions de conflicte",
+        "C24: Accepta que els canvis que proposa no sempre tirin endavant",
+        "C25: Transmet una actitud constructiva i d'energia positiva",
+        "C26: Adequa el comportament, to i llenguatge a la situació",
+        "C27: Demostra tolerància davant l'error com a oportunitat"
+      ],
+      pens: [
+        "C28: Relaciona continguts nous amb vivències i sabers previs",
+        "C29: Reflexiona amb profunditat sobre els seus processos interns",
+        "C30: Fa bones preguntes per entendre o fer avançar la reflexió",
+        "C31: Planteja estratègies alternatives quan un camí no funciona",
+        "C32: Explora perspectives diferents i comprèn punts de vista diversos",
+        "C33: Planifica i prioritza les tasques abans d'executar-les",
+        "C34: Mostra curiositat i interès per anar més enllà del mínim",
+        "C35: Dóna i rep feedback amable, específic i útil (Austin)"
+      ]
+    };
+
+    function updateBehaviorOptions(type) {
+      const skillSelect = document.getElementById(`select-skill-${type}`);
+      const compSelect = document.getElementById(`select-comp-${type}`);
+      const skill = skillSelect.value;
+
+      compSelect.innerHTML = '<option value="">-- Tria un comportament --</option>';
+      if (behaviorsData[skill]) {
+        behaviorsData[skill].forEach(comp => {
+          const opt = document.createElement('option');
+          opt.value = comp;
+          opt.textContent = comp;
+          compSelect.appendChild(opt);
+        });
+      }
+    }
+
+    function saveEquipatge() {
+      const equipatge = {
+        skillAncora: document.getElementById('select-skill-ancora').value,
+        compAncora: document.getElementById('select-comp-ancora').value,
+        evidenceAncora: document.getElementById('evidence-ancora').value,
+        skillTimo: document.getElementById('select-skill-timo').value,
+        compTimo: document.getElementById('select-comp-timo').value,
+        evidenceTimo: document.getElementById('evidence-timo').value
+      };
+
+      localStorage.setItem('riu_equipatge', JSON.stringify(equipatge));
+      const status = document.getElementById('equipatge-status');
+      status.textContent = "✓ Equipatge desat correctament al navegador!";
+      setTimeout(() => { status.textContent = ""; }, 3000);
+    }
+
+    function loadEquipatge() {
+      const saved = localStorage.getItem('riu_equipatge');
+      if (saved) {
+        try {
+          const data = JSON.parse(saved);
+          if (data.skillAncora) {
+            document.getElementById('select-skill-ancora').value = data.skillAncora;
+            updateBehaviorOptions('ancora');
+            document.getElementById('select-comp-ancora').value = data.compAncora || "";
+            document.getElementById('evidence-ancora').value = data.evidenceAncora || "";
+          }
+          if (data.skillTimo) {
+            document.getElementById('select-skill-timo').value = data.skillTimo;
+            updateBehaviorOptions('timo');
+            document.getElementById('select-comp-timo').value = data.compTimo || "";
+            document.getElementById('evidence-timo').value = data.evidenceTimo || "";
+          }
+        } catch (e) {}
+      }
+    }
+
+    // BITACOLA STORAGE
+    function saveBitacola() {
+      const bitacola = {
+        at1_q1: document.getElementById('bit-at1-q1').value,
+        at1_q2: document.getElementById('bit-at1-q2').value,
+        at1_q3: document.getElementById('bit-at1-q3').value,
+        at2_q1: document.getElementById('bit-at2-q1').value,
+        at2_q2: document.getElementById('bit-at2-q2').value,
+        at2_q3: document.getElementById('bit-at2-q3').value,
+        at3_q1: document.getElementById('bit-at3-q1').value,
+        at3_q2: document.getElementById('bit-at3-q2').value,
+        at4_q1: document.getElementById('bit-at4-q1').value,
+        at4_q2: document.getElementById('bit-at4-q2').value,
+        at4_q3: document.getElementById('bit-at4-q3').value
+      };
+
+      localStorage.setItem('riu_bitacola', JSON.stringify(bitacola));
+      const status = document.getElementById('bitacola-save-status');
+      status.textContent = "✓ Respostes de Bitàcola desades!";
+      setTimeout(() => { status.textContent = ""; }, 3000);
+    }
+
+    function loadBitacola() {
+      const saved = localStorage.getItem('riu_bitacola');
+      if (saved) {
+        try {
+          const d = JSON.parse(saved);
+          for (let k in d) {
+            const el = document.getElementById('bit-' + k.replace('_', '-'));
+            if (el) el.value = d[k];
+          }
+        } catch(e) {}
+      }
+    }
+
+    // DOCENT TABLE DATA & LOGIC
+    let docentStudents = [
+      { id: 1, name: "Laura M.", group: "Grup 1", ancora: "C1 (Treball constant)", timo: "C16 (Pregunta en bloqueig)", s1: 2, s2: 3, s3: 4, notes: "Ha aixecat la mà per demanar suport al Tram 1." },
+      { id: 2, name: "Marc S.", group: "Grup 1", ancora: "C15 (Aporta idees)", timo: "C8 (Escolta els altres)", s1: 2, s2: 2, s3: 3, notes: "Millora en no interrompre en petit grup." },
+      { id: 3, name: "Jordi R.", group: "Grup 2", ancora: "C8 (Escolta)", timo: "C1 (Treball constant)", s1: 3, s2: 3, s3: 4, notes: "Molt concentrat a la recerca de CFGM." }
+    ];
+
+    function renderDocentTable() {
+      const tbody = document.getElementById('docent-tbody');
+      tbody.innerHTML = '';
+
+      docentStudents.forEach((st, idx) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><strong>${st.group}</strong></td>
+          <td>${st.name}</td>
+          <td><span class="tag-skill badge-resp" style="font-size: 0.75rem;">${st.ancora}</span></td>
+          <td><span class="tag-skill badge-auto" style="font-size: 0.75rem;">${st.timo}</span></td>
+          <td style="text-align: center;">
+            <select style="width: 55px; padding: 2px; margin: 0;" onchange="updateDocentScore(${idx}, 's1', this.value)">
+              <option value="1" ${st.s1 == 1 ? 'selected' : ''}>1</option>
+              <option value="2" ${st.s1 == 2 ? 'selected' : ''}>2</option>
+              <option value="3" ${st.s1 == 3 ? 'selected' : ''}>3</option>
+              <option value="4" ${st.s1 == 4 ? 'selected' : ''}>4</option>
+            </select>
+          </td>
+          <td style="text-align: center;">
+            <select style="width: 55px; padding: 2px; margin: 0;" onchange="updateDocentScore(${idx}, 's2', this.value)">
+              <option value="1" ${st.s2 == 1 ? 'selected' : ''}>1</option>
+              <option value="2" ${st.s2 == 2 ? 'selected' : ''}>2</option>
+              <option value="3" ${st.s2 == 3 ? 'selected' : ''}>3</option>
+              <option value="4" ${st.s2 == 4 ? 'selected' : ''}>4</option>
+            </select>
+          </td>
+          <td style="text-align: center;">
+            <select style="width: 55px; padding: 2px; margin: 0;" onchange="updateDocentScore(${idx}, 's3', this.value)">
+              <option value="1" ${st.s3 == 1 ? 'selected' : ''}>1</option>
+              <option value="2" ${st.s3 == 2 ? 'selected' : ''}>2</option>
+              <option value="3" ${st.s3 == 3 ? 'selected' : ''}>3</option>
+              <option value="4" ${st.s3 == 4 ? 'selected' : ''}>4</option>
+            </select>
+          </td>
+          <td>
+            <input type="text" value="${st.notes || ''}" style="margin: 0; padding: 3px 6px; font-size: 0.85rem;" onchange="updateDocentNotes(${idx}, this.value)">
+          </td>
+          <td>
+            <button class="btn btn-secondary" style="padding: 2px 8px; font-size: 0.75rem; color: #dc2626;" onclick="deleteDocentStudent(${idx})">✕</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function updateDocentScore(idx, session, val) {
+      docentStudents[idx][session] = parseInt(val, 10);
+    }
+
+    function updateDocentNotes(idx, text) {
+      docentStudents[idx].notes = text;
+    }
+
+    function addDocentStudent() {
+      const name = document.getElementById('docent-new-name').value.trim();
+      const group = document.getElementById('docent-new-group').value.trim() || "Grup A";
+      const ancora = document.getElementById('docent-new-ancora').value.trim() || "C1";
+      const timo = document.getElementById('docent-new-timo').value.trim() || "C16";
+
+      if (!name) {
+        alert("Si us plau, introdueix el nom de l'alumne/a.");
+        return;
+      }
+
+      docentStudents.push({
+        id: Date.now(),
+        name,
+        group,
+        ancora,
+        timo,
+        s1: 2,
+        s2: 2,
+        s3: 2,
+        notes: ""
+      });
+
+      document.getElementById('docent-new-name').value = '';
+      renderDocentTable();
+      saveDocentData();
+    }
+
+    function deleteDocentStudent(idx) {
+      if (confirm(`Vols eliminar el registre de ${docentStudents[idx].name}?`)) {
+        docentStudents.splice(idx, 1);
+        renderDocentTable();
+        saveDocentData();
+      }
+    }
+
+    function saveDocentData() {
+      localStorage.setItem('riu_docent_students', JSON.stringify(docentStudents));
+      alert("Observacions docents desades correctament.");
+    }
+
+    function loadDocentData() {
+      const saved = localStorage.getItem('riu_docent_students');
+      if (saved) {
+        try {
+          docentStudents = JSON.parse(saved);
+        } catch(e) {}
+      }
+      renderDocentTable();
+    }
+
+    function exportDocentCSV() {
+      let csv = "Grup,Alumne,Ancora,Timo,Sessio1_2,Sessio3_4,Sessio5_6,Notes\n";
+      docentStudents.forEach(s => {
+        csv += `"${s.group}","${s.name}","${s.ancora}","${s.timo}",${s.s1},${s.s2},${s.s3},"${(s.notes || '').replace(/"/g, '""')}"\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `observacio_socioemocional_riu_de_la_vida_${new Date().toISOString().slice(0,10)}.csv`;
+      a.click();
+    }
+
+    // PRINT FUNCTION
+    function printDoc(elementId) {
+      document.querySelectorAll('.printable-sheet').forEach(s => s.classList.remove('active-print'));
+      const sheet = document.getElementById(elementId);
+      if (sheet) {
+        sheet.classList.add('active-print');
+        window.print();
+      }
+    }
+
+    // INITIALIZATION
+    window.addEventListener('DOMContentLoaded', () => {
+      loadEquipatge();
+      loadBitacola();
+      loadDocentData();
+    });
+  </script>
+</body>
+</html>

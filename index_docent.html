@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Els rius de la vida | Docent | Recerca i acció 2026-27</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-deep: #0c4a6e;
+      --teal-river: #0d9488;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --color-resp: #2563eb;
+      --color-coop: #059669;
+      --color-auto: #d97706;
+      --color-emoc: #e11d48;
+      --color-pens: #7c3aed;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 14px rgba(0,0,0,0.07);
+      --shadow-lg: 0 10px 25px rgba(2,132,199,0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+    h1, h2, h3, .font-serif { font-family: 'Outfit', sans-serif; font-weight: 700; }
+
+    /* HEADER */
+    header { background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #0d9488 100%); color: white; padding: 3rem 1.5rem 2.5rem; position: relative; overflow: hidden; }
+    header::before { content: ""; position: absolute; top: -50%; left: -20%; width: 140%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.08) 10%, transparent 60%); pointer-events: none; }
+    .header-container { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    .badge-hero { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.18); backdrop-filter: blur(8px); padding: 0.35rem 0.9rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.3px; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.25); }
+    .hero-title { font-size: 2.8rem; line-height: 1.15; margin-bottom: 0.8rem; letter-spacing: -0.5px; }
+    .hero-subtitle { font-size: 1.1rem; font-weight: 300; max-width: 760px; opacity: 0.92; margin-bottom: 1.5rem; }
+
+    /* NAV */
+    nav.main-nav { background: white; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; gap: 0.5rem; overflow-x: auto; padding: 0.5rem 1rem; scrollbar-width: none; }
+    .nav-container::-webkit-scrollbar { display: none; }
+    .nav-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.15rem; border-radius: var(--radius-sm); border: none; background: transparent; color: var(--text-muted); font-size: 0.95rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: all 0.2s ease; }
+    .nav-btn:hover { color: var(--primary); background: #f0f9ff; }
+    .nav-btn.active { color: var(--primary-deep); background: #e0f2fe; border-bottom: 2px solid var(--primary); }
+
+    /* MAIN */
+    main { max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem; }
+    .tab-content { display: none; animation: fadeIn 0.3s ease; }
+    .tab-content.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* CARDS */
+    .card { background: var(--card-bg); border-radius: var(--radius-md); border: 1px solid var(--border-color); padding: 1.8rem; box-shadow: var(--shadow-sm); margin-bottom: 1.8rem; }
+    .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border-color); }
+    .card-title { font-size: 1.4rem; color: var(--primary-deep); display: flex; align-items: center; gap: 0.6rem; }
+
+    /* GRIDS */
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+
+    /* RIVER CARDS */
+    .river-grid-10 { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; }
+    .river-card { background: white; border: 2px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; cursor: pointer; transition: all 0.25s ease; position: relative; display: flex; flex-direction: column; }
+    .river-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .river-card.selected { border-color: var(--primary-dark); background: #f0f9ff; box-shadow: var(--shadow-lg); }
+    .river-card-img-container { position: relative; width: 100%; height: 160px; overflow: hidden; background: #e2e8f0; }
+    .river-card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .river-card:hover .river-card-img { transform: scale(1.06); }
+    .river-zoom-btn { position: absolute; bottom: 8px; right: 8px; background: rgba(15,23,42,0.75); color: white; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; backdrop-filter: blur(4px); display: flex; align-items: center; gap: 4px; opacity: 0.85; transition: opacity 0.2s; cursor: pointer; }
+    .river-card:hover .river-zoom-btn { opacity: 1; background: var(--primary); }
+    .river-card-body { padding: 1.2rem; display: flex; flex-direction: column; flex-grow: 1; }
+    .river-badge { align-self: flex-start; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 9999px; margin-bottom: 0.6rem; }
+    .river-card h4 { font-size: 1.1rem; margin-bottom: 0.4rem; color: var(--primary-deep); }
+    .river-card p.river-desc { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.8rem; flex-grow: 1; }
+    .river-questions { background: #f8fafc; padding: 0.75rem; border-radius: var(--radius-sm); border-left: 3px solid var(--primary); }
+    .river-questions .rq-label { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 0.35rem; }
+    .river-questions ol { font-size: 0.81rem; font-style: italic; margin-left: 1.1rem; line-height: 1.65; color: var(--primary-deep); }
+
+    /* MODAL */
+    .river-modal { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15,23,42,0.88); backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 1.5rem; }
+    .river-modal.active { display: flex; }
+    .modal-dialog { background: white; border-radius: var(--radius-lg); max-width: 900px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4); display: flex; flex-direction: column; }
+    .modal-img-wrap { width: 100%; height: 380px; position: relative; background: #0f172a; }
+    .modal-img { width: 100%; height: 100%; object-fit: cover; }
+    .modal-close-btn { position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.6); color: white; border: none; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; }
+    .modal-close-btn:hover { background: rgba(220,38,38,0.9); }
+    .modal-nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 1.4rem; display: flex; align-items: center; justify-content: center; }
+    .modal-nav-arrow:hover { background: var(--primary); }
+    .modal-nav-prev { left: 15px; } .modal-nav-next { right: 15px; }
+    .modal-body { padding: 1.8rem; }
+    .modal-title { font-size: 1.8rem; color: var(--primary-deep); margin-bottom: 0.5rem; }
+    .modal-question-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4px solid var(--color-coop); padding: 1rem 1.2rem; border-radius: var(--radius-sm); margin-top: 1.2rem; }
+    .modal-questions-list { margin-top: 0.4rem; font-style: italic; color: #14532d; font-size: 0.95rem; line-height: 1.8; padding-left: 1.2rem; }
+
+    /* BADGES */
+    .badge-resp { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
+    .badge-coop { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+    .badge-auto { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+    .badge-emoc { background: #ffe4e6; color: #9f1239; border: 1px solid #fda4af; }
+    .badge-pens { background: #ede9fe; color: #5b21b6; border: 1px solid #c4b5fd; }
+    .tag-skill { display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 9999px; margin-right: 0.4rem; margin-bottom: 0.4rem; }
+
+    /* DIARI BLOCKS */
+    .diari-block { background: #f0fdf4; border: 1px solid #86efac; border-left: 4px solid #16a34a; border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1.5rem 0; }
+    .diari-block h4 { color: #15803d; font-size: 1rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.4rem; }
+    .diari-block ol { font-size: 0.9rem; color: #166534; margin-left: 1.2rem; line-height: 1.9; }
+    .diari-block .diari-cta { font-size: 0.85rem; color: #15803d; font-weight: 700; margin-top: 0.6rem; }
+
+    /* TRAM PILLS */
+    .tram-banner { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .tram-pill { flex: 1; min-width: 220px; padding: 1.2rem; background: white; border: 2px solid var(--border-color); border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s ease; }
+    .tram-pill.active { border-color: var(--primary); background: #f0f9ff; box-shadow: var(--shadow-md); }
+    .tram-pill-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary); margin-bottom: 0.3rem; }
+    .tram-pill h3 { font-size: 1.15rem; color: var(--primary-deep); margin-bottom: 0.2rem; }
+
+    /* METAPHOR NODES */
+    .metaphor-node { background: white; border: 1px solid #cbd5e1; border-radius: var(--radius-sm); padding: 1rem; margin-bottom: 1rem; box-shadow: var(--shadow-sm); transition: all 0.2s; }
+    .metaphor-node:hover { border-color: var(--primary); box-shadow: var(--shadow-md); }
+    .metaphor-node-title { font-weight: 700; color: var(--primary-deep); display: flex; align-items: center; gap: 0.5rem; font-size: 1.05rem; margin-bottom: 0.3rem; }
+
+    /* BEHAVIOR SELECTOR */
+    .selector-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem; }
+    @media (max-width: 768px) { .selector-grid { grid-template-columns: 1fr; } }
+    .select-card { border: 2px dashed #cbd5e1; padding: 1.2rem; border-radius: var(--radius-sm); background: #f8fafc; }
+    .select-card.filled { border-style: solid; border-color: var(--primary); background: #f0f9ff; }
+
+    /* FORMS */
+    label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--text-main); }
+    select, input[type="text"], textarea { width: 100%; padding: 0.65rem 0.85rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.9rem; background: white; color: var(--text-main); margin-bottom: 0.8rem; }
+    select:focus, input[type="text"]:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(2,132,199,0.15); }
+
+    /* BUTTONS */
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.65rem 1.2rem; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; text-decoration: none; }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .btn-secondary { background: #f1f5f9; color: var(--text-main); border: 1px solid var(--border-color); }
+    .btn-secondary:hover { background: #e2e8f0; }
+    .btn-sm { padding: 0.35rem 0.75rem; font-size: 0.82rem; }
+
+    /* TRAM LOCK */
+    .tram-lock-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(248,250,252,0.90); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 10; border-radius: 14px; padding: 2rem; text-align: center; }
+
+    /* DIARI ATURADA LIST */
+    .aturada-entry { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.2rem; }
+    .aturada-badge { display: inline-block; background: #16a34a; color: white; padding: 0.25rem 0.7rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .aturada-entry h4 { color: var(--primary-deep); font-size: 1rem; margin-bottom: 0.6rem; }
+    .aturada-entry ol { font-size: 0.9rem; color: var(--text-main); margin-left: 1.2rem; line-height: 1.9; }
+    .aturada-entry .aturada-ref { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.6rem; font-style: italic; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 1.5rem; font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid var(--border-color); margin-top: 3rem; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <div class="badge-hero">Recerca i acció - curs 2026-27</div>
+      <div style="display:inline-flex; align-items:center; gap:0.4rem; background:rgba(251,191,36,0.28); border:1px solid rgba(251,191,36,0.5); padding:0.25rem 0.75rem; border-radius:9999px; font-size:0.82rem; font-weight:700; margin-bottom:0.8rem; margin-left:0.5rem;">📋 Versió docent · Materials pedagògics inclosos</div>
+      <h1 class="hero-title">Els rius de la vida</h1>
+      <p class="hero-subtitle">
+        Sembla que les decisions que prendrem a 4rt d'ESO ens hagin de marcar un sol camí del que no se'n pot sortir mai. Però les trajectòries reals són com rius: s'alimenten d'afluents inesperats, s'eixamplen, troben pedres, viuen cascades sobtades, i poden tornar a confluir amb nous aprenentatges.
+      </p>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="main-nav no-print">
+    <div class="nav-container">
+      <button class="nav-btn active" onclick="switchTab('tab-metafora')">🌊 La metàfora</button>
+      <button class="nav-btn" onclick="switchTab('tab-trams')">🗺️ Els 3 trams</button>
+      <button class="nav-btn" onclick="switchTab('tab-diari')">📒 Diari del viatge</button>
+      <button class="nav-btn" onclick="switchTab('tab-docent')">📋 Eina docent</button>
+      <button class="nav-btn" onclick="switchTab('tab-print')">🖨️ Materials imprimibles</button>
+      <button class="nav-btn" onclick="switchTab('tab-referents')" style="display:none">🗣️ Converses amb referents</button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================= -->
+    <!-- TAB 1: LA METÀFORA                                            -->
+    <!-- ============================================================= -->
+    <section id="tab-metafora" class="tab-content active">
+
+      <!-- Bloc explicatiu del Diari -->
+      <div class="diari-block" style="border-radius:14px; margin-bottom:1.5rem;">
+        <h4>📒 Què és el «Diari del teu viatge»?</h4>
+        <p style="font-size:0.9rem; color:#166534; margin-bottom:0.6rem;">
+          Al llarg d'aquest projecte trobaràs moments marcats amb aquest color verd. Cada cop que n'aparegui un, hauràs d'obrir el teu Diari del Viatge i respondre les preguntes que t'indiquem. Serà la teva captura del moment. 📸
+        </p>
+        <button class="btn btn-primary btn-sm" onclick="switchTab('tab-diari')" style="margin-top:0.3rem;">→ Descobreix com fer el teu diari i veu totes les entrades</button>
+      </div>
+
+      <!-- Card principal: Quin riu ets avui? -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">🌊 Quin riu ets avui?</h2>
+          <span class="tag-skill badge-auto">~30 min</span>
+        </div>
+        <p style="margin-bottom:1.2rem;">
+          Explora les fotografies dels 10 rius. Fes clic al riu que millor descriu la teva energia o el teu moment vital actual. Quan facis clic, fixa't en el requadre blau <strong>«Connexió amb el teu riu»</strong> que apareix a baix: et donarà una pista sobre el que significa la teva tria.
+        </p>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
+          <h3 style="margin:0; color:var(--primary-deep);">1. Tria el teu riu</h3>
+          <button class="btn btn-primary" onclick="openRiverModal(0)">🖥️ Projecció a pantalla completa</button>
+        </div>
+
+        <!-- RIVER GRID -->
+        <div class="river-grid-10" id="river-cards-container">
+
+          <!-- 1. MUNTANYA -->
+          <div class="river-card" onclick="selectRiverType(this,'muntanya',0)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="Imatge rius/0f7f5105-42d1-4ada-b232-56409df902bc_alta-libre-aspect-ratio_default_0.jpg" alt="Riu d'alta muntanya" loading="lazy">
+              <span class="river-zoom-btn" onclick="event.stopPropagation(); openRiverModal(0)">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-auto">Impuls i força</span>
+              <h4>1. Riu d'alta muntanya</h4>
+              <p class="river-desc">Baixa ràpid, impetuós i transparent entre roques. Té molta força però encara busca el seu llit definitiu.</p>
+              <div class="river-questions">
+                <p class="rq-label">Tria una pregunta per respondre al diari:</p>
+                <ol>
+                  <li>«Quan notes que t'has entusiasmat de sobte amb alguna cosa, la teva tendència és llançar-t'hi de cap o primer t'atures a pensar?»</li>
+                  <li>«Et passa que comences moltes coses però de vegades perds l'energia inicial? On creus que es perd aquell impuls?»</li>
+                  <li>«Si la teva energia fos un riu de muntanya, cap a on et portaria el seu corrent? Quin seria el teu "mar" ideal?»</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. MEANDRES -->
+          <div class="river-card" onclick="selectRiverType(this,'meandres',1)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="Imatge rius/Nowitna_river.jpg" alt="Riu amb meandres" loading="lazy">
+              <span class="river-zoom-btn" onclick="event.stopPropagation(); openRiverModal(1)">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-coop">Calma i reflexió</span>
+              <h4>2. Riu de plana (meandres)</h4>
+              <p class="river-desc">Avança sinuós, lent i segur per terreny pla. Fa grans corbes sense pressa, explorant cada pam de paisatge.</p>
+              <div class="river-questions">
+                <p class="rq-label">Tria una pregunta per respondre al diari:</p>
+                <ol>
+                  <li>«Quan has de prendre una decisió important, ets dels que necessiten temps, observar i voltar-hi per tots costats?»</li>
+                  <li>«Hi ha situacions en les que anar lent et genera pressió o comparació amb els altres? Com ho gestiones?»</li>
+                  <li>«Els meandres sempre acaben trobant el camí cap al mar. Creus que la reflexió pausada és una fortalesa teva?»</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. CASCADA -->
+          <div class="river-card" onclick="selectRiverType(this,'cascada',2)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=80" alt="Riu amb gran cascada" loading="lazy">
+              <span class="river-zoom-btn" onclick="event.stopPropagation(); openRiverModal(2)">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-emoc">Canvi brusc</span>
+              <h4>3. Riu amb gran cascada</h4>
+              <p class="river-desc">Un desnivell sobtat que trenca la continuïtat. L'aigua cau amb estrèpit a un gorg profund abans de recomençar.</p>
+              <div class="river-questions">
+                <p class="rq-label">Tria una pregunta per respondre al diari:</p>
+                <ol>
+                  <li>«Recordes algun moment de la teva vida on tot va canviar de cop, sense avisar? Com el vas viure al principi?»</li>
+                  <li>«Quan t'arriba un imprevist important, la teva primera reacció és paralitzar-te, desfogarte o buscar solucions?»</li>
+                  <li>«Les cascades sempre cauen a una bassa on el riu es reorganitza. Quin "gorg" has creat tu per sortir-te'n d'un moment difícil?»</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. TRENAT -->
+          <div class="river-card" onclick="selectRiverType(this,'trenat',3)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="Imatge rius/Dep-28.jpeg" alt="Riu trenat glacial" loading="lazy">
+              <span class="river-zoom-btn" onclick="event.stopPropagation(); openRiverModal(3)">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-pens">Múltiples opcions</span>
+              <h4>4. Riu trenat glacial</h4>
+              <p class="river-desc">Es divideix en múltiples rierols que s'entrellacen sobre graves. No hi ha un curs únic, sinó molts camins alhora.</p>
+              <div class="river-questions">
+                <p class="rq-label">Tria una pregunta per respondre al diari:</p>
+                <ol>
+                  <li>«Quines coses t'agraden tant que et costaria molt imaginar un futur sense cap d'elles? Llistar-les t'alleugereix o t'angoixa?»</li>
+                  <li>«Has viscut mai que tenir massa opcions t'ha paralitzat en comptes d'ajudar-te? Quan?»</li>
+                  <li>«Si haguessis de triar tres filons del riu que vols que segueixin corrent al teu futur, quins serien?»</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. GORG -->
+          <div class="river-card" onclick="selectRiverType(this,'gorg',4)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="Imatge rius/103065837.400x300.jpg" alt="Gorg d'estiatge" loading="lazy">
+              <span class="river-zoom-btn" onclick="event.stopPropagation(); openRiverModal(4)">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-resp">Pausa i recàrrega</span>
+              <h4>5. Gorg d'estiatge (bassa de calma)</h4>
+              <p class="river-desc">Aigua aturada en una bassa fonda i fresca. Sembla que no es mogui, però acumula vida i espera la pluja.</p>
+              <div class="river-questions">
+                <p class="rq-label">Tria una pregunta per respondre al diari:</p>
+                <ol>
+                  <li>«Quan et sents desbordat/da o buit/da, quina és la teva manera d'aturar-te i de recuperar forces?»</li>
+                  <li>«Hi ha alguna activitat, lloc o persona que et funcioni com a gorg personal? On et pares i respires?»</li>
+                  <li>«Creus que en la teva manera de prendre decisions et falta (o et sobra) temps de pausa i de reflexió?»</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. CONGOST -->
+          <div class="river-card" onclick="selectRiverType(this,'congost',5)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="Imatge rius/montrebei1.jpg" alt="Congost estret" loading="lazy">
+              <span class="river-zoom-btn" onclick="event.stopPropagation(); openRiverModal(5)">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-auto">Determinació</span>
+              <h4>6. Congost estret (canyó)</h4>
+              <p class="river-desc">S'obre pas perforant parets verticals de roca. Tota la seva força és concentrada en un sol punt estret.</p>
+              <div class="river-questions">
+                <p class="rq-label">Tria una pregunta per respondre al diari:</p>
+                <ol>
+                  <li>«Hi ha alguna cosa que vols aconseguir amb tanta convicció que sents que res et pot aturar del tot?»</li>
+                  <li>«Com reacciones davant els obstacles: els evites, els atacs frontalment o busques forats pels costats?»</li>
+                  <li>«Recorda un moment en el que vas superar quelcom que semblava impossible. Què et va fer no rendir-te?»</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. DELTA -->
+          <div class="river-card" onclick="selectRiverType(this,'delta',6)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="Imatge rius/delta_que_es_como_se_forma_y_tipos_4754_1200.jpg" alt="Delta fluvial" loading="lazy">
+              <span class="river-zoom-btn" onclick="event.stopPropagation(); openRiverModal(6)">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-coop">Obertura al món</span>
+              <h4>7. Delta fluvial (desembocadura)</h4>
+              <p class="river-desc">S'eixampla en una xarxa de canals fèrtils abans de fondre's harmònicament amb el mar immens.</p>
+              <div class="river-questions">
+                <p class="rq-label">Tria una pregunta per respondre al diari:</p>
+                <ol>
+                  <li>«Hi ha alguna causa, problema o comunitat del món que et preocupi genuïnament i que vulguis que formi part del teu futur?»</li>
+                  <li>«Com et sents quan pots ajudar algú de debò? Creus que aquesta sensació podria ser un motor de vida per a tu?»</li>
+                  <li>«Si el teu futur professional pogués connectar amb alguna cosa "més gran que tu", de quina cosa es tractaria?»</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. SUBTERRANI -->
+          <div class="river-card" onclick="selectRiverType(this,'subterrani',7)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="Imatge rius/riviere-souterraine-labouiche-ariege-pyrenees-riviere-souterraine-de-labouiche-1.jpg" alt="Riu subterrani" loading="lazy">
+              <span class="river-zoom-btn" onclick="event.stopPropagation(); openRiverModal(7)">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-pens">Món interior</span>
+              <h4>8. Riu subterrani (cenote)</h4>
+              <p class="river-desc">Flueix sota terra en coves secretes. Ningú el veu des de la superfície, però porta un cabal pur i profund.</p>
+              <div class="river-questions">
+                <p class="rq-label">Tria una pregunta per respondre al diari:</p>
+                <ol>
+                  <li>«Hi ha alguna afició, talent o interès que gairebé no has compartit mai amb ningú? Per què creus que el guardes?»</li>
+                  <li>«Alguna vegada has sorprès algú —o t'has sorprès a tu/a mateix/a— descobrint una capacitat que no sabies que tenies?»</li>
+                  <li>«Si poguessis dedicar el teu futur a quelcom que connecti amb el teu món interior, de quina cosa es tractaria?»</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9. GLAÇAT -->
+          <div class="river-card" onclick="selectRiverType(this,'glacat',8)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="https://images.unsplash.com/photo-1491002052546-bf38f186af56?auto=format&fit=crop&w=800&q=80" alt="Riu glaçat d'hivern" loading="lazy">
+              <span class="river-zoom-btn" onclick="event.stopPropagation(); openRiverModal(8)">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-resp">Paciència</span>
+              <h4>9. Riu glaçat d'hivern</h4>
+              <p class="river-desc">Protegit sota una capa de gel. Sembla aturat pel fred, però per sota l'aigua continua corrent esperant la primavera.</p>
+              <div class="river-questions">
+                <p class="rq-label">Tria una pregunta per respondre al diari:</p>
+                <ol>
+                  <li>«Hi ha alguna cosa que vols però que sents que "encara no és el moment"? Com vius aquesta espera?»</li>
+                  <li>«Quina és la teva relació amb la incertesa: la toleres bé, t'angoixa o la converteixes en acció?»</li>
+                  <li>«Recorda una vegada que vas aguantar una etapa difícil fins que les coses es van desencallar. Què et va ajudar?»</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10. AIGUABARREIG -->
+          <div class="river-card" onclick="selectRiverType(this,'confluencia',9)">
+            <div class="river-card-img-container">
+              <img class="river-card-img" src="Imatge rius/Vista-Aerea-del-Aiguabarreig.jpg" alt="Aiguabarreig" loading="lazy">
+              <span class="river-zoom-btn" onclick="event.stopPropagation(); openRiverModal(9)">🔍 Ampliar</span>
+            </div>
+            <div class="river-card-body">
+              <span class="river-badge badge-coop">Trobada i diàleg</span>
+              <h4>10. Aiguabarreig (confluència)</h4>
+              <p class="river-desc">Dos corrents de colors diferents s'ajunten i caminen de costat fins a fondre's en un cabal el doble de potent.</p>
+              <div class="river-questions">
+                <p class="rq-label">Tria una pregunta per respondre al diari:</p>
+                <ol>
+                  <li>«Hi ha persones al teu entorn sense les quals et semblaria molt difícil avançar? Qui i per què?»</li>
+                  <li>«Creus que les teves arrels —d'on véns, la teva família, la teva cultura— influencien qui vols ser? Com?»</li>
+                  <li>«Si el teu futur pogués ser una confluència de dos corrents, quins dos interessos, valors o persones voldries que s'hi trobessin?»</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /river-grid-10 -->
+
+        <div id="selected-river-feedback" style="display:none; margin-top:1.5rem; padding:1.2rem; background:#e0f2fe; border-radius:var(--radius-sm); border-left:4px solid var(--primary);">
+          <strong style="color:var(--primary-deep); font-size:1rem;">🌊 Connexió amb el teu riu:</strong> <span id="selected-river-text"></span>
+        </div>
+
+        <!-- DIARI ATURADA 1 -->
+        <div class="diari-block" style="margin-top:1.5rem;">
+          <h4>📒 Diari del teu viatge — Aturada 1: Inici del viatge</h4>
+          <ol>
+            <li>Quina és la primera paraula o emoció que et ve al cap quan penses en prendre alguna decisió sobre què fer el curs vinent?</li>
+            <li>Sobre el riu que has triat: explica per què l'has escollit, quina emoció et genera i respon UNA de les 3 preguntes que apareixen sota la imatge. Recorda que el requadre blau <strong>«Connexió amb el teu riu»</strong> que apareix en fer clic et dóna una pista sobre el que significa la teva tria!</li>
+          </ol>
+          <p class="diari-cta">→ Escriu les teves respostes al Diari del teu viatge.</p>
+        </div>
+
+      </div><!-- /card quin riu -->
+
+      <!-- DICCIONARI SIMBÒLIC -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">🗺️ El diccionari simbòlic del riu</h2>
+          <span style="font-size:0.85rem; color:var(--text-muted);">Com traduir la teva vida en geografia</span>
+        </div>
+        <p style="margin-bottom:1.2rem;">Cada element del riu té un significat simbòlic per parlar de la vida. Llegeix-los i fixa't si algun element del riu que has triat t'explica d'alguna manera.</p>
+        <div class="grid-2">
+          <div class="metaphor-node">
+            <div class="metaphor-node-title">🌱 El naixement (la font)</div>
+            <p style="font-size:0.88rem;">Les teves arrels, el lloc on vas néixer o créixer, la teva família i els valors que et van transmetre de petit/a.</p>
+          </div>
+          <div class="metaphor-node">
+            <div class="metaphor-node-title">🌊 El curs principal</div>
+            <p style="font-size:0.88rem;">Allò que et defineix: els teus interessos essencials, el que et fa gaudir de veritat i que roman en tu encara que l'entorn canviï.</p>
+          </div>
+          <div class="metaphor-node">
+            <div class="metaphor-node-title">🌿 Els afluents</div>
+            <p style="font-size:0.88rem;">Noves persones decisives, aficions descobertes, viatges o activitats que van sumar cabal i riquesa al teu camí.</p>
+          </div>
+          <div class="metaphor-node">
+            <div class="metaphor-node-title">🪨 Les pedres i els ràpids</div>
+            <p style="font-size:0.88rem;">Moments difícils, exàmens fallits, conflictes amb amics o pors. No aturen el riu: l'obliguen a agafar agilitat.</p>
+          </div>
+          <div class="metaphor-node">
+            <div class="metaphor-node-title">⚡ La cascada i el gorg</div>
+            <p style="font-size:0.88rem;">L'imprevist radical. Un salt inesperat que espanta, però que acaba en una bassa tranquil·la per recomençar amb una altra perspectiva.</p>
+          </div>
+          <div class="metaphor-node">
+            <div class="metaphor-node-title">🔄 La bifurcació i el retorn</div>
+            <p style="font-size:0.88rem;">Prendre un desviament formatiu o professional i, temps després, tornar al teu fil conductor amb més experiència i maduresa.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- EL MEU EQUIPATGE -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">⚓ El meu equipatge per navegar</h2>
+          <span class="tag-skill badge-auto">Autoconeixement socioemocional</span>
+        </div>
+        <p style="margin-bottom:1.2rem;">
+          Per navegar per la vida cal conèixer el propi vaixell. A partir de les <strong>5 habilitats socioemocionals</strong>, cada alumne escull la seva <strong>Àncora</strong> (una fortalesa que ja té) i el seu <strong>Timó</strong> (un comportament que vol entrenar durant aquest projecte).
+        </p>
+
+        <!-- IMATGE COMPORTAMENTS -->
+        <div style="text-align:center; margin:1.5rem 0;">
+          <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.8rem;">Mira el mapa de les 5 habilitats i els 35 comportaments. Amb quins et sents més identificat/da?</p>
+          <img src="Imatge habilitats.png" alt="Mapa de les 5 habilitats i 35 comportaments" style="max-width:100%; border-radius:12px; box-shadow:0 4px 14px rgba(0,0,0,0.1);">
+        </div>
+
+        <div class="selector-grid">
+          <!-- ANCORA -->
+          <div class="select-card" id="card-ancora">
+            <h3 style="color:var(--color-coop); display:flex; align-items:center; gap:0.5rem; margin-bottom:0.8rem;">⚓ La meva àncora (la fortalesa que ja tinc)</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Un comportament en el qual et sents sòlid/a i segur/a.</p>
+            <label for="select-skill-ancora">Tria l'habilitat:</label>
+            <select id="select-skill-ancora" onchange="updateBehaviorOptions('ancora')">
+              <option value="">-- Selecciona una habilitat --</option>
+              <option value="resp">🔵 Responsabilitat</option>
+              <option value="coop">🟢 Cooperació i treball en equip</option>
+              <option value="auto">🟠 Autonomia i iniciativa</option>
+              <option value="emoc">🔴 Gestió emocional</option>
+              <option value="pens">🟣 Habilitats de pensament</option>
+            </select>
+            <label for="select-comp-ancora">Comportament concret:</label>
+            <select id="select-comp-ancora">
+              <option value="">-- Primer tria l'habilitat --</option>
+            </select>
+            <div id="questions-ancora" style="display:none; margin-top:0.8rem; background:#f0fdf4; border-left:3px solid #16a34a; padding:0.8rem 1rem; border-radius:8px; font-size:0.88rem;">
+              <p style="font-weight:700; color:#15803d; margin-bottom:0.4rem;">📒 Preguntes per al teu diari (àncora):</p>
+              <ol style="margin-left:1rem; color:#166534; line-height:1.9;">
+                <li>Explica una situació concreta en la qual has demostrat aquesta fortalesa. Quan, on i com?</li>
+                <li>De quina manera creus que aquest punt fort t'ajuda (o pot ajudar) al teu grup o equip?</li>
+                <li>Si haguessis d'ensenyar algú a ser millor en aquest comportament, quin consell li donaries?</li>
+              </ol>
+            </div>
+            <label for="evidence-ancora" style="margin-top:0.8rem;">Com t'ajuda aquesta fortalesa?</label>
+            <input type="text" id="evidence-ancora" placeholder="Ex: Sempre escolto tothom abans de decidir...">
+          </div>
+
+          <!-- TIMO -->
+          <div class="select-card" id="card-timo">
+            <h3 style="color:var(--primary); display:flex; align-items:center; gap:0.5rem; margin-bottom:0.8rem;">🧭 El meu timó (el repte que vull entrenar)</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Un comportament que et costa i que practicaràs conscientment.</p>
+            <label for="select-skill-timo">Tria l'habilitat:</label>
+            <select id="select-skill-timo" onchange="updateBehaviorOptions('timo')">
+              <option value="">-- Selecciona una habilitat --</option>
+              <option value="resp">🔵 Responsabilitat</option>
+              <option value="coop">🟢 Cooperació i treball en equip</option>
+              <option value="auto">🟠 Autonomia i iniciativa</option>
+              <option value="emoc">🔴 Gestió emocional</option>
+              <option value="pens">🟣 Habilitats de pensament</option>
+            </select>
+            <label for="select-comp-timo">Comportament concret:</label>
+            <select id="select-comp-timo">
+              <option value="">-- Primer tria l'habilitat --</option>
+            </select>
+            <div id="questions-timo" style="display:none; margin-top:0.8rem; background:#eff6ff; border-left:3px solid #0284c7; padding:0.8rem 1rem; border-radius:8px; font-size:0.88rem;">
+              <p style="font-weight:700; color:#0369a1; margin-bottom:0.4rem;">📒 Preguntes per al teu diari (timó):</p>
+              <ol style="margin-left:1rem; color:#0c4a6e; line-height:1.9;">
+                <li>En quin moment concret de les sessions t'és més difícil aplicar aquest comportament?</li>
+                <li>Quina estratègia concreta et compromets a fer servir la propera vegada que t'encallis?</li>
+                <li>Com sabràs, al final del projecte, que has millorat? Quina seria l'evidència visible?</li>
+              </ol>
+            </div>
+            <label for="evidence-timo" style="margin-top:0.8rem;">Quina acció concreta faràs per entrenar-lo?</label>
+            <input type="text" id="evidence-timo" placeholder="Ex: Quan m'encalli, en comptes de mirar el mòbil, demanaré ajuda...">
+          </div>
+        </div>
+
+        <!-- DIARI ATURADA 2 -->
+        <div class="diari-block" style="margin-top:1.5rem;">
+          <h4>📒 Diari del teu viatge — Aturada 2: El meu equipatge</h4>
+          <ol>
+            <li>Quin comportament Àncora has triat i per què? Respon les 3 preguntes verdes que han aparegut en seleccionar-lo.</li>
+            <li>Quin és el teu comportament Timó i per què et costa entrenar-lo? Respon les 3 preguntes blaves que han aparegut en seleccionar-lo.</li>
+          </ol>
+          <p class="diari-cta">→ Escriu les teves respostes al Diari del teu viatge.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- TAB 2: ELS 3 TRAMS                                            -->
+    <!-- ============================================================= -->
+    <section id="tab-trams" class="tab-content">
+
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">🗺️ L'arquitectura del projecte: els 3 trams</h2>
+          <span style="font-size:0.85rem; color:var(--text-muted);">Tres perspectives temporals d'autoconeixement</span>
+        </div>
+        <p>Al llarg del projecte, cada estudiant dibuixarà una gran cartografia dividida en 3 trams temporals complementaris:</p>
+        <div class="tram-banner" style="margin-top:1.2rem;">
+          <div class="tram-pill active" id="pill-tram1" onclick="showTramDetail(1)">
+            <div class="tram-pill-tag">Tram 1 · Mirada enrere</div>
+            <h3>Dels 0 als 16 anys</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted);">D'on vinc? Arrels, moments clau, pedres i afluents fins avui.</p>
+          </div>
+          <div class="tram-pill" id="pill-tram2" onclick="showTramDetail(2)">
+            <div class="tram-pill-tag">Tram 2 · Saviesa retrospectiva</div>
+            <h3>Dels 80 als 18 anys</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Mirar enrere des del futur, després de parlar amb referents.</p>
+          </div>
+          <div class="tram-pill" id="pill-tram3" onclick="showTramDetail(3)">
+            <div class="tram-pill-tag">Tram 3 · La lupa d'acció</div>
+            <h3>Postobligatòria (16 a 18/20)</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Recerca profunda: Batxillerat, CFGM, PFI. Plans A, B i C.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRAM 1 -->
+      <div id="tram-detail-1" class="card">
+        <div class="card-header">
+          <h3 class="card-title" style="color:var(--primary);">🌊 Tram 1: «El meu riu fins avui» (0 a 16 anys)</h3>
+          <span class="tag-skill badge-resp">Fase individual i creativa</span>
+        </div>
+
+        <h4 style="color:var(--primary-deep); margin-bottom:0.8rem; font-size:1.05rem;">Instruccions de creació pas a pas</h4>
+        <ol style="font-size:1.05rem; line-height:2.0; margin-left:1.3rem;">
+          <li style="margin-bottom:1rem;"><strong>Pluja d'idees inicial:</strong> Escriu en brut: 3 moments feliços, 2 dificultats superades, 2 persones importants i 1 afició constant. <em>Per exemple: «La competició d'atletisme de 5è, quan vam canviar de pis, quan vaig descobrir la música...»</em></li>
+          <li style="margin-bottom:1rem;"><strong>El curs del riu:</strong> Dibuixa un riu sobre paper A3, cartolina o qualsevol suport creatiu. Fes que el riu s'eixampli en moments d'energia i s'estrenyi en moments de dubte. <em>Pots enganxar fotografies, retallades, objectes petits o dibuixos que representin moments clau de la teva vida.</em></li>
+          <li style="margin-bottom:1rem;"><strong>Afegeix la simbologia:</strong> Dibuixa afluents amb noms de persones o aficions, roques amb etiquetes de dificultats superades i gorgs de pausa i reflexió. <em>Per exemple: «Un afluent: la professora de català que em va animar a seguir llegint.»</em></li>
+          <li style="margin-bottom:1rem;"><strong>La llegenda:</strong> A una cantonada, explica els colors i símbols que has fet servir. <em>Per exemple: «Aigua blava = alegria, Roca negra = dificultat, Afluent verd = persona que m'ha ajudat.»</em></li>
+        </ol>
+
+        <!-- DIARI ATURADA 3 -->
+        <div class="diari-block" style="margin-top:1.5rem;">
+          <h4>📒 Diari del teu viatge — Aturada 3: El meu riu fins avui</h4>
+          <ol>
+            <li>Mirant el teu riu dibuixat, quina pedra o dificultat que semblava enorme ara veus amb perspectiva que et va fer créixer?</li>
+            <li>Hi ha algun element del diccionari simbòlic del riu (afluents, gorgs, cascades...) que representi especialment bé un moment de la teva vida? Quin i per què?</li>
+          </ol>
+          <p class="diari-cta">→ Escriu les teves respostes al Diari del teu viatge.</p>
+        </div>
+
+        <!-- PAPALLONA D'AUSTIN -->
+        <div style="background:#fffbeb; border:1px solid #fef3c7; border-left:5px solid #f59e0b; padding:1.8rem; border-radius:14px; margin-top:1.5rem;">
+          <h3 style="color:#92400e; font-size:1.3rem; margin-bottom:0.8rem;">🦋 La papallona d'Austin: com donar feedback que faci créixer</h3>
+          <p style="font-size:0.95rem; color:#78350f; margin-bottom:1.2rem;">
+            La papallona d'Austin és la metàfora d'un projecte pedagògic real: Austin, un nen, va millorar el seu dibuix d'una papallona gràcies al feedback específic i constructiu dels seus companys de classe. El resultat final no s'assemblava gens al primer esbós. Intercanvia el teu riu amb una parella i doneu-vos retorn seguint els 3 principis:
+          </p>
+          <img src="Imatge PAPALLONA D'AUSTIN.png" alt="La papallona d'Austin" style="max-width:100%; max-height:320px; object-fit:contain; border-radius:10px; margin-bottom:1.2rem; display:block;">
+          <div class="grid-3" style="margin-top:1rem;">
+            <div style="background:#f0fdf4; border-left:4px solid #16a34a; padding:1rem; border-radius:8px;">
+              <h4 style="color:#15803d; margin-bottom:0.4rem;">💚 Amable</h4>
+              <p style="font-size:0.88rem; color:#166534;">Destaca primer allò que funciona molt bé. <em>Ex: «M'agrada molt com has representat el canvi d'institut amb aquell salt en el riu...»</em></p>
+            </div>
+            <div style="background:#eff6ff; border-left:4px solid #0284c7; padding:1rem; border-radius:8px;">
+              <h4 style="color:#0369a1; margin-bottom:0.4rem;">🎯 Específic</h4>
+              <p style="font-size:0.88rem; color:#0c4a6e;">Assenyala un punt exacte que no quedi clar. <em>Ex: «Entre els 10 i els 12 anys no s'entén per què l'aigua és fosca»</em></p>
+            </div>
+            <div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:1rem; border-radius:8px;">
+              <h4 style="color:#92400e; margin-bottom:0.4rem;">💡 Útil</h4>
+              <p style="font-size:0.88rem; color:#78350f;">Proposa una acció clara de millora. <em>Ex: «Si afegeixes una etiqueta al costat de la roca s'entendrà de seguida»</em></p>
+            </div>
+          </div>
+          <p style="margin-top:1rem; font-size:0.9rem; color:#92400e; font-style:italic; border-top:1px solid #fde68a; padding-top:0.8rem;">Recorda: el feedback no és una crítica. És un regal que ajuda a créixer.</p>
+        </div>
+      </div>
+
+      <!-- TRAM 2 (BLOQUEJAT) -->
+      <div id="tram-detail-2" class="card" style="display:none; position:relative; min-height:300px;">
+        <div id="tram-lock-2" class="tram-lock-overlay">
+          <div style="font-size:3rem; margin-bottom:0.5rem;">🔒</div>
+          <h3 style="color:var(--primary-deep); margin-bottom:0.5rem;">Aquest tram es desbloqueja més endavant</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; max-width:420px; margin-bottom:1.5rem; text-align:center;">El Tram 2 (dels 80 als 18 anys) el treballaràs <strong>després de les converses amb referents</strong>. El teu docent t'indicarà quan és el moment de continuar.</p>
+          <button class="btn btn-primary" onclick="unlockTram(2)">🔓 El docent m'ha dit que puc continuar</button>
+        </div>
+        <div class="card-header">
+          <h3 class="card-title" style="color:var(--color-pens);">🔭 Tram 2: «Mirada retrospectiva des dels 80 anys»</h3>
+          <span class="tag-skill badge-pens">Després de les converses amb referents</span>
+        </div>
+        <p style="margin-bottom:1rem;">Després d'haver conversat amb persones de diferents edats i haver vist com la vida dóna voltes inesperades, ens posem a la pell d'un mateix/a amb 80 anys mirant enrere.</p>
+        <div class="grid-2">
+          <div class="metaphor-node">
+            <div class="metaphor-node-title">🧓 La perspectiva de la vellesa</div>
+            <p style="font-size:0.88rem;">Des dels 80 anys, cap decisió presa als 16 anys és una condemna. Les equivocacions esdevenen anècdotes o aprenentatges fonamentals.</p>
+            <ul style="font-size:0.85rem; margin-left:1.2rem; margin-top:0.5rem; color:var(--text-muted);">
+              <li>Quin tipus de vida t'agradaria haver viscut en conjunt?</li>
+              <li>Com hauràs afrontat les cascades imprevistes sense rendir-te?</li>
+            </ul>
+          </div>
+          <div class="metaphor-node">
+            <div class="metaphor-node-title">🎨 Com es dibuixa aquest tram?</div>
+            <p style="font-size:0.88rem;">El riu continua des dels 18 fins als 80 anys amb un traç lliure i poètic:</p>
+            <ul style="font-size:0.85rem; margin-left:1.2rem; margin-top:0.5rem; color:var(--text-muted);">
+              <li>Dibuixa les grans fites que voldries celebrar.</li>
+              <li>Afegeix com a mínim 1 gran cascada o revolt sobtat imaginat.</li>
+              <li>La desembocadura: com connecta el teu riu amb el mar (la comunitat, el món).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRAM 3 (BLOQUEJAT) -->
+      <div id="tram-detail-3" class="card" style="display:none; position:relative; min-height:300px;">
+        <div id="tram-lock-3" class="tram-lock-overlay">
+          <div style="font-size:3rem; margin-bottom:0.5rem;">🔒</div>
+          <h3 style="color:var(--primary-deep); margin-bottom:0.5rem;">Aquest tram es desbloqueja més endavant</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; max-width:420px; margin-bottom:1.5rem; text-align:center;">El Tram 3 de recerca de la postobligatòria el treballaràs a les <strong>sessions finals del projecte</strong>. El teu docent t'indicarà quan és el moment.</p>
+          <button class="btn btn-primary" onclick="unlockTram(3)">🔓 El docent m'ha dit que puc continuar</button>
+        </div>
+        <div class="card-header">
+          <h3 class="card-title" style="color:var(--color-auto);">🔍 Tram 3: «La lupa a la postobligatòria» (16 a 18/20 anys)</h3>
+          <span class="tag-skill badge-auto">Recerca d'opcions reals i plans A, B i C</span>
+        </div>
+        <p style="margin-bottom:1rem;">Ara que tenim la mirada àmplia de la vida, posem la lupa d'alta definició al tram immediat que tenim davant dels nassos: els propers 2 o 4 anys.</p>
+        <div class="grid-3">
+          <div class="card" style="border-top:4px solid var(--primary); margin-bottom:0;">
+            <h4 style="color:var(--primary-deep); margin-bottom:0.5rem;">🌟 Pla A (la primera il·lusió)</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">L'opció que ara mateix et motiva més (modalitat de Batxillerat, cicle formatiu de grau mitjà específic, etc.).</p>
+            <p style="font-size:0.8rem;"><strong>Què has d'investigar:</strong> Centres on s'imparteix, notes de tall, matèries clau.</p>
+          </div>
+          <div class="card" style="border-top:4px solid var(--color-coop); margin-bottom:0;">
+            <h4 style="color:var(--color-coop); margin-bottom:0.5rem;">🌿 Pla B (l'alternativa sòlida)</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Una segona opció realment atractiva si no aconsegueixes plaça al Pla A o si canvies d'interès.</p>
+            <p style="font-size:0.8rem;"><strong>L'afluent de retorn:</strong> Com et permet aquest Pla B arribar més endavant al mateix àmbit?</p>
+          </div>
+          <div class="card" style="border-top:4px solid var(--color-auto); margin-bottom:0;">
+            <h4 style="color:var(--color-auto); margin-bottom:0.5rem;">🛡️ Pla C (la xarxa de seguretat)</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Una sortida formativa pràctica (CFGM alternatiu, PFI, Ensenyaments Esportius/Artístics) que et manté en moviment.</p>
+            <p style="font-size:0.8rem;"><strong>Sense sequeres:</strong> Saber que mai et quedaràs encallat/da perquè tens opcions previstes.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- TAB 3: EL TEU DIARI                                           -->
+    <!-- ============================================================= -->
+    <section id="tab-diari" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">📒 El teu diari del viatge</h2>
+          <span style="font-size:0.85rem; color:var(--text-muted);">Les teves reflexions al llarg del projecte</span>
+        </div>
+
+        <div style="background:#f0fdf4; border-left:4px solid #16a34a; padding:1.5rem; border-radius:12px; margin-bottom:2rem;">
+          <h3 style="color:#15803d; margin-bottom:0.8rem;">Com funciona el Diari del Viatge?</h3>
+          <p style="font-size:0.95rem; color:#166534; margin-bottom:0.8rem;">El Diari del Viatge és el teu espai de reflexió personal al llarg del projecte. No és un examen ni una feina amb nota — és una eina per capturar el que penses i sents en moments clau.</p>
+          <ul style="font-size:0.9rem; color:#166534; margin-left:1.2rem; line-height:1.9;">
+            <li><strong>Format:</strong> Pots fer-lo en un quadern físic, en fulles soltes o en el teu portafoli digital.</li>
+            <li><strong>Quan:</strong> Cada cop que trobis un bloc verd al web, para-t'hi i escriu les respostes abans de continuar.</li>
+            <li><strong>Com:</strong> Escriu en primera persona, sense censurar-te. No hi ha respostes correctes ni incorrectes.</li>
+            <li><strong>Consell:</strong> Afegeix imatges, dibuixos o paraules que trobes al teu voltant si t'ajuden a expressar-te millor.</li>
+          </ul>
+        </div>
+
+        <h3 style="color:var(--primary-deep); margin-bottom:1rem;">Totes les entrades del teu diari</h3>
+
+        <div class="aturada-entry">
+          <span class="aturada-badge">Aturada 1</span>
+          <h4>Inici del viatge · Quin riu ets avui?</h4>
+          <ol>
+            <li>Quina és la primera paraula o emoció que et ve al cap quan penses en prendre alguna decisió sobre què fer el curs vinent?</li>
+            <li>Sobre el riu que has triat: per què l'has escollit? Quina emoció et genera? Respon una de les 3 preguntes que apareixen sota la imatge.</li>
+          </ol>
+          <p class="aturada-ref">📍 On trobaràs el moment de reflexió: al final de la galeria dels 10 rius, a la pestanya «La metàfora».</p>
+        </div>
+
+        <div class="aturada-entry">
+          <span class="aturada-badge">Aturada 2</span>
+          <h4>El meu equipatge · Àncora i Timó</h4>
+          <ol>
+            <li>Respon les 3 preguntes verdes que han aparegut en triar el teu comportament Àncora.</li>
+            <li>Respon les 3 preguntes blaves que han aparegut en triar el teu comportament Timó.</li>
+          </ol>
+          <p class="aturada-ref">📍 On trobaràs el moment de reflexió: al final de la secció «El meu equipatge», a la pestanya «La metàfora».</p>
+        </div>
+
+        <div class="aturada-entry">
+          <span class="aturada-badge">Aturada 3</span>
+          <h4>El meu riu fins avui · Tram 1 (0 a 16 anys)</h4>
+          <ol>
+            <li>Mirant el teu riu dibuixat, quina pedra o dificultat que semblava enorme ara veus amb perspectiva que et va fer créixer?</li>
+            <li>Hi ha algun element del diccionari simbòlic del riu (afluents, gorgs, cascades...) que representi especialment bé un moment de la teva vida? Quin i per què?</li>
+            <li>Quin feedback has rebut de la teva parella (Papallona d'Austin) i com has millorat el teu riu gràcies a ell?</li>
+          </ol>
+          <p class="aturada-ref">📍 On trobaràs el moment de reflexió: al final de les instruccions del Tram 1, a la pestanya «Els 3 trams».</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- TAB REFERENTS (AMAGAT)                                        -->
+    <!-- ============================================================= -->
+    <section id="tab-referents" class="tab-content" style="display:none;">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">🗣️ Bastida de converses: «Navegants reals»</h2>
+          <span class="tag-skill badge-pens">Entrevistes àgils i significatives</span>
+        </div>
+        <p>A 4t d'ESO faràs dues converses autèntiques amb persones que ja naveguen per la vida. Tindreu una conversa sobre les seves decisions, canvis de rumb i aprenentatges.</p>
+        <div class="grid-2" style="margin:1.2rem 0;">
+          <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:1.2rem; border-radius:var(--radius-sm);">
+            <h4 style="color:#166534; margin-bottom:0.3rem;">🧑‍🎓 Referent 1: Jove (19 a 28 anys)</h4>
+            <p style="font-size:0.85rem; color:#14532d;">Algú que fa pocs anys va viure exactament el que tu estàs vivint ara: la decisió de sortir de l'ESO, canvis de cicle o universitat, primeres feines.</p>
+          </div>
+          <div style="background:#eff6ff; border:1px solid #bfdbfe; padding:1.2rem; border-radius:var(--radius-sm);">
+            <h4 style="color:#1e40af; margin-bottom:0.3rem;">🧑‍💼 Referent 2: Adult / gran (més de 40 anys)</h4>
+            <p style="font-size:0.85rem; color:#1e3a8a;">Algú amb perspectiva llarga: pares, familiars, veïns o professionals que hagin viscut canvis d'ocupació o imprevistos de vida.</p>
+          </div>
+        </div>
+        <h3 style="color:var(--primary-deep); margin:1.5rem 0 0.8rem;">🧭 Les 4 preguntes cardinals per a la conversa</h3>
+        <div class="grid-2">
+          <div class="card" style="margin-bottom:1rem; border-left:4px solid var(--primary);">
+            <h4 style="color:var(--primary-deep);">1. El moment d'inflexió (la cruïlla)</h4>
+            <p style="font-style:italic; font-size:0.9rem; margin:0.4rem 0;">«Quan tenies 15 o 16 anys, quina decisió vas haver de prendre? Ho tenies clar o estaves ple/na de dubtes?»</p>
+          </div>
+          <div class="card" style="margin-bottom:1rem; border-left:4px solid var(--color-auto);">
+            <h4 style="color:var(--color-auto);">2. L'afluent inesperat (el canvi de rumb)</h4>
+            <p style="font-style:italic; font-size:0.9rem; margin:0.4rem 0;">«Hi ha hagut algun moment on la teva vida va fer un gir que no havies planejat?»</p>
+          </div>
+          <div class="card" style="margin-bottom:1rem; border-left:4px solid var(--color-emoc);">
+            <h4 style="color:var(--color-emoc);">3. La cascada o sequera (l'obstacle)</h4>
+            <p style="font-style:italic; font-size:0.9rem; margin:0.4rem 0;">«T'has trobat mai bloquejat/da, sense saber cap on anar? Com te'n vas sortir?»</p>
+          </div>
+          <div class="card" style="margin-bottom:1rem; border-left:4px solid var(--color-coop);">
+            <h4 style="color:var(--color-coop);">4. La mirada retrospectiva (el consell)</h4>
+            <p style="font-style:italic; font-size:0.9rem; margin:0.4rem 0;">«Amb tot el que saps avui... què et diries a tu mateix/a si tornessis a tenir 16 anys?»</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL PROJECCIÓ -->
+  <div id="river-modal" class="river-modal" onclick="if(event.target===this) closeRiverModal()">
+    <div class="modal-dialog">
+      <div class="modal-img-wrap">
+        <img id="modal-river-img" class="modal-img" src="" alt="Riu">
+        <button class="modal-close-btn" onclick="closeRiverModal()">✕</button>
+        <button class="modal-nav-arrow modal-nav-prev" onclick="prevRiverModal()">❮</button>
+        <button class="modal-nav-arrow modal-nav-next" onclick="nextRiverModal()">❯</button>
+      </div>
+      <div class="modal-body">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+          <span id="modal-river-badge" class="river-badge"></span>
+          <span id="modal-river-counter" style="font-size:0.85rem; color:var(--text-muted); font-weight:600;"></span>
+        </div>
+        <h2 id="modal-river-title" class="modal-title"></h2>
+        <p id="modal-river-desc" style="font-size:1.05rem; color:var(--text-main); line-height:1.6; margin-bottom:1rem;"></p>
+        <div class="modal-question-box">
+          <strong style="color:#166534; font-size:0.95rem;">💬 Preguntes de reflexió (tria'n una per respondre al diari):</strong>
+          <ol id="modal-river-questions" class="modal-questions-list"></ol>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1.5rem;">
+          <button class="btn btn-secondary" onclick="prevRiverModal()">❮ Riu anterior</button>
+          <span style="font-size:0.8rem; color:var(--text-muted);">Pots prémer ⬅️ i ➡️ del teclat per canviar de riu</span>
+          <button class="btn btn-primary" onclick="nextRiverModal()">Riu següent ❯</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- TAB EINA DOCENT (exclusiva versió docent)                     -->
+  <!-- ============================================================= -->
+  <div id="tab-docent" class="tab-content" style="display:none; max-width:1200px; margin:2rem auto; padding:0 1.5rem;">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">📋 Eina docent: graella d'observació</h2>
+        <span style="font-size:0.85rem; color:var(--text-muted);">Registre de comportaments socioemocionals</span>
+      </div>
+
+      <!-- Info localStorage -->
+      <div style="background:#fefce8; border:1px solid #fde68a; border-left:4px solid #ca8a04; border-radius:10px; padding:1rem 1.2rem; margin-bottom:1.5rem;">
+        <h4 style="color:#92400e; margin-bottom:0.4rem;">⚠️ On es guarden les dades?</h4>
+        <p style="font-size:0.88rem; color:#78350f; margin-bottom:0.3rem;">Totes les observacions es guarden <strong>únicament al localStorage d'aquest navegador i dispositiu</strong>. No surten a cap servidor extern. Si obres el fitxer en un altre ordinador, la graella estarà buida.</p>
+        <p style="font-size:0.88rem; color:#78350f;">💡 <strong>Recomanació:</strong> Exporta el CSV al final de cada sessió i desa'l a la carpeta del projecte com a còpia de seguretat.</p>
+      </div>
+
+      <div style="display:flex; gap:0.8rem; flex-wrap:wrap; margin-bottom:1.2rem; align-items:center;">
+        <button class="btn btn-primary" onclick="addDocentStudent()">+ Afegir alumne/a</button>
+        <button class="btn btn-secondary" onclick="exportDocentCSV()">⬇️ Exportar CSV</button>
+        <button class="btn btn-secondary" onclick="saveDocentData()">💾 Desar observacions</button>
+        <span id="docent-save-status" style="font-size:0.85rem; color:var(--color-coop); font-weight:600;"></span>
+      </div>
+
+      <div style="overflow-x:auto;">
+        <table id="docent-table" style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+          <thead>
+            <tr style="background:#f1f5f9;">
+              <th style="padding:0.7rem; text-align:left; border:1px solid #e2e8f0; min-width:130px;">Alumne/a</th>
+              <th style="padding:0.7rem; text-align:center; border:1px solid #e2e8f0; color:var(--color-resp);">Responsabilitat</th>
+              <th style="padding:0.7rem; text-align:center; border:1px solid #e2e8f0; color:var(--color-coop);">Cooperació</th>
+              <th style="padding:0.7rem; text-align:center; border:1px solid #e2e8f0; color:var(--color-auto);">Autonomia</th>
+              <th style="padding:0.7rem; text-align:center; border:1px solid #e2e8f0; color:var(--color-emoc);">Gestió emoc.</th>
+              <th style="padding:0.7rem; text-align:center; border:1px solid #e2e8f0; color:var(--color-pens);">Pensament</th>
+              <th style="padding:0.7rem; text-align:left; border:1px solid #e2e8f0;">Àncora triat</th>
+              <th style="padding:0.7rem; text-align:left; border:1px solid #e2e8f0;">Timó triat</th>
+              <th style="padding:0.7rem; text-align:left; border:1px solid #e2e8f0;">Notes docent</th>
+              <th style="padding:0.7rem; text-align:center; border:1px solid #e2e8f0;">Accions</th>
+            </tr>
+          </thead>
+          <tbody id="docent-tbody"></tbody>
+        </table>
+      </div>
+      <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0.8rem;">Puntuació: 1 = En procés · 2 = Assoliment bàsic · 3 = Assoliment notable · 4 = Assoliment excel·lent</p>
+    </div>
+
+    <!-- Notes pedagògiques del docent -->
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">📖 Guia de sessions i temporització</h2>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1rem;">
+        <div style="background:#fef3c7; border-left:4px solid #d97706; padding:1rem; border-radius:8px;">
+          <h4 style="color:#92400e; margin-bottom:0.4rem;">📋 Sessió 1 (1h) — La metàfora</h4>
+          <ul style="font-size:0.85rem; color:#78350f; margin-left:1rem; line-height:1.7;">
+            <li>Presenta els 10 rius a la pissarra digital (5 min).</li>
+            <li>Exploració individual de les fotos (5-7 min).</li>
+            <li>Plenari: qui ha triat el riu 3? I el 9? (10 min).</li>
+            <li>Introducció de les 5 habilitats i elecció Àncora/Timó (20 min).</li>
+            <li>Primera entrada del Diari del Viatge (10 min).</li>
+          </ul>
+        </div>
+        <div style="background:#fef3c7; border-left:4px solid #d97706; padding:1rem; border-radius:8px;">
+          <h4 style="color:#92400e; margin-bottom:0.4rem;">📋 Sessió 2-3 (2h) — Tram 1</h4>
+          <ul style="font-size:0.85rem; color:#78350f; margin-left:1rem; line-height:1.7;">
+            <li>Demostra el teu propi riu 0-18 anys (5 min trenca el bloqueig «no sé dibuixar»).</li>
+            <li>Creació individual del Tram 1 (40-50 min).</li>
+            <li>Feedback Papallona d'Austin en parelles (15 min).</li>
+            <li>Aturada 3 del Diari del Viatge (10 min).</li>
+          </ul>
+        </div>
+        <div style="background:#fef3c7; border-left:4px solid #d97706; padding:1rem; border-radius:8px;">
+          <h4 style="color:#92400e; margin-bottom:0.4rem;">📋 Sessió 4-5 (2h) — Referents</h4>
+          <ul style="font-size:0.85rem; color:#78350f; margin-left:1rem; line-height:1.7;">
+            <li>Preparació de les preguntes per a les entrevistes.</li>
+            <li>Converses amb referents (poden ser fora de l'aula).</li>
+            <li>Compartida en petit grup (6 min per persona): conclusions clau.</li>
+            <li>Plenari: tipologies de decisions, imprevistos, consells.</li>
+          </ul>
+        </div>
+        <div style="background:#fef3c7; border-left:4px solid #d97706; padding:1rem; border-radius:8px;">
+          <h4 style="color:#92400e; margin-bottom:0.4rem;">📋 Sessió 6-7 (2h) — Trams 2 i 3</h4>
+          <ul style="font-size:0.85rem; color:#78350f; margin-left:1rem; line-height:1.7;">
+            <li>Desbloqueja els Trams 2 i 3 a la pantalla de cada alumne.</li>
+            <li>Tram 2: mirada des dels 80 anys (30 min).</li>
+            <li>Tram 3: recerca de la postobligatòria i plans A, B, C (50 min).</li>
+            <li>Síntesi final i presentació oral breu (30 min).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- TAB MATERIALS IMPRIMIBLES (exclusiva versió docent)           -->
+  <!-- ============================================================= -->
+  <div id="tab-print" class="tab-content" style="display:none; max-width:1200px; margin:2rem auto; padding:0 1.5rem;">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">🖨️ Kit d'aula imprimible</h2>
+        <span style="font-size:0.85rem; color:var(--text-muted);">Materials per imprimir i repartir a l'aula</span>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1.2rem;">
+
+        <div class="card" style="margin-bottom:0; border-top:4px solid var(--primary);">
+          <h4 style="color:var(--primary-deep); margin-bottom:0.4rem;">📄 Fitxa del Tram 1</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Full A3 amb el riu en blanc per dibuixar i la llegenda dels símbols.</p>
+          <button class="btn btn-primary" style="width:100%;">🖨️ Imprimir (A3)</button>
+        </div>
+
+        <div class="card" style="margin-bottom:0; border-top:4px solid var(--color-coop);">
+          <h4 style="color:var(--color-coop); margin-bottom:0.4rem;">🗣️ Bastida de referents</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Les 4 preguntes cardinals per a la conversa amb referents (A5, 2 per full).</p>
+          <button class="btn btn-primary" style="width:100%;">🖨️ Imprimir preguntes</button>
+        </div>
+
+        <div class="card" style="margin-bottom:0; border-top:4px solid var(--color-auto);">
+          <h4 style="color:var(--color-auto); margin-bottom:0.4rem;">⚓ Targeta d'equipatge</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Targeta petita amb l'Àncora i el Timó per enganxar a l'agenda o carpeta.</p>
+          <button class="btn btn-primary" style="width:100%;">🖨️ Imprimir targetes</button>
+        </div>
+
+        <div class="card" style="margin-bottom:0; border-top:4px solid var(--color-pens);">
+          <h4 style="color:var(--color-pens); margin-bottom:0.4rem;">🌊 Targetes dels 10 rius</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">10 targetes A6 amb les imatges i descripcions dels rius per treballar sense pantalla.</p>
+          <button class="btn btn-primary" style="width:100%;">🖨️ Imprimir targetes</button>
+        </div>
+
+        <div class="card" style="margin-bottom:0; border-top:4px solid var(--color-emoc);">
+          <h4 style="color:var(--color-emoc); margin-bottom:0.4rem;">📒 Diari del Viatge — full d'aturades</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Full resum de les 3 aturades per enganxar al quadern de l'alumnat.</p>
+          <button class="btn btn-primary" style="width:100%;">🖨️ Imprimir full</button>
+        </div>
+
+        <div class="card" style="margin-bottom:0; border-top:4px solid #0d9488;">
+          <h4 style="color:#0d9488; margin-bottom:0.4rem;">📋 Graella d'observació</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Versió en paper de la graella docent per anotacions en paper al llarg de les sessions.</p>
+          <button class="btn btn-primary" style="width:100%;">🖨️ Imprimir graella</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Els rius de la vida · Recerca i acció 2026-27 · Versió docent | Les dades de la graella es guarden localment al teu navegador
+  </footer>
+
+  <script>
+    // TAB SWITCHING
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => { tab.classList.remove('active'); tab.style.display = 'none'; });
+      document.querySelectorAll('#tab-docent, #tab-print').forEach(t => t.style.display = 'none');
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+      const target = document.getElementById(tabId);
+      if (target) { target.style.display = 'block'; target.classList.add('active'); }
+      const clickedBtn = Array.from(document.querySelectorAll('.nav-btn')).find(b => b.getAttribute('onclick') && b.getAttribute('onclick').includes(tabId));
+      if (clickedBtn) clickedBtn.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // RIVERS DATA
+    const riversData = [
+      { id:'muntanya', title:"1. Riu d'alta muntanya", badge:"Impuls i força", badgeClass:"badge-auto",
+        img:"Imatge rius/0f7f5105-42d1-4ada-b232-56409df902bc_alta-libre-aspect-ratio_default_0.jpg",
+        desc:"Baixa ràpid, impetuós i transparent entre roques. Té molta força però encara busca el seu llit definitiu.",
+        questions:["«Quan notes que t'has entusiasmat de sobte amb alguna cosa, la teva tendència és llançar-t'hi de cap o primer t'atures a pensar?»","«Et passa que comences moltes coses però de vegades perds l'energia inicial? On creus que es perd aquell impuls?»","«Si la teva energia fos un riu de muntanya, cap a on et portaria el seu corrent? Quin seria el teu \u2018mar\u2019 ideal?»"],
+        feedback:"Tens força i ganes d'accelerar! El projecte t'ajudarà a canalitzar aquesta energia per trobar el camí que et motiva." },
+      { id:'meandres', title:"2. Riu de plana (meandres)", badge:"Calma i reflexió", badgeClass:"badge-coop",
+        img:"Imatge rius/Nowitna_river.jpg",
+        desc:"Avança sinuós, lent i segur per terreny pla. Fa grans corbes sense pressa, explorant cada pam de paisatge.",
+        questions:["«Quan has de prendre una decisió important, ets dels que necessiten temps, observar i voltar-hi per tots costats?»","«Hi ha situacions en les que anar lent et genera pressió o comparació amb els altres? Com ho gestiones?»","«Els meandres sempre acaben trobant el camí cap al mar. Creus que la reflexió pausada és una fortalesa teva?»"],
+        feedback:"La reflexió pausada és una fortalesa. Aprofitaràs molt la recerca d'itineraris per triar amb criteri sòlid." },
+      { id:'cascada', title:"3. Riu amb gran cascada", badge:"Canvi brusc", badgeClass:"badge-emoc",
+        img:"https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80",
+        desc:"Un desnivell sobtat que trenca la continuïtat. L'aigua cau amb estrèpit a un gorg profund abans de recomençar.",
+        questions:["«Recordes algun moment de la teva vida on tot va canviar de cop, sense avisar? Com el vas viure al principi?»","«Quan t'arriba un imprevist important, la teva primera reacció és paralitzar-te, desfogarte o buscar solucions?»","«Les cascades sempre cauen a una bassa on el riu es reorganitza. Quin «gorg» has creat tu per sortir-te'n d'un moment difícil?»"],
+        feedback:"La cascada impressiona, però a sota sempre es forma una bassa serena per continuar navegant." },
+      { id:'trenat', title:"4. Riu trenat glacial", badge:"Múltiples opcions", badgeClass:"badge-pens",
+        img:"Imatge rius/Dep-28.jpeg",
+        desc:"Es divideix en múltiples rierols que s'entrellacen. No hi ha un curs únic, sinó molts camins alhora.",
+        questions:["«Quines coses t'agraden tant que et costaria molt imaginar un futur sense cap d'elles?»","«Has viscut mai que tenir massa opcions t'ha paralitzat en comptes d'ajudar-te? Quan?»","«Si haguessis de triar tres filons del riu que vols que segueixin corrent al teu futur, quins serien?»"],
+        feedback:"La curiositat polivalent és una gran riquesa! Dibuixar el riu t'ajudarà a veure com combinar els teus interessos." },
+      { id:'gorg', title:"5. Gorg d'estiatge (bassa de calma)", badge:"Pausa i recàrrega", badgeClass:"badge-resp",
+        img:"Imatge rius/103065837.400x300.jpg",
+        desc:"Aigua aturada en una bassa fonda i fresca. Sembla que no es mogui, però acumula vida i espera la pluja.",
+        questions:["«Quan et sents desbordat/da o buit/da, quina és la teva manera d'aturar-te i de recuperar forces?»","«Hi ha alguna activitat, lloc o persona que et funcioni com a gorg personal?»","«Creus que en la teva manera de prendre decisions et falta (o et sobra) temps de pausa i de reflexió?»"],
+        feedback:"Aturar-se és un acte de saviesa. Pren-te el projecte com el teu espai d'introspecció." },
+      { id:'congost', title:"6. Congost estret (canyó)", badge:"Determinació", badgeClass:"badge-auto",
+        img:"Imatge rius/montrebei1.jpg",
+        desc:"S'obre pas perforant parets verticals de roca. Tota la seva força és concentrada en un sol punt estret.",
+        questions:["«Hi ha alguna cosa que vols aconseguir amb tanta convicció que sents que res et pot aturar del tot?»","«Com reacciones davant els obstacles: els evites, els atacs frontalment o busques forats pels costats?»","«Recorda un moment en el que vas superar quelcom que semblava impossible. Què et va fer no rendir-te?»"],
+        feedback:"Tens determinació i caràcter! Utilitza aquest enfocament per investigar a fons els requisits del teu Pla A." },
+      { id:'delta', title:"7. Delta fluvial (desembocadura)", badge:"Obertura al món", badgeClass:"badge-coop",
+        img:"Imatge rius/delta_que_es_como_se_forma_y_tipos_4754_1200.jpg",
+        desc:"S'eixampla en una xarxa de canals fèrtils i amples abans de fondre's harmònicament amb el mar immens.",
+        questions:["«Hi ha alguna causa o comunitat del món que et preocupi genuïnament i que vulguis que formi part del teu futur?»","«Com et sents quan pots ajudar algú de debò? Podria ser un motor de vida per a tu?»","«Si el teu futur pogués connectar amb alguna cosa «més gran que tu», de quina cosa es tractaria?»"],
+        feedback:"La teva mirada és generosa i comunitària! Exploraràs itineraris on l'impacte social sigui protagonista." },
+      { id:'subterrani', title:"8. Riu subterrani (cenote)", badge:"Món interior", badgeClass:"badge-pens",
+        img:"Imatge rius/riviere-souterraine-labouiche-ariege-pyrenees-riviere-souterraine-de-labouiche-1.jpg",
+        desc:"Flueix sota terra en coves secretes. Ningú el veu des de la superfície, però porta un cabal pur i profund.",
+        questions:["«Hi ha alguna afició, talent o interès que gairebé no has compartit mai amb ningú?»","«Alguna vegada has sorprès algú descobrint una capacitat que no sabies que tenies?»","«Si poguessis dedicar el teu futur a quelcom que connecti amb el teu món interior, de quina cosa es tractaria?»"],
+        feedback:"El món interior és una mina de talents! El projecte és una oportunitat per donar veu a les passions amagades." },
+      { id:'glacat', title:"9. Riu glaçat d'hivern", badge:"Paciència", badgeClass:"badge-resp",
+        img:"https://images.unsplash.com/photo-1491002052546-bf38f186af56?auto=format&fit=crop&w=1200&q=80",
+        desc:"Protegit sota una capa de gel. Sembla aturat, però per sota l'aigua continua corrent esperant la primavera.",
+        questions:["«Hi ha alguna cosa que vols però que sents que «encara no és el moment»? Com vius aquesta espera?»","«Quina és la teva relació amb la incertesa: la toleres bé, t'angoixa o la converteixes en acció?»","«Recorda una vegada que vas aguantar una etapa difícil fins que les coses es van desencallar. Què et va ajudar?»"],
+        feedback:"La perseverança és una fortalesa clau. El treball de reflexió t'ajudarà a preparar el teu propi desgel vital." },
+      { id:'confluencia', title:"10. Aiguabarreig (confluència)", badge:"Trobada i diàleg", badgeClass:"badge-coop",
+        img:"Imatge rius/Vista-Aerea-del-Aiguabarreig.jpg",
+        desc:"Dos corrents de colors i orígens diferents s'ajunten i avancen de costat fins a fondre's en un cabal el doble de potent.",
+        questions:["«Hi ha persones al teu entorn sense les quals et semblaria molt difícil avançar? Qui i per què?»","«Creus que les teves arrels —d'on véns, la teva família, la teva cultura— influencien qui vols ser?»","«Si el teu futur pogués ser una confluència de dos corrents, quins dos valors o persones voldries que s'hi trobessin?»"],
+        feedback:"El mestissatge i la col·laboració multipliquen la força! Trobaràs molta inspiració en les converses amb referents." }
+    ];
+
+    let currentModalIndex = 0;
+    function selectRiverType(cardElement, typeKey, index) {
+      document.querySelectorAll('.river-card').forEach(c => c.classList.remove('selected'));
+      cardElement.classList.add('selected');
+      const river = riversData[index];
+      const feedbackBox = document.getElementById('selected-river-feedback');
+      const feedbackText = document.getElementById('selected-river-text');
+      if (river && feedbackBox && feedbackText) {
+        feedbackText.textContent = `Has triat ${river.title}. ${river.feedback}`;
+        feedbackBox.style.display = 'block';
+        feedbackBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+    function openRiverModal(index) { currentModalIndex = index; updateModalContent(); document.getElementById('river-modal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeRiverModal() { document.getElementById('river-modal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+    function nextRiverModal() { currentModalIndex = (currentModalIndex + 1) % riversData.length; updateModalContent(); }
+    function prevRiverModal() { currentModalIndex = (currentModalIndex - 1 + riversData.length) % riversData.length; updateModalContent(); }
+    function updateModalContent() {
+      const river = riversData[currentModalIndex];
+      if (!river) return;
+      document.getElementById('modal-river-img').src = river.img;
+      document.getElementById('modal-river-title').textContent = river.title;
+      document.getElementById('modal-river-badge').textContent = river.badge;
+      document.getElementById('modal-river-badge').className = 'river-badge ' + river.badgeClass;
+      document.getElementById('modal-river-counter').textContent = `Riu ${currentModalIndex + 1} de ${riversData.length}`;
+      document.getElementById('modal-river-desc').textContent = river.desc;
+      const qList = document.getElementById('modal-river-questions');
+      qList.innerHTML = '';
+      river.questions.forEach(q => { const li = document.createElement('li'); li.textContent = q; qList.appendChild(li); });
+    }
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('river-modal');
+      if (modal && modal.classList.contains('active')) {
+        if (e.key === 'ArrowRight') nextRiverModal();
+        if (e.key === 'ArrowLeft') prevRiverModal();
+        if (e.key === 'Escape') closeRiverModal();
+      }
+    });
+
+    // TRAM SWITCHER
+    window.tram2Unlocked = false; window.tram3Unlocked = false;
+    function showTramDetail(tramNum) {
+      for (let i = 1; i <= 3; i++) {
+        const d = document.getElementById('tram-detail-' + i);
+        const p = document.getElementById('pill-tram' + i);
+        if (d) d.style.display = (i === tramNum) ? 'block' : 'none';
+        if (p) p.classList.toggle('active', i === tramNum);
+      }
+      if (tramNum === 2 && !window.tram2Unlocked) { const l = document.getElementById('tram-lock-2'); if(l) l.style.display='flex'; }
+      if (tramNum === 3 && !window.tram3Unlocked) { const l = document.getElementById('tram-lock-3'); if(l) l.style.display='flex'; }
+    }
+    function unlockTram(num) { window['tram'+num+'Unlocked']=true; const el=document.getElementById('tram-lock-'+num); if(el) el.style.display='none'; }
+
+    // BEHAVIORS
+    const behaviorsData = {
+      resp:["C1: Treballa de forma constant durant la sessió","C2: Realitza les tasques amb cura, detall i netedat","C3: Fa comentaris i/o accions relacionats amb la tasca","C4: Persevera davant les dificultats i bloquejos","C5: Respecta les normes d'aula i el material comú","C6: Compleix els terminis acordats per a cada fase","C7: Assumeix el rol o càrrec assignat dins del grup"],
+      coop:["C8: Escolta activament els altres i respecta el torn de paraula","C9: Fomenta la participació activa de tots els membres","C10: Participa en la presa de decisions consensuades","C11: Reconeix les seves responsabilitats i les dels altres","C12: Ajuda els companys/es de forma desinteressada","C13: Facilita la resolució constructiva de conflictes","C14: Incorpora les aportacions dels altres per millorar el comú"],
+      auto:["C15: Aporta idees noves i creatives relacionades amb el repte","C16: Fa preguntes pertinents quan s'encalla","C17: Pren decisions amb criteri propi i justificació","C18: Sap argumentar i convèncer el grup respectuosament","C19: Treballa amb determinació i independència de supervisió","C20: Creu que pot iniciar canvis i millores en el seu entorn","C21: Gestiona el temps de manera autònoma i eficient"],
+      emoc:["C22: Es mostra tranquil/la en situacions de pressió","C23: Controla les emocions en situacions de conflicte","C24: Accepta que els canvis que proposa no sempre tirin endavant","C25: Transmet una actitud constructiva i d'energia positiva","C26: Adequa el comportament, to i llenguatge a la situació","C27: Demostra tolerància davant l'error com a oportunitat"],
+      pens:["C28: Relaciona continguts nous amb vivències i sabers previs","C29: Reflexiona amb profunditat sobre els seus processos interns","C30: Fa bones preguntes per entendre o fer avançar la reflexió","C31: Planteja estratègies alternatives quan un camí no funciona","C32: Explora perspectives i comprèn punts de vista diversos","C33: Planifica i prioritza les tasques abans d'executar-les","C34: Mostra curiositat i interès per anar més enllà del mínim","C35: Dóna i rep feedback amable, específic i útil (Austin)"]
+    };
+    function updateBehaviorOptions(type) {
+      const skillSelect = document.getElementById('select-skill-'+type);
+      const compSelect = document.getElementById('select-comp-'+type);
+      const skill = skillSelect.value;
+      compSelect.innerHTML = '<option value="">-- Tria un comportament --</option>';
+      if (behaviorsData[skill]) { behaviorsData[skill].forEach(comp => { const opt=document.createElement('option'); opt.value=comp; opt.textContent=comp; compSelect.appendChild(opt); }); }
+      const qDiv = document.getElementById('questions-'+type);
+      if (qDiv) qDiv.style.display = 'none';
+    }
+    function loadEquipatge() {
+      const saved = localStorage.getItem('riu_equipatge');
+      if (saved) { try { const data = JSON.parse(saved); if (data.skillAncora) { document.getElementById('select-skill-ancora').value=data.skillAncora; updateBehaviorOptions('ancora'); document.getElementById('select-comp-ancora').value=data.compAncora||''; document.getElementById('evidence-ancora').value=data.evidenceAncora||''; if(data.compAncora) document.getElementById('questions-ancora').style.display='block'; } if (data.skillTimo) { document.getElementById('select-skill-timo').value=data.skillTimo; updateBehaviorOptions('timo'); document.getElementById('select-comp-timo').value=data.compTimo||''; document.getElementById('evidence-timo').value=data.evidenceTimo||''; if(data.compTimo) document.getElementById('questions-timo').style.display='block'; } } catch(e){} }
+    }
+
+    // DOCENT GRAELLA
+    let docentStudents = [];
+    function renderDocentTable() {
+      const tbody = document.getElementById('docent-tbody');
+      tbody.innerHTML = '';
+      docentStudents.forEach((s, i) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td style="padding:0.5rem; border:1px solid #e2e8f0;"><input type="text" value="${s.name||''}" onchange="docentStudents[${i}].name=this.value" style="width:120px; border:none; background:transparent; font-size:0.85rem;"></td>
+          <td style="text-align:center; border:1px solid #e2e8f0;"><select onchange="docentStudents[${i}].resp=this.value" style="font-size:0.85rem;"><option value="">—</option>${[1,2,3,4].map(v=>`<option value="${v}" ${s.resp==v?'selected':''}>${v}</option>`).join('')}</select></td>
+          <td style="text-align:center; border:1px solid #e2e8f0;"><select onchange="docentStudents[${i}].coop=this.value" style="font-size:0.85rem;"><option value="">—</option>${[1,2,3,4].map(v=>`<option value="${v}" ${s.coop==v?'selected':''}>${v}</option>`).join('')}</select></td>
+          <td style="text-align:center; border:1px solid #e2e8f0;"><select onchange="docentStudents[${i}].auto=this.value" style="font-size:0.85rem;"><option value="">—</option>${[1,2,3,4].map(v=>`<option value="${v}" ${s.auto==v?'selected':''}>${v}</option>`).join('')}</select></td>
+          <td style="text-align:center; border:1px solid #e2e8f0;"><select onchange="docentStudents[${i}].emoc=this.value" style="font-size:0.85rem;"><option value="">—</option>${[1,2,3,4].map(v=>`<option value="${v}" ${s.emoc==v?'selected':''}>${v}</option>`).join('')}</select></td>
+          <td style="text-align:center; border:1px solid #e2e8f0;"><select onchange="docentStudents[${i}].pens=this.value" style="font-size:0.85rem;"><option value="">—</option>${[1,2,3,4].map(v=>`<option value="${v}" ${s.pens==v?'selected':''}>${v}</option>`).join('')}</select></td>
+          <td style="border:1px solid #e2e8f0;"><input type="text" value="${s.ancora||''}" onchange="docentStudents[${i}].ancora=this.value" style="width:110px; border:none; background:transparent; font-size:0.82rem;"></td>
+          <td style="border:1px solid #e2e8f0;"><input type="text" value="${s.timo||''}" onchange="docentStudents[${i}].timo=this.value" style="width:110px; border:none; background:transparent; font-size:0.82rem;"></td>
+          <td style="border:1px solid #e2e8f0;"><input type="text" value="${s.notes||''}" onchange="docentStudents[${i}].notes=this.value" style="width:150px; border:none; background:transparent; font-size:0.82rem;"></td>
+          <td style="text-align:center; border:1px solid #e2e8f0;"><button onclick="deleteDocentStudent(${i})" style="background:#fee2e2; border:none; color:#991b1b; padding:0.2rem 0.5rem; border-radius:4px; cursor:pointer; font-size:0.8rem;">🗑</button></td>`;
+        tbody.appendChild(tr);
+      });
+    }
+    function addDocentStudent() { docentStudents.push({name:'',resp:'',coop:'',auto:'',emoc:'',pens:'',ancora:'',timo:'',notes:''}); renderDocentTable(); }
+    function deleteDocentStudent(i) { docentStudents.splice(i,1); renderDocentTable(); }
+    function saveDocentData() {
+      localStorage.setItem('riu_docent_students', JSON.stringify(docentStudents));
+      const status = document.getElementById('docent-save-status');
+      if (status) { status.textContent = '✓ Observacions desades al navegador.'; setTimeout(()=>{ status.textContent=''; }, 3000); }
+    }
+    function loadDocentData() {
+      const saved = localStorage.getItem('riu_docent_students');
+      if (saved) { try { docentStudents = JSON.parse(saved); } catch(e) { docentStudents = []; } } else { docentStudents = []; }
+      renderDocentTable();
+    }
+    function exportDocentCSV() {
+      const headers = ['Alumne/a','Responsabilitat','Cooperació','Autonomia','Gestió emocional','Pensament','Àncora','Timó','Notes'];
+      const rows = docentStudents.map(s => [s.name,s.resp,s.coop,s.auto,s.emoc,s.pens,s.ancora,s.timo,s.notes].map(v=>`"${(v||'').replace(/"/g,'""')}"`).join(','));
+      const csv = [headers.join(','), ...rows].join('\n');
+      const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href=url; a.download='observacions_rius_vida.csv'; a.click(); URL.revokeObjectURL(url);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadEquipatge();
+      loadDocentData();
+      document.getElementById('select-comp-ancora').addEventListener('change', function() {
+        const q = document.getElementById('questions-ancora');
+        if (q) q.style.display = this.value ? 'block' : 'none';
+        const eq={skillAncora:document.getElementById('select-skill-ancora').value,compAncora:this.value,evidenceAncora:document.getElementById('evidence-ancora').value,skillTimo:document.getElementById('select-skill-timo').value,compTimo:document.getElementById('select-comp-timo').value,evidenceTimo:document.getElementById('evidence-timo').value};
+        localStorage.setItem('riu_equipatge', JSON.stringify(eq));
+      });
+      document.getElementById('select-comp-timo').addEventListener('change', function() {
+        const q = document.getElementById('questions-timo');
+        if (q) q.style.display = this.value ? 'block' : 'none';
+        const eq={skillAncora:document.getElementById('select-skill-ancora').value,compAncora:document.getElementById('select-comp-ancora').value,evidenceAncora:document.getElementById('evidence-ancora').value,skillTimo:document.getElementById('select-skill-timo').value,compTimo:this.value,evidenceTimo:document.getElementById('evidence-timo').value};
+        localStorage.setItem('riu_equipatge', JSON.stringify(eq));
+      });
+    });
+  </script>
+</body>
+</html>
