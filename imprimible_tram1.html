@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitxa Imprimible Tram 1: El meu riu fins avui | Kit Docent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; color: #1e293b; background: #f8fafc; padding: 1.5rem; }
+    .no-print-bar { max-width: 1000px; margin: 0 auto 1.5rem; background: white; padding: 1.2rem 1.8rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; justify-content: space-between; align-items: center; }
+    .print-btn { background: #0284c7; color: white; border: none; padding: 0.7rem 1.4rem; font-weight: 700; border-radius: 8px; cursor: pointer; }
+    .back-btn { background: #f1f5f9; color: #334155; text-decoration: none; padding: 0.7rem 1.2rem; font-weight: 600; border-radius: 8px; border: 1px solid #cbd5e1; }
+    .sheet-a3 { max-width: 1000px; margin: 0 auto; background: white; border: 2px solid #94a3b8; border-radius: 12px; padding: 2rem; min-height: 700px; display: flex; flex-direction: column; justify-content: space-between; }
+    .header-sheet { display: flex; justify-content: space-between; border-bottom: 2px solid #0284c7; padding-bottom: 1rem; margin-bottom: 1.5rem; }
+    .drawing-area { flex-grow: 1; border: 2px dashed #cbd5e1; border-radius: 10px; min-height: 440px; position: relative; display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; background: radial-gradient(#f1f5f9 1px, transparent 1px); background-size: 20px 20px; }
+    .symbol-guide { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; font-size: 0.8rem; }
+    @media print {
+      body { background: white; padding: 0; }
+      .no-print { display: none !important; }
+      .sheet-a3 { border: 1px solid #000; box-shadow: none; min-height: 98vh; padding: 1.5cm; }
+    }
+  </style>
+</head>
+<body>
+  <div class="no-print-bar no-print">
+    <div>
+      <h1 style="font-family:'Outfit',sans-serif; font-size:1.3rem; color:#0c4a6e;">📄 Fitxa Tram 1: «El meu riu fins avui» (0 a 16 anys)</h1>
+      <p style="font-size:0.85rem; color:#64748b;">Full de dibuix i expressió creativa. Ideal per imprimir en A3 o A4.</p>
+    </div>
+    <div style="display:flex; gap:0.6rem;">
+      <a href="index_docent.html" class="back-btn">← Tornar</a>
+      <button class="print-btn" onclick="window.print()">🖨️ Imprimir full</button>
+    </div>
+  </div>
+
+  <div class="sheet-a3">
+    <div class="header-sheet">
+      <div>
+        <h2 style="font-family:'Outfit',sans-serif; color:#0c4a6e; font-size:1.6rem;">🌊 Els rius de la vida · Tram 1 (0 a 16 anys)</h2>
+        <p style="font-size:0.9rem; color:#64748b;">Cartografia vital: d'on vinc, arrels, afluents, pedres i gorgs de calma.</p>
+      </div>
+      <div style="text-align:right; font-size:0.9rem;">
+        <p><strong>Alumne/a:</strong> ________________________________</p>
+        <p style="margin-top:0.3rem;"><strong>Grup:</strong> 4t ESO ____ &nbsp;|&nbsp; <strong>Data:</strong> ____________</p>
+      </div>
+    </div>
+
+    <div class="drawing-area">
+      <div style="display:flex; justify-content:space-between; color:#94a3b8; font-weight:700; font-size:0.85rem;">
+        <span>🌱 NAIXEMENT / FONT (0 ANYS)</span>
+        <span>🌊 CURS DEL RIU</span>
+        <span>⚓ MOMENT ACTUAL (16 ANYS) ➔</span>
+      </div>
+      <div style="text-align:center; color:#94a3b8; font-style:italic; font-size:0.95rem; margin:auto 0;">
+        Espai per dibuixar el riu, enganxar fotografies personals, retallades, tiquets, petits objectes i situar la simbologia.
+      </div>
+      <div style="border:1px solid #cbd5e1; border-radius:6px; padding:0.8rem; background:white; width:280px; align-self:flex-end;">
+        <strong style="font-size:0.8rem; color:#0c4a6e; display:block; margin-bottom:0.3rem;">📌 La meva llegenda:</strong>
+        <div style="font-size:0.75rem; color:#64748b; line-height:1.6;">
+          <div>🔵 Aigua: _____________________________</div>
+          <div>🌿 Afluent: ___________________________</div>
+          <div>🪨 Roca/Pedra: ________________________</div>
+          <div>⚡ Cascada: ___________________________</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="symbol-guide">
+      <div><strong>🌱 Font:</strong> Arrels, família, primers records.</div>
+      <div><strong>🌿 Afluents:</strong> Noves aficions, amics, referents.</div>
+      <div><strong>🪨 Pedres:</strong> Dificultats que t'han fet créixer.</div>
+      <div><strong>⚡ Cascades:</strong> Canvis sobtats i imprevistos.</div>
+      <div><strong>🌊 Gorgs:</strong> Espais de pausa, descans i calma.</div>
+      <div><strong>✂️ Collage:</strong> Enganxa fotos, tiquets o objectes!</div>
+    </div>
+  </div>
+</body>
+</html>

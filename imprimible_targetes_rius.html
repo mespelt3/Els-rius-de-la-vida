@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Targetes Imprimibles: Els 10 Rius de la Vida | Kit Docent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --text: #1e293b;
+      --border: #cbd5e1;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text);
+      background: #f1f5f9;
+      padding: 1.5rem;
+    }
+
+    /* TOP BAR (NO PRINT) */
+    .no-print-bar {
+      max-width: 1100px;
+      margin: 0 auto 1.5rem;
+      background: white;
+      padding: 1.2rem 1.8rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .no-print-bar h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
+      color: #0c4a6e;
+    }
+    .no-print-bar p {
+      font-size: 0.88rem;
+      color: #64748b;
+      margin-top: 0.2rem;
+    }
+    .print-btn {
+      background: #0284c7;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.2s;
+    }
+    .print-btn:hover { background: #0369a1; }
+    .back-btn {
+      background: #f1f5f9;
+      color: #334155;
+      text-decoration: none;
+      padding: 0.75rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+    }
+
+    /* SHEET & CARDS GRID */
+    .sheet-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .river-card-print {
+      background: white;
+      border: 2px dashed #94a3b8;
+      border-radius: 14px;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      page-break-inside: avoid;
+      break-inside: avoid;
+      position: relative;
+      background-clip: padding-box;
+    }
+
+    .cut-badge {
+      position: absolute;
+      top: -11px;
+      right: 20px;
+      background: white;
+      padding: 0 8px;
+      font-size: 0.75rem;
+      color: #64748b;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .card-photo-box {
+      width: 100%;
+      height: 180px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 0.9rem;
+      background: #e2e8f0;
+    }
+    .card-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      color: #0c4a6e;
+      line-height: 1.2;
+    }
+    .badge-energy {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      white-space: nowrap;
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+    }
+
+    .card-desc {
+      font-size: 0.84rem;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-questions-box {
+      background: #f8fafc;
+      border-left: 3px solid #0284c7;
+      padding: 0.65rem 0.8rem;
+      border-radius: 6px;
+      margin-top: auto;
+    }
+    .card-questions-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #0369a1;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.3rem;
+    }
+    .card-questions-box ol {
+      font-size: 0.78rem;
+      margin-left: 1.1rem;
+      line-height: 1.5;
+      color: #1e293b;
+      font-style: italic;
+    }
+
+    .glue-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.8rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.74rem;
+      color: #64748b;
+    }
+
+    /* PRINT MEDIA */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .sheet-container {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2cm;
+        margin: 0.5cm;
+      }
+      .river-card-print {
+        border: 1.5px dashed #64748b !important;
+        box-shadow: none !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        padding: 0.8rem;
+      }
+      .card-photo-box {
+        height: 150px;
+      }
+      .card-title {
+        font-size: 1.05rem;
+      }
+      .card-desc {
+        font-size: 0.76rem;
+      }
+      .card-questions-box ol {
+        font-size: 0.72rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NO PRINT BAR -->
+  <div class="no-print-bar no-print">
+    <div>
+      <h1>🌊 Kit Imprimible: Les 10 Targetes dels Rius</h1>
+      <p>Targetes preparades per imprimir en color, retallar per la línia discontínua i que l'alumnat les enganxi al seu Diari del viatge.</p>
+    </div>
+    <div style="display:flex; gap:0.6rem; align-items:center;">
+      <a href="index_docent.html" class="back-btn">← Tornar a la web docent</a>
+      <button class="print-btn" onclick="window.print()">🖨️ Imprimir / Desar com a PDF</button>
+    </div>
+  </div>
+
+  <div class="sheet-container">
+
+    <!-- 1. MUNTANYA -->
+    <div class="river-card-print">
+      <span class="cut-badge">✂️ Retallar</span>
+      <div class="card-photo-box">
+        <img class="card-photo" src="Imatge rius/0f7f5105-42d1-4ada-b232-56409df902bc_alta-libre-aspect-ratio_default_0.jpg" alt="Riu d'alta muntanya">
+      </div>
+      <div class="card-head">
+        <h2 class="card-title">1. Riu d'alta muntanya</h2>
+        <span class="badge-energy" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">Impuls i força</span>
+      </div>
+      <p class="card-desc">Baixa ràpid, impetuós i transparent entre roques. Té molta força però encara busca el seu llit definitiu. L'aigua blanca agafa velocitat a cada tram.</p>
+      <div class="card-questions-box">
+        <div class="card-questions-label">Tria una pregunta per respondre al diari:</div>
+        <ol>
+          <li>Quan notes que t'has entusiasmat amb alguna cosa, t'hi llances de cap o primer penses?</li>
+          <li>Comences moltes coses però perds l'energia inicial? On creus que es perd l'impuls?</li>
+          <li>Si la teva energia fos un riu de muntanya, quin seria el teu "mar" ideal?</li>
+        </ol>
+      </div>
+      <div class="glue-footer">
+        <span>📎 Els rius de la vida · Aturada 1</span>
+        <span>Enganxa aquesta targeta al teu diari 📌</span>
+      </div>
+    </div>
+
+    <!-- 2. MEANDRES -->
+    <div class="river-card-print">
+      <span class="cut-badge">✂️ Retallar</span>
+      <div class="card-photo-box">
+        <img class="card-photo" src="Imatge rius/Nowitna_river.jpg" alt="Riu de plana amb meandres">
+      </div>
+      <div class="card-head">
+        <h2 class="card-title">2. Riu de plana (meandres)</h2>
+        <span class="badge-energy" style="background:#d1fae5; color:#065f46; border-color:#a7f3d0;">Calma i reflexió</span>
+      </div>
+      <p class="card-desc">Avança sinuós, lent i segur per terreny pla. Dibuixa grans corbes sense pressa, explorant cada pam de paisatge i deixant sediments rics als marges.</p>
+      <div class="card-questions-box">
+        <div class="card-questions-label">Tria una pregunta per respondre al diari:</div>
+        <ol>
+          <li>Quan has de decidir, necessites temps, observar i voltar-hi per tots costats?</li>
+          <li>Hi ha situacions en les que anar lent et genera pressió? Com ho gestiones?</li>
+          <li>Els meandres sempre arriben al mar: creus que la reflexió pausada és una fortalesa?</li>
+        </ol>
+      </div>
+      <div class="glue-footer">
+        <span>📎 Els rius de la vida · Aturada 1</span>
+        <span>Enganxa aquesta targeta al teu diari 📌</span>
+      </div>
+    </div>
+
+    <!-- 3. CASCADA -->
+    <div class="river-card-print">
+      <span class="cut-badge">✂️ Retallar</span>
+      <div class="card-photo-box">
+        <img class="card-photo" src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=80" alt="Riu amb gran cascada">
+      </div>
+      <div class="card-head">
+        <h2 class="card-title">3. Riu amb gran cascada</h2>
+        <span class="badge-energy" style="background:#ffe4e6; color:#9f1239; border-color:#fecdd3;">Canvi brusc</span>
+      </div>
+      <p class="card-desc">Un desnivell sobtat que trenca la continuïtat. L'aigua cau amb estrèpit a un gorg profund abans de recomençar el seu viatge amb una nova perspectiva.</p>
+      <div class="card-questions-box">
+        <div class="card-questions-label">Tria una pregunta per respondre al diari:</div>
+        <ol>
+          <li>Recordes algun moment on tot va canviar de cop sense avisar? Com el vas viure?</li>
+          <li>Davant d'un imprevist, la teva reacció és paralitzar-te, desfogar-te o buscar solucions?</li>
+          <li>Les cascades sempre cauen a un gorg: quin gorg has creat per sortir d'un moment dur?</li>
+        </ol>
+      </div>
+      <div class="glue-footer">
+        <span>📎 Els rius de la vida · Aturada 1</span>
+        <span>Enganxa aquesta targeta al teu diari 📌</span>
+      </div>
+    </div>
+
+    <!-- 4. TRENAT -->
+    <div class="river-card-print">
+      <span class="cut-badge">✂️ Retallar</span>
+      <div class="card-photo-box">
+        <img class="card-photo" src="Imatge rius/Dep-28.jpeg" alt="Riu trenat glacial">
+      </div>
+      <div class="card-head">
+        <h2 class="card-title">4. Riu trenat glacial</h2>
+        <span class="badge-energy" style="background:#ede9fe; color:#5b21b6; border-color:#ddd6fe;">Múltiples opcions</span>
+      </div>
+      <p class="card-desc">Es divideix en múltiples rierols que s'entrellacen sobre un llit de graves. No hi ha un sol curs, sinó molts camins que s'ajunten i se separen constantment.</p>
+      <div class="card-questions-box">
+        <div class="card-questions-label">Tria una pregunta per respondre al diari:</div>
+        <ol>
+          <li>Quines coses t'agraden tant que et costaria imaginar un futur sense elles?</li>
+          <li>Has viscut mai que tenir massa opcions et paralitzi en comptes d'ajudar-te?</li>
+          <li>Si haguessis de triar tres filons del riu per al teu futur, quins serien?</li>
+        </ol>
+      </div>
+      <div class="glue-footer">
+        <span>📎 Els rius de la vida · Aturada 1</span>
+        <span>Enganxa aquesta targeta al teu diari 📌</span>
+      </div>
+    </div>
+
+    <!-- 5. GORG -->
+    <div class="river-card-print">
+      <span class="cut-badge">✂️ Retallar</span>
+      <div class="card-photo-box">
+        <img class="card-photo" src="Imatge rius/103065837.400x300.jpg" alt="Gorg d'estiatge">
+      </div>
+      <div class="card-head">
+        <h2 class="card-title">5. Gorg d'estiatge (bassa de calma)</h2>
+        <span class="badge-energy" style="background:#dbeafe; color:#1e40af; border-color:#bfdbfe;">Pausa i recàrrega</span>
+      </div>
+      <p class="card-desc">Aigua aturada en una bassa fonda, fresca i ombrívola. Sembla que no es mogui, però acumula vida, guarda l'oxigen i espera la propera pluja.</p>
+      <div class="card-questions-box">
+        <div class="card-questions-label">Tria una pregunta per respondre al diari:</div>
+        <ol>
+          <li>Quan et sents desbordat/da o buit/da, com t'atures per recuperar forces?</li>
+          <li>Hi ha alguna activitat, lloc o persona que et funcioni com a gorg personal?</li>
+          <li>En la teva manera de decidir, et falta o et sobra temps de pausa i reflexió?</li>
+        </ol>
+      </div>
+      <div class="glue-footer">
+        <span>📎 Els rius de la vida · Aturada 1</span>
+        <span>Enganxa aquesta targeta al teu diari 📌</span>
+      </div>
+    </div>
+
+    <!-- 6. CONGOST -->
+    <div class="river-card-print">
+      <span class="cut-badge">✂️ Retallar</span>
+      <div class="card-photo-box">
+        <img class="card-photo" src="Imatge rius/montrebei1.jpg" alt="Congost estret">
+      </div>
+      <div class="card-head">
+        <h2 class="card-title">6. Congost estret (canyó)</h2>
+        <span class="badge-energy" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">Determinació</span>
+      </div>
+      <p class="card-desc">S'obre pas perforant parets de roca verticals. No es dispersa cap als costats; tota la seva energia està concentrada en avançar per un sol punt.</p>
+      <div class="card-questions-box">
+        <div class="card-questions-label">Tria una pregunta per respondre al diari:</div>
+        <ol>
+          <li>Hi ha alguna cosa que vols aconseguir amb tanta convicció que res et pot aturar?</li>
+          <li>Com reacciones davant els obstacles: els evites, els ataques o busques forats?</li>
+          <li>Recorda un moment en què vas superar una cosa que semblava impossible.</li>
+        </ol>
+      </div>
+      <div class="glue-footer">
+        <span>📎 Els rius de la vida · Aturada 1</span>
+        <span>Enganxa aquesta targeta al teu diari 📌</span>
+      </div>
+    </div>
+
+    <!-- 7. DELTA -->
+    <div class="river-card-print">
+      <span class="cut-badge">✂️ Retallar</span>
+      <div class="card-photo-box">
+        <img class="card-photo" src="Imatge rius/delta_que_es_como_se_forma_y_tipos_4754_1200.jpg" alt="Delta fluvial">
+      </div>
+      <div class="card-head">
+        <h2 class="card-title">7. Delta fluvial (desembocadura)</h2>
+        <span class="badge-energy" style="background:#d1fae5; color:#065f46; border-color:#a7f3d0;">Obertura al món</span>
+      </div>
+      <p class="card-desc">S'eixampla en canals fèrtils abans de fondre's harmònicament amb el mar immens. Connecta la terra amb un horitzó obert i comunitari.</p>
+      <div class="card-questions-box">
+        <div class="card-questions-label">Tria una pregunta per respondre al diari:</div>
+        <ol>
+          <li>Hi ha alguna causa o problema del món que vulguis que formi part del teu futur?</li>
+          <li>Com et sents quan pots ajudar algú de debò? Podria ser un motor de vida?</li>
+          <li>Si el teu futur connectés amb una cosa "més gran que tu", de què es tractaria?</li>
+        </ol>
+      </div>
+      <div class="glue-footer">
+        <span>📎 Els rius de la vida · Aturada 1</span>
+        <span>Enganxa aquesta targeta al teu diari 📌</span>
+      </div>
+    </div>
+
+    <!-- 8. SUBTERRANI -->
+    <div class="river-card-print">
+      <span class="cut-badge">✂️ Retallar</span>
+      <div class="card-photo-box">
+        <img class="card-photo" src="Imatge rius/riviere-souterraine-labouiche-ariege-pyrenees-riviere-souterraine-de-labouiche-1.jpg" alt="Riu subterrani">
+      </div>
+      <div class="card-head">
+        <h2 class="card-title">8. Riu subterrani (cenote)</h2>
+        <span class="badge-energy" style="background:#ede9fe; color:#5b21b6; border-color:#ddd6fe;">Món interior</span>
+      </div>
+      <p class="card-desc">Flueix sota terra en coves secretes. Ningú el veu des de la superfície, però porta un cabal pur, net i profund que brolla de sobte com una gran font.</p>
+      <div class="card-questions-box">
+        <div class="card-questions-label">Tria una pregunta per respondre al diari:</div>
+        <ol>
+          <li>Hi ha alguna afició o interès que gairebé no has compartit mai amb ningú?</li>
+          <li>Alguna vegada has sorprès algú descobrint una capacitat que no sabies que tenies?</li>
+          <li>Si poguessis dedicar el futur a quelcom del teu món interior, de què es tractaria?</li>
+        </ol>
+      </div>
+      <div class="glue-footer">
+        <span>📎 Els rius de la vida · Aturada 1</span>
+        <span>Enganxa aquesta targeta al teu diari 📌</span>
+      </div>
+    </div>
+
+    <!-- 9. GLAÇAT -->
+    <div class="river-card-print">
+      <span class="cut-badge">✂️ Retallar</span>
+      <div class="card-photo-box">
+        <img class="card-photo" src="https://images.unsplash.com/photo-1491002052546-bf38f186af56?auto=format&fit=crop&w=800&q=80" alt="Riu glaçat">
+      </div>
+      <div class="card-head">
+        <h2 class="card-title">9. Riu glaçat d'hivern</h2>
+        <span class="badge-energy" style="background:#dbeafe; color:#1e40af; border-color:#bfdbfe;">Paciència</span>
+      </div>
+      <p class="card-desc">Protegit sota una capa de gel. Sembla aturat pel fred, però per sota la vida i el corrent continuen fluint en silenci esperant el desgel.</p>
+      <div class="card-questions-box">
+        <div class="card-questions-label">Tria una pregunta per respondre al diari:</div>
+        <ol>
+          <li>Hi ha alguna cosa que vols però que sents que "encara no és el moment"?</li>
+          <li>Quina és la teva relació amb la incertesa: la toleres, t'angoixa o passes a l'acció?</li>
+          <li>Recorda quan vas aguantar una etapa difícil fins que es va desencallar. Què et va ajudar?</li>
+        </ol>
+      </div>
+      <div class="glue-footer">
+        <span>📎 Els rius de la vida · Aturada 1</span>
+        <span>Enganxa aquesta targeta al teu diari 📌</span>
+      </div>
+    </div>
+
+    <!-- 10. AIGUABARREIG -->
+    <div class="river-card-print">
+      <span class="cut-badge">✂️ Retallar</span>
+      <div class="card-photo-box">
+        <img class="card-photo" src="Imatge rius/Vista-Aerea-del-Aiguabarreig.jpg" alt="Aiguabarreig">
+      </div>
+      <div class="card-head">
+        <h2 class="card-title">10. Aiguabarreig (confluència)</h2>
+        <span class="badge-energy" style="background:#d1fae5; color:#065f46; border-color:#a7f3d0;">Trobada i diàleg</span>
+      </div>
+      <p class="card-desc">Dos corrents de colors i orígens diferents s'ajunten i avancen costat a costat fins a fondre's en un cabal el doble de poderós.</p>
+      <div class="card-questions-box">
+        <div class="card-questions-label">Tria una pregunta per respondre al diari:</div>
+        <ol>
+          <li>Hi ha persones al teu entorn sense les quals et semblaria molt difícil avançar?</li>
+          <li>Creus que les teves arrels familiars i culturals influencien qui vols ser?</li>
+          <li>Si el teu futur fos la confluència de dos corrents, quins voldries que fossin?</li>
+        </ol>
+      </div>
+      <div class="glue-footer">
+        <span>📎 Els rius de la vida · Aturada 1</span>
+        <span>Enganxa aquesta targeta al teu diari 📌</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

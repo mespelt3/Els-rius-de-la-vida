@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full d'Aturades del Diari | Kit Docent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; color: #1e293b; background: #f8fafc; padding: 1.5rem; }
+    .no-print-bar { max-width: 900px; margin: 0 auto 1.5rem; background: white; padding: 1.2rem 1.8rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; justify-content: space-between; align-items: center; }
+    .print-btn { background: #0284c7; color: white; border: none; padding: 0.7rem 1.4rem; font-weight: 700; border-radius: 8px; cursor: pointer; }
+    .back-btn { background: #f1f5f9; color: #334155; text-decoration: none; padding: 0.7rem 1.2rem; font-weight: 600; border-radius: 8px; border: 1px solid #cbd5e1; }
+    .sheet { max-width: 900px; margin: 0 auto; background: white; border: 2px solid #94a3b8; border-radius: 12px; padding: 2rem; }
+    .aturada-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.2rem; border-radius: 8px; margin-bottom: 1.5rem; }
+    @media print {
+      body { background: white; padding: 0; }
+      .no-print { display: none !important; }
+      .sheet { border: 1px solid #000; box-shadow: none; padding: 1cm; }
+    }
+  </style>
+</head>
+<body>
+  <div class="no-print-bar no-print">
+    <div>
+      <h1 style="font-family:'Outfit',sans-serif; font-size:1.3rem; color:#0c4a6e;">📒 Full d'Aturades del Diari del Viatge</h1>
+      <p style="font-size:0.85rem; color:#64748b;">Full guia per enganxar al quadern de l'alumnat com a índex de reflexió.</p>
+    </div>
+    <div style="display:flex; gap:0.6rem;">
+      <a href="index_docent.html" class="back-btn">← Tornar</a>
+      <button class="print-btn" onclick="window.print()">🖨️ Imprimir full</button>
+    </div>
+  </div>
+
+  <div class="sheet">
+    <div style="display:flex; justify-content:space-between; border-bottom:2px solid #16a34a; padding-bottom:0.8rem; margin-bottom:1.5rem;">
+      <div>
+        <h2 style="font-family:'Outfit',sans-serif; color:#15803d; font-size:1.5rem;">📒 Els rius de la vida · Diari del viatge</h2>
+        <p style="font-size:0.88rem; color:#64748b;">Full de ruta metacognitiva per acompanyar el teu quadern personal.</p>
+      </div>
+      <div style="text-align:right; font-size:0.85rem;">
+        <p><strong>Alumne/a:</strong> ____________________________</p>
+        <p style="margin-top:0.2rem;"><strong>Grup:</strong> 4t ESO ____</p>
+      </div>
+    </div>
+
+    <!-- ATURADA 1 -->
+    <div class="aturada-box">
+      <h3 style="color:#15803d; font-size:1.05rem; margin-bottom:0.5rem;">🟢 Aturada 1: Inici del viatge · Quin riu ets avui?</h3>
+      <ol style="font-size:0.88rem; color:#166534; margin-left:1.2rem; line-height:1.7;">
+        <li>Quina és la primera paraula o emoció que et ve al cap quan penses en prendre alguna decisió sobre què fer el curs vinent?</li>
+        <li><strong>Enganxa la imatge del teu riu</strong>. Explica per què l'has escollit, quina emoció et genera i respon una de les 3 preguntes reflexives de la targeta.</li>
+      </ol>
+    </div>
+
+    <!-- ATURADA 2 -->
+    <div class="aturada-box" style="background:#eff6ff; border-left-color:#0284c7;">
+      <h3 style="color:#0369a1; font-size:1.05rem; margin-bottom:0.5rem;">🔵 Aturada 2: El meu equipatge · Àncora i Timó</h3>
+      <ol style="font-size:0.88rem; color:#0c4a6e; margin-left:1.2rem; line-height:1.7;">
+        <li>Respon les 3 preguntes verdes associades a la teva fortalesa Àncora.</li>
+        <li>Respon les 3 preguntes blaves associades al teu repte Timó.</li>
+      </ol>
+    </div>
+
+    <!-- ATURADA 3 -->
+    <div class="aturada-box" style="background:#fffbeb; border-left-color:#d97706;">
+      <h3 style="color:#92400e; font-size:1.05rem; margin-bottom:0.5rem;">🟠 Aturada 3: El meu riu fins avui · Tram 1 (0 a 16 anys)</h3>
+      <ol style="font-size:0.88rem; color:#78350f; margin-left:1.2rem; line-height:1.7;">
+        <li>Mirant el teu riu dibuixat, quina pedra o dificultat que semblava enorme ara veus amb perspectiva que et va fer créixer?</li>
+        <li>Hi ha algun element del diccionari simbòlic (afluents, gorgs, cascades...) que representi especialment bé la teva vida?</li>
+        <li>Quin feedback has rebut de la teva parella (Papallona d'Austin) i com has millorat el teu riu?</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>

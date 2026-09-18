@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bastida Imprimible: Converses amb Referents | Kit Docent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; color: #1e293b; background: #f8fafc; padding: 1.5rem; }
+    .no-print-bar { max-width: 900px; margin: 0 auto 1.5rem; background: white; padding: 1.2rem 1.8rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; justify-content: space-between; align-items: center; }
+    .print-btn { background: #0284c7; color: white; border: none; padding: 0.7rem 1.4rem; font-weight: 700; border-radius: 8px; cursor: pointer; }
+    .back-btn { background: #f1f5f9; color: #334155; text-decoration: none; padding: 0.7rem 1.2rem; font-weight: 600; border-radius: 8px; border: 1px solid #cbd5e1; }
+    .sheet { max-width: 900px; margin: 0 auto; background: white; border: 2px dashed #94a3b8; border-radius: 12px; padding: 2rem; }
+    .card-q { border-left: 4px solid #0284c7; padding: 0.8rem 1rem; margin-bottom: 1.2rem; background: #f8fafc; border-radius: 6px; }
+    .lines-box { border: 1px solid #cbd5e1; border-radius: 6px; height: 75px; margin-top: 0.5rem; background: repeating-linear-gradient(white, white 24px, #e2e8f0 25px); }
+    @media print {
+      body { background: white; padding: 0; }
+      .no-print { display: none !important; }
+      .sheet { border: 1.5px dashed #64748b; box-shadow: none; padding: 1cm; }
+    }
+  </style>
+</head>
+<body>
+  <div class="no-print-bar no-print">
+    <div>
+      <h1 style="font-family:'Outfit',sans-serif; font-size:1.3rem; color:#0c4a6e;">🗣️ Bastida de Converses amb Referents</h1>
+      <p style="font-size:0.85rem; color:#64748b;">Guia de preguntes cardinals per a les entrevistes de camp.</p>
+    </div>
+    <div style="display:flex; gap:0.6rem;">
+      <a href="index_docent.html" class="back-btn">← Tornar</a>
+      <button class="print-btn" onclick="window.print()">🖨️ Imprimir fitxa</button>
+    </div>
+  </div>
+
+  <div class="sheet">
+    <div style="display:flex; justify-content:space-between; border-bottom:2px solid #0284c7; padding-bottom:0.8rem; margin-bottom:1.2rem;">
+      <div>
+        <h2 style="font-family:'Outfit',sans-serif; color:#0c4a6e; font-size:1.4rem;">🗣️ Els rius de la vida · Entrevista a un Referent</h2>
+        <p style="font-size:0.85rem; color:#64748b;">Navegants reals: descobrir com altres persones han pres decisions i superat cascades.</p>
+      </div>
+      <div style="text-align:right; font-size:0.85rem;">
+        <p><strong>Alumne/a:</strong> ____________________________</p>
+        <p style="margin-top:0.2rem;"><strong>Nom referent:</strong> _______________________</p>
+      </div>
+    </div>
+
+    <div class="card-q">
+      <strong>1. La cruïlla vital (16 anys):</strong>
+      <p style="font-style:italic; font-size:0.88rem; color:#475569; margin:0.3rem 0;">«Quan tenies 15 o 16 anys, quina decisió vas haver de prendre? Ho tenies clar o estaves ple/na de dubtes?»</p>
+      <div class="lines-box"></div>
+    </div>
+
+    <div class="card-q" style="border-left-color:#d97706;">
+      <strong>2. L'afluent inesperat (canvi de rumb):</strong>
+      <p style="font-style:italic; font-size:0.88rem; color:#475569; margin:0.3rem 0;">«Hi ha hagut algun moment on la teva vida va fer un gir que no havies planejat mai?»</p>
+      <div class="lines-box"></div>
+    </div>
+
+    <div class="card-q" style="border-left-color:#e11d48;">
+      <strong>3. La cascada o sequera (l'obstacle):</strong>
+      <p style="font-style:italic; font-size:0.88rem; color:#475569; margin:0.3rem 0;">«T'has trobat mai bloquejat/da o davant d'una dificultat gran? Com te'n vas sortir?»</p>
+      <div class="lines-box"></div>
+    </div>
+
+    <div class="card-q" style="border-left-color:#059669;">
+      <strong>4. La mirada retrospectiva (el consell):</strong>
+      <p style="font-style:italic; font-size:0.88rem; color:#475569; margin:0.3rem 0;">«Amb tot el que saps avui... què et diries a tu mateix/a si tornessis a tenir 16 anys?»</p>
+      <div class="lines-box"></div>
+    </div>
+  </div>
+</body>
+</html>

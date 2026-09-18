@@ -951,42 +951,51 @@
         <h2 class="card-title">🖨️ Kit d'aula imprimible</h2>
         <span style="font-size:0.85rem; color:var(--text-muted);">Materials per imprimir i repartir a l'aula</span>
       </div>
-      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1.2rem;">
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1.4rem;">
 
+        <!-- 1. TARGETES RIUS (DESTACAT) -->
+        <div class="card" style="margin-bottom:0; border-top:4px solid var(--color-pens); box-shadow:0 4px 12px rgba(124,58,237,0.12);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+            <h4 style="color:var(--color-pens); margin:0;">🌊 Targetes dels 10 rius</h4>
+            <span style="background:#ede9fe; color:#5b21b6; font-size:0.72rem; font-weight:700; padding:0.15rem 0.5rem; border-radius:9999px;">Per al diari 📌</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">10 targetes a color amb les fotografies reals, descripcions i preguntes reflexives per retallar i que cada alumne enganxi al seu Diari del viatge.</p>
+          <button class="btn btn-primary" style="width:100%; background:var(--color-pens); border:none;" onclick="window.open('imprimible_targetes_rius.html', '_blank')">🖨️ Obrir i Imprimir targetes</button>
+        </div>
+
+        <!-- 2. FITXA TRAM 1 -->
         <div class="card" style="margin-bottom:0; border-top:4px solid var(--primary);">
           <h4 style="color:var(--primary-deep); margin-bottom:0.4rem;">📄 Fitxa del Tram 1</h4>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Full A3 amb el riu en blanc per dibuixar i la llegenda dels símbols.</p>
-          <button class="btn btn-primary" style="width:100%;">🖨️ Imprimir (A3)</button>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Full A3 o A4 amb el curs en blanc per dibuixar el riu vital (0 a 16 anys), afegir-hi fotografies/collage i omplir la llegenda de símbols.</p>
+          <button class="btn btn-primary" style="width:100%;" onclick="window.open('imprimible_tram1.html', '_blank')">🖨️ Obrir i Imprimir (A3/A4)</button>
         </div>
 
+        <!-- 3. BASTIDA REFERENTS -->
         <div class="card" style="margin-bottom:0; border-top:4px solid var(--color-coop);">
           <h4 style="color:var(--color-coop); margin-bottom:0.4rem;">🗣️ Bastida de referents</h4>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Les 4 preguntes cardinals per a la conversa amb referents (A5, 2 per full).</p>
-          <button class="btn btn-primary" style="width:100%;">🖨️ Imprimir preguntes</button>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Fitxa amb les 4 preguntes cardinals i línies d'anotació per a les entrevistes al referent jove i al referent adult.</p>
+          <button class="btn btn-primary" style="width:100%; background:var(--color-coop); border:none;" onclick="window.open('imprimible_bastida_referents.html', '_blank')">🖨️ Obrir i Imprimir bastida</button>
         </div>
 
+        <!-- 4. TARGETA EQUIPATGE -->
         <div class="card" style="margin-bottom:0; border-top:4px solid var(--color-auto);">
           <h4 style="color:var(--color-auto); margin-bottom:0.4rem;">⚓ Targeta d'equipatge</h4>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Targeta petita amb l'Àncora i el Timó per enganxar a l'agenda o carpeta.</p>
-          <button class="btn btn-primary" style="width:100%;">🖨️ Imprimir targetes</button>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Targeta doble d'Àncora (fortalesa) i Timó (repte) per retallar i enganxar a l'agenda, carpeta o diari de l'alumnat.</p>
+          <button class="btn btn-primary" style="width:100%; background:var(--color-auto); border:none;" onclick="window.open('imprimible_targeta_equipatge.html', '_blank')">🖨️ Obrir i Imprimir targetes</button>
         </div>
 
-        <div class="card" style="margin-bottom:0; border-top:4px solid var(--color-pens);">
-          <h4 style="color:var(--color-pens); margin-bottom:0.4rem;">🌊 Targetes dels 10 rius</h4>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">10 targetes A6 amb les imatges i descripcions dels rius per treballar sense pantalla.</p>
-          <button class="btn btn-primary" style="width:100%;">🖨️ Imprimir targetes</button>
-        </div>
-
+        <!-- 5. DIARI ATURADES -->
         <div class="card" style="margin-bottom:0; border-top:4px solid var(--color-emoc);">
           <h4 style="color:var(--color-emoc); margin-bottom:0.4rem;">📒 Diari del Viatge — full d'aturades</h4>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Full resum de les 3 aturades per enganxar al quadern de l'alumnat.</p>
-          <button class="btn btn-primary" style="width:100%;">🖨️ Imprimir full</button>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Full resum amb les preguntes clau de les Aturades 1, 2 i 3 per enganxar directament al quadern físic de l'alumnat.</p>
+          <button class="btn btn-primary" style="width:100%; background:var(--color-emoc); border:none;" onclick="window.open('imprimible_diari_aturades.html', '_blank')">🖨️ Obrir i Imprimir full</button>
         </div>
 
+        <!-- 6. GRAELLA OBSERVACIÓ -->
         <div class="card" style="margin-bottom:0; border-top:4px solid #0d9488;">
-          <h4 style="color:#0d9488; margin-bottom:0.4rem;">📋 Graella d'observació</h4>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Versió en paper de la graella docent per anotacions en paper al llarg de les sessions.</p>
-          <button class="btn btn-primary" style="width:100%;">🖨️ Imprimir graella</button>
+          <h4 style="color:#0d9488; margin-bottom:0.4rem;">📋 Graella d'observació d'aula</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Plantilla en paper per prendre notes ràpides a classe sobre l'assoliment dels 35 comportaments i l'avaluació formativa.</p>
+          <button class="btn btn-primary" style="width:100%; background:#0d9488; border:none;" onclick="window.open('imprimible_graella_docent.html', '_blank')">🖨️ Obrir i Imprimir graella</button>
         </div>
 
       </div>
