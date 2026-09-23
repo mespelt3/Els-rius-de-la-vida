@@ -176,6 +176,7 @@
     <div class="nav-container">
       <button class="nav-btn active" onclick="switchTab('tab-metafora')">🌊 La metàfora</button>
       <button class="nav-btn" onclick="switchTab('tab-trams')">🗺️ Els 3 trams</button>
+      <button class="nav-btn" onclick="switchTab('tab-habilitats')">⚓ Habilitats socioemocionals</button>
       <button class="nav-btn" onclick="switchTab('tab-diari')">📒 El teu diari</button>
       <button class="nav-btn" onclick="switchTab('tab-referents')" style="display:none">🗣️ Converses amb referents</button>
     </div>
@@ -479,93 +480,6 @@
 
       </div><!-- /card diccionari simbolic -->
 
-      <!-- EL MEU EQUIPATGE -->
-      <div class="card">
-        <div class="card-header">
-          <h2 class="card-title">⚓ El meu equipatge per navegar</h2>
-          <span class="tag-skill badge-auto">Autoconeixement socioemocional</span>
-        </div>
-        <p style="margin-bottom:1.2rem;">
-          Per navegar per la vida cal conèixer el propi vaixell. A partir de les <strong>5 habilitats socioemocionals</strong>, cada alumne escull la seva <strong>Àncora</strong> (una fortalesa que ja té) i el seu <strong>Timó</strong> (un comportament que vol entrenar durant aquest projecte).
-        </p>
-
-        <!-- IMATGE COMPORTAMENTS -->
-        <div style="text-align:center; margin:1.5rem 0;">
-          <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.8rem;">Mira el mapa de les 5 habilitats i els 35 comportaments. Amb quins et sents més identificat/da?</p>
-          <img src="habilitats.png" alt="Mapa de les 5 habilitats i 35 comportaments" style="max-width:100%; border-radius:12px; box-shadow:0 4px 14px rgba(0,0,0,0.1);">
-        </div>
-
-        <div class="selector-grid">
-          <!-- ANCORA -->
-          <div class="select-card" id="card-ancora">
-            <h3 style="color:var(--color-coop); display:flex; align-items:center; gap:0.5rem; margin-bottom:0.8rem;">⚓ La meva àncora (la fortalesa que ja tinc)</h3>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Un comportament en el qual et sents sòlid/a i segur/a.</p>
-            <label for="select-skill-ancora">Tria l'habilitat:</label>
-            <select id="select-skill-ancora" onchange="updateBehaviorOptions('ancora')">
-              <option value="">-- Selecciona una habilitat --</option>
-              <option value="resp">🔵 Responsabilitat</option>
-              <option value="coop">🟢 Cooperació i treball en equip</option>
-              <option value="auto">🟠 Autonomia i iniciativa</option>
-              <option value="emoc">🔴 Gestió emocional</option>
-              <option value="pens">🟣 Habilitats de pensament</option>
-            </select>
-            <label for="select-comp-ancora">Comportament concret:</label>
-            <select id="select-comp-ancora">
-              <option value="">-- Primer tria l'habilitat --</option>
-            </select>
-            <div id="questions-ancora" style="display:none; margin-top:0.8rem; background:#f0fdf4; border-left:3px solid #16a34a; padding:0.8rem 1rem; border-radius:8px; font-size:0.88rem;">
-              <p style="font-weight:700; color:#15803d; margin-bottom:0.4rem;">📒 Preguntes per al teu diari (àncora):</p>
-              <ol style="margin-left:1rem; color:#166534; line-height:1.9;">
-                <li>Explica una situació concreta en la qual has demostrat aquesta fortalesa. Quan, on i com?</li>
-                <li>De quina manera creus que aquest punt fort t'ajuda (o pot ajudar) al teu grup o equip?</li>
-                <li>Si haguessis d'ensenyar algú a ser millor en aquest comportament, quin consell li donaries?</li>
-              </ol>
-            </div>
-            <label for="evidence-ancora" style="margin-top:0.8rem;">Com t'ajuda aquesta fortalesa?</label>
-            <input type="text" id="evidence-ancora" placeholder="Ex: Sempre escolto tothom abans de decidir...">
-          </div>
-
-          <!-- TIMO -->
-          <div class="select-card" id="card-timo">
-            <h3 style="color:var(--primary); display:flex; align-items:center; gap:0.5rem; margin-bottom:0.8rem;">🧭 El meu timó (el repte que vull entrenar)</h3>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Un comportament que et costa i que practicaràs conscientment.</p>
-            <label for="select-skill-timo">Tria l'habilitat:</label>
-            <select id="select-skill-timo" onchange="updateBehaviorOptions('timo')">
-              <option value="">-- Selecciona una habilitat --</option>
-              <option value="resp">🔵 Responsabilitat</option>
-              <option value="coop">🟢 Cooperació i treball en equip</option>
-              <option value="auto">🟠 Autonomia i iniciativa</option>
-              <option value="emoc">🔴 Gestió emocional</option>
-              <option value="pens">🟣 Habilitats de pensament</option>
-            </select>
-            <label for="select-comp-timo">Comportament concret:</label>
-            <select id="select-comp-timo">
-              <option value="">-- Primer tria l'habilitat --</option>
-            </select>
-            <div id="questions-timo" style="display:none; margin-top:0.8rem; background:#eff6ff; border-left:3px solid #0284c7; padding:0.8rem 1rem; border-radius:8px; font-size:0.88rem;">
-              <p style="font-weight:700; color:#0369a1; margin-bottom:0.4rem;">📒 Preguntes per al teu diari (timó):</p>
-              <ol style="margin-left:1rem; color:#0c4a6e; line-height:1.9;">
-                <li>En quin moment concret de les sessions t'és més difícil aplicar aquest comportament?</li>
-                <li>Quina estratègia concreta et compromets a fer servir la propera vegada que t'encallis?</li>
-                <li>Com sabràs, al final del projecte, que has millorat? Quina seria l'evidència visible?</li>
-              </ol>
-            </div>
-            <label for="evidence-timo" style="margin-top:0.8rem;">Quina acció concreta faràs per entrenar-lo?</label>
-            <input type="text" id="evidence-timo" placeholder="Ex: Quan m'encalli, en comptes de mirar el mòbil, demanaré ajuda...">
-          </div>
-        </div>
-
-        <!-- DIARI ATURADA 2 -->
-        <div class="diari-block" style="margin-top:1.5rem;">
-          <h4>📒 Diari del teu viatge — Aturada 2: El meu equipatge</h4>
-          <ol>
-            <li>Quin comportament Àncora has triat i per què? Respon les 3 preguntes verdes que han aparegut en seleccionar-lo.</li>
-            <li>Quin és el teu comportament Timó i per què et costa entrenar-lo? Respon les 3 preguntes blaves que han aparegut en seleccionar-lo.</li>
-          </ol>
-          <p class="diari-cta">→ Escriu les teves respostes al Diari del teu viatge.</p>
-        </div>
-      </div>
-
     </section>
 
     <!-- ============================================================= -->
@@ -614,9 +528,9 @@
           <li style="margin-bottom:1rem;"><strong>La llegenda personal:</strong> A una cantonada, explica els colors i símbols que has fet servir. <em>Per exemple: «Aigua blava = alegria, Roca negra = dificultat superada, Afluent verd = persona que m'ha ajudat.»</em></li>
         </ol>
 
-        <!-- DIARI ATURADA 3 -->
+        <!-- DIARI ATURADA 2 -->
         <div class="diari-block" style="margin-top:1.5rem;">
-          <h4>📒 Diari del teu viatge — Aturada 3: El meu riu fins avui</h4>
+          <h4>📒 Diari del teu viatge — Aturada 2: El meu riu fins avui</h4>
           <ol>
             <li>Mirant el teu riu dibuixat, quina pedra o dificultat que semblava enorme ara veus amb perspectiva que et va fer créixer?</li>
             <li>Hi ha algun element del diccionari simbòlic del riu (afluents, gorgs, cascades...) que representi especialment bé un moment de la teva vida? Quin i per què?</li>
@@ -726,7 +640,130 @@
     </section>
 
     <!-- ============================================================= -->
-    <!-- TAB 3: EL TEU DIARI                                           -->
+    <!-- TAB: HABILITATS SOCIOEMOCIONALS                               -->
+    <!-- ============================================================= -->
+    <section id="tab-habilitats" class="tab-content">
+
+      <!-- INTRODUCCIÓ I COMPORTAMENTS OBJECTIU DEL GRUP -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">🎯 Els comportaments objectiu del projecte</h2>
+          <span class="tag-skill badge-pens">Focus compartit del grup-classe</span>
+        </div>
+        <p style="margin-bottom:1.2rem;">
+          Per navegar pel riu de la vida i fer que el projecte funcioni com un autèntic equip, el primer pas és decidir quins comportaments seran la nostra brúixola comuna. Entre tota la classe i l'equip docent, heu seleccionat <strong>3 o 4 comportaments objectiu</strong> d'entre les 5 grans habilitats socioemocionals. Aquests seran els que entrenarem i observarem durant tot el viatge.
+        </p>
+
+        <!-- IMATGE MAPA HABILITATS -->
+        <div style="text-align:center; margin:1.5rem 0;">
+          <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.8rem;">El mapa de les 5 grans habilitats i els 35 comportaments del nostre centre:</p>
+          <img src="habilitats.png" alt="Mapa de les 5 habilitats i 35 comportaments" style="max-width:100%; border-radius:12px; box-shadow:0 4px 14px rgba(0,0,0,0.1);">
+        </div>
+
+        <!-- BLOC DE SELECCIÓ DELS COMPORTAMENTS DE LA CLASSE -->
+        <div style="background:#f8fafc; border:2px solid #e2e8f0; border-radius:12px; padding:1.5rem; margin-top:1.5rem;">
+          <h3 style="color:var(--primary-deep); font-size:1.15rem; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+            <span>👥</span> Comportaments seleccionats per la teva classe
+          </h3>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.2rem;">
+            Aquests són els comportaments acordats pel grup-classe com a prioritaris. Podeu ajustar-los si a la vostra aula n'heu escollit d'altres:
+          </p>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem;">
+            <div>
+              <label for="group-comp-1" style="font-weight:600; font-size:0.85rem; color:var(--text-main); display:block; margin-bottom:0.3rem;">Comportament diana 1:</label>
+              <select id="group-comp-1" class="group-comp-select" onchange="onGroupBehaviorsChanged()" style="width:100%; padding:0.6rem; border:1px solid #cbd5e1; border-radius:8px; font-size:0.85rem; background:#fff;">
+              </select>
+            </div>
+            <div>
+              <label for="group-comp-2" style="font-weight:600; font-size:0.85rem; color:var(--text-main); display:block; margin-bottom:0.3rem;">Comportament diana 2:</label>
+              <select id="group-comp-2" class="group-comp-select" onchange="onGroupBehaviorsChanged()" style="width:100%; padding:0.6rem; border:1px solid #cbd5e1; border-radius:8px; font-size:0.85rem; background:#fff;">
+              </select>
+            </div>
+            <div>
+              <label for="group-comp-3" style="font-weight:600; font-size:0.85rem; color:var(--text-main); display:block; margin-bottom:0.3rem;">Comportament diana 3:</label>
+              <select id="group-comp-3" class="group-comp-select" onchange="onGroupBehaviorsChanged()" style="width:100%; padding:0.6rem; border:1px solid #cbd5e1; border-radius:8px; font-size:0.85rem; background:#fff;">
+              </select>
+            </div>
+            <div>
+              <label for="group-comp-4" style="font-weight:600; font-size:0.85rem; color:var(--text-main); display:block; margin-bottom:0.3rem;">Comportament diana 4 (opcional):</label>
+              <select id="group-comp-4" class="group-comp-select" onchange="onGroupBehaviorsChanged()" style="width:100%; padding:0.6rem; border:1px solid #cbd5e1; border-radius:8px; font-size:0.85rem; background:#fff;">
+              </select>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- EL MEU EQUIPATGE: ÀNCORA I TIMÓ -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">⚓ El meu equipatge per navegar: Àncora i Timó</h2>
+          <span class="tag-skill badge-auto">Autoconeixement socioemocional</span>
+        </div>
+        <p style="margin-bottom:1.2rem;">
+          Ara que el grup té definits els seus objectius comuns, cada persona prepara el seu equipatge individual. <strong>D'entre els comportaments seleccionats per la classe</strong>, tria quina és la teva fortalesa (<strong>Àncora</strong>) i quin és el teu repte d'entrenament personal (<strong>Timó</strong>).
+        </p>
+
+        <div class="selector-grid">
+          <!-- ANCORA -->
+          <div class="select-card" id="card-ancora">
+            <h3 style="color:var(--color-coop); display:flex; align-items:center; gap:0.5rem; margin-bottom:0.8rem;">⚓ La meva àncora (la fortalesa que ja tinc)</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Dels comportaments del grup, en quin et sents més sòlid/a i segur/a?</p>
+            <label for="select-comp-ancora">Tria el teu comportament Àncora:</label>
+            <select id="select-comp-ancora" onchange="onStudentEquipatgeChanged()">
+              <option value="">-- Selecciona d'entre els del grup --</option>
+            </select>
+            <div id="questions-ancora" style="display:none; margin-top:0.8rem; background:#f0fdf4; border-left:3px solid #16a34a; padding:0.8rem 1rem; border-radius:8px; font-size:0.88rem;">
+              <p style="font-weight:700; color:#15803d; margin-bottom:0.4rem;">📒 Preguntes per al teu diari (àncora):</p>
+              <ol style="margin-left:1rem; color:#166534; line-height:1.9;">
+                <li>Explica una situació concreta en la qual has demostrat aquesta fortalesa. Quan, on i com?</li>
+                <li>De quina manera creus que aquest punt fort t'ajuda (o pot ajudar) al teu grup o equip?</li>
+                <li>Si haguessis d'ensenyar algú a ser millor en aquest comportament, quin consell li donaries?</li>
+              </ol>
+            </div>
+            <label for="evidence-ancora" style="margin-top:0.8rem;">Com t'ajuda aquesta fortalesa?</label>
+            <input type="text" id="evidence-ancora" oninput="saveEquipatgeData()" placeholder="Ex: Sempre mantinc la calma i ajudo a ordenar les tasques...">
+          </div>
+
+          <!-- TIMO -->
+          <div class="select-card" id="card-timo">
+            <h3 style="color:var(--primary); display:flex; align-items:center; gap:0.5rem; margin-bottom:0.8rem;">🧭 El meu timó (el repte que vull entrenar)</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Dels comportaments del grup, quin és el que et costa més i practicaràs conscientment?</p>
+            <label for="select-comp-timo">Tria el teu comportament Timó:</label>
+            <select id="select-comp-timo" onchange="onStudentEquipatgeChanged()">
+              <option value="">-- Selecciona d'entre els del grup --</option>
+            </select>
+            <div id="questions-timo" style="display:none; margin-top:0.8rem; background:#eff6ff; border-left:3px solid #0284c7; padding:0.8rem 1rem; border-radius:8px; font-size:0.88rem;">
+              <p style="font-weight:700; color:#0369a1; margin-bottom:0.4rem;">📒 Preguntes per al teu diari (timó):</p>
+              <ol style="margin-left:1rem; color:#0c4a6e; line-height:1.9;">
+                <li>En quin moment concret de les sessions t'és més difícil aplicar aquest comportament?</li>
+                <li>Quina estratègia concreta et compromets a fer servir la propera vegada que t'encallis?</li>
+                <li>Com sabràs, al final del projecte, que has millorat? Quina seria l'evidència visible?</li>
+              </ol>
+            </div>
+            <label for="evidence-timo" style="margin-top:0.8rem;">Quina acció concreta faràs per entrenar-lo?</label>
+            <input type="text" id="evidence-timo" oninput="saveEquipatgeData()" placeholder="Ex: Quan no estigui d'acord, demanaré torn i escoltaré abans de respondre...">
+          </div>
+        </div>
+
+        <!-- DIARI ATURADA 3 -->
+        <div class="diari-block" style="margin-top:1.5rem;">
+          <h4>📒 Diari del teu viatge — Aturada 3: El meu equipatge socioemocional</h4>
+          <ol>
+            <li>Dels 3 o 4 comportaments consensuats pel grup-classe, quin has triat com a <strong>Àncora</strong> (fortalesa)? Respon les 3 preguntes verdes que han aparegut en seleccionar-lo.</li>
+            <li>Quin has triat com a <strong>Timó</strong> (repte a entrenar) i per què creus que et costa més? Respon les 3 preguntes blaves que han aparegut en seleccionar-lo.</li>
+            <li><strong>Reflexió en equip:</strong> Com es complementen les teves fortaleses i reptes amb els de la resta de companys/es del teu grup per avançar amb èxit pel riu del projecte?</li>
+          </ol>
+          <p class="diari-cta">→ Escriu les teves respostes al Diari del teu viatge.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- TAB: EL TEU DIARI                                             -->
     <!-- ============================================================= -->
     <section id="tab-diari" class="tab-content">
       <div class="card">
@@ -760,16 +797,6 @@
 
         <div class="aturada-entry">
           <span class="aturada-badge">Aturada 2</span>
-          <h4>El meu equipatge · Àncora i Timó</h4>
-          <ol>
-            <li>Respon les 3 preguntes verdes que han aparegut en triar el teu comportament Àncora.</li>
-            <li>Respon les 3 preguntes blaves que han aparegut en triar el teu comportament Timó.</li>
-          </ol>
-          <p class="aturada-ref">📍 On trobaràs el moment de reflexió: al final de la secció «El meu equipatge», a la pestanya «La metàfora».</p>
-        </div>
-
-        <div class="aturada-entry">
-          <span class="aturada-badge">Aturada 3</span>
           <h4>El meu riu fins avui · Tram 1 (0 a 16 anys)</h4>
           <ol>
             <li>Mirant el teu riu dibuixat, quina pedra o dificultat que semblava enorme ara veus amb perspectiva que et va fer créixer?</li>
@@ -777,6 +804,17 @@
             <li>Quin feedback has rebut de la teva parella (Papallona d'Austin) i com has millorat el teu riu gràcies a ell?</li>
           </ol>
           <p class="aturada-ref">📍 On trobaràs el moment de reflexió: al final de les instruccions del Tram 1, a la pestanya «Els 3 trams».</p>
+        </div>
+
+        <div class="aturada-entry">
+          <span class="aturada-badge">Aturada 3</span>
+          <h4>El meu equipatge socioemocional · Àncora i Timó</h4>
+          <ol>
+            <li>Dels 3 o 4 comportaments consensuats pel grup-classe, quin has triat com a <strong>Àncora</strong> (fortalesa)? Respon les 3 preguntes verdes (situació concreta, ajut al grup, consell).</li>
+            <li>Quin has triat com a <strong>Timó</strong> (repte a entrenar) i per què et costa més? Respon les 3 preguntes blaves (moment difícil, estratègia compromesa, evidència de millora).</li>
+            <li><strong>Reflexió en equip:</strong> Com es complementen les teves fortaleses i reptes amb els de la resta de companys/es per navegar amb èxit pel riu del projecte?</li>
+          </ol>
+          <p class="aturada-ref">📍 On trobaràs el moment de reflexió: a la pestanya «Habilitats socioemocionals».</p>
         </div>
       </div>
     </section>
@@ -1013,20 +1051,111 @@
       pens: ["C28: Relaciona continguts nous amb vivències i sabers previs","C29: Reflexiona amb profunditat sobre els seus processos interns","C30: Fa bones preguntes per entendre o fer avançar la reflexió","C31: Planteja estratègies alternatives quan un camí no funciona","C32: Explora perspectives diferents i comprèn punts de vista diversos","C33: Planifica i prioritza les tasques abans d'executar-les","C34: Mostra curiositat i interès per anar més enllà del mínim","C35: Dóna i rep feedback amable, específic i útil (Austin)"]
     };
 
-    function updateBehaviorOptions(type) {
-      const skillSelect = document.getElementById('select-skill-' + type);
-      const compSelect = document.getElementById('select-comp-' + type);
-      const skill = skillSelect.value;
-      compSelect.innerHTML = '<option value="">-- Tria un comportament --</option>';
-      if (behaviorsData[skill]) {
-        behaviorsData[skill].forEach(comp => {
-          const opt = document.createElement('option');
-          opt.value = comp; opt.textContent = comp;
-          compSelect.appendChild(opt);
-        });
+    function onGroupBehaviorsChanged() {
+      const groupData = [];
+      for (let i = 1; i <= 4; i++) {
+        const el = document.getElementById('group-comp-' + i);
+        if (el && el.value) groupData.push(el.value);
       }
-      const qDiv = document.getElementById('questions-' + type);
-      if (qDiv) qDiv.style.display = 'none';
+      localStorage.setItem('riu_group_behaviors', JSON.stringify(groupData));
+      updateStudentBehaviorsDropdowns();
+    }
+
+    function initGroupSelectors() {
+      const defaultGroup = [
+        "C1: Treballa de forma constant durant la sessió",
+        "C8: Escolta activament els altres i respecta el torn de paraula",
+        "C17: Pren decisions amb criteri propi i justificació",
+        "C23: Controla les emocions en situacions de conflicte"
+      ];
+      let savedGroup = null;
+      try {
+        const raw = localStorage.getItem('riu_group_behaviors');
+        if (raw) savedGroup = JSON.parse(raw);
+      } catch(e) {}
+
+      const groupValues = (Array.isArray(savedGroup) && savedGroup.length > 0) ? savedGroup : defaultGroup;
+
+      const categoryNames = {
+        resp: "🔵 Responsabilitat",
+        coop: "🟢 Cooperació",
+        auto: "🟠 Autonomia",
+        emoc: "🔴 Gestió emocional",
+        pens: "🟣 Pensament"
+      };
+
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('group-comp-' + i);
+        if (!sel) continue;
+        sel.innerHTML = (i === 4) ? '<option value="">-- Cap (opcional) --</option>' : '<option value="">-- Selecciona un comportament --</option>';
+        for (const [catKey, comps] of Object.entries(behaviorsData)) {
+          const optGroup = document.createElement('optgroup');
+          optGroup.label = categoryNames[catKey] || catKey;
+          comps.forEach(c => {
+            const opt = document.createElement('option');
+            opt.value = c;
+            opt.textContent = c;
+            optGroup.appendChild(opt);
+          });
+          sel.appendChild(optGroup);
+        }
+        if (groupValues[i - 1]) {
+          sel.value = groupValues[i - 1];
+        }
+      }
+
+      updateStudentBehaviorsDropdowns();
+    }
+
+    function updateStudentBehaviorsDropdowns() {
+      const selectAncora = document.getElementById('select-comp-ancora');
+      const selectTimo = document.getElementById('select-comp-timo');
+      const currentAncora = selectAncora ? selectAncora.value : '';
+      const currentTimo = selectTimo ? selectTimo.value : '';
+
+      const selectedComps = [];
+      for (let i = 1; i <= 4; i++) {
+        const el = document.getElementById('group-comp-' + i);
+        if (el && el.value && !selectedComps.includes(el.value)) {
+          selectedComps.push(el.value);
+        }
+      }
+
+      [ { sel: selectAncora, prev: currentAncora }, { sel: selectTimo, prev: currentTimo } ].forEach(item => {
+        if (!item.sel) return;
+        item.sel.innerHTML = '<option value="">-- Selecciona d\'entre els ' + selectedComps.length + ' del grup --</option>';
+        selectedComps.forEach(comp => {
+          const opt = document.createElement('option');
+          opt.value = comp;
+          opt.textContent = comp;
+          item.sel.appendChild(opt);
+        });
+        if (selectedComps.includes(item.prev)) {
+          item.sel.value = item.prev;
+        }
+      });
+
+      onStudentEquipatgeChanged();
+    }
+
+    function onStudentEquipatgeChanged() {
+      const compAncora = document.getElementById('select-comp-ancora') ? document.getElementById('select-comp-ancora').value : '';
+      const compTimo = document.getElementById('select-comp-timo') ? document.getElementById('select-comp-timo').value : '';
+      const qAncora = document.getElementById('questions-ancora');
+      const qTimo = document.getElementById('questions-timo');
+      if (qAncora) qAncora.style.display = compAncora ? 'block' : 'none';
+      if (qTimo) qTimo.style.display = compTimo ? 'block' : 'none';
+      saveEquipatgeData();
+    }
+
+    function saveEquipatgeData() {
+      const eq = {
+        compAncora: document.getElementById('select-comp-ancora') ? document.getElementById('select-comp-ancora').value : '',
+        evidenceAncora: document.getElementById('evidence-ancora') ? document.getElementById('evidence-ancora').value : '',
+        compTimo: document.getElementById('select-comp-timo') ? document.getElementById('select-comp-timo').value : '',
+        evidenceTimo: document.getElementById('evidence-timo') ? document.getElementById('evidence-timo').value : ''
+      };
+      localStorage.setItem('riu_equipatge', JSON.stringify(eq));
     }
 
     function loadEquipatge() {
@@ -1034,39 +1163,33 @@
       if (saved) {
         try {
           const data = JSON.parse(saved);
-          if (data.skillAncora) {
-            document.getElementById('select-skill-ancora').value = data.skillAncora;
-            updateBehaviorOptions('ancora');
-            document.getElementById('select-comp-ancora').value = data.compAncora || '';
-            document.getElementById('evidence-ancora').value = data.evidenceAncora || '';
-            if (data.compAncora) document.getElementById('questions-ancora').style.display = 'block';
+          const selAncora = document.getElementById('select-comp-ancora');
+          const selTimo = document.getElementById('select-comp-timo');
+          const evAncora = document.getElementById('evidence-ancora');
+          const evTimo = document.getElementById('evidence-timo');
+          if (selAncora && data.compAncora) {
+            selAncora.value = data.compAncora;
+            const q = document.getElementById('questions-ancora');
+            if (q) q.style.display = selAncora.value ? 'block' : 'none';
           }
-          if (data.skillTimo) {
-            document.getElementById('select-skill-timo').value = data.skillTimo;
-            updateBehaviorOptions('timo');
-            document.getElementById('select-comp-timo').value = data.compTimo || '';
-            document.getElementById('evidence-timo').value = data.evidenceTimo || '';
-            if (data.compTimo) document.getElementById('questions-timo').style.display = 'block';
+          if (evAncora && data.evidenceAncora) {
+            evAncora.value = data.evidenceAncora;
+          }
+          if (selTimo && data.compTimo) {
+            selTimo.value = data.compTimo;
+            const q = document.getElementById('questions-timo');
+            if (q) q.style.display = selTimo.value ? 'block' : 'none';
+          }
+          if (evTimo && data.evidenceTimo) {
+            evTimo.value = data.evidenceTimo;
           }
         } catch(e) {}
       }
     }
 
     window.addEventListener('DOMContentLoaded', () => {
+      initGroupSelectors();
       loadEquipatge();
-      document.getElementById('select-comp-ancora').addEventListener('change', function() {
-        const q = document.getElementById('questions-ancora');
-        if (q) q.style.display = this.value ? 'block' : 'none';
-        // Autosave
-        const eq = { skillAncora: document.getElementById('select-skill-ancora').value, compAncora: this.value, evidenceAncora: document.getElementById('evidence-ancora').value, skillTimo: document.getElementById('select-skill-timo').value, compTimo: document.getElementById('select-comp-timo').value, evidenceTimo: document.getElementById('evidence-timo').value };
-        localStorage.setItem('riu_equipatge', JSON.stringify(eq));
-      });
-      document.getElementById('select-comp-timo').addEventListener('change', function() {
-        const q = document.getElementById('questions-timo');
-        if (q) q.style.display = this.value ? 'block' : 'none';
-        const eq = { skillAncora: document.getElementById('select-skill-ancora').value, compAncora: document.getElementById('select-comp-ancora').value, evidenceAncora: document.getElementById('evidence-ancora').value, skillTimo: document.getElementById('select-skill-timo').value, compTimo: this.value, evidenceTimo: document.getElementById('evidence-timo').value };
-        localStorage.setItem('riu_equipatge', JSON.stringify(eq));
-      });
     });
   </script>
 </body>
