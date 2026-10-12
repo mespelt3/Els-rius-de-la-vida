@@ -154,6 +154,17 @@
     .aturada-entry ol { font-size: 0.9rem; color: var(--text-main); margin-left: 1.2rem; line-height: 1.9; }
     .aturada-entry .aturada-ref { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.6rem; font-style: italic; }
 
+    /* TRAM 2 ENHANCEMENTS */
+    .hl-moment { background-color: #dbeafe; color: #1e40af; border-bottom: 2px solid #3b82f6; font-weight: 600; padding: 2px 6px; border-radius: 4px; display: inline; }
+    .hl-decision { background-color: #dcfce7; color: #166534; border-bottom: 2px solid #22c55e; font-weight: 600; padding: 2px 6px; border-radius: 4px; display: inline; }
+    .hl-person { background-color: #f3e8ff; color: #6b21a8; border-bottom: 2px solid #a855f7; font-weight: 600; padding: 2px 6px; border-radius: 4px; display: inline; }
+    .tram2-nav-btn { text-decoration: none; display: flex; align-items: center; gap: 0.7rem; background: #fff; border: 1px solid #cbd5e1; padding: 0.8rem 1rem; border-radius: 8px; color: var(--text-main); font-weight: 600; font-size: 0.9rem; transition: all 0.2s; }
+    .tram2-nav-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-color: #94a3b8; }
+    .relat-img-thumb { width: 100%; border-radius: 10px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
+    .relat-img-thumb:hover { transform: scale(1.015); box-shadow: 0 8px 20px rgba(0,0,0,0.14); }
+    .checklist-item { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.6rem; font-size: 0.9rem; }
+    .checklist-item input[type="checkbox"] { margin-top: 0.2rem; transform: scale(1.2); }
+
     /* FOOTER */
     footer { text-align: center; padding: 1.5rem; font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid var(--border-color); margin-top: 3rem; }
   </style>
@@ -571,143 +582,478 @@
       <!-- TRAM 2 (DESBLOQUEJAT) -->
       <div id="tram-detail-2" class="card" style="display:none;">
         <div class="card-header">
-          <h3 class="card-title" style="color:var(--color-pens);">🗣️ Tram 2: «Converses que ens ensenyen»</h3>
-          <span class="tag-skill badge-pens">Fase d'equip · Síntesi i creació</span>
+          <h3 class="card-title" style="color:var(--color-pens);">🧭 Tram 2: «Converses, el relat dels 100 anys i l'escena dels records»</h3>
+          <span class="tag-skill badge-pens">Mirada prospectiva · De la joventut a la vellesa</span>
         </div>
-        <p style="font-size:1.02rem; line-height:1.7; margin-bottom:1.5rem;">
-          Després d'haver conversat amb els nostres referents i haver descobert com les trajectòries reals estan plenes de revolts, imprevistos i oportunitats, és el moment de <strong>posar en comú totes les converses</strong> per transformar les històries individuals en aprenentatge col·lectiu per a tota la classe.
+        
+        <p style="font-size:1.02rem; line-height:1.7; margin-bottom:1.2rem;">
+          En aquest segon tram fem un viatge complet cap al futur: primer aprenem de les experiències i decisions dels nostres referents reals, després ens projectem en un relat fictici fins al nostre <strong>100è aniversari</strong> (convertit en obra d'art amb IA), i finalment seleccionem els <strong>5 objectes clau</strong> que han marcat la nostra vida per donar vida a una <strong>escena teatralitzada</strong> d'amics trobats als 80 anys.
         </p>
 
-        <!-- FASE 1: COMPARTIM AMB ELS GRUPS -->
-        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-left:5px solid #0284c7; padding:1.5rem; border-radius:12px; margin-bottom:1.5rem;">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;">
-            <h4 style="color:#0369a1; font-size:1.15rem; margin:0; display:flex; align-items:center; gap:0.5rem;">
-              <span>👥</span> Compartim amb els grups
-            </h4>
-            <span style="background:#e0f2fe; color:#0369a1; font-weight:700; font-size:0.82rem; padding:0.3rem 0.8rem; border-radius:9999px;">⏱️ 20 minuts</span>
-          </div>
-          <p style="font-size:0.95rem; line-height:1.7; color:var(--text-main); margin-bottom:0.8rem;">
-            Us reuniu en <strong>grups de 4</strong>. Cada grup treballa la pàgina <strong>«Del relat a les categories»</strong>:
+        <!-- NAVEGACIÓ CRONOLÒGICA DE TRAM 2 -->
+        <div style="background:#f8fafc; border:2px solid #e2e8f0; border-radius:14px; padding:1.2rem; margin:1.2rem 0 2.2rem 0;">
+          <p style="font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:var(--text-muted); margin-bottom:0.8rem; display:flex; align-items:center; gap:0.4rem;">
+            <span>🗺️</span> Cronologia de treball del Tram 2 (fes clic per navegar ràpidament a cada fase):
           </p>
-          <ul style="font-size:0.92rem; line-height:1.8; color:var(--text-main); margin-left:1.3rem;">
-            <li><strong>Extreure en idees curtes:</strong> Resumiu cada conversa en idees curtes (una decisió, un moment, un què canviaria o un aprenentatge).</li>
-            <li><strong>Agrupar per afinitat:</strong> Agrupeu les idees per temàtica o experiència semblant.</li>
-            <li><strong>Posar nom a cada categoria:</strong> Definiu un nom clar i compartit per a cada categoria creada.</li>
-            <li><strong>Comptabilitzar i triar exemples anònims:</strong> Comproveu quantes històries hi ha a cadascuna, triant exemples anònims per il·lustrar-les.</li>
-          </ul>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.8rem;">
+            <a href="#tram2-fase1" class="tram2-nav-btn" style="border-left:4px solid #0284c7;">
+              <span style="font-size:1.4rem;">🗣️</span>
+              <div>
+                <span style="display:block; font-size:0.75rem; color:#0369a1; text-transform:uppercase; font-weight:800;">Fase 1</span>
+                <span>Converses i Mural</span>
+              </div>
+            </a>
+            <a href="#tram2-fase2" class="tram2-nav-btn" style="border-left:4px solid #16a34a;">
+              <span style="font-size:1.4rem;">✍️</span>
+              <div>
+                <span style="display:block; font-size:0.75rem; color:#15803d; text-transform:uppercase; font-weight:800;">Fase 2</span>
+                <span>Relat 100 anys & IA</span>
+              </div>
+            </a>
+            <a href="#tram2-fase3" class="tram2-nav-btn" style="border-left:4px solid #9333ea;">
+              <span style="font-size:1.4rem;">🎭</span>
+              <div>
+                <span style="display:block; font-size:0.75rem; color:#7e22ce; text-transform:uppercase; font-weight:800;">Fase 3</span>
+                <span>Objectes i Escena</span>
+              </div>
+            </a>
+          </div>
         </div>
 
-        <!-- FASE 2: CONSTRUCCIÓ DEL MURAL -->
-        <div style="background:#fffbeb; border:1px solid #fef3c7; border-left:5px solid #d97706; padding:1.5rem; border-radius:12px; margin-bottom:1.5rem;">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;">
-            <h4 style="color:#92400e; font-size:1.15rem; margin:0; display:flex; align-items:center; gap:0.5rem;">
-              <span>🎨</span> Construcció del mural
-            </h4>
-            <span style="background:#fef3c7; color:#92400e; font-weight:700; font-size:0.82rem; padding:0.3rem 0.8rem; border-radius:9999px;">⏱️ 30 minuts · Cronòmetre actiu</span>
+        <!-- ============================================================= -->
+        <!-- FASE 1: CONVERSES I MURAL                                     -->
+        <!-- ============================================================= -->
+        <div id="tram2-fase1" style="scroll-margin-top:20px; border-top:2px solid #e2e8f0; padding-top:1.5rem; margin-top:1.5rem;">
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; background:#e0f2fe; color:#0369a1; font-size:0.82rem; font-weight:800; padding:0.35rem 0.85rem; border-radius:9999px; margin-bottom:0.8rem; text-transform:uppercase;">
+            📍 Fase 1 · L'aprenentatge col·lectiu dels referents
           </div>
-          <p style="font-size:0.95rem; line-height:1.7; color:var(--text-main); margin-bottom:0.8rem;">
-            A continuació, cada grup construeix el mural de classe:
+          <h3 style="color:#0369a1; font-size:1.35rem; margin-bottom:0.6rem;">🗣️ Converses que ens ensenyen & El mural de classe</h3>
+          <p style="font-size:0.95rem; line-height:1.7; color:var(--text-muted); margin-bottom:1.5rem;">
+            Després d'haver conversat amb els nostres referents i haver descobert com les trajectòries reals estan plenes de revolts, imprevistos i oportunitats, és el moment de <strong>posar en comú totes les converses</strong> per transformar les històries individuals en aprenentatge col·lectiu per a tota la classe.
           </p>
-          <ul style="font-size:0.92rem; line-height:1.8; color:var(--text-main); margin-left:1.3rem; margin-bottom:1rem;">
-            <li><strong>Contingut clau:</strong> Hi han d'aparèixer les categories de <strong>Decisions</strong>, <strong>Moments</strong> i <strong>Canvis</strong> (amb el nombre d'històries i un exemple anònim de cadascuna).</li>
-            <li><strong>Conclusió pròpia:</strong> Tanqueu el mural amb una conclusió pròpia i consensuada pel grup.</li>
-          </ul>
 
-          <div style="background:#fef2f2; border:1px solid #fecaca; border-left:4px solid #ef4444; padding:0.9rem 1.1rem; border-radius:8px; margin-top:0.8rem;">
-            <p style="font-weight:700; color:#991b1b; font-size:0.9rem; margin-bottom:0.3rem;">🔒 Revisió de privacitat abans d'exposar-lo:</p>
-            <p style="font-size:0.85rem; color:#7f1d1d; line-height:1.6; margin:0;">
-              Comproveu que no hi hagi <strong>cap nom complet ni dada identificable</strong>, que tots els exemples siguin <strong>totalment anònims</strong> i que el contingut es pugui entendre perfectament sense conèixer les persones entrevistades.
+          <!-- FASE 1.1: COMPARTIM AMB ELS GRUPS -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-left:5px solid #0284c7; padding:1.5rem; border-radius:12px; margin-bottom:1.5rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;">
+              <h4 style="color:#0369a1; font-size:1.15rem; margin:0; display:flex; align-items:center; gap:0.5rem;">
+                <span>👥</span> Compartim amb els grups: del relat a les categories
+              </h4>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:700; font-size:0.82rem; padding:0.3rem 0.8rem; border-radius:9999px;">⏱️ 20 minuts</span>
+            </div>
+            <p style="font-size:0.95rem; line-height:1.7; color:var(--text-main); margin-bottom:0.8rem;">
+              Us reuniu en <strong>grups de 4</strong>. Cada grup treballa la pàgina <strong>«Del relat a les categories»</strong>:
+            </p>
+            <ul style="font-size:0.92rem; line-height:1.8; color:var(--text-main); margin-left:1.3rem;">
+              <li><strong>Extreure en idees curtes:</strong> Resumiu cada conversa en idees curtes (una decisió, un moment, un què canviaria o un aprenentatge).</li>
+              <li><strong>Agrupar per afinitat:</strong> Agrupeu les idees per temàtica o experiència semblant.</li>
+              <li><strong>Posar nom a cada categoria:</strong> Definiu un nom clar i compartit per a cada categoria creada.</li>
+              <li><strong>Comptabilitzar i triar exemples anònims:</strong> Comproveu quantes històries hi ha a cadascuna, triant exemples anònims per il·lustrar-les.</li>
+            </ul>
+          </div>
+
+          <!-- FASE 1.2: CONSTRUCCIÓ DEL MURAL -->
+          <div style="background:#fffbeb; border:1px solid #fef3c7; border-left:5px solid #d97706; padding:1.5rem; border-radius:12px; margin-bottom:1.5rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;">
+              <h4 style="color:#92400e; font-size:1.15rem; margin:0; display:flex; align-items:center; gap:0.5rem;">
+                <span>🎨</span> Construcció del mural col·lectiu
+              </h4>
+              <span style="background:#fef3c7; color:#92400e; font-weight:700; font-size:0.82rem; padding:0.3rem 0.8rem; border-radius:9999px;">⏱️ 30 minuts · Cronòmetre actiu</span>
+            </div>
+            <p style="font-size:0.95rem; line-height:1.7; color:var(--text-main); margin-bottom:0.8rem;">
+              A continuació, cada grup construeix el mural de classe:
+            </p>
+            <ul style="font-size:0.92rem; line-height:1.8; color:var(--text-main); margin-left:1.3rem; margin-bottom:1rem;">
+              <li><strong>Contingut clau:</strong> Hi han d'aparèixer les categories de <strong>Decisions</strong>, <strong>Moments</strong> i <strong>Canvis</strong> (amb el nombre d'històries i un exemple anònim de cadascuna).</li>
+              <li><strong>Conclusió pròpia:</strong> Tanqueu el mural amb una conclusió pròpia i consensuada pel grup.</li>
+            </ul>
+
+            <div style="background:#fef2f2; border:1px solid #fecaca; border-left:4px solid #ef4444; padding:0.9rem 1.1rem; border-radius:8px; margin-top:0.8rem;">
+              <p style="font-weight:700; color:#991b1b; font-size:0.9rem; margin-bottom:0.3rem;">🔒 Revisió de privacitat abans d'exposar-lo:</p>
+              <p style="font-size:0.85rem; color:#7f1d1d; line-height:1.6; margin:0;">
+                Comproveu que no hi hagi <strong>cap nom complet ni dada identificable</strong>, que tots els exemples siguin <strong>totalment anònims</strong> i que el contingut es pugui entendre perfectament sense conèixer les persones entrevistades.
+              </p>
+            </div>
+            <p style="margin-top:0.8rem; font-size:0.85rem; color:#78350f; font-style:italic;">
+              ⏱️ <em>Mentre realitzeu el mural hi haurà cronòmetre i els docents avaluaran els comportaments socioemocionals en equip.</em>
             </p>
           </div>
-          <p style="margin-top:0.8rem; font-size:0.85rem; color:#78350f; font-style:italic;">
-            ⏱️ <em>Mentre realitzeu el mural hi haurà cronòmetre i els docents avaluaran els comportaments socioemocionals en equip.</em>
-          </p>
-        </div>
 
-        <!-- CRITERIS D'ÈXIT DEL MURAL -->
-        <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-left:5px solid #16a34a; padding:1.5rem; border-radius:12px; margin-bottom:1.5rem;">
-          <h4 style="color:#15803d; font-size:1.15rem; margin-bottom:0.8rem; display:flex; align-items:center; gap:0.5rem;">
-            <span>📋</span> Criteris: el mural ha de...
-          </h4>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:0.8rem;">
-            <div style="background:#fff; border:1px solid #86efac; padding:0.9rem 1rem; border-radius:8px;">
-              <strong style="color:#166534; display:block; margin-bottom:0.2rem;">📌 Incloure tot el contingut</strong>
-              <p style="font-size:0.85rem; color:#14532d; margin:0;">Decisions, moments, què canviaria i aprenentatge.</p>
-            </div>
-            <div style="background:#fff; border:1px solid #86efac; padding:0.9rem 1rem; border-radius:8px;">
-              <strong style="color:#166534; display:block; margin-bottom:0.2rem;">🌊 Metàfora visual</strong>
-              <p style="font-size:0.85rem; color:#14532d; margin:0;">Plasma de forma metafòrica un relat consensuat.</p>
-            </div>
-            <div style="background:#fff; border:1px solid #86efac; padding:0.9rem 1rem; border-radius:8px;">
-              <strong style="color:#166534; display:block; margin-bottom:0.2rem;">🎨 Eines artístiques</strong>
-              <p style="font-size:0.85rem; color:#14532d; margin:0;">Utilitza diferents eines artístiques: colors, cartolines, textures, etc.</p>
-            </div>
-            <div style="background:#fff; border:1px solid #86efac; padding:0.9rem 1rem; border-radius:8px;">
-              <strong style="color:#166534; display:block; margin-bottom:0.2rem;">🗣️ Exposició coral</strong>
-              <p style="font-size:0.85rem; color:#14532d; margin:0;">Tothom participa en l'exposició (tothom és capaç d'explicar qualsevol element del mural).</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- FASE 3: FEEDBACK DELS MURALS -->
-        <div style="background:#faf5ff; border:1px solid #e9d5ff; border-left:5px solid #9333ea; padding:1.5rem; border-radius:12px; margin-bottom:1.5rem;">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;">
-            <h4 style="color:#6b21a8; font-size:1.15rem; margin:0; display:flex; align-items:center; gap:0.5rem;">
-              <span>🦋</span> Feedback dels murals
+          <!-- CRITERIS D'ÈXIT DEL MURAL -->
+          <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-left:5px solid #16a34a; padding:1.5rem; border-radius:12px; margin-bottom:1.5rem;">
+            <h4 style="color:#15803d; font-size:1.15rem; margin-bottom:0.8rem; display:flex; align-items:center; gap:0.5rem;">
+              <span>📋</span> Criteris: el mural ha de...
             </h4>
-            <span style="background:#f3e8ff; color:#6b21a8; font-weight:700; font-size:0.82rem; padding:0.3rem 0.8rem; border-radius:9999px;">⏱️ 30 minuts</span>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:0.8rem;">
+              <div style="background:#fff; border:1px solid #86efac; padding:0.9rem 1rem; border-radius:8px;">
+                <strong style="color:#166534; display:block; margin-bottom:0.2rem;">📌 Incloure tot el contingut</strong>
+                <p style="font-size:0.85rem; color:#14532d; margin:0;">Decisions, moments, què canviaria i aprenentatge.</p>
+              </div>
+              <div style="background:#fff; border:1px solid #86efac; padding:0.9rem 1rem; border-radius:8px;">
+                <strong style="color:#166534; display:block; margin-bottom:0.2rem;">🌊 Metàfora visual</strong>
+                <p style="font-size:0.85rem; color:#14532d; margin:0;">Plasma de forma metafòrica un relat consensuat.</p>
+              </div>
+              <div style="background:#fff; border:1px solid #86efac; padding:0.9rem 1rem; border-radius:8px;">
+                <strong style="color:#166534; display:block; margin-bottom:0.2rem;">🎨 Eines artístiques</strong>
+                <p style="font-size:0.85rem; color:#14532d; margin:0;">Utilitza diferents eines artístiques: colors, cartolines, textures, etc.</p>
+              </div>
+              <div style="background:#fff; border:1px solid #86efac; padding:0.9rem 1rem; border-radius:8px;">
+                <strong style="color:#166534; display:block; margin-bottom:0.2rem;">🗣️ Exposició coral</strong>
+                <p style="font-size:0.85rem; color:#14532d; margin:0;">Tothom participa en l'exposició (tothom és capaç d'explicar qualsevol element del mural).</p>
+              </div>
+            </div>
           </div>
-          <p style="font-size:0.95rem; line-height:1.7; color:var(--text-main); margin-bottom:0.8rem;">
-            Ronda de presentacions davant la classe i retorn entre grups seguint el mètode de la <strong>Papallona d'Austin</strong>:
-          </p>
-          <div class="grid-3" style="margin-top:0.8rem;">
-            <div style="background:#fff; border:1px solid #d8b4fe; border-left:4px solid #16a34a; padding:0.9rem; border-radius:8px;">
-              <strong style="color:#15803d; font-size:0.9rem;">💚 Amable</strong>
-              <p style="font-size:0.83rem; color:var(--text-muted); margin-top:0.3rem;">Destaqueu allò que més us ha impactat o emocionat del seu mural i de la seva metàfora.</p>
+
+          <!-- FASE 1.3: FEEDBACK DELS MURALS -->
+          <div style="background:#faf5ff; border:1px solid #e9d5ff; border-left:5px solid #9333ea; padding:1.5rem; border-radius:12px; margin-bottom:1.5rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;">
+              <h4 style="color:#6b21a8; font-size:1.15rem; margin:0; display:flex; align-items:center; gap:0.5rem;">
+                <span>🦋</span> Feedback dels murals
+              </h4>
+              <span style="background:#f3e8ff; color:#6b21a8; font-weight:700; font-size:0.82rem; padding:0.3rem 0.8rem; border-radius:9999px;">⏱️ 30 minuts</span>
             </div>
-            <div style="background:#fff; border:1px solid #d8b4fe; border-left:4px solid #0284c7; padding:0.9rem; border-radius:8px;">
-              <strong style="color:#0369a1; font-size:0.9rem;">🎯 Específic</strong>
-              <p style="font-size:0.83rem; color:var(--text-muted); margin-top:0.3rem;">Assenyaleu una categoria, xifra o exemple concret que es pugui representar millor.</p>
+            <p style="font-size:0.95rem; line-height:1.7; color:var(--text-main); margin-bottom:0.8rem;">
+              Ronda de presentacions davant la classe i retorn entre grups seguint el mètode de la <strong>Papallona d'Austin</strong>:
+            </p>
+            <div class="grid-3" style="margin-top:0.8rem;">
+              <div style="background:#fff; border:1px solid #d8b4fe; border-left:4px solid #16a34a; padding:0.9rem; border-radius:8px;">
+                <strong style="color:#15803d; font-size:0.9rem;">💚 Amable</strong>
+                <p style="font-size:0.83rem; color:var(--text-muted); margin-top:0.3rem;">Destaqueu allò que més us ha impactat o emocionat del seu mural i de la seva metàfora.</p>
+              </div>
+              <div style="background:#fff; border:1px solid #d8b4fe; border-left:4px solid #0284c7; padding:0.9rem; border-radius:8px;">
+                <strong style="color:#0369a1; font-size:0.9rem;">🎯 Específic</strong>
+                <p style="font-size:0.83rem; color:var(--text-muted); margin-top:0.3rem;">Assenyaleu una categoria, xifra o exemple concret que es pugui representar millor.</p>
+              </div>
+              <div style="background:#fff; border:1px solid #d8b4fe; border-left:4px solid #d97706; padding:0.9rem; border-radius:8px;">
+                <strong style="color:#92400e; font-size:0.9rem;">💡 Útil</strong>
+                <p style="font-size:0.83rem; color:var(--text-muted); margin-top:0.3rem;">Aporteu una idea constructiva sobre la conclusió o sobre com connectar-ho amb les vostres pròpies decisions.</p>
+              </div>
             </div>
-            <div style="background:#fff; border:1px solid #d8b4fe; border-left:4px solid #d97706; padding:0.9rem; border-radius:8px;">
-              <strong style="color:#92400e; font-size:0.9rem;">💡 Útil</strong>
-              <p style="font-size:0.83rem; color:var(--text-muted); margin-top:0.3rem;">Aporteu una idea constructiva sobre la conclusió o sobre com connectar-ho amb les vostres pròpies decisions.</p>
+          </div>
+
+          <!-- PREGUNTA DE TANCAMENT -->
+          <div style="background:linear-gradient(135deg, #0c4a6e 0%, #0369a1 100%); color:#fff; padding:1.8rem; border-radius:14px; margin-bottom:1.5rem; text-align:center;">
+            <span style="font-size:2rem; display:block; margin-bottom:0.5rem;">🧭</span>
+            <h4 style="font-size:1.25rem; font-weight:700; margin-bottom:0.6rem; color:#fff;">Tanquem la sessió amb la pregunta per a tota la classe:</h4>
+            <p style="font-size:1.2rem; font-weight:600; line-height:1.6; max-width:680px; margin:0 auto; opacity:0.98;">
+              «Quan mirem les decisions d'altres persones, què ens ajuda a prendre millor les nostres?»
+            </p>
+          </div>
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- FASE 2: RELAT 100 ANYS & IA                                   -->
+        <!-- ============================================================= -->
+        <div id="tram2-fase2" style="scroll-margin-top:20px; border-top:3px solid #16a34a; padding-top:2rem; margin-top:2.5rem;">
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; background:#dcfce7; color:#15803d; font-size:0.82rem; font-weight:800; padding:0.35rem 0.85rem; border-radius:9999px; margin-bottom:0.8rem; text-transform:uppercase;">
+            📍 Fase 2 · Escriptura fictícia i creació artística amb IA
+          </div>
+          <h3 style="color:#15803d; font-size:1.45rem; margin-bottom:0.6rem;">✍️ El meu relat del 100è aniversari (dels 25 als 100 anys)</h3>
+          
+          <div style="background:linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%); border:2px solid #86efac; border-radius:14px; padding:1.4rem 1.6rem; margin-bottom:1.8rem;">
+            <p style="font-size:1.05rem; font-weight:600; color:#14532d; line-height:1.7; margin:0;">
+              ✨ <strong>Imagina que avui és el teu 100è aniversari i fas una revisió de com t'ha anat la vida.</strong><br>
+              En aquesta tasca escriuràs un relat fictici de la teva vida des dels 25 fins als 100 anys, el milloraràs amb un/a company/a i finalment, el convertiràs en una obra d'art amb IA.
+            </p>
+          </div>
+
+          <!-- LES 5 PASSES DE LA TASCA -->
+          <div style="margin-bottom:2rem;">
+            <h4 style="color:var(--primary-deep); font-size:1.2rem; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
+              <span>📌</span> Instruccions de la tasca pas a pas
+            </h4>
+
+            <div style="display:flex; flex-direction:column; gap:1rem;">
+              <!-- Pas 1 -->
+              <div style="background:#fff; border:1px solid #cbd5e1; border-left:5px solid #0284c7; padding:1.2rem 1.4rem; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.5rem;">
+                  <strong style="color:#0369a1; font-size:1.05rem;">1. Escriu el relat fictici en paper (dels 25 als 100 anys)</strong>
+                  <span style="background:#fee2e2; color:#b91c1c; font-weight:800; font-size:0.8rem; padding:0.25rem 0.75rem; border-radius:9999px;">📅 Data límit esbós: Dimarts 13</span>
+                </div>
+                <p style="font-size:0.92rem; line-height:1.7; color:var(--text-main); margin-bottom:0.6rem;">
+                  Imagina que mires enrere des del dia que fas 100 anys. <strong>Fes-lo primer en paper</strong>. Ha de tenir una extensió aproximada d'<strong>un full per davant i per darrere</strong> (si estàs inspirat/da pots fer-lo més llarg).
+                </p>
+                <ul style="font-size:0.9rem; line-height:1.7; color:var(--text-main); margin-left:1.2rem;">
+                  <li><strong>Temps verbal:</strong> Escriu en passat.</li>
+                  <li><strong>Fes servir la bastida com a guia:</strong> el relat ha de recórrer totes les etapes de la vida i tocar àmbits diferents. Pots fer un relat general i també aprofundir en algun dels moments importants.</li>
+                  <li><strong>Ambient de creació:</strong> Fes-lo en silenci i amb cura. Si necessites escoltar música, pots fer-ho. Aprofita que és un relat totalment fictici per imaginar-te molts camins diferents!</li>
+                </ul>
+              </div>
+
+              <!-- Pas 2 -->
+              <div style="background:#fff; border:1px solid #cbd5e1; border-left:5px solid #16a34a; padding:1.2rem 1.4rem; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+                <strong style="color:#15803d; font-size:1.05rem; display:block; margin-bottom:0.6rem;">2. Al relat, identifica i marca amb el codi de 3 colors</strong>
+                <p style="font-size:0.92rem; line-height:1.7; color:var(--text-main); margin-bottom:0.8rem;">
+                  Quan tinguis el text redactat, agafa 3 subratlladors o colors i marca el teu text seguint aquesta clau:
+                </p>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:0.8rem;">
+                  <div style="background:#eff6ff; border:1px solid #93c5fd; border-radius:8px; padding:0.8rem 1rem;">
+                    <div style="font-weight:800; color:#1e40af; font-size:0.95rem; margin-bottom:0.2rem;">🔵 MOMENTS</div>
+                    <p style="font-size:0.85rem; color:#1e3a8a; margin:0;">Coses que et van passar i et van marcar (fets inesperats, canvis d'etapa, pèrdues, naixements, fites).</p>
+                  </div>
+                  <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:0.8rem 1rem;">
+                    <div style="font-weight:800; color:#166534; font-size:0.95rem; margin-bottom:0.2rem;">🟢 DECISIONS</div>
+                    <p style="font-size:0.85rem; color:#14532d; margin:0;">Moments en què vas triar conscientment un camí i no un altre (girs de carrera, mudances, canvis de feina o prioritats).</p>
+                  </div>
+                  <div style="background:#faf5ff; border:1px solid #d8b4fe; border-radius:8px; padding:0.8rem 1rem;">
+                    <div style="font-weight:800; color:#6b21a8; font-size:0.95rem; margin-bottom:0.2rem;">🟣 PERSONES</div>
+                    <p style="font-size:0.85rem; color:#581c87; margin:0;">Qui va deixar petjada a la teva vida (amistats decisives, parelles, mentors, companys de feina, referents).</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pas 3 -->
+              <div style="background:#fff; border:1px solid #cbd5e1; border-left:5px solid #d97706; padding:1.2rem 1.4rem; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+                <strong style="color:#b45309; font-size:1.05rem; display:block; margin-bottom:0.5rem;">3. Intercanvia el relat amb un/a company/a i passa'l a net</strong>
+                <p style="font-size:0.92rem; line-height:1.7; color:var(--text-main); margin-bottom:0.6rem;">
+                  Intercanvia el teu relat amb un/a company/a de confiança. Doneu-vos feedback i <strong>feu-vos alguna pregunta aclaridora</strong> («Per què vas decidir això als 35?», «Com et va fer sentir aquest moment?»).
+                </p>
+                <p style="font-size:0.92rem; line-height:1.7; color:var(--text-main); margin:0;">
+                  Després, torna al teu relat i millora'l amb el feedback rebut (ajudeu-vos de la metodologia amable, específica i útil de la Papallona d'Austin). Quan n'estiguis satisfet/a, <strong>passa'l a net</strong>.
+                </p>
+              </div>
+
+              <!-- Pas 4 -->
+              <div style="background:#fff; border:1px solid #cbd5e1; border-left:5px solid #9333ea; padding:1.2rem 1.4rem; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+                <strong style="color:#7e22ce; font-size:1.05rem; display:block; margin-bottom:0.5rem;">4. Transforma el teu relat en una obra d'art amb IA</strong>
+                <p style="font-size:0.92rem; line-height:1.7; color:var(--text-main); margin-bottom:0.6rem;">
+                  Fes servir una eina d'Intel·ligència Artificial generativa d'imatges (com ara DALL·E, Bing Image Creator, Leonardo AI, Canva Magic, etc.) per crear una representació visual artística del teu riu de vida.
+                </p>
+                <ul style="font-size:0.9rem; line-height:1.7; color:var(--text-main); margin-left:1.2rem;">
+                  <li><strong>Instruccions clares (prompt):</strong> Descriu a la IA la metàfora del teu riu, els colors clau, els moments lluminosos i els trams difícils que apareixen al teu relat.</li>
+                  <li><strong>Iteració artística:</strong> Fes tantes versions com sigui necessari modificant les paraules clau fins que estiguis plenament satisfet/a amb el resultat. <em>Intenta que sigui una imatge original i profunda; no et quedis amb la primera versió que et generi la IA!</em></li>
+                </ul>
+              </div>
+
+              <!-- Pas 5 -->
+              <div style="background:#fff; border:1px solid #cbd5e1; border-left:5px solid #0d9488; padding:1.2rem 1.4rem; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+                <strong style="color:#0f766e; font-size:1.05rem; display:block; margin-bottom:0.4rem;">5. Entrega al Classroom</strong>
+                <p style="font-size:0.92rem; line-height:1.7; color:var(--text-main); margin:0;">
+                  Fes la tramesa del teu <strong>relat a net</strong> i la <strong>imatge artística generada per la IA</strong> a la tasca corresponent del Classroom.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- BASTIDA DE REDACCIÓ -->
+          <div style="background:#f8fafc; border:2px solid #cbd5e1; border-radius:12px; padding:1.5rem; margin-bottom:2rem;">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+              <span style="font-size:1.5rem;">🧭</span>
+              <div>
+                <h4 style="color:var(--primary-deep); font-size:1.15rem; margin:0;">Bastida per a la redacció del relat</h4>
+                <p style="font-size:0.85rem; color:var(--text-muted); margin:0;">Etapes vitals i àmbits que has d'incloure al teu recorregut:</p>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:0.8rem; margin-top:1rem;">
+              <div style="background:#fff; border-left:4px solid #0284c7; padding:0.85rem 1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                <strong style="color:#0369a1; font-size:0.92rem; display:block; margin-bottom:0.2rem;">🌱 25 als 35 anys: Inicis i girs</strong>
+                <p style="font-size:0.83rem; color:var(--text-main); margin:0; line-height:1.5;">Primeres feines, independència, decisions formatives, descobriments personals, canvis de rumb o primers entrebancs superats.</p>
+              </div>
+              <div style="background:#fff; border-left:4px solid #16a34a; padding:0.85rem 1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                <strong style="color:#15803d; font-size:0.92rem; display:block; margin-bottom:0.2rem;">🌿 35 als 50 anys: Consolidació i noves veus</strong>
+                <p style="font-size:0.83rem; color:var(--text-main); margin:0; line-height:1.5;">Maduresa en l'àmbit professional o artístic, noves relacions i vincles, projectes personals o familiars, canvis de perspectiva.</p>
+              </div>
+              <div style="background:#fff; border-left:4px solid #d97706; padding:0.85rem 1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                <strong style="color:#b45309; font-size:0.92rem; display:block; margin-bottom:0.2rem;">🌳 50 als 65 anys: Reconciliació i propòsit</strong>
+                <p style="font-size:0.83rem; color:var(--text-main); margin:0; line-height:1.5;">Decisions valentes de maduresa, canvis de rol, renúncies a allò superficial per retrobar el que realment té valor, pèrdues i aprenentatges profunds.</p>
+              </div>
+              <div style="background:#fff; border-left:4px solid #9333ea; padding:0.85rem 1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                <strong style="color:#7e22ce; font-size:0.92rem; display:block; margin-bottom:0.2rem;">🍂 65 als 80 anys: Jubilació i transmissió</strong>
+                <p style="font-size:0.83rem; color:var(--text-main); margin:0; line-height:1.5;">El moment de jubilar-se i redefinir qui ets, voluntariat, suport a la comunitat, transmissió de valors a noves generacions, acceptació del pas del temps.</p>
+              </div>
+              <div style="background:#fff; border-left:4px solid #0d9488; padding:0.85rem 1rem; border-radius:8px; border:1px solid #e2e8f0; grid-column:1/-1;">
+                <strong style="color:#0f766e; font-size:0.92rem; display:block; margin-bottom:0.2rem;">🌊 80 als 100 anys: Vellesa serena i mirada panoràmica</strong>
+                <p style="font-size:0.83rem; color:var(--text-main); margin:0; line-height:1.5;">Mirar enrere des de la calma, comprensió que els revolts i errors tenien un sentit, trobar el fil conductor invisible que connectava tots els moments.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- MODEL DE RELAT -->
+          <div style="background:#fff; border:2px solid #e2e8f0; border-radius:14px; padding:1.6rem; margin-bottom:2rem; box-shadow:0 4px 14px rgba(0,0,0,0.04);">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; border-bottom:1px solid #e2e8f0; padding-bottom:0.8rem;">
+              <div>
+                <h4 style="color:var(--primary-deep); font-size:1.25rem; margin:0; display:flex; align-items:center; gap:0.5rem;">
+                  <span>📖</span> Relat model: «El meu relat (dels 25 als 100 anys)»
+                </h4>
+                <p style="font-size:0.85rem; color:var(--text-muted); margin:0.3rem 0 0 0;">Observa com s'ha redactat el relat i com s'han identificat els colors dels moments, decisions i persones:</p>
+              </div>
+              <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                <span class="hl-moment" style="font-size:0.8rem;">🔵 Moments</span>
+                <span class="hl-decision" style="font-size:0.8rem;">🟢 Decisions</span>
+                <span class="hl-person" style="font-size:0.8rem;">🟣 Persones</span>
+              </div>
+            </div>
+
+            <!-- IMATGES DEL MODEL REAL -->
+            <div style="margin-bottom:1.5rem;">
+              <p style="font-size:0.88rem; font-weight:700; color:var(--text-main); margin-bottom:0.6rem;">📄 Imatges originals del model de relat:</p>
+              <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.2rem;">
+                <div>
+                  <a href="relat_model_part1.png" target="_blank" title="Fes clic per veure en gran la Part 1">
+                    <img src="relat_model_part1.png" alt="Relat Model - Part 1" class="relat-img-thumb">
+                  </a>
+                  <p style="text-align:center; font-size:0.8rem; color:var(--text-muted); margin-top:0.4rem;">🔍 Clica sobre la imatge per obrir la Part 1 a pantalla completa</p>
+                </div>
+                <div>
+                  <a href="relat_model_part2.png" target="_blank" title="Fes clic per veure en gran la Part 2">
+                    <img src="relat_model_part2.png" alt="Relat Model - Part 2" class="relat-img-thumb">
+                  </a>
+                  <p style="text-align:center; font-size:0.8rem; color:var(--text-muted); margin-top:0.4rem;">🔍 Clica sobre la imatge per obrir la Part 2 a pantalla completa</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- TRANSCRIPCIÓ COMPLETA FORMATADA AMB COLORS -->
+            <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:10px; padding:1.4rem; font-size:0.95rem; line-height:2.0; color:#1e293b;">
+              <div style="text-align:center; margin-bottom:1.2rem;">
+                <h5 style="font-family:'Outfit',sans-serif; font-size:1.25rem; color:#0c4a6e; margin:0;">El meu relat (dels 25 als 100 anys)</h5>
+                <span style="font-size:0.8rem; color:var(--text-muted);">Model de referència amb marcatge analític</span>
+              </div>
+
+              <p style="margin-bottom:1.2rem;">
+                Avui faig 100 anys. Des de la finestra d'aquesta residència, amb una manta a les cames i un cafè que ja s'ha refredat, miro enrere i veig tot el riu que he recorregut. Durant molts anys vaig pensar que la meva vida havia estat un seguit de girs sense rumb. Avui, en canvi, hi veig una línia que ho travessa tot de principi a fi. Però això no ho vaig entendre fins al final.
+              </p>
+
+              <p style="margin-bottom:1.2rem;">
+                Als 25 anys jo era un desastre meravellós. Acabava de <span class="hl-decision">deixar la carrera de Biologia a mig fer</span> perquè m'havia enamorat del teatre. La meva mare va plorar; el meu pare va deixar de parlar-me durant mesos. Vaig passar tres anys fent gires per pobles amb una companyia que no cobrava quasi res, dormint en cases de gent desconeguda i muntant l'escenari sota la pluja. Va ser allà on vaig conèixer en <span class="hl-person">Rashid, el director</span>. Ell no ens ensenyava a actuar, ens ensenyava a mirar: deia que el teatre no anava de fingir, sinó d'ajudar algú a treure la veu que portava amagada a dins. Mai vaig oblidar aquella frase, encara que llavors no sabia com em marcaria.
+              </p>
+
+              <p style="margin-bottom:1.2rem;">
+                Als 29 anys la <span class="hl-moment">companyia va fer fallida</span>. De cop em vaig quedar sense feina, sense diners i sense saber qui era. Vaig fer una cosa que encara avui no sé si va ser valenta o covarda: <span class="hl-decision">vaig tornar a la universitat, però no a Biologia, sinó a Educació</span>. Em deia a mi mateixa que el teatre s'havia acabat. Avui sé que no era veritat: només havia canviat d'escenari. Als 34 ja era mestra en una escola rural del Pirineu, i a l'aula feia exactament el mateix que a dalt d'un escenari: intentar que cada nen descobrís la seva pròpia veu.
+              </p>
+
+              <p style="margin-bottom:1.2rem;">
+                Allà vaig conèixer la <span class="hl-person">Júlia, la bibliotecària del poble i la meva companya de vida durant quaranta-dos anys</span>. Ens vam conèixer discutint per un llibre i no vam parar de parlar mai més. El dia que <span class="hl-moment">va néixer la nostra filla, l'Ona</span>, vaig entendre per primera vegada què volia dir tenir por i felicitat alhora: la por de no estar a l'altura i la felicitat de tenir, per fi, algú a qui acompanyar de debò.
+              </p>
+
+              <p style="margin-bottom:1.2rem;">
+                Als 48 em van oferir dirigir l'escola, i vaig acceptar. Durant uns anys em va agradar manar, decidir, que em fessin cas. Però, de mica en mica, em vaig adonar que ja no trepitjava mai una aula: em passava els dies signant papers i discutint amb l'administració. Als 54 vaig prendre la decisió més difícil i més important de la meva vida professional: <span class="hl-decision">vaig deixar la direcció i vaig tornar a ser una mestra d'aula qualsevol</span>. Vaig renunciar al sou més alt i al despatx amb finestra. Molts no ho van entendre. Però jo havia recordat per què m'havia fet mestra, i no era per manar: era per ser a prop dels nens que ningú escoltava. Vaig ser feliç de debò a l'aula quan vaig muntar, amb els alumnes més tímids i els que anaven més endarrerits, un petit grup de teatre els divendres a la tarda. Veure parlar en veu alta, davant de tothom, un nen que no havia dit mai res a classe: allò valia més que qualsevol despatx.
+              </p>
+
+              <p style="margin-bottom:1.2rem;">
+                No tot van ser bons moments. Als 56 vaig <span class="hl-moment">perdre el meu pare</span>, i el pitjor no va ser la mort, sinó tots els anys que havíem passat sense parlar-nos des que vaig deixar Biologia. Vam fer les paus només uns mesos abans del final. Vaig aprendre, tard, que la confiança és el pont que més costa de tornar a construir.
+              </p>
+
+              <p style="margin-bottom:1.2rem;">
+                Als 63 <span class="hl-moment">em vaig jubilar</span>, i em feia pànic. Qui era jo sense ser mestra? Aquell buit, però, es va omplir d'una manera que no esperava: <span class="hl-decision">vaig començar a fer voluntariat ensenyant a llegir a persones adultes que acabaven d'arribar al país</span>. Un d'ells, en <span class="hl-person">Mohamed</span>, va aprendre a llegir als 70 anys. El dia que va poder llegir sol una carta de la seva filla, es va posar a plorar i em va dir que jo li havia regalat un món nou. No li vaig saber dir que era ell qui me'n regalava un a mi: perquè allà, ensenyant-lo a llegir, tornava a fer el mateix de sempre: ajudar algú a trobar la seva veu.
+              </p>
+
+              <p style="margin-bottom:1.2rem;">
+                Als 78 <span class="hl-moment">la Júlia va morir</span>, una tarda de tardor, agafant-me la mà. Aquell va ser el tram més fosc de la meva vida i on vaig estar a punt de quedar-me encallada per sempre. El que em va salvar va ser l'Ona, que un dia es va plantar a casa, va fer les maletes per mi i em va dir que encara tenia coses per ensenyar-li als seus fills. <span class="hl-decision">Em vaig traslladar a viure a prop seu</span>, i vaig descobrir que ser àvia també era una manera d'estar a dalt de l'escenari.
+              </p>
+
+              <p style="margin-bottom:0.5rem;">
+                I ara, als 100, ho veig tot clar per fi. Durant anys vaig creure que havia traït aquella noia de 25 anys que volia fer teatre; que havia renunciat al meu somni per una vida més petita. Avui sé que no el vaig deixar mai. Als pobles amb la companyia, a l'aula del Pirineu, amb en Mohamed i la seva carta, amb els néts: sempre vaig fer el mateix. Vaig dedicar la vida a ajudar la gent a trobar la seva pròpia veu. Aquell va ser el meu propòsit, encara que fins ara no ho he vist clar.
+              </p>
             </div>
           </div>
         </div>
 
-        <!-- PREGUNTA DE TANCAMENT PER A TOTA LA CLASSE -->
-        <div style="background:linear-gradient(135deg, #0c4a6e 0%, #0369a1 100%); color:#fff; padding:1.8rem; border-radius:14px; margin-bottom:1.5rem; text-align:center;">
-          <span style="font-size:2rem; display:block; margin-bottom:0.5rem;">🧭</span>
-          <h4 style="font-size:1.25rem; font-weight:700; margin-bottom:0.6rem; color:#fff;">Tanquem la sessió amb la pregunta per a tota la classe:</h4>
-          <p style="font-size:1.2rem; font-weight:600; line-height:1.6; max-width:680px; margin:0 auto; opacity:0.98;">
-            «Quan mirem les decisions d'altres persones, què ens ajuda a prendre millor les nostres?»
+        <!-- ============================================================= -->
+        <!-- FASE 3: ELS 5 OBJECTES & L'ESCENA TEATRALITZADA               -->
+        <!-- ============================================================= -->
+        <div id="tram2-fase3" style="scroll-margin-top:20px; border-top:3px solid #9333ea; padding-top:2rem; margin-top:2.5rem;">
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; background:#f3e8ff; color:#7e22ce; font-size:0.82rem; font-weight:800; padding:0.35rem 0.85rem; border-radius:9999px; margin-bottom:0.8rem; text-transform:uppercase;">
+            📍 Fase 3 · Els meus objectes de vida i l'escena dels records
+          </div>
+          <h3 style="color:#7e22ce; font-size:1.45rem; margin-bottom:0.6rem;">🎭 Els 5 objectes de la meva vida & L'escena teatralitzada (als 80 anys)</h3>
+          
+          <p style="font-size:1rem; line-height:1.7; color:var(--text-main); margin-bottom:1.5rem;">
+            Imaginem que, d'aquí a 60 anys, us trobeu amb un grup de 3 o 4 amics/amigues als <strong>80 anys</strong>. Cadascú ha trobat al fons de l'armari una caixa de records amb objectes que resumeixen la seva vida. A través d'aquests objectes, compartireu les vostres històries en una <strong>escena teatralitzada</strong>.
           </p>
-        </div>
 
-        <!-- PERSPECTIVA RETROSPECTIVA DEL RIU -->
-        <div style="border-top:1px solid #e2e8f0; padding-top:1.5rem; margin-top:1.5rem;">
-          <h4 style="color:var(--primary-deep); font-size:1.1rem; margin-bottom:0.6rem;">🔭 Connectem amb la teva cartografia: dels 80 als 18 anys</h4>
-          <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.7; margin-bottom:1rem;">
-            A partir de tot el que hem après dels nostres referents i del mural col·lectiu, podem mirar el futur amb molta més calma i perspectiva. Cap decisió als 16 anys és definitiva:
-          </p>
-          <div class="grid-2">
-            <div class="metaphor-node">
-              <div class="metaphor-node-title">🧓 La perspectiva de la vellesa</div>
-              <p style="font-size:0.88rem;">Des dels 80 anys, les equivocacions esdevenen anècdotes o aprenentatges fonamentals.</p>
-              <ul style="font-size:0.85rem; margin-left:1.2rem; margin-top:0.5rem; color:var(--text-muted);">
-                <li>Com et mires amb 80 anys a tu mateix/a avui a 4t d'ESO?</li>
-                <li>Què és allò que realment haurà tingut valor?</li>
+          <!-- PAS A: TRIA I REDACCIÓ DELS 5 OBJECTES -->
+          <div style="background:#fff; border:1px solid #cbd5e1; border-left:5px solid #9333ea; border-radius:12px; padding:1.4rem; margin-bottom:1.6rem; box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+            <h4 style="color:#6b21a8; font-size:1.15rem; margin-bottom:0.6rem;">📦 Pas A: Tria i redacció dels teus 5 objectes de vida</h4>
+            <p style="font-size:0.92rem; line-height:1.7; color:var(--text-main); margin-bottom:0.8rem;">
+              Escull <strong>5 objectes</strong> que compartiràs per parlar de la teva trajectòria seguint aquestes condicions:
+            </p>
+            <ul style="font-size:0.9rem; line-height:1.8; color:var(--text-main); margin-left:1.3rem; margin-bottom:1rem;">
+              <li><strong>Moments significatius:</strong> Han de representar moments importants de la teva vida (no tenen per què ser necessàriament bons o dolents).</li>
+              <li><strong>Creativitat i originalitat:</strong> Han de ser objectes curiosos, simbòlics o amb càrrega emocional, no tòpics.</li>
+              <li><strong>Diferents etapes vitals:</strong> Els objectes han de parlar d'etapes diverses (infantesa, adolescència, joventut, adultesa, vellesa).</li>
+            </ul>
+
+            <div style="background:#faf5ff; border:1px solid #e9d5ff; border-radius:8px; padding:1rem 1.2rem; margin-bottom:1rem;">
+              <strong style="color:#6b21a8; font-size:0.9rem; display:block; margin-bottom:0.4rem;">✍️ Què has d'explicar al text de cada objecte:</strong>
+              <ol style="font-size:0.88rem; color:#581c87; margin-left:1.2rem; line-height:1.8;">
+                <li>D'on vas treure aquest objecte i quan (quin any, quina edat tenies).</li>
+                <li>La història concreta darrere de l'objecte i com es relaciona amb la teva evolució personal.</li>
+                <li>Detalls i concrecions que facin viva la narració oral a l'escena.</li>
+                <li>Per què has triat aquest objecte i no cap altre.</li>
+              </ol>
+            </div>
+
+            <!-- EXEMPLES D'OBJECTES -->
+            <div>
+              <p style="font-weight:700; font-size:0.9rem; color:var(--primary-deep); margin-bottom:0.5rem;">💡 Exemples inspiradors per a la teva caixa de records:</p>
+              <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:0.6rem;">
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:0.7rem 0.9rem; border-radius:6px; font-size:0.83rem;">
+                  <strong>🗝️ Una clau rovellada (Infantesa, 7 anys):</strong> Obría una antiga caseta vora el riu. Representa el refugi i el primer record guardat a la butxaca.
+                </div>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:0.7rem 0.9rem; border-radius:6px; font-size:0.83rem;">
+                  <strong>💿 Un CD ratllat (Adolescència, 15 anys):</strong> La música que va donar veu pròpia a qui no sabia explicar-se amb paraules.
+                </div>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:0.7rem 0.9rem; border-radius:6px; font-size:0.83rem;">
+                  <strong>🎫 Un bitllet de tren estripat (Joventut, 22 anys):</strong> L'inici d'un canvi radical, de deixar enrere la dependència per començar a ser un mateix.
+                </div>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:0.7rem 0.9rem; border-radius:6px; font-size:0.83rem;">
+                  <strong>💍 Un anell esquerdat (Adultesa, 38 anys):</strong> Saber deixar anar; entendre que no totes les històries acaben igual, però totes ensenyen.
+                </div>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:0.7rem 0.9rem; border-radius:6px; font-size:0.83rem; grid-column:1/-1;">
+                  <strong>📷 Una fotografia borrosa (Vellesa, 79 anys):</strong> La pau de no buscar records perfectes, sinó moments serens en companyia.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PAS B: PREPARACIÓ DE L'ESCENA TEATRALITZADA -->
+          <div style="background:#fff; border:1px solid #cbd5e1; border-left:5px solid #d97706; border-radius:12px; padding:1.4rem; margin-bottom:1.6rem; box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+            <h4 style="color:#b45309; font-size:1.15rem; margin-bottom:0.6rem;">🎬 Pas B: Preparació de l'escena teatralitzada en grup</h4>
+            <p style="font-size:0.92rem; line-height:1.7; color:var(--text-main); margin-bottom:0.8rem;">
+              En grups de <strong>3 o 4 companys/es</strong>, prepareu l'escena on representareu aquesta trobada als 80 anys. Podeu triar entre dues opcions:
+            </p>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:0.8rem; margin-bottom:1.2rem;">
+              <div style="background:#fffbeb; border:1px solid #fde68a; padding:1rem; border-radius:8px;">
+                <strong style="color:#92400e; font-size:0.95rem; display:block; margin-bottom:0.3rem;">🎭 Opció 1: En directe a l'aula</strong>
+                <p style="font-size:0.85rem; color:#78350f; margin:0; line-height:1.5;">Representació teatralitzada en viu davant la resta de companys/es amb atrezzo i vestuari preparat.</p>
+              </div>
+              <div style="background:#eff6ff; border:1px solid #bfdbfe; padding:1rem; border-radius:8px;">
+                <strong style="color:#1e40af; font-size:0.95rem; display:block; margin-bottom:0.3rem;">🎥 Opció 2: Enregistrada en vídeo</strong>
+                <p style="font-size:0.85rem; color:#1e3a8a; margin:0; line-height:1.5;">Gravació en vídeo, editada i penjada a la plataforma abans de la data indicada pel professorat.</p>
+              </div>
+            </div>
+
+            <!-- PAUTES CLAU -->
+            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1.1rem; margin-bottom:1.2rem;">
+              <strong style="color:var(--primary-deep); font-size:0.92rem; display:block; margin-bottom:0.5rem;">📋 Pautes clau per a la representació:</strong>
+              <ul style="font-size:0.88rem; line-height:1.8; color:var(--text-main); margin-left:1.2rem;">
+                <li><strong>Durada orientativa:</strong> Uns 8 minuts en total (aproximadament 2 minuts de protagonisme per persona).</li>
+                <li><strong>Context i to:</strong> Decidiu on passa l'escena (una sala d'estar, una residència, un banc vora el mar, una terrassa) i quin to té (humor, tendresa, nostàlgia o emoció).</li>
+                <li><strong>Caracterització:</strong> Vestuari, accessoris, pentinat i llenguatge corporal d'octogenaris/àvies (bastonet, ulleres, mantes, gestos).</li>
+                <li><strong>Memòria i ritme:</strong> <em>No es pot portar paper a la mà!</em> Els diàlegs han de ser fluids i memoritzats, deixant espai a la interacció i a les preguntes entre personatges.</li>
               </ul>
             </div>
-            <div class="metaphor-node">
-              <div class="metaphor-node-title">🎨 Com es dibuixa aquest tram?</div>
-              <p style="font-size:0.88rem;">El riu continua des dels 18 fins als 80 anys amb un traç lliure i poètic:</p>
-              <ul style="font-size:0.85rem; margin-left:1.2rem; margin-top:0.5rem; color:var(--text-muted);">
-                <li>Dibuixa les grans fites que voldries celebrar.</li>
-                <li>Afegeix com a mínim 1 gran cascada o revolt sobtat imaginat.</li>
-                <li>La desembocadura: com connecta el teu riu amb el mar (la comunitat, el món).</li>
-              </ul>
+
+            <!-- CHECKLIST DE L'ESCENA -->
+            <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:1.2rem;">
+              <strong style="color:#166534; font-size:0.95rem; display:block; margin-bottom:0.6rem;">✅ Checklist de l'escena «La caixa del temps»:</strong>
+              
+              <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1rem;">
+                <div>
+                  <span style="font-size:0.8rem; font-weight:800; text-transform:uppercase; color:#15803d; display:block; margin-bottom:0.4rem;">Nivell Individual:</span>
+                  <div class="checklist-item"><input type="checkbox" id="chk-ind-1"><label for="chk-ind-1">Tinc clars els 5 objectes per a la meva caixa de records.</label></div>
+                  <div class="checklist-item"><input type="checkbox" id="chk-ind-2"><label for="chk-ind-2">Tinc redactades les vivències, etapes i emocions de cada objecte.</label></div>
+                  <div class="checklist-item"><input type="checkbox" id="chk-ind-3"><label for="chk-ind-3">Tinc preparat el meu objecte físic o element simbòlic per a l'escena.</label></div>
+                </div>
+                <div>
+                  <span style="font-size:0.8rem; font-weight:800; text-transform:uppercase; color:#15803d; display:block; margin-bottom:0.4rem;">Nivell Grupal:</span>
+                  <div class="checklist-item"><input type="checkbox" id="chk-grp-1"><label for="chk-grp-1">Hem decidit l'escenari, el to i l'estil de l'escena.</label></div>
+                  <div class="checklist-item"><input type="checkbox" id="chk-grp-2"><label for="chk-grp-2">Hem decidit la modalitat: gravat en vídeo o en directe a l'aula.</label></div>
+                  <div class="checklist-item"><input type="checkbox" id="chk-grp-3"><label for="chk-grp-3">Hem elaborat el guió complet i definit el vestuari i la caracterització.</label></div>
+                  <div class="checklist-item"><input type="checkbox" id="chk-grp-4"><label for="chk-grp-4">Hem assajat l'escena sense papers i respectant el temps de tothom.</label></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1228,6 +1574,16 @@
           <h4 style="color:#0d9488; margin-bottom:0.4rem;">📋 Graella d'observació d'aula</h4>
           <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Plantilla en paper per prendre notes ràpides a classe sobre l'assoliment dels 35 comportaments i l'avaluació formativa.</p>
           <button class="btn btn-primary" style="width:100%; background:#0d9488; border:none;" onclick="window.open('imprimible_graella_docent.html', '_blank')">🖨️ Obrir i Imprimir graella</button>
+        </div>
+
+        <!-- 7. RELAT 100 ANYS & MODEL -->
+        <div class="card" style="margin-bottom:0; border-top:4px solid var(--color-pens);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+            <h4 style="color:var(--color-pens); margin:0;">✍️ Guia i Model de Relat (100 anys)</h4>
+            <span style="background:#ede9fe; color:#5b21b6; font-size:0.72rem; font-weight:700; padding:0.15rem 0.5rem; border-radius:9999px;">Tram 2 📌</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Full guia per a l'alumnat amb les 5 passes, codi de colors, bastida d'etapes vitals i el model transcrit complet.</p>
+          <button class="btn btn-primary" style="width:100%; background:var(--color-pens); border:none;" onclick="window.open('imprimible_relat_100_anys.html', '_blank')">🖨️ Obrir i Imprimir guia relat</button>
         </div>
 
       </div>
