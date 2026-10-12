@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Els rius de la vida | Recerca i acció 2026-27</title>
+  <title>Els rius de la vida | Projecte d'Orientació 4t d'ESO</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #0284c7;
@@ -16,6 +16,9 @@
       --bg-light: #f8fafc;
       --text-main: #1e293b;
       --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 2px 4px rgba(0,0,0,0.04);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.07);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -25,86 +28,145 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      line-height: 1.6;
     }
+    
+    /* HEADER HERO */
     header {
-      background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #0d9488 100%);
+      background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 55%, #0d9488 100%);
       color: white;
-      padding: 4rem 1.5rem 3.5rem;
+      padding: 4.5rem 1.5rem 4rem;
       text-align: center;
       position: relative;
     }
-    .badge {
+    .badge-hero {
       display: inline-block;
       background: rgba(255,255,255,0.18);
       backdrop-filter: blur(8px);
-      padding: 0.35rem 1rem;
+      padding: 0.4rem 1.1rem;
       border-radius: 9999px;
       font-size: 0.85rem;
       font-weight: 600;
-      margin-bottom: 1rem;
-      border: 1px solid rgba(255,255,255,0.25);
+      margin-bottom: 1.2rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      letter-spacing: 0.3px;
     }
     h1 {
       font-family: 'Outfit', sans-serif;
-      font-size: 2.8rem;
-      margin-bottom: 0.8rem;
-      letter-spacing: -0.5px;
+      font-size: 3.2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.8px;
+      line-height: 1.15;
     }
     p.lead {
-      font-size: 1.15rem;
-      max-width: 680px;
+      font-size: 1.25rem;
+      max-width: 780px;
       margin: 0 auto;
-      opacity: 0.92;
+      opacity: 0.95;
       font-weight: 300;
       line-height: 1.6;
     }
+    p.sublead {
+      font-size: 1rem;
+      max-width: 680px;
+      margin: 0.8rem auto 0;
+      opacity: 0.85;
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    /* MAIN CONTAINER */
     main {
-      max-width: 900px;
+      max-width: 1060px;
       width: 100%;
-      margin: -2rem auto 3rem;
+      margin: -2.5rem auto 4rem;
       padding: 0 1.5rem;
       position: relative;
       z-index: 10;
     }
+
+    /* PORTAL CARDS GRID */
     .portal-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.8rem;
+      gap: 2rem;
+      margin-bottom: 3rem;
     }
     .portal-card {
       background: white;
-      border-radius: 18px;
+      border-radius: 20px;
       border: 2px solid #e2e8f0;
       padding: 2.2rem;
       text-decoration: none;
       color: inherit;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
       transition: all 0.25s ease;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      position: relative;
     }
     .portal-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 16px 32px rgba(2,132,199,0.15);
+      box-shadow: 0 20px 36px rgba(2,132,199,0.14);
       border-color: var(--primary);
+    }
+    .portal-card.card-docent:hover {
+      box-shadow: 0 20px 36px rgba(217,119,6,0.14);
+      border-color: #d97706;
+    }
+    .card-top-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      margin-bottom: 1rem;
+      align-self: flex-start;
+    }
+    .tag-alumne { background: #e0f2fe; color: #0369a1; }
+    .tag-docent { background: #fef3c7; color: #b45309; }
+
+    .card-header-flex {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.8rem;
     }
     .card-icon {
       font-size: 2.8rem;
-      margin-bottom: 1rem;
+      line-height: 1;
     }
     .portal-card h2 {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       color: var(--primary-deep);
-      margin-bottom: 0.6rem;
+      margin: 0;
+      line-height: 1.2;
     }
-    .portal-card p {
+    .card-lead-text {
       color: var(--text-muted);
       font-size: 0.95rem;
       line-height: 1.6;
-      margin-bottom: 1.5rem;
-      flex-grow: 1;
+      margin-bottom: 1rem;
+    }
+    .card-features-list {
+      list-style: none;
+      margin: 0.5rem 0 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      font-size: 0.9rem;
+      color: #334155;
+    }
+    .card-features-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      line-height: 1.45;
     }
     .card-btn {
       display: inline-flex;
@@ -113,10 +175,13 @@
       gap: 0.5rem;
       background: var(--primary);
       color: white;
-      font-weight: 600;
-      padding: 0.8rem 1.4rem;
-      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.95rem 1.5rem;
+      border-radius: 12px;
       transition: background 0.2s;
+      width: 100%;
+      text-align: center;
     }
     .portal-card:hover .card-btn {
       background: var(--primary-dark);
@@ -127,36 +192,208 @@
     .card-docent:hover .card-btn {
       background: #b45309;
     }
+
+    /* SECTION CONTAINERS */
+    .section-box {
+      background: white;
+      border-radius: 18px;
+      border: 1px solid var(--border-color);
+      padding: 2.2rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2.5rem;
+    }
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.65rem;
+      color: var(--primary-deep);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.6rem;
+    }
+
+    /* ROADMAP / RECORREGUT DEL PROJECTE */
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+    .journey-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 1.3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s;
+    }
+    .journey-card:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+    }
+    .journey-step-num {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      margin-bottom: 0.6rem;
+      align-self: flex-start;
+    }
+    .badge-fase-1 { background: #e0f2fe; color: #0369a1; }
+    .badge-fase-2 { background: #fef3c7; color: #b45309; }
+    .badge-fase-3 { background: #dcfce7; color: #15803d; }
+    .badge-fase-4 { background: #f3e8ff; color: #7e22ce; }
+
+    .journey-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      color: var(--primary-deep);
+      margin-bottom: 0.5rem;
+    }
+    .journey-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .journey-substeps {
+      margin-top: 0.8rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.8rem;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    /* 3 PASSOS COM COMENÇAR */
+    .steps-horizontal {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.2rem;
+    }
+    .step-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.2rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+    }
+    .step-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+    .step-content h4 {
+      font-size: 1rem;
+      color: var(--primary-deep);
+      margin-bottom: 0.3rem;
+    }
+    .step-content p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* RESOURCES / PRINTABLES GRID */
+    .printables-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+    .printable-item {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .printable-item:hover {
+      border-color: var(--primary);
+      background: #f0f9ff;
+      color: var(--primary-dark);
+      transform: translateX(3px);
+    }
+    .printable-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
     footer {
       margin-top: auto;
       text-align: center;
-      padding: 2rem;
+      padding: 2.5rem 1.5rem;
       color: var(--text-muted);
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       border-top: 1px solid #e2e8f0;
+      background: white;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.3rem; }
+      p.lead { font-size: 1.1rem; }
+      .section-box { padding: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="badge">Recerca i acció - curs 2026-27</div>
+    <div class="badge-hero">Recerca i acció · Curs 2026-27 · 4t d'ESO</div>
     <h1>Els rius de la vida</h1>
     <p class="lead">
-      Sembla que les decisions que prendrem a 4rt d'ESO ens hagin de marcar un sol camí del que no se'n pot sortir mai. Però les trajectòries reals són com rius.
+      Sembla que les decisions que prendrem a 4t d'ESO ens hagin de marcar un sol camí del qual no se'n pot sortir mai. Però les trajectòries reals són com rius.
+    </p>
+    <p class="sublead">
+      «La vida no és una autopista d'un sol carril: té meandres, afluents i salts d'aigua que ens fan créixer.»
     </p>
   </header>
 
   <main>
+    <!-- PORTALS D'ACCÉS -->
     <div class="portal-grid">
       <!-- PORTAL ALUMNE -->
       <a href="index_alumne.html" class="portal-card">
         <div>
-          <div class="card-icon">🌊</div>
-          <h2>Espai de l'alumnat</h2>
-          <p>
-            Tria el teu riu actual, selecciona la teva Àncora i el teu Timó socioemocional, dibuixa el teu riu vital fins avui i prepara el Diari del teu viatge.
+          <span class="card-top-tag tag-alumne">Espai de l'alumnat</span>
+          <div class="card-header-flex">
+            <span class="card-icon">🌊</span>
+            <h2>Espai Alumne</h2>
+          </div>
+          <p class="card-lead-text">
+            El teu espai de treball interactiu per navegar pel projecte pas a pas:
           </p>
+          <ul class="card-features-list">
+            <li><span>🌊</span> <strong>La metàfora:</strong> Galeria dels 10 rius i diccionari simbòlic.</li>
+            <li><span>🗺️</span> <strong>Els 3 trams:</strong> Cartografia del passat, futur llunyà i cruïlla de 4t.</li>
+            <li><span>⚓</span> <strong>Habilitats:</strong> Selecció de la teva Àncora i el teu Timó.</li>
+            <li><span>📒</span> <strong>Diari del viatge:</strong> Registre interactiu de les 5 parades de reflexió.</li>
+          </ul>
         </div>
         <div class="card-btn">Entrar a l'espai alumne ➔</div>
       </a>
@@ -164,19 +401,183 @@
       <!-- PORTAL DOCENT -->
       <a href="index_docent.html" class="portal-card card-docent">
         <div>
-          <div class="card-icon">📋</div>
-          <h2>Espai docent</h2>
-          <p>
-            Guia pedagògica de sessions, temporització, graella d'observació de les 5 habilitats socioemocionals, descàrrega de dades en CSV i kit imprimible d'aula.
+          <span class="card-top-tag tag-docent">Espai del professorat</span>
+          <div class="card-header-flex">
+            <span class="card-icon">📋</span>
+            <h2>Espai Docent</h2>
+          </div>
+          <p class="card-lead-text">
+            Eines d'orientació, avaluació formativa i gestió pedagògica d'aula:
           </p>
+          <ul class="card-features-list">
+            <li><span>🧭</span> <strong>Guia de sessions:</strong> Temporització pas a pas per a les classes.</li>
+            <li><span>📊</span> <strong>Graella d'observació:</strong> Seguiment de les 5 habilitats socioemocionals.</li>
+            <li><span>💾</span> <strong>Dades i CSV:</strong> Descàrrega directa dels registres de l'alumnat.</li>
+            <li><span>🖨️</span> <strong>Banc imprimible:</strong> Accés ràpid a tots els materials en paper.</li>
+          </ul>
         </div>
         <div class="card-btn">Entrar a l'espai docent ➔</div>
       </a>
     </div>
+
+    <!-- EL MAPA DEL VIATGE (COM S'ENDREÇA EL PROJECTE) -->
+    <div class="section-box">
+      <h2 class="section-title">🧭 El mapa del viatge: Com s'estructura el projecte?</h2>
+      <p class="section-subtitle">
+        Una seqüència pedagògica en 4 etapes dissenyada per desmuntar la por al futur i prendre decisions amb seguretat:
+      </p>
+
+      <div class="journey-grid">
+        <!-- FASE 1 -->
+        <div class="journey-card">
+          <div>
+            <span class="journey-step-num badge-fase-1">1a Fase</span>
+            <h3>🌊 La metàfora fluvial</h3>
+            <p>Descobrir la simbologia del riu com a model de trajectòria vital no lineal.</p>
+          </div>
+          <div class="journey-substeps">
+            <strong>Què fem:</strong> Galeria dels 10 rius («Quin riu ets avui?»), diccionari simbòlic i Parada 1 del Diari.
+          </div>
+        </div>
+
+        <!-- FASE 2 -->
+        <div class="journey-card">
+          <div>
+            <span class="journey-step-num badge-fase-2">2a Fase</span>
+            <h3>🗺️ Els 3 trams del riu</h3>
+            <p>Creació de la gran cartografia vital en un ordre de treball intencionat.</p>
+          </div>
+          <div class="journey-substeps">
+            <strong>Ordre:</strong> 1r Tram 1 (0-16 anys) ➔ 2n Tram 2 (25-100 anys) ➔ 3r Tram 3 (Cruïlla de 4t).
+          </div>
+        </div>
+
+        <!-- FASE 3 -->
+        <div class="journey-card">
+          <div>
+            <span class="journey-step-num badge-fase-3">3a Fase</span>
+            <h3>⚓ L'equipatge personal</h3>
+            <p>Entrenament de les habilitats socioemocionals necessàries per navegar.</p>
+          </div>
+          <div class="journey-substeps">
+            <strong>Què fem:</strong> Consens dels 4 comportaments del grup, tria d'Àncora (fortalesa) i Timó (repte).
+          </div>
+        </div>
+
+        <!-- FASE 4 -->
+        <div class="journey-card">
+          <div>
+            <span class="journey-step-num badge-fase-4">4a Fase</span>
+            <h3>📒 El Diari del viatge</h3>
+            <p>El quadern d'introspecció personal que acompanya tot el procés d'orientació.</p>
+          </div>
+          <div class="journey-substeps">
+            <strong>Què fem:</strong> 5 aturades reflexives contextuals i seguiment interactiu amb checklist guardat.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COM COMENÇAR -->
+    <div class="section-box">
+      <h2 class="section-title">🚀 Com començar a treballar?</h2>
+      <p class="section-subtitle">Tres passos senzills per a l'alumnat a l'inici del projecte:</p>
+
+      <div class="steps-horizontal">
+        <div class="step-item">
+          <div class="step-circle">1</div>
+          <div class="step-content">
+            <h4>Entra a l'Espai Alumne</h4>
+            <p>Fes clic al botó blau superior per accedir a la plataforma interactiva del teu grup.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-circle">2</div>
+          <div class="step-content">
+            <h4>Prepara el teu Diari</h4>
+            <p>Agafa una llibreta o fulls en blanc on respondràs les preguntes reflexives del teu viatge.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-circle">3</div>
+          <div class="step-content">
+            <h4>Segueix el curs del riu</h4>
+            <p>Avança pas a pas amb la teva classe utilitzant els botons guiats «Següent pas ➔».</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BANC DE MATERIALS IMPRIMIBLES -->
+    <div class="section-box">
+      <h2 class="section-title">🖨️ Materials i recursos d'aula imprimibles</h2>
+      <p class="section-subtitle">
+        Accés directe a totes les fitxes i recursos en format paper llestos per imprimir:
+      </p>
+
+      <div class="printables-grid">
+        <a href="imprimible_diari_aturades.html" class="printable-item">
+          <span class="printable-icon">📒</span>
+          <div>
+            <div>Full d'aturades del Diari</div>
+            <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">Guia de les 5 parades</span>
+          </div>
+        </a>
+
+        <a href="imprimible_targetes_rius.html" class="printable-item">
+          <span class="printable-icon">🌊</span>
+          <div>
+            <div>Targetes visuals dels 10 rius</div>
+            <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">Per a la dinàmica d'inici</span>
+          </div>
+        </a>
+
+        <a href="imprimible_relat_100_anys.html" class="printable-item">
+          <span class="printable-icon">📖</span>
+          <div>
+            <div>Relat del 100è aniversari</div>
+            <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">Bastida i model amb colors</span>
+          </div>
+        </a>
+
+        <a href="imprimible_tram1.html" class="printable-item">
+          <span class="printable-icon">🗺️</span>
+          <div>
+            <div>Guia de creació del Tram 1</div>
+            <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">0 als 16 anys (Passat)</span>
+          </div>
+        </a>
+
+        <a href="imprimible_bastida_referents.html" class="printable-item">
+          <span class="printable-icon">🗣️</span>
+          <div>
+            <div>Converses amb referents</div>
+            <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">Guió per a les entrevistes</span>
+          </div>
+        </a>
+
+        <a href="imprimible_targeta_equipatge.html" class="printable-item">
+          <span class="printable-icon">⚓</span>
+          <div>
+            <div>Targeta Àncora i Timó</div>
+            <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">Equipatge socioemocional</span>
+          </div>
+        </a>
+
+        <a href="imprimible_graella_docent.html" class="printable-item">
+          <span class="printable-icon">📋</span>
+          <div>
+            <div>Graella d'observació docent</div>
+            <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">Avaluació formativa d'aula</span>
+          </div>
+        </a>
+      </div>
+    </div>
   </main>
 
   <footer>
-    Els rius de la vida · Projecte d'orientació i autoconeixement a 4t d'ESO · Curs 2026-27
+    <strong>Els rius de la vida</strong> · Projecte d'orientació vital i autoconeixement a 4t d'ESO · Curs 2026-27<br>
+    <span style="font-size:0.8rem; color:#94a3b8; margin-top:0.3rem; display:inline-block;">Desenvolupat per a l'acompanyament educatiu i la presa de decisions no lineals.</span>
   </footer>
 
 </body>
