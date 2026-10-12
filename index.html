@@ -420,6 +420,9 @@
         <!-- ============================================================= -->
     <!-- TAB 0: PÀGINA INICIAL / INICI                                -->
     <!-- ============================================================= -->
+    <!-- ============================================================= -->
+    <!-- TAB 0: PÀGINA INICIAL / INICI                                -->
+    <!-- ============================================================= -->
     <section id="tab-inici" class="tab-content active">
       <div class="route-breadcrumb"><span>📍 Estàs a:</span> <strong>Inici</strong> · Benvinguda i mapa d'orientació del projecte</div>
 
@@ -454,145 +457,144 @@
         </div>
       </div>
 
-      <!-- CARD 2: EL MAPA DEL VIATGE EN 4 ETAPES -->
+      <!-- CARD 2: EL MAPA DEL PROJECTE: ELS 3 TRAMS I LES DIMENSIONS TRANSVERSALS -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">🧭 El mapa del viatge: Com s'endreça el projecte?</h3>
-          <span style="font-size:0.85rem; color:var(--text-muted);">Les 4 grans fases de treball a l'aula</span>
-        </div>
-        <p style="margin-bottom:1.4rem;">
-          Seguirem un recorregut intencionat en 4 fases que pots explorar a través del menú superior:
-        </p>
-
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1.2rem;">
-          
-          <!-- FASE 1 -->
-          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
-                <span style="background:#e0f2fe; color:#0369a1; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:9999px;">1r Pas</span>
-                <span style="font-size:1.4rem;">🌊</span>
-              </div>
-              <h4 style="font-size:1.1rem; color:var(--primary-deep); margin-bottom:0.4rem;">La metàfora fluvial</h4>
-              <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;">
-                Explora la galeria interactiva dels 10 tipus de rius, descobreix «Quin riu ets avui?», aprèn el diccionari simbòlic i fes la primera parada del teu diari.
-              </p>
-            </div>
-            <button class="btn btn-sm btn-outline" style="margin-top:1rem; width:100%;" onclick="switchTab('tab-metafora')">Explorar la metàfora ➔</button>
-          </div>
-
-          <!-- FASE 2 -->
-          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
-                <span style="background:#fef3c7; color:#b45309; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:9999px;">2n Pas</span>
-                <span style="font-size:1.4rem;">🗺️</span>
-              </div>
-              <h4 style="font-size:1.1rem; color:var(--primary-deep); margin-bottom:0.4rem;">Els 3 trams del riu</h4>
-              <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;">
-                Dibuixa la teva cartografia vital: el passat fins avui (Tram 1), el futur llunyà i relat dels 100 anys (Tram 2), i la cruïlla real de 4t (Tram 3).
-              </p>
-            </div>
-            <button class="btn btn-sm btn-outline" style="margin-top:1rem; width:100%;" onclick="switchTab('tab-trams')">Veure els 3 trams ➔</button>
-          </div>
-
-          <!-- FASE 3 -->
-          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
-                <span style="background:#dcfce7; color:#15803d; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:9999px;">3r Pas</span>
-                <span style="font-size:1.4rem;">⚓</span>
-              </div>
-              <h4 style="font-size:1.1rem; color:var(--primary-deep); margin-bottom:0.4rem;">Habilitats socioemocionals</h4>
-              <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;">
-                Tria el teu equipatge per navegar: defineix la teva <strong>Àncora</strong> (fortalesa) i el teu <strong>Timó</strong> (repte a entrenar) dels 4 comportaments del grup.
-              </p>
-            </div>
-            <button class="btn btn-sm btn-outline" style="margin-top:1rem; width:100%;" onclick="switchTab('tab-habilitats')">Triar el meu equipatge ➔</button>
-          </div>
-
-          <!-- FASE 4 -->
-          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
-                <span style="background:#f3e8ff; color:#7e22ce; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:9999px;">4t Pas</span>
-                <span style="font-size:1.4rem;">📒</span>
-              </div>
-              <h4 style="font-size:1.1rem; color:var(--primary-deep); margin-bottom:0.4rem;">El teu diari del viatge</h4>
-              <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;">
-                L'índex central de les teves reflexions personals amb les preguntes clau de cada etapa i una llista de comprovació que guarda el teu progrés.
-              </p>
-            </div>
-            <button class="btn btn-sm btn-outline" style="margin-top:1rem; width:100%;" onclick="switchTab('tab-diari')">Obrir el diari ➔</button>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- CARD 3: COM COMENÇAR? (3 PASSOS PER A L'ALUMNE) -->
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">🚀 Com començar a treballar?</h3>
-          <span style="font-size:0.85rem; color:var(--text-muted);">Tres passos senzills</span>
+          <h3 class="card-title">🧭 El mapa del projecte: el recorregut fluvial</h3>
+          <span style="font-size:0.85rem; color:var(--text-muted);">Com s'organitza el nostre treball</span>
         </div>
         
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem;">
-          <div style="display:flex; gap:0.9rem; align-items:flex-start; padding:1rem; background:#f8fafc; border-radius:10px; border:1px solid #e2e8f0;">
-            <div style="width:34px; height:34px; border-radius:50%; background:var(--primary); color:white; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0;">1</div>
-            <div>
-              <h4 style="font-size:0.95rem; color:var(--primary-deep); margin-bottom:0.25rem;">Prepara el teu diari físic</h4>
-              <p style="font-size:0.85rem; color:var(--text-muted); margin:0; line-height:1.5;">Tingues a mà una llibreta o fulls soltes on escriuràs les teves reflexions personals de cada parada.</p>
-            </div>
-          </div>
-
-          <div style="display:flex; gap:0.9rem; align-items:flex-start; padding:1rem; background:#f8fafc; border-radius:10px; border:1px solid #e2e8f0;">
-            <div style="width:34px; height:34px; border-radius:50%; background:var(--primary); color:white; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0;">2</div>
-            <div>
-              <h4 style="font-size:0.95rem; color:var(--primary-deep); margin-bottom:0.25rem;">Tria el teu riu d'avui</h4>
-              <p style="font-size:0.85rem; color:var(--text-muted); margin:0; line-height:1.5;">Ves a la pestanya «La metàfora», explora les 10 fotografies i tria el riu que millor representa el teu moment.</p>
-            </div>
-          </div>
-
-          <div style="display:flex; gap:0.9rem; align-items:flex-start; padding:1rem; background:#f8fafc; border-radius:10px; border:1px solid #e2e8f0;">
-            <div style="width:34px; height:34px; border-radius:50%; background:var(--primary); color:white; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0;">3</div>
-            <div>
-              <h4 style="font-size:0.95rem; color:var(--primary-deep); margin-bottom:0.25rem;">Avança al ritme de classe</h4>
-              <p style="font-size:0.85rem; color:var(--text-muted); margin:0; line-height:1.5;">Fes les activitats pas a pas seguint les indicacions del professorat i els botons de continuïtat del web.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CARD 4: RECURSOS I MATERIALS D'AULA IMPRIMIBLES -->
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">🖨️ Materials imprimibles del projecte</h3>
-          <span style="font-size:0.85rem; color:var(--text-muted);">Fitxes de suport en paper</span>
-        </div>
-        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1rem;">
-          Si necessites descarregar o imprimir qualsevol dels documents de treball per a la teva llibreta o taula de classe:
+        <p style="font-size:0.98rem; color:#334155; line-height:1.6; margin-bottom:1.5rem;">
+          El projecte s'inicia amb la <strong>metàfora del riu</strong> i es desenvolupa a través de <strong>3 trams cartogràfics</strong> que treballem en un ordre pedagògic intencionat, acompanyats en tot moment per l'equipatge socioemocional i el diari reflexiu:
         </p>
 
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.8rem;">
-          <a href="imprimible_diari_aturades.html" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.6rem; padding:0.8rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; font-size:0.88rem; font-weight:600; transition:all 0.2s;">
-            <span style="font-size:1.2rem;">📒</span> Full d'aturades del Diari
-          </a>
-          <a href="imprimible_targetes_rius.html" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.6rem; padding:0.8rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; font-size:0.88rem; font-weight:600; transition:all 0.2s;">
-            <span style="font-size:1.2rem;">🌊</span> Targetes dels 10 rius
-          </a>
-          <a href="imprimible_relat_100_anys.html" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.6rem; padding:0.8rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; font-size:0.88rem; font-weight:600; transition:all 0.2s;">
-            <span style="font-size:1.2rem;">📖</span> Model Relat 100 anys
-          </a>
-          <a href="imprimible_tram1.html" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.6rem; padding:0.8rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; font-size:0.88rem; font-weight:600; transition:all 0.2s;">
-            <span style="font-size:1.2rem;">🗺️</span> Guia de creació Tram 1
-          </a>
-          <a href="imprimible_bastida_referents.html" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.6rem; padding:0.8rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; font-size:0.88rem; font-weight:600; transition:all 0.2s;">
-            <span style="font-size:1.2rem;">🗣️</span> Converses amb referents
-          </a>
-          <a href="imprimible_targeta_equipatge.html" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.6rem; padding:0.8rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; font-size:0.88rem; font-weight:600; transition:all 0.2s;">
-            <span style="font-size:1.2rem;">⚓</span> Targeta Àncora i Timó
-          </a>
+        <!-- PUNT DE PARTIDA: LA METÀFORA -->
+        <div style="background:white; border:2px solid #bae6fd; border-radius:12px; padding:1.3rem; margin-bottom:1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; box-shadow:0 2px 8px rgba(2,132,199,0.06);">
+          <div style="display:flex; align-items:center; gap:1rem; max-width:680px;">
+            <div style="font-size:2.4rem; line-height:1;">🌊</div>
+            <div>
+              <div style="display:inline-block; font-size:0.75rem; font-weight:800; text-transform:uppercase; background:#e0f2fe; color:#0369a1; padding:2px 8px; border-radius:9999px; margin-bottom:0.3rem;">
+                Punt de partida
+              </div>
+              <h4 style="font-size:1.15rem; color:var(--primary-deep); margin:0 0 0.3rem 0;">La metàfora fluvial · Quin riu ets avui?</h4>
+              <p style="font-size:0.88rem; color:var(--text-muted); margin:0; line-height:1.5;">
+                Identificació personal a través de la galeria interactiva dels 10 rius i el diccionari simbòlic (fonts, cascades, ràpids, afluents, gorgs i deltes) com a model de trajectòria vital.
+              </p>
+            </div>
+          </div>
+          <button class="btn btn-sm btn-primary" onclick="switchTab('tab-metafora')">Explorar la metàfora ➔</button>
         </div>
+
+        <!-- ELS 3 TRAMS -->
+        <div style="margin-bottom:1.5rem;">
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">
+            <span style="font-size:1.2rem;">🗺️</span>
+            <h4 style="font-size:1.1rem; color:var(--primary-deep); margin:0;">El recorregut en 3 trams (Ordre pedagògic de treball)</h4>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.2rem;">
+            
+            <!-- TRAM 1 -->
+            <div style="background:#f8fafc; border:2px solid #cbd5e1; border-top:5px solid #0284c7; border-radius:12px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between;">
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                  <span style="background:#dbeafe; color:#0369a1; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:9999px;">1r Pas de treball</span>
+                  <span style="font-size:0.8rem; font-weight:700; color:#0284c7;">Passat</span>
+                </div>
+                <h4 style="font-size:1.15rem; color:var(--primary-deep); margin-bottom:0.4rem;">Tram 1: Dels 0 als 16 anys</h4>
+                <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5; margin-bottom:0.8rem;">
+                  <strong>Mirada enrere:</strong> Reconstruir el recorregut vital fins avui. Arrels, collage de fotografies i materials, pedres superades, afluents i feedback constructiu amb la papallona d'Austin.
+                </p>
+              </div>
+              <button class="btn btn-sm btn-outline" style="width:100%;" onclick="switchTab('tab-trams'); showTramDetail(1);">
+                Veure Tram 1 ➔
+              </button>
+            </div>
+
+            <!-- TRAM 2 -->
+            <div style="background:#f8fafc; border:2px solid #cbd5e1; border-top:5px solid #9333ea; border-radius:12px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between;">
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                  <span style="background:#f3e8ff; color:#7e22ce; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:9999px;">2n Pas de treball</span>
+                  <span style="font-size:0.8rem; font-weight:700; color:#9333ea;">Futur llunyà</span>
+                </div>
+                <h4 style="font-size:1.15rem; color:var(--primary-deep); margin-bottom:0.4rem;">Tram 2: Dels 25 als 100 anys</h4>
+                <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5; margin-bottom:0.8rem;">
+                  <strong>Mirada prospectiva:</strong> Viatjar al futur llunyà per guanyar perspectiva. Entrevistes a referents adults, mural de decisions, relat del 100è aniversari (amb art IA) i escena teatral dels 5 objectes als 80 anys.
+                </p>
+              </div>
+              <button class="btn btn-sm btn-outline" style="width:100%;" onclick="switchTab('tab-trams'); showTramDetail(2);">
+                Veure Tram 2 ➔
+              </button>
+            </div>
+
+            <!-- TRAM 3 -->
+            <div style="background:#f8fafc; border:2px dashed #94a3b8; border-top:5px solid #64748b; border-radius:12px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between; opacity:0.9;">
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                  <span style="background:#e2e8f0; color:#475569; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:9999px;">3r Pas · 🔒 Bloquejat</span>
+                  <span style="font-size:0.8rem; font-weight:700; color:#64748b;">Fase posterior</span>
+                </div>
+                <h4 style="font-size:1.15rem; color:#475569; margin-bottom:0.4rem;">Tram 3: Del present als 25 anys</h4>
+                <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5; margin-bottom:0.8rem;">
+                  <strong>Mirada aplicada (Cruïlla de 4t):</strong> La recerca d'itineraris reals (Batxillerat, CFGM, PFI) i la construcció dels Plans A, B i C. <em>(S'activarà a les sessions finals del projecte).</em>
+                </p>
+              </div>
+              <button class="btn btn-sm btn-outline" style="width:100%; border-style:dashed; color:#64748b;" onclick="switchTab('tab-trams'); showTramDetail(3);">
+                🔒 Estat del Tram 3 ➔
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- DIMENSIONS TRANSVERSALS -->
+        <div style="margin-top:1.8rem; padding-top:1.4rem; border-top:1px solid #e2e8f0;">
+          <h4 style="font-size:0.92rem; text-transform:uppercase; letter-spacing:0.5px; color:#475569; margin-bottom:0.9rem; display:flex; align-items:center; gap:0.4rem;">
+            <span>🔄</span> Dimensions transversals que acompanyen tot el projecte:
+          </h4>
+          
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.2rem;">
+            
+            <!-- HABILITATS (TRANSVERSAL) -->
+            <div style="background:#eff6ff; border:1px solid #bfdbfe; border-left:4px solid #0284c7; padding:1.2rem; border-radius:10px; display:flex; flex-direction:column; justify-content:space-between;">
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                  <span style="font-weight:700; color:#0369a1; font-size:1rem; display:flex; align-items:center; gap:0.4rem;">
+                    <span>⚓</span> Habilitats socioemocionals (Àncora i Timó)
+                  </span>
+                  <span style="background:#dbeafe; color:#0369a1; font-size:0.72rem; font-weight:800; padding:2px 8px; border-radius:9999px;">Transversal</span>
+                </div>
+                <p style="font-size:0.87rem; color:#0c4a6e; line-height:1.55; margin:0 0 0.8rem 0;">
+                  No és un pas puntual: és l'equipatge que entrenem al llarg de tot el viatge. D'entre els 4 comportaments consensuats pel grup, cada persona tria i entrena la seva <strong>Àncora</strong> (fortalesa) i el seu <strong>Timó</strong> (repte personal).
+                </p>
+              </div>
+              <button class="btn btn-sm btn-outline" style="border-color:#0284c7; color:#0284c7; width:fit-content;" onclick="switchTab('tab-habilitats')">
+                Anar a Habilitats socioemocionals ➔
+              </button>
+            </div>
+
+            <!-- DIARI (TRANSVERSAL) -->
+            <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-left:4px solid #16a34a; padding:1.2rem; border-radius:10px; display:flex; flex-direction:column; justify-content:space-between;">
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                  <span style="font-weight:700; color:#15803d; font-size:1rem; display:flex; align-items:center; gap:0.4rem;">
+                    <span>📒</span> El Diari del viatge (Metacognició)
+                  </span>
+                  <span style="background:#dcfce7; color:#15803d; font-size:0.72rem; font-weight:800; padding:2px 8px; border-radius:9999px;">Transversal</span>
+                </div>
+                <p style="font-size:0.87rem; color:#166534; line-height:1.55; margin:0 0 0.8rem 0;">
+                  El teu espai personal d'introspecció que acompanya cada fase. Conté <strong>5 aturades de reflexió</strong> integrades en el moment clau de cada activitat, amb una llista de comprovació que guarda el teu progrés.
+                </p>
+              </div>
+              <button class="btn btn-sm btn-outline" style="border-color:#16a34a; color:#16a34a; width:fit-content;" onclick="switchTab('tab-diari')">
+                Obrir el Diari del viatge ➔
+              </button>
+            </div>
+
+          </div>
+        </div>
+
       </div>
 
       <!-- PEU DE FLUX INICI -->
