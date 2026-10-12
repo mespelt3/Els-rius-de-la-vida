@@ -167,7 +167,225 @@
 
     /* FOOTER */
     footer { text-align: center; padding: 1.5rem; font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid var(--border-color); margin-top: 3rem; }
-  </style>
+  
+    /* NAVEGACIÓ I BREADCRUMBS */
+    .route-breadcrumb {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      margin-bottom: 1rem;
+      border: 1px solid #e2e8f0;
+    }
+    .route-breadcrumb strong {
+      color: var(--primary-deep);
+    }
+    .step-nav-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    /* ROADMAP PEDAGÒGIC DELS TRAMS */
+    .pedagogical-roadmap-box {
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border: 2px solid #cbd5e1;
+      border-radius: 14px;
+      padding: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+    .roadmap-track {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 0.8rem;
+    }
+    .roadmap-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      border: 1px solid #e2e8f0;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .roadmap-step-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      margin-bottom: 0.4rem;
+    }
+    .badge-step-1 { background: #dbeafe; color: #0369a1; }
+    .badge-step-2 { background: #f3e8ff; color: #7e22ce; }
+    .badge-step-3 { background: #fef3c7; color: #b45309; }
+
+    /* PROMINÈNCIA ESPECIAL TRAM 3 */
+    .tram-pill-featured {
+      border: 2px solid #f59e0b !important;
+      background: linear-gradient(135deg, #ffffff 0%, #fffbeb 100%) !important;
+      position: relative;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.18);
+    }
+    .tram-pill-featured::after {
+      content: "⭐ CRUÏLLA CLAU DE 4t";
+      position: absolute;
+      top: -11px;
+      right: 14px;
+      background: #d97706;
+      color: white;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      letter-spacing: 0.5px;
+    }
+    .tram3-hero-header {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #eff6ff 100%);
+      border: 2px solid #f59e0b;
+      border-radius: 14px;
+      padding: 1.6rem;
+      margin-bottom: 1.6rem;
+      box-shadow: 0 6px 18px rgba(245, 158, 11, 0.14);
+    }
+
+    /* ESTRUCTURA D'INSTRUCCIONS EN 4 PASSOS */
+    .instruction-part {
+      margin-bottom: 1.2rem;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1.1rem 1.3rem;
+    }
+    .part-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.6rem;
+    }
+    .part-que { color: #0284c7; }
+    .part-com { color: #0d9488; }
+    .part-perque { color: #d97706; }
+    .part-diari { color: #16a34a; }
+
+    /* CHECKLIST INTERACTIU DEL DIARI */
+    .diari-progress-card {
+      background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%);
+      border: 2px solid #86efac;
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+    .progress-bar-container {
+      width: 100%;
+      height: 12px;
+      background: #e2e8f0;
+      border-radius: 9999px;
+      overflow: hidden;
+      margin: 0.8rem 0 0.4rem 0;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #16a34a 0%, #0284c7 100%);
+      border-radius: 9999px;
+      transition: width 0.4s ease;
+    }
+    .aturada-card {
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1.4rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .aturada-card.done {
+      border-color: #86efac;
+      background: #fcfdfc;
+    }
+    .aturada-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 0.8rem;
+    }
+    .aturada-check-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .aturada-check-label input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: #16a34a;
+      cursor: pointer;
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .status-badge.pending {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .status-badge.completed {
+      background: #dcfce7;
+      color: #15803d;
+    }
+    .btn-jump {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #f1f5f9;
+      color: #0369a1;
+      border: 1px solid #cbd5e1;
+      padding: 0.5rem 0.95rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-jump:hover {
+      background: #0284c7;
+      color: white;
+      border-color: #0284c7;
+    }
+    @keyframes flashGlow {
+      0% { box-shadow: 0 0 0 4px #16a34a, 0 8px 24px rgba(22,163,74,0.35); transform: scale(1.01); }
+      50% { box-shadow: 0 0 0 8px #22c55e, 0 12px 32px rgba(34,197,94,0.45); transform: scale(1.02); }
+      100% { box-shadow: none; transform: scale(1); }
+    }
+    .flash-highlight {
+      animation: flashGlow 2s ease;
+    }
+
+</style>
 </head>
 <body>
 
@@ -202,6 +420,7 @@
     <!-- TAB 1: LA METÀFORA                                            -->
     <!-- ============================================================= -->
     <section id="tab-metafora" class="tab-content active">
+      <div class="route-breadcrumb"><span>📍 Estàs a:</span> <strong>Pas 1 · La metàfora fluvial</strong> · La galeria dels 10 rius i el diccionari simbòlic</div>
 
       <!-- Bloc explicatiu del Diari -->
       <div class="diari-block" style="border-radius:14px; margin-bottom:1.5rem;">
@@ -483,7 +702,7 @@
         </div>
 
         <!-- DIARI ATURADA 1 -->
-        <div class="diari-block" style="margin-top:1.5rem;">
+        <div id="aturada-context-1" class="diari-block" style="margin-top:1.5rem;">
           <h4>📒 Diari del teu viatge — Aturada 1: Inici del viatge</h4>
           <ol>
             <li>Quina és la primera paraula o emoció que et ve al cap quan penses en prendre alguna decisió sobre què fer el curs vinent?</li>
@@ -493,6 +712,13 @@
         </div>
 
       </div><!-- /card diccionari simbolic -->
+      <!-- PEU DE FLUX METÀFORA -->
+      <div class="step-nav-footer">
+        <div></div>
+        <button class="btn btn-primary" onclick="switchTab('tab-trams'); showTramDetail(1);">
+          Següent pas: El recorregut en 3 trams (Tram 1) ➔
+        </button>
+      </div>
 
     </section>
 
@@ -500,30 +726,105 @@
     <!-- TAB 2: ELS 3 TRAMS                                            -->
     <!-- ============================================================= -->
     <section id="tab-trams" class="tab-content">
+      <div class="route-breadcrumb"><span>📍 Estàs a:</span> <strong>Pas 2 · Els 3 trams del recorregut</strong> · Passat (0-16), Futur llunyà (25-100) i Futur proper (16-25)</div>
 
       <div class="card">
         <div class="card-header">
           <h2 class="card-title">🗺️ L'arquitectura del projecte: els 3 trams</h2>
-          <span style="font-size:0.85rem; color:var(--text-muted);">Tres perspectives temporals d'autoconeixement</span>
+          <span style="font-size:0.85rem; color:var(--text-muted);">Ordre pedagògic i mirades temporals</span>
         </div>
-        <p>Al llarg del projecte, cada estudiant dibuixarà una gran cartografia dividida en 3 trams temporals complementaris:</p>
+
+        <!-- EXPLICACIÓ CLAU: RECORREGUT VITAL VS ORDRE PEDAGÒGIC DE TREBALL -->
+        <div class="pedagogical-roadmap-box">
+          <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.6rem;">
+            <span style="font-size:1.6rem;">🧭</span>
+            <div>
+              <h3 style="font-family:'Outfit',sans-serif; color:var(--primary-deep); font-size:1.2rem; margin:0;">
+                Com s'organitza el viatge? Cronologia vital vs. Ordre de treball a l'aula
+              </h3>
+              <p style="font-size:0.88rem; color:var(--text-muted); margin:0.2rem 0 0 0;">
+                Distingim clarament entre la línia cronològica dels anys de la teva vida i l'ordre estratègic en què treballem cada tram a classe.
+              </p>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.2rem; margin-top:1.1rem;">
+            
+            <!-- Eix 1: Recorregut Vital -->
+            <div style="background:white; border-radius:12px; padding:1.2rem; border:1px solid #cbd5e1;">
+              <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.6rem;">
+                <span style="font-size:1.1rem;">🌱</span>
+                <h4 style="font-size:0.92rem; color:#334155; margin:0; text-transform:uppercase; letter-spacing:0.5px;">1. La línia de la vida (edats cronològiques)</h4>
+              </div>
+              <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:0.8rem; line-height:1.5;">
+                La vida avança cronològicament en el temps:
+              </p>
+              <div style="display:flex; flex-direction:column; gap:0.5rem; font-size:0.84rem;">
+                <div style="padding:0.45rem 0.75rem; background:#eff6ff; border-left:3px solid #0284c7; border-radius:6px;">
+                  <strong>Dels 0 als 16 anys:</strong> La infantesa i l'ESO. Les arrels i les pedres superades.
+                </div>
+                <div style="padding:0.45rem 0.75rem; background:#fffbeb; border-left:3px solid #d97706; border-radius:6px;">
+                  <strong>Dels 16 als 25 anys:</strong> La joventut immediata. Postobligatòria i primeres tries vitals.
+                </div>
+                <div style="padding:0.45rem 0.75rem; background:#faf5ff; border-left:3px solid #9333ea; border-radius:6px;">
+                  <strong>Dels 25 als 100 anys:</strong> La vida adulta, experiències, meandres llargs i vellesa.
+                </div>
+              </div>
+            </div>
+
+            <!-- Eix 2: Ordre de Treball Pedagògic -->
+            <div style="background:white; border-radius:12px; padding:1.2rem; border:2px solid #0284c7; box-shadow:0 4px 12px rgba(2,132,199,0.08);">
+              <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.6rem;">
+                <span style="font-size:1.1rem;">🎯</span>
+                <h4 style="font-size:0.92rem; color:#0369a1; margin:0; text-transform:uppercase; letter-spacing:0.5px;">2. L'ordre de treball pedagògic a l'aula</h4>
+              </div>
+              <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:0.8rem; line-height:1.5;">
+                A l'aula treballem amb una seqüència intencionada per alliberar-te de la pressió:
+              </p>
+              <div style="display:flex; flex-direction:column; gap:0.5rem; font-size:0.84rem;">
+                <div style="padding:0.45rem 0.75rem; background:#eff6ff; border-left:3px solid #0284c7; border-radius:6px;">
+                  <strong>1r Pas · Tram 1 (0-16 anys):</strong> Mirar enrere. Reconstruir el passat per saber qui ets i les fortaleses que portes.
+                </div>
+                <div style="padding:0.45rem 0.75rem; background:#faf5ff; border-left:3px solid #9333ea; border-radius:6px;">
+                  <strong>2n Pas · Tram 2 (25-100 anys):</strong> Explorar el futur llunyà. Viatjar als 100 anys i escoltar referents per comprendre que les vides tenen meandres i que cap decisió és irreversible.
+                </div>
+                <div style="padding:0.45rem 0.75rem; background:#fffbeb; border-left:4px solid #f59e0b; border-radius:6px; box-shadow:0 2px 6px rgba(245,158,11,0.12);">
+                  <strong style="color:#b45309;">3r Pas · Tram 3 (16-25 anys) ⭐:</strong> <strong>El cor del projecte.</strong> Tornem al present amb serenor per decidir la cruïlla de 4t d'ESO i construir els Plans A, B i C.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="margin-top:1rem; padding:0.75rem 1rem; background:#f0fdf4; border-radius:8px; border-left:3px solid #16a34a; font-size:0.85rem; color:#166534;">
+            💡 <strong>Per què aquest ordre?</strong> Si miressis només els 16-25 anys d'entrada, sentiries la pressió de creure que t'estàs jugant tota la vida en una sola tria. En canvi, haver vist primer la immensitat dels 100 anys al Tram 2 et permet aterrar al Tram 3 amb curiositat, flexibilitat i pau mental.
+          </div>
+        </div>
+
+        <!-- PÍNDOLES SELECTORES DELS 3 TRAMS -->
         <div class="tram-banner" style="margin-top:1.2rem;">
           <div class="tram-pill active" id="pill-tram1" onclick="showTramDetail(1)">
+            <span class="roadmap-step-badge badge-step-1">1r Pas de treball</span>
             <div class="tram-pill-tag">Tram 1 · Mirada enrere</div>
-            <h3>Dels 0 als 16 anys</h3>
-            <p style="font-size:0.85rem; color:var(--text-muted);">D'on vinc? Arrels, moments clau, pedres i afluents fins avui.</p>
+            <h3 style="font-size:1.15rem; margin-bottom:0.3rem;">Dels 0 als 16 anys</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.4;">D'on vinc? Arrels, collage vital, afluents, pedres i feedback d'Austin.</p>
           </div>
+          
           <div class="tram-pill" id="pill-tram2" onclick="showTramDetail(2)">
-            <div class="tram-pill-tag">Tram 2 · Treball en equip</div>
-            <h3>Converses que ens ensenyen</h3>
-            <p style="font-size:0.85rem; color:var(--text-muted);">Del relat a les categories, construcció del mural i feedback.</p>
+            <span class="roadmap-step-badge badge-step-2">2n Pas de treball</span>
+            <div class="tram-pill-tag" style="color:var(--color-pens);">Tram 2 · El futur llunyà</div>
+            <h3 style="font-size:1.15rem; margin-bottom:0.3rem;">Dels 25 als 100 anys</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.4;">Perspectiva llarga: Converses, mural, relat 100 anys (IA) i escena teatral dels 80.</p>
           </div>
-          <div class="tram-pill" id="pill-tram3" onclick="showTramDetail(3)">
-            <div class="tram-pill-tag">Tram 3 · La lupa d'acció</div>
-            <h3>Postobligatòria (16 a 18/20)</h3>
-            <p style="font-size:0.85rem; color:var(--text-muted);">Recerca profunda: Batxillerat, CFGM, PFI. Plans A, B i C.</p>
+          
+          <div class="tram-pill tram-pill-featured" id="pill-tram3" onclick="showTramDetail(3)">
+            <span class="roadmap-step-badge badge-step-3">3r Pas de treball · Clau</span>
+            <div class="tram-pill-tag" style="color:#d97706;">Tram 3 · El cor del projecte</div>
+            <h3 style="font-size:1.15rem; color:#92400e; margin-bottom:0.3rem;">Del present als 25 anys</h3>
+            <p style="font-size:0.85rem; color:#78350f; line-height:1.4;">La cruïlla de 4t d'ESO: Batxillerat, CFGM, PFI i la xarxa de Plans A, B i C.</p>
           </div>
         </div>
+      </div>
       </div>
 
       <!-- TRAM 1 -->
@@ -567,7 +868,7 @@
         </div>
 
         <!-- DIARI ATURADA 2 -->
-        <div class="diari-block" style="margin-top:1.5rem;">
+        <div id="aturada-context-2" class="diari-block" style="margin-top:1.5rem;">
           <h4>📒 Diari del teu viatge — Aturada 2: El meu riu fins avui</h4>
           <ol>
             <li>Mirant el teu riu dibuixat, quina pedra o dificultat que semblava enorme ara veus amb perspectiva que et va fer créixer?</li>
@@ -576,6 +877,12 @@
             <li>Si haguessis de posar-te tu mateix/a una nota a la representació d'aquest primer tram, quina seria i per què?</li>
           </ol>
           <p class="diari-cta">→ Escriu les teves respostes al Diari del teu viatge.</p>
+        </div>
+      
+        <!-- PEU DE FLUX TRAM 1 -->
+        <div class="step-nav-footer">
+          <button class="btn btn-secondary" onclick="switchTab('tab-metafora')">⬅️ Pas anterior: La metàfora</button>
+          <button class="btn btn-primary" onclick="showTramDetail(2)">Següent pas: Tram 2 (Futur llunyà 25-100 anys) ➔</button>
         </div>
       </div>
 
@@ -1058,42 +1365,237 @@
           </div>
         </div>
 
+      
+        <!-- DIARI ATURADA 4 -->
+        <div id="aturada-context-4" class="diari-block" style="margin-top:1.8rem; border-color:#c084fc; background:#faf5ff;">
+          <h4 style="color:#7e22ce;">📒 Diari del teu viatge — Aturada 4: El meu futur llunyà i els meus records (25 a 100 anys)</h4>
+          <p style="font-size:0.88rem; color:#6b21a8; margin-bottom:0.8rem;">
+            Respon aquestes preguntes al teu quadern del Diari del Viatge després d'haver escrit el relat del teu 100è aniversari i representat l'escena dels 80 anys:
+          </p>
+          <ol style="color:#581c87;">
+            <li>Quan et vas projectar amb 100 anys mirant enrere en el teu relat, quina decisió, moment o aprenentatge et va transmetre més serenor o orgull?</li>
+            <li>Dels 5 objectes que vas triar per a la teva vellesa, quin diu més sobre els teus valors essencials i per què?</li>
+            <li>Després d'haver buidat les entrevistes als referents adults i vist el mural de classe, què has après sobre la presa de decisions que et tregui la por d'equivocar-te en el futur?</li>
+          </ol>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.8rem; flex-wrap:wrap; gap:0.5rem;">
+            <p class="diari-cta" style="margin:0; color:#7e22ce;">→ Escriu les respostes al teu Diari i marca-la com a completada a la pestanya del Diari.</p>
+            <button class="btn btn-sm btn-primary" onclick="switchTab('tab-diari')">Obrir índex del diari ➔</button>
+          </div>
+        </div>
+
+        <!-- PEU DE FLUX TRAM 2 -->
+        <div class="step-nav-footer">
+          <button class="btn btn-secondary" onclick="showTramDetail(1)">⬅️ Pas anterior: Tram 1 (0-16 anys)</button>
+          <button class="btn btn-primary" style="background:#d97706; border-color:#d97706;" onclick="showTramDetail(3)">
+            Següent pas: Tram 3 (⭐ Cruïlla clau de 4t d'ESO) ➔
+          </button>
+        </div>
       </div>
 
-      <!-- TRAM 3 (BLOQUEJAT) -->
-      <div id="tram-detail-3" class="card" style="display:none; position:relative; min-height:320px;">
-        <div id="tram-lock-3" class="tram-lock-overlay">
-          <div style="font-size:3rem; margin-bottom:0.5rem; opacity:0.85;">🔒</div>
-          <h3 style="color:var(--primary-deep); margin-bottom:0.5rem;">Tram inactiu (fase posterior)</h3>
-          <p style="color:var(--text-muted); font-size:0.92rem; max-width:440px; line-height:1.6; text-align:center;">
-            La recerca a fons de la postobligatòria (plans A, B i C) es treballarà a les <strong>sessions finals del projecte</strong>. El professorat indicarà quan arriba el moment.
+      <!-- TRAM 3 (PROTAGONISTA I DESBLOQUEJAT) -->
+      <div id="tram-detail-3" class="card" style="display:none; position:relative;">
+        
+        <!-- HERO BANNER TRAM 3 -->
+        <div class="tram3-hero-header">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;">
+            <div style="display:inline-flex; align-items:center; gap:0.5rem; background:#d97706; color:white; font-size:0.78rem; font-weight:800; padding:0.3rem 0.85rem; border-radius:9999px; letter-spacing:0.5px;">
+              ⭐ EL COR DEL PROJECTE · 3r PAS DE TREBALL
+            </div>
+            <span class="tag-skill badge-auto" style="font-size:0.82rem;">Decisions reals de 4t d'ESO · 16 als 25 anys</span>
+          </div>
+          <h2 style="font-family:'Outfit',sans-serif; color:#78350f; font-size:1.6rem; margin-bottom:0.5rem;">
+            🔍 Tram 3: «La cruïlla de 4t d'ESO: Del present als 25 anys»
+          </h2>
+          <p style="font-size:1rem; color:#92400e; line-height:1.6; margin-bottom:0;">
+            Has mirat enrere per saber quines fortaleses i pedres t'han forjat (<strong>Tram 1</strong>). Després has viatjat fins als 100 anys per veure que la vida és llarga, té meandres i no s'acaba en un sol camí (<strong>Tram 2</strong>). Ara tornem al teu present amb aquesta saviesa acumulada: és el moment de <strong>posar la lupa d'alta resolució a la teva cruïlla de 4t d'ESO</strong>, explorar itineraris reals i dissenyar la teva xarxa de seguretat amb els <strong>Plans A, B i C</strong>.
           </p>
-          <div style="display:inline-flex; align-items:center; gap:0.4rem; background:#f1f5f9; color:#64748b; font-size:0.82rem; font-weight:600; padding:0.4rem 0.9rem; border-radius:9999px; margin-top:0.8rem; border:1px solid #cbd5e1;">
-            ⏳ Pendent d'activació a l'aula
+        </div>
+
+        <!-- ACTIVITAT 1: MAPA D'OPCIONS POSTOBLIGATÒRIES -->
+        <div class="instruction-part">
+          <div class="part-header part-que">
+            <span>🎯</span>
+            <h4>Activitat 1 · Què has de fer? Explorar el mapa real d'opcions postobligatòries</h4>
+          </div>
+          <p style="font-size:0.95rem; color:var(--text-main); line-height:1.6; margin-bottom:0.8rem;">
+            Investigar a fons les opcions formatives i acadèmiques reals que pots triar en acabar 4t d'ESO, sense prejudicis ni idees preconcebudes, entenent que cap tria et bloqueja el camí.
+          </p>
+          
+          <div class="part-header part-com" style="margin-top:1rem;">
+            <span>🛠️</span>
+            <h4>Com ho has de fer?</h4>
+          </div>
+          <p style="font-size:0.92rem; color:var(--text-muted); margin-bottom:0.8rem;">
+            Revisa els 4 grans itineraris formatius i contrasta'ls amb els teus interessos i la teva realitat:
+          </p>
+          
+          <div class="grid-2" style="gap:1rem; margin-bottom:1rem;">
+            <div style="background:#eff6ff; border-left:4px solid #0284c7; padding:1rem; border-radius:8px;">
+              <h5 style="color:#0369a1; font-size:0.95rem; margin-bottom:0.3rem;">🎓 Batxillerat (2 cursos)</h5>
+              <p style="font-size:0.85rem; color:#0c4a6e; line-height:1.5;">
+                Formació acadèmica general orientada a estudis superiors (Cicles de Grau Superior o Universitat).<br>
+                <strong>Modalitats:</strong> Científic i Tecnològic, Humanitats i Ciències Socials, Artístic (Arts Plàstiques / Música i Arts Escèniques) i General.
+              </p>
+            </div>
+            <div style="background:#f0fdf4; border-left:4px solid #16a34a; padding:1rem; border-radius:8px;">
+              <h5 style="color:#15803d; font-size:0.95rem; margin-bottom:0.3rem;">🔧 Cicles Formatius de Grau Mitjà (CFGM - 2 cursos)</h5>
+              <p style="font-size:0.85rem; color:#166534; line-height:1.5;">
+                Formació professional pràctica i especialitzada en més de 20 famílies professionals (Informàtica, Sanitat, Electricitat, Esports, Gestió, etc.).<br>
+                <strong>Continuïtat directa:</strong> Accés directe als Cicles Formatius de Grau Superior (CFGS) sense necessitat de fer Batxillerat.
+              </p>
+            </div>
+            <div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:1rem; border-radius:8px;">
+              <h5 style="color:#92400e; font-size:0.95rem; margin-bottom:0.3rem;">🌱 Programes de Formació i Inserció (PFI)</h5>
+              <p style="font-size:0.85rem; color:#78350f; line-height:1.5;">
+                Per a joves de 16 a 21 anys que no hagin obtingut el graduat en ESO. Permeten aprendre un ofici pràctic, reprendre el ritme d'estudi i accedir directament a un CFGM.
+              </p>
+            </div>
+            <div style="background:#faf5ff; border-left:4px solid #9333ea; padding:1rem; border-radius:8px;">
+              <h5 style="color:#7e22ce; font-size:0.95rem; margin-bottom:0.3rem;">🎨 Ensenyaments de Règim Especial</h5>
+              <p style="font-size:0.85rem; color:#581c87; line-height:1.5;">
+                Itineraris específics per a vocacions esportives (Tècnic Esportiu), arts plàstiques i disseny, o música i dansa, amb titulacions homologades.
+              </p>
+            </div>
+          </div>
+
+          <div class="part-header part-perque">
+            <span>💡</span>
+            <h4>Per a què serveix?</h4>
+          </div>
+          <p style="font-size:0.9rem; color:#78350f; margin:0;">
+            Per desmuntar el fals mite que hi ha «un sol camí bo» o que una via pràctica et tanca les portes a la universitat o al creixement professional. Tots els rius tenen canals d'unió!
+          </p>
+        </div>
+
+        <!-- ACTIVITAT 2: DISSENY DELS PLANS A, B I C -->
+        <div class="instruction-part">
+          <div class="part-header part-que">
+            <span>🎯</span>
+            <h4>Activitat 2 · Què has de fer? Construir la teva xarxa de navegació: Plans A, B i C</h4>
+          </div>
+          <p style="font-size:0.95rem; color:var(--text-main); line-height:1.6; margin-bottom:0.8rem;">
+            Definir 3 camins clars i reals per als propers anys. Aquesta triple xarxa et donarà tranquil·litat absoluta davant de qualsevol imprevist (notes de tall, canvis de vocació o manca de places).
+          </p>
+
+          <div class="part-header part-com" style="margin-top:1rem;">
+            <span>🛠️</span>
+            <h4>Com ho has de fer?</h4>
+          </div>
+          
+          <div class="grid-3" style="gap:1.2rem; margin-top:0.8rem; margin-bottom:1rem;">
+            
+            <!-- PLA A -->
+            <div class="card" style="border:2px solid #0284c7; border-top:5px solid #0284c7; margin-bottom:0; background:#f8fafc;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                <h4 style="color:#0369a1; margin:0; font-size:1.05rem;">🌟 Pla A (La primera il·lusió)</h4>
+                <span style="background:#dbeafe; color:#0369a1; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:12px;">Prioritat 1</span>
+              </div>
+              <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem; line-height:1.5;">
+                L'opció que ara mateix et fa més il·lusió i connecta amb el que t'agrada fer (modalitat de Batxillerat, cicle de grau mitjà concret, etc.).
+              </p>
+              <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem; font-size:0.82rem; line-height:1.6;">
+                <strong>🔍 Què has d'investigar:</strong>
+                <ul style="margin-left:1rem; margin-top:0.3rem;">
+                  <li>Centres on s'imparteix (propers o accessibles).</li>
+                  <li>Requisits d'accés i matèries/mòduls clau.</li>
+                  <li>Com et pots preparar durant 4t d'ESO per assolir-lo.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- PLA B -->
+            <div class="card" style="border:2px solid #16a34a; border-top:5px solid #16a34a; margin-bottom:0; background:#f8fafc;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                <h4 style="color:#15803d; margin:0; font-size:1.05rem;">🌿 Pla B (L'alternativa sòlida)</h4>
+                <span style="background:#dcfce7; color:#15803d; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:12px;">Alternativa</span>
+              </div>
+              <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem; line-height:1.5;">
+                Una segona opció realment atractiva si no aconsegueixes plaça al Pla A o si canvies d'interès. No és un premi de consolació, és un curs d'aigua paral·lel.
+              </p>
+              <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem; font-size:0.82rem; line-height:1.6;">
+                <strong>🌊 L'afluent de retorn:</strong>
+                <ul style="margin-left:1rem; margin-top:0.3rem;">
+                  <li>Com et permet aquest Pla B arribar més endavant al mateix camp professional?</li>
+                  <li>Exemple: Si no entres a Batxillerat científic, fer un CFGM de Sanitat i accedir després al Grau Superior.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- PLA C -->
+            <div class="card" style="border:2px solid #d97706; border-top:5px solid #d97706; margin-bottom:0; background:#f8fafc;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                <h4 style="color:#b45309; margin:0; font-size:1.05rem;">🛡️ Pla C (La xarxa de seguretat)</h4>
+                <span style="background:#fef3c7; color:#b45309; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:12px;">Seguretat</span>
+              </div>
+              <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem; line-height:1.5;">
+                Una sortida formativa pràctica i accessible (CFGM amb molta oferta, PFI, Ensenyaments Esportius/Artístics) que et manté sempre en moviment.
+              </p>
+              <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem; font-size:0.82rem; line-height:1.6;">
+                <strong>🛶 Mai aturar el riu:</strong>
+                <ul style="margin-left:1rem; margin-top:0.3rem;">
+                  <li>Saber que mai et quedaràs encallat/da davant d'una sequera perquè tens opcions previstes.</li>
+                  <li>Connecta directament amb el teu comportament Timó (superar dificultats).</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="part-header part-perque">
+            <span>💡</span>
+            <h4>Per a què serveix?</h4>
+          </div>
+          <p style="font-size:0.9rem; color:#78350f; margin:0;">
+            Eliminar l'angoixa de la tria. Quan un navegant sap que té un bot auxiliar i una xarxa de seguretat, pren decisions amb molta més audàcia i convicció.
+          </p>
+        </div>
+
+        <!-- ACTIVITAT 3: DIBUIX DEL TRAM FINAL DEL RIU -->
+        <div class="instruction-part">
+          <div class="part-header part-que">
+            <span>🎯</span>
+            <h4>Activitat 3 · Què has de fer? Dibuixar el tram final: El delta de possibilitats (16 a 25 anys)</h4>
+          </div>
+          <p style="font-size:0.95rem; color:var(--text-main); line-height:1.6; margin-bottom:0.8rem;">
+            Dibuixar sobre el teu suport físic (paper A3 / cartolina) el tram que connecta el teu present de 4t d'ESO amb els teus 25 anys, integrant els teus tres plans i la teva Àncora i Timó.
+          </p>
+
+          <div class="part-header part-com">
+            <span>🛠️</span>
+            <h4>Com ho has de fer?</h4>
+          </div>
+          <ol style="font-size:0.92rem; color:var(--text-main); line-height:1.8; margin-left:1.3rem; margin-bottom:1rem;">
+            <li><strong>La bifurcació de 4t d'ESO:</strong> Dibuixa com el cabal del riu arriba al punt actual i es divideix en braços o afluents que representen el teu Pla A (canal principal), Pla B (segon canal) i Pla C (canal de seguretat).</li>
+            <li><strong>Els afluents de connexió:</strong> Dibuixa canals d'enllaç entre el Pla B i el Pla A per visualitzar gràficament que el camí sempre permet retrobar la teva vocació.</li>
+            <li><strong>El teu equipatge navegant:</strong> Dibuixa la teva <strong>Àncora</strong> (la teva fortalesa) en el llit del riu com a roca ferma que et sosté, i el teu <strong>Timó</strong> (el comportament que estàs entrenant) com a instrument que et permet maniobrar quan arriben els corrents ràpids.</li>
+            <li><strong>L'arribada als 25 anys:</strong> Fes confluir aquests canals cap a un espai ampli i obert (un meandre ample o un estuari) que simbolitzi la teva entrada a la vida adulta.</li>
+          </ol>
+        </div>
+
+        <!-- DIARI ATURADA 5 -->
+        <div id="aturada-context-5" class="diari-block" style="margin-top:1.8rem; border-color:#f59e0b; background:#fffdf5;">
+          <h4 style="color:#b45309;">📒 Diari del teu viatge — Aturada 5: La meva brúixola de futur i xarxa de seguretat</h4>
+          <p style="font-size:0.88rem; color:#78350f; margin-bottom:0.8rem;">
+            Respon aquestes 4 preguntes clau al teu quadern del Diari del Viatge un cop hagis dissenyat els teus Plans A, B i C:
+          </p>
+          <ol style="color:#92400e;">
+            <li>Quin és el teu <strong>Pla A</strong> per al curs vinent (Batxillerat, CFGM, PFI, etc.) i quins són els requisits i matèries clau que has d'atendre des d'ara mateix?</li>
+            <li>Si el Pla A no fos possible d'entrada, com et protegeix el teu <strong>Pla B</strong>? Quin «afluent de retorn» té per continuar apropant-te al teu camp d'interès?</li>
+            <li>Quin és el teu <strong>Pla C</strong> com a xarxa de seguretat pràctica per mantenir el teu riu en moviment davant de qualsevol sequera? Com et dona tranquil·litat tenir-lo pensat?</li>
+            <li>Ara que has recorregut tots els trams del riu (del passat als 100 anys i tornant a 4t d'ESO), com ha canviat la teva seguretat i mirada respecte a les decisions que has de prendre properament?</li>
+          </ol>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.8rem; flex-wrap:wrap; gap:0.5rem;">
+            <p class="diari-cta" style="margin:0; color:#b45309;">→ Escriu les respostes al teu Diari i marca-la com a completada a la pestanya del Diari.</p>
+            <button class="btn btn-sm btn-primary" onclick="switchTab('tab-diari')">Obrir índex del diari ➔</button>
           </div>
         </div>
-        <div class="card-header">
-          <h3 class="card-title" style="color:var(--color-auto);">🔍 Tram 3: «La lupa a la postobligatòria» (16 a 18/20 anys)</h3>
-          <span class="tag-skill badge-auto">Recerca d'opcions reals i plans A, B i C</span>
+
+        <!-- PEU DE FLUX TRAM 3 -->
+        <div class="step-nav-footer">
+          <button class="btn btn-secondary" onclick="showTramDetail(2)">⬅️ Pas anterior: Tram 2 (25-100 anys)</button>
+          <button class="btn btn-primary" onclick="switchTab('tab-habilitats')">Següent pas: Habilitats socioemocionals (Àncora i Timó) ➔</button>
         </div>
-        <p style="margin-bottom:1rem;">Ara que tenim la mirada àmplia de la vida, posem la lupa d'alta definició al tram immediat que tenim davant dels nassos: els propers 2 o 4 anys.</p>
-        <div class="grid-3">
-          <div class="card" style="border-top:4px solid var(--primary); margin-bottom:0;">
-            <h4 style="color:var(--primary-deep); margin-bottom:0.5rem;">🌟 Pla A (la primera il·lusió)</h4>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">L'opció que ara mateix et motiva més (modalitat de Batxillerat, cicle formatiu de grau mitjà específic, etc.).</p>
-            <p style="font-size:0.8rem;"><strong>Què has d'investigar:</strong> Centres on s'imparteix, notes de tall, matèries clau.</p>
-          </div>
-          <div class="card" style="border-top:4px solid var(--color-coop); margin-bottom:0;">
-            <h4 style="color:var(--color-coop); margin-bottom:0.5rem;">🌿 Pla B (l'alternativa sòlida)</h4>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Una segona opció realment atractiva si no aconsegueixes plaça al Pla A o si canvies d'interès.</p>
-            <p style="font-size:0.8rem;"><strong>L'afluent de retorn:</strong> Com et permet aquest Pla B arribar més endavant al mateix àmbit?</p>
-          </div>
-          <div class="card" style="border-top:4px solid var(--color-auto); margin-bottom:0;">
-            <h4 style="color:var(--color-auto); margin-bottom:0.5rem;">🛡️ Pla C (la xarxa de seguretat)</h4>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">Una sortida formativa pràctica (CFGM alternatiu, PFI, Ensenyaments Esportius/Artístics) que et manté en moviment.</p>
-            <p style="font-size:0.8rem;"><strong>Sense sequeres:</strong> Saber que mai et quedaràs encallat/da perquè tens opcions previstes.</p>
-          </div>
-        </div>
+
       </div>
 
     </section>
@@ -1102,6 +1604,7 @@
     <!-- TAB: HABILITATS SOCIOEMOCIONALS                               -->
     <!-- ============================================================= -->
     <section id="tab-habilitats" class="tab-content">
+      <div class="route-breadcrumb"><span>📍 Estàs a:</span> <strong>Pas 3 · Habilitats socioemocionals</strong> · Àncora i Timó</div>
 
       <!-- INTRODUCCIÓ I COMPORTAMENTS OBJECTIU DEL GRUP -->
       <div class="card">
@@ -1282,7 +1785,7 @@
         </div>
 
         <!-- DIARI ATURADA 3 -->
-        <div class="diari-block" style="margin-top:1.5rem;">
+        <div id="aturada-context-3" class="diari-block" style="margin-top:1.5rem;">
           <h4>📒 Diari del teu viatge — Aturada 3: El meu equipatge socioemocional</h4>
           <ol>
             <li>Dels 3 o 4 comportaments consensuats pel grup-classe, quin has triat com a <strong>Àncora</strong> (fortalesa)? Respon les 3 preguntes verdes que han aparegut en seleccionar-lo.</li>
@@ -1293,6 +1796,11 @@
         </div>
 
       </div>
+      <!-- PEU DE FLUX HABILITATS -->
+      <div class="step-nav-footer">
+        <button class="btn btn-secondary" onclick="switchTab('tab-trams'); showTramDetail(3);">⬅️ Pas anterior: Tram 3 (Plans A, B i C)</button>
+        <button class="btn btn-primary" onclick="switchTab('tab-diari')">Següent pas: El teu diari del viatge (Índex complet) ➔</button>
+      </div>
 
     </section>
 
@@ -1300,57 +1808,195 @@
     <!-- TAB: EL TEU DIARI                                             -->
     <!-- ============================================================= -->
     <section id="tab-diari" class="tab-content">
+      <div class="route-breadcrumb"><span>📍 Estàs a:</span> <strong>Pas 4 · El teu diari del viatge</strong> · Índex central i seguiment de parades</div>
+
       <div class="card">
         <div class="card-header">
           <h2 class="card-title">📒 El teu diari del viatge</h2>
-          <span style="font-size:0.85rem; color:var(--text-muted);">Les teves reflexions al llarg del projecte</span>
+          <span style="font-size:0.85rem; color:var(--text-muted);">Índex central de reflexions i registre de progrés</span>
         </div>
 
-        <div style="background:#f0fdf4; border-left:4px solid #16a34a; padding:1.5rem; border-radius:12px; margin-bottom:2rem;">
-          <h3 style="color:#15803d; margin-bottom:0.8rem;">Com funciona el Diari del Viatge?</h3>
-          <p style="font-size:0.95rem; color:#166534; margin-bottom:0.8rem;">El Diari del Viatge és el teu espai de reflexió personal al llarg del projecte. No és un examen ni una feina amb nota — és una eina per capturar el que penses i sents en moments clau.</p>
+        <!-- GUIA D'ÚS DEL DIARI -->
+        <div style="background:#f0fdf4; border-left:4px solid #16a34a; padding:1.5rem; border-radius:12px; margin-bottom:1.8rem;">
+          <h3 style="color:#15803d; margin-bottom:0.8rem; font-size:1.15rem;">Com funciona el Diari del Viatge?</h3>
+          <p style="font-size:0.95rem; color:#166534; margin-bottom:0.8rem; line-height:1.6;">
+            El Diari del Viatge és el teu espai de reflexió personal al llarg del projecte. No és un examen ni una feina amb nota — és una eina per capturar el que penses i sents en moments clau del teu creixement personal i orientador.
+          </p>
           <ul style="font-size:0.9rem; color:#166534; margin-left:1.2rem; line-height:1.9;">
-            <li><strong>Format:</strong> Fes-lo en un quadern físic o en fulles soltes.</li>
-            <li><strong>Quan:</strong> Cada cop que trobis un bloc verd al web, para-t'hi i escriu les respostes abans de continuar.</li>
-            <li><strong>Com:</strong> Escriu en primera persona, sense censurar-te. No hi ha respostes correctes ni incorrectes.</li>
-            <li><strong>Consell:</strong> Afegeix imatges, dibuixos o paraules que trobes al teu voltant si t'ajuden a expressar-te millor.</li>
+            <li><strong>Format:</strong> Fes-lo en un quadern físic, fulls soltes o el teu portafolis personal.</li>
+            <li><strong>Dues maneres de trobar les parades:</strong> Les trobaràs de manera contextual integrada en cada activitat del web, i també reunides aquí com a índex complet.</li>
+            <li><strong>Com escriure:</strong> En primera persona, amb honestedat i sense por d'equivocar-te. No hi ha respostes correctes ni incorrectes.</li>
+            <li><strong>Consell:</strong> Afegeix imatges, dibuixos, retallades o esquemes per expressar millor les teves idees.</li>
           </ul>
         </div>
 
-        <h3 style="color:var(--primary-deep); margin-bottom:1rem;">Totes les entrades del teu diari</h3>
+        <!-- PROGRESS DASHBOARD (CHECKLIST INTERACTIU) -->
+        <div class="diari-progress-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.6rem;">
+            <div>
+              <h3 style="color:#15803d; font-size:1.15rem; margin:0;">🎯 Llista de comprovació del teu viatge</h3>
+              <p style="font-size:0.88rem; color:#166534; margin:0.2rem 0 0 0;">
+                Marca les parades que ja has respost al teu quadern per portar el control:
+              </p>
+            </div>
+            <div style="font-weight:700; color:#15803d; font-size:1rem;">
+              <span id="diari-completed-count">0</span> de 5 parades fetes (<span id="diari-completed-pct">0%</span>)
+            </div>
+          </div>
 
-        <div class="aturada-entry">
-          <span class="aturada-badge">Aturada 1</span>
-          <h4>Inici del viatge · Quin riu ets avui?</h4>
-          <ol>
-            <li>Quina és la primera paraula o emoció que et ve al cap quan penses en prendre alguna decisió sobre què fer el curs vinent?</li>
-            <li>Sobre el riu que has triat: <strong>enganxa la imatge del riu al teu diari</strong>. Després, explica per què l'has escollit, quina emoció et genera i respon una de les 3 preguntes que apareixen sota la imatge.</li>
-          </ol>
-          <p class="aturada-ref">📍 On trobaràs el moment de reflexió: al final de la galeria dels 10 rius, a la pestanya «La metàfora».</p>
+          <div class="progress-bar-container">
+            <div id="diari-progress-bar" class="progress-bar-fill" style="width:0%;"></div>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.6rem; margin-top:0.6rem;">
+            <span style="font-size:0.8rem; color:#166534;">💾 El progrés es guarda automàticament al teu dispositiu</span>
+            <a href="imprimible_diari_aturades.html" class="btn-jump" style="background:white; color:#15803d; border-color:#86efac;">
+              🖨️ Descarrega el full d'aturades imprimible ➔
+            </a>
+          </div>
         </div>
 
-        <div class="aturada-entry">
-          <span class="aturada-badge">Aturada 2</span>
-          <h4>El meu riu fins avui · Tram 1 (0 a 16 anys)</h4>
-          <ol>
+        <h3 style="color:var(--primary-deep); margin-bottom:1.2rem; font-size:1.2rem;">
+          Índex de les 5 parades de reflexió
+        </h3>
+
+        <!-- ATURADA 1 -->
+        <div class="aturada-card" id="aturada-card-1">
+          <div class="aturada-card-header">
+            <div style="display:flex; align-items:center; gap:0.6rem;">
+              <span class="aturada-badge">Aturada 1</span>
+              <h4 style="margin:0; font-size:1.1rem; color:var(--primary-deep);">Inici del viatge · Quin riu ets avui?</h4>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.8rem;">
+              <span id="status-badge-1" class="status-badge pending">⏳ Pendent</span>
+              <label class="aturada-check-label">
+                <input type="checkbox" id="chk-aturada-1" onchange="toggleAturadaCheck(1)">
+                <span>Feta al quadern</span>
+              </label>
+            </div>
+          </div>
+          <ol style="font-size:0.92rem; color:var(--text-main); margin-left:1.3rem; line-height:1.8;">
+            <li>Quina és la primera paraula o emoció que et ve al cap quan penses en prendre alguna decisió sobre què fer el curs vinent?</li>
+            <li>Sobre el riu que has triat: <strong>enganxa la imatge del riu al teu diari</strong>. Després, explica per què l'has escollit, quina emoció et genera i respon UNA de les 3 preguntes reflexives de la targeta.</li>
+          </ol>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1rem; padding-top:0.8rem; border-top:1px solid #f1f5f9; flex-wrap:wrap; gap:0.5rem;">
+            <span class="aturada-ref">📍 Ubicació al web: Galeria dels 10 rius a la pestanya «La metàfora»</span>
+            <button class="btn-jump" onclick="jumpToAturada(1)">Ves a l'activitat per treballar-la ➔</button>
+          </div>
+        </div>
+
+        <!-- ATURADA 2 -->
+        <div class="aturada-card" id="aturada-card-2">
+          <div class="aturada-card-header">
+            <div style="display:flex; align-items:center; gap:0.6rem;">
+              <span class="aturada-badge" style="background:#0284c7;">Aturada 2</span>
+              <h4 style="margin:0; font-size:1.1rem; color:var(--primary-deep);">El meu riu fins avui · Tram 1 (0 a 16 anys)</h4>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.8rem;">
+              <span id="status-badge-2" class="status-badge pending">⏳ Pendent</span>
+              <label class="aturada-check-label">
+                <input type="checkbox" id="chk-aturada-2" onchange="toggleAturadaCheck(2)">
+                <span>Feta al quadern</span>
+              </label>
+            </div>
+          </div>
+          <ol style="font-size:0.92rem; color:var(--text-main); margin-left:1.3rem; line-height:1.8;">
             <li>Mirant el teu riu dibuixat, quina pedra o dificultat que semblava enorme ara veus amb perspectiva que et va fer créixer?</li>
             <li>Hi ha algun element del diccionari simbòlic del riu (afluents, gorgs, cascades...) que representi especialment bé un moment de la teva vida? Quin i per què?</li>
             <li>Quin feedback has rebut i com has millorat el teu riu gràcies a ell? Hi ha alguna cosa que has decidit NO canviar tot i el feedback rebut — i per què?</li>
             <li>Si haguessis de posar-te tu mateix/a una nota a la representació d'aquest primer tram, quina seria i per què?</li>
           </ol>
-          <p class="aturada-ref">📍 On trobaràs el moment de reflexió: al final de les instruccions del Tram 1 (després del feedback de la papallona d'Austin), a la pestanya «Els 3 trams».</p>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1rem; padding-top:0.8rem; border-top:1px solid #f1f5f9; flex-wrap:wrap; gap:0.5rem;">
+            <span class="aturada-ref">📍 Ubicació al web: Final del Tram 1 (després del feedback de la papallona d'Austin)</span>
+            <button class="btn-jump" onclick="jumpToAturada(2)">Ves a l'activitat per treballar-la ➔</button>
+          </div>
         </div>
 
-        <div class="aturada-entry">
-          <span class="aturada-badge">Aturada 3</span>
-          <h4>El meu equipatge socioemocional · Àncora i Timó</h4>
-          <ol>
-            <li>Dels 3 o 4 comportaments consensuats pel grup-classe, quin has triat com a <strong>Àncora</strong> (fortalesa)? Respon les 3 preguntes verdes (situació concreta, ajut al grup, consell).</li>
+        <!-- ATURADA 3 -->
+        <div class="aturada-card" id="aturada-card-3">
+          <div class="aturada-card-header">
+            <div style="display:flex; align-items:center; gap:0.6rem;">
+              <span class="aturada-badge" style="background:#0d9488;">Aturada 3</span>
+              <h4 style="margin:0; font-size:1.1rem; color:var(--primary-deep);">El meu equipatge socioemocional · Àncora i Timó</h4>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.8rem;">
+              <span id="status-badge-3" class="status-badge pending">⏳ Pendent</span>
+              <label class="aturada-check-label">
+                <input type="checkbox" id="chk-aturada-3" onchange="toggleAturadaCheck(3)">
+                <span>Feta al quadern</span>
+              </label>
+            </div>
+          </div>
+          <ol style="font-size:0.92rem; color:var(--text-main); margin-left:1.3rem; line-height:1.8;">
+            <li>Dels comportaments consensuats pel grup-classe, quin has triat com a <strong>Àncora</strong> (fortalesa)? Respon les 3 preguntes verdes (situació concreta, ajut al grup, consell).</li>
             <li>Quin has triat com a <strong>Timó</strong> (repte a entrenar) i per què et costa més? Respon les 3 preguntes blaves (moment difícil, estratègia compromesa, evidència de millora).</li>
             <li><strong>Reflexió en equip:</strong> Com es complementen les teves fortaleses i reptes amb els de la resta de companys/es per navegar amb èxit pel riu del projecte?</li>
           </ol>
-          <p class="aturada-ref">📍 On trobaràs el moment de reflexió: a la pestanya «Habilitats socioemocionals».</p>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1rem; padding-top:0.8rem; border-top:1px solid #f1f5f9; flex-wrap:wrap; gap:0.5rem;">
+            <span class="aturada-ref">📍 Ubicació al web: Pestanya «Habilitats socioemocionals»</span>
+            <button class="btn-jump" onclick="jumpToAturada(3)">Ves a l'activitat per treballar-la ➔</button>
+          </div>
         </div>
+
+        <!-- ATURADA 4 -->
+        <div class="aturada-card" id="aturada-card-4">
+          <div class="aturada-card-header">
+            <div style="display:flex; align-items:center; gap:0.6rem;">
+              <span class="aturada-badge" style="background:#9333ea;">Aturada 4</span>
+              <h4 style="margin:0; font-size:1.1rem; color:var(--primary-deep);">El meu futur llunyà i els meus records · Tram 2 (25 a 100 anys)</h4>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.8rem;">
+              <span id="status-badge-4" class="status-badge pending">⏳ Pendent</span>
+              <label class="aturada-check-label">
+                <input type="checkbox" id="chk-aturada-4" onchange="toggleAturadaCheck(4)">
+                <span>Feta al quadern</span>
+              </label>
+            </div>
+          </div>
+          <ol style="font-size:0.92rem; color:var(--text-main); margin-left:1.3rem; line-height:1.8;">
+            <li>Quan et vas projectar amb 100 anys mirant enrere en el teu relat, quina decisió, moment o aprenentatge et va transmetre més serenor o orgull?</li>
+            <li>Dels 5 objectes que vas triar per a la teva vellesa, quin diu més sobre els teus valors essencials i per què?</li>
+            <li>Després d'haver buidat les entrevistes als referents adults i vist el mural de classe, què has après sobre la presa de decisions que et tregui la por d'equivocar-te en el futur?</li>
+          </ol>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1rem; padding-top:0.8rem; border-top:1px solid #f1f5f9; flex-wrap:wrap; gap:0.5rem;">
+            <span class="aturada-ref">📍 Ubicació al web: Final del Tram 2 (després del relat i de l'escena teatralitzada)</span>
+            <button class="btn-jump" onclick="jumpToAturada(4)">Ves a l'activitat per treballar-la ➔</button>
+          </div>
+        </div>
+
+        <!-- ATURADA 5 -->
+        <div class="aturada-card" id="aturada-card-5">
+          <div class="aturada-card-header">
+            <div style="display:flex; align-items:center; gap:0.6rem;">
+              <span class="aturada-badge" style="background:#d97706;">⭐ Aturada 5</span>
+              <h4 style="margin:0; font-size:1.1rem; color:#92400e;">La meva brúixola de futur i xarxa de seguretat · Tram 3 (16 a 25 anys)</h4>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.8rem;">
+              <span id="status-badge-5" class="status-badge pending">⏳ Pendent</span>
+              <label class="aturada-check-label">
+                <input type="checkbox" id="chk-aturada-5" onchange="toggleAturadaCheck(5)">
+                <span>Feta al quadern</span>
+              </label>
+            </div>
+          </div>
+          <ol style="font-size:0.92rem; color:var(--text-main); margin-left:1.3rem; line-height:1.8;">
+            <li>Quin és el teu <strong>Pla A</strong> per al curs vinent (Batxillerat, CFGM, PFI, etc.) i quins requisits o matèries clau has d'atendre des d'ara mateix?</li>
+            <li>Si el Pla A no fos possible d'entrada, com et protegeix el teu <strong>Pla B</strong>? Quin «afluent de retorn» té per continuar apropant-te al teu camp d'interès?</li>
+            <li>Quin és el teu <strong>Pla C</strong> com a xarxa de seguretat pràctica per mantenir el teu riu en moviment davant de qualsevol sequera? Com et dona tranquil·litat tenir-lo pensat?</li>
+            <li>Ara que has recorregut tots els trams del riu (del passat als 100 anys i tornant a 4t d'ESO), com ha canviat la teva seguretat i mirada respecte a les decisions que has de prendre properament?</li>
+          </ol>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1rem; padding-top:0.8rem; border-top:1px solid #f1f5f9; flex-wrap:wrap; gap:0.5rem;">
+            <span class="aturada-ref">📍 Ubicació al web: Final del Tram 3 (cruïlla clau de 4t d'ESO)</span>
+            <button class="btn-jump" onclick="jumpToAturada(5)">Ves a l'activitat per treballar-la ➔</button>
+          </div>
+        </div>
+
+        <!-- PEU DE FLUX DIARI -->
+        <div class="step-nav-footer">
+          <button class="btn btn-secondary" onclick="switchTab('tab-habilitats')">⬅️ Anar a Habilitats socioemocionals</button>
+          <button class="btn btn-outline" onclick="window.scrollTo({top:0, behavior:'smooth'})">⬆️ Tornar a dalt de tot</button>
+        </div>
+
       </div>
     </section>
 
@@ -1596,6 +2242,103 @@
 
   <script>
     // TAB SWITCHING
+    
+    // DIARI CHECKLIST & NAVIGATION FUNCTIONS
+    function toggleAturadaCheck(num) {
+      const chk = document.getElementById('chk-aturada-' + num);
+      const isChecked = chk ? chk.checked : false;
+      localStorage.setItem('riu_aturada_done_' + num, isChecked ? 'true' : 'false');
+      updateDiariProgress();
+    }
+
+    function updateDiariProgress() {
+      let count = 0;
+      for (let i = 1; i <= 5; i++) {
+        const chk = document.getElementById('chk-aturada-' + i);
+        const badge = document.getElementById('status-badge-' + i);
+        const card = document.getElementById('aturada-card-' + i);
+        const isDone = localStorage.getItem('riu_aturada_done_' + i) === 'true';
+        if (chk) chk.checked = isDone;
+        if (badge) {
+          if (isDone) {
+            badge.className = 'status-badge completed';
+            badge.textContent = '✅ Feta al quadern';
+          } else {
+            badge.className = 'status-badge pending';
+            badge.textContent = '⏳ Pendent';
+          }
+        }
+        if (card) {
+          card.classList.toggle('done', isDone);
+        }
+        if (isDone) count++;
+      }
+      const pct = Math.round((count / 5) * 100);
+      const countEl = document.getElementById('diari-completed-count');
+      const pctEl = document.getElementById('diari-completed-pct');
+      const barEl = document.getElementById('diari-progress-bar');
+      if (countEl) countEl.textContent = count;
+      if (pctEl) pctEl.textContent = pct + '%';
+      if (barEl) barEl.style.width = pct + '%';
+    }
+
+    function jumpToAturada(num) {
+      if (num === 1) {
+        switchTab('tab-metafora');
+        setTimeout(() => {
+          const el = document.getElementById('aturada-context-1');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            highlightElement(el);
+          }
+        }, 120);
+      } else if (num === 2) {
+        switchTab('tab-trams');
+        showTramDetail(1);
+        setTimeout(() => {
+          const el = document.getElementById('aturada-context-2');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            highlightElement(el);
+          }
+        }, 120);
+      } else if (num === 3) {
+        switchTab('tab-habilitats');
+        setTimeout(() => {
+          const el = document.getElementById('aturada-context-3');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            highlightElement(el);
+          }
+        }, 120);
+      } else if (num === 4) {
+        switchTab('tab-trams');
+        showTramDetail(2);
+        setTimeout(() => {
+          const el = document.getElementById('aturada-context-4');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            highlightElement(el);
+          }
+        }, 120);
+      } else if (num === 5) {
+        switchTab('tab-trams');
+        showTramDetail(3);
+        setTimeout(() => {
+          const el = document.getElementById('aturada-context-5');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            highlightElement(el);
+          }
+        }, 120);
+      }
+    }
+
+    function highlightElement(el) {
+      el.classList.add('flash-highlight');
+      setTimeout(() => el.classList.remove('flash-highlight'), 2200);
+    }
+
     function switchTab(tabId) {
       document.querySelectorAll('.tab-content').forEach(tab => { tab.classList.remove('active'); tab.style.display = 'none'; });
       document.querySelectorAll('#tab-docent, #tab-print').forEach(t => t.style.display = 'none');
@@ -1701,7 +2444,7 @@
     });
 
     // TRAM SWITCHER
-    window.tram2Unlocked = true; window.tram3Unlocked = false;
+    window.tram2Unlocked = true; window.tram3Unlocked = true;
     function showTramDetail(tramNum) {
       for (let i = 1; i <= 3; i++) {
         const d = document.getElementById('tram-detail-' + i);
