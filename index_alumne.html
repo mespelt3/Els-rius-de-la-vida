@@ -403,7 +403,8 @@
   <!-- NAV -->
   <nav class="main-nav no-print">
     <div class="nav-container">
-      <button class="nav-btn active" onclick="switchTab('tab-metafora')">🌊 La metàfora</button>
+      <button class="nav-btn active" onclick="switchTab('tab-inici')">🏠 Inici</button>
+      <button class="nav-btn" onclick="switchTab('tab-metafora')">🌊 La metàfora</button>
       <button class="nav-btn" onclick="switchTab('tab-trams')">🗺️ Els 3 trams</button>
       <button class="nav-btn" onclick="switchTab('tab-habilitats')">⚓ Habilitats socioemocionals</button>
       <button class="nav-btn" onclick="switchTab('tab-diari')">📒 El teu diari</button>
@@ -416,7 +417,194 @@
     <!-- ============================================================= -->
     <!-- TAB 1: LA METÀFORA                                            -->
     <!-- ============================================================= -->
-    <section id="tab-metafora" class="tab-content active">
+        <!-- ============================================================= -->
+    <!-- TAB 0: PÀGINA INICIAL / INICI                                -->
+    <!-- ============================================================= -->
+    <section id="tab-inici" class="tab-content active">
+      <div class="route-breadcrumb"><span>📍 Estàs a:</span> <strong>Inici</strong> · Benvinguda i mapa d'orientació del projecte</div>
+
+      <!-- CARD 1: PRESENTACIÓ I SENTIT DEL PROJECTE -->
+      <div class="card" style="border-top: 5px solid var(--primary);">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;">
+          <span style="background:#e0f2fe; color:#0369a1; font-size:0.78rem; font-weight:800; padding:0.3rem 0.85rem; border-radius:9999px; letter-spacing:0.5px;">
+            PROJECTE D'ORIENTACIÓ I AUTOCONEIXEMENT · 4t D'ESO
+          </span>
+          <span style="font-size:0.85rem; color:var(--text-muted); font-weight:600;">Curs 2026-27</span>
+        </div>
+        
+        <h2 style="font-family:'Outfit',sans-serif; color:var(--primary-deep); font-size:2.1rem; margin-bottom:0.8rem; line-height:1.2;">
+          🌊 Benvinguts i benvingudes a «Els rius de la vida»
+        </h2>
+        
+        <p style="font-size:1.08rem; color:#334155; line-height:1.7; margin-bottom:1.2rem;">
+          Sembla que les decisions que hem de prendre a 4t d'ESO ens hagin de marcar un sol camí del qual no es pot sortir mai, com si la vida fos una autopista d'un sol carril on equivocar-se és un desastre. <strong>Però les trajectòries humanes reals són com rius:</strong> tenen arrels fondes, s'alimenten d'afluents inesperats, travessen pedres i salts d'aigua que ens fan créixer, i s'eixamplen cap al futur amb nous aprenentatges.
+        </p>
+
+        <div style="background:linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%); border-left:4px solid #16a34a; padding:1.2rem 1.4rem; border-radius:10px; margin-bottom:1.5rem;">
+          <h4 style="color:#15803d; margin-bottom:0.4rem; font-size:1rem;">💡 La intenció d'aquest viatge:</h4>
+          <p style="font-size:0.92rem; color:#166534; margin:0; line-height:1.6;">
+            Aquest projecte t'ajudarà a mirar d'on vens, perdre la por d'equivocar-te observant la vida d'altres persones, entrenar el teu equipatge socioemocional i aprendre a dissenyar no pas una única decisió rígida, sinó una <strong>xarxa flexible de camins (Plans A, B i C)</strong> per al teu futur.
+          </p>
+        </div>
+
+        <div style="display:flex; justify-content:center; margin-top:0.5rem;">
+          <button class="btn btn-primary" style="font-size:1.05rem; padding:0.9rem 2rem; border-radius:12px; font-weight:700;" onclick="switchTab('tab-metafora')">
+            Comença el viatge: Pas 1 · La metàfora fluvial ➔
+          </button>
+        </div>
+      </div>
+
+      <!-- CARD 2: EL MAPA DEL VIATGE EN 4 ETAPES -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">🧭 El mapa del viatge: Com s'endreça el projecte?</h3>
+          <span style="font-size:0.85rem; color:var(--text-muted);">Les 4 grans fases de treball a l'aula</span>
+        </div>
+        <p style="margin-bottom:1.4rem;">
+          Seguirem un recorregut intencionat en 4 fases que pots explorar a través del menú superior:
+        </p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1.2rem;">
+          
+          <!-- FASE 1 -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
+                <span style="background:#e0f2fe; color:#0369a1; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:9999px;">1r Pas</span>
+                <span style="font-size:1.4rem;">🌊</span>
+              </div>
+              <h4 style="font-size:1.1rem; color:var(--primary-deep); margin-bottom:0.4rem;">La metàfora fluvial</h4>
+              <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;">
+                Explora la galeria interactiva dels 10 tipus de rius, descobreix «Quin riu ets avui?», aprèn el diccionari simbòlic i fes la primera parada del teu diari.
+              </p>
+            </div>
+            <button class="btn btn-sm btn-outline" style="margin-top:1rem; width:100%;" onclick="switchTab('tab-metafora')">Explorar la metàfora ➔</button>
+          </div>
+
+          <!-- FASE 2 -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
+                <span style="background:#fef3c7; color:#b45309; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:9999px;">2n Pas</span>
+                <span style="font-size:1.4rem;">🗺️</span>
+              </div>
+              <h4 style="font-size:1.1rem; color:var(--primary-deep); margin-bottom:0.4rem;">Els 3 trams del riu</h4>
+              <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;">
+                Dibuixa la teva cartografia vital: el passat fins avui (Tram 1), el futur llunyà i relat dels 100 anys (Tram 2), i la cruïlla real de 4t (Tram 3).
+              </p>
+            </div>
+            <button class="btn btn-sm btn-outline" style="margin-top:1rem; width:100%;" onclick="switchTab('tab-trams')">Veure els 3 trams ➔</button>
+          </div>
+
+          <!-- FASE 3 -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
+                <span style="background:#dcfce7; color:#15803d; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:9999px;">3r Pas</span>
+                <span style="font-size:1.4rem;">⚓</span>
+              </div>
+              <h4 style="font-size:1.1rem; color:var(--primary-deep); margin-bottom:0.4rem;">Habilitats socioemocionals</h4>
+              <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;">
+                Tria el teu equipatge per navegar: defineix la teva <strong>Àncora</strong> (fortalesa) i el teu <strong>Timó</strong> (repte a entrenar) dels 4 comportaments del grup.
+              </p>
+            </div>
+            <button class="btn btn-sm btn-outline" style="margin-top:1rem; width:100%;" onclick="switchTab('tab-habilitats')">Triar el meu equipatge ➔</button>
+          </div>
+
+          <!-- FASE 4 -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:1.3rem; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
+                <span style="background:#f3e8ff; color:#7e22ce; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:9999px;">4t Pas</span>
+                <span style="font-size:1.4rem;">📒</span>
+              </div>
+              <h4 style="font-size:1.1rem; color:var(--primary-deep); margin-bottom:0.4rem;">El teu diari del viatge</h4>
+              <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;">
+                L'índex central de les teves reflexions personals amb les preguntes clau de cada etapa i una llista de comprovació que guarda el teu progrés.
+              </p>
+            </div>
+            <button class="btn btn-sm btn-outline" style="margin-top:1rem; width:100%;" onclick="switchTab('tab-diari')">Obrir el diari ➔</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CARD 3: COM COMENÇAR? (3 PASSOS PER A L'ALUMNE) -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">🚀 Com començar a treballar?</h3>
+          <span style="font-size:0.85rem; color:var(--text-muted);">Tres passos senzills</span>
+        </div>
+        
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem;">
+          <div style="display:flex; gap:0.9rem; align-items:flex-start; padding:1rem; background:#f8fafc; border-radius:10px; border:1px solid #e2e8f0;">
+            <div style="width:34px; height:34px; border-radius:50%; background:var(--primary); color:white; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0;">1</div>
+            <div>
+              <h4 style="font-size:0.95rem; color:var(--primary-deep); margin-bottom:0.25rem;">Prepara el teu diari físic</h4>
+              <p style="font-size:0.85rem; color:var(--text-muted); margin:0; line-height:1.5;">Tingues a mà una llibreta o fulls soltes on escriuràs les teves reflexions personals de cada parada.</p>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:0.9rem; align-items:flex-start; padding:1rem; background:#f8fafc; border-radius:10px; border:1px solid #e2e8f0;">
+            <div style="width:34px; height:34px; border-radius:50%; background:var(--primary); color:white; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0;">2</div>
+            <div>
+              <h4 style="font-size:0.95rem; color:var(--primary-deep); margin-bottom:0.25rem;">Tria el teu riu d'avui</h4>
+              <p style="font-size:0.85rem; color:var(--text-muted); margin:0; line-height:1.5;">Ves a la pestanya «La metàfora», explora les 10 fotografies i tria el riu que millor representa el teu moment.</p>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:0.9rem; align-items:flex-start; padding:1rem; background:#f8fafc; border-radius:10px; border:1px solid #e2e8f0;">
+            <div style="width:34px; height:34px; border-radius:50%; background:var(--primary); color:white; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0;">3</div>
+            <div>
+              <h4 style="font-size:0.95rem; color:var(--primary-deep); margin-bottom:0.25rem;">Avança al ritme de classe</h4>
+              <p style="font-size:0.85rem; color:var(--text-muted); margin:0; line-height:1.5;">Fes les activitats pas a pas seguint les indicacions del professorat i els botons de continuïtat del web.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4: RECURSOS I MATERIALS D'AULA IMPRIMIBLES -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">🖨️ Materials imprimibles del projecte</h3>
+          <span style="font-size:0.85rem; color:var(--text-muted);">Fitxes de suport en paper</span>
+        </div>
+        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1rem;">
+          Si necessites descarregar o imprimir qualsevol dels documents de treball per a la teva llibreta o taula de classe:
+        </p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.8rem;">
+          <a href="imprimible_diari_aturades.html" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.6rem; padding:0.8rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; font-size:0.88rem; font-weight:600; transition:all 0.2s;">
+            <span style="font-size:1.2rem;">📒</span> Full d'aturades del Diari
+          </a>
+          <a href="imprimible_targetes_rius.html" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.6rem; padding:0.8rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; font-size:0.88rem; font-weight:600; transition:all 0.2s;">
+            <span style="font-size:1.2rem;">🌊</span> Targetes dels 10 rius
+          </a>
+          <a href="imprimible_relat_100_anys.html" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.6rem; padding:0.8rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; font-size:0.88rem; font-weight:600; transition:all 0.2s;">
+            <span style="font-size:1.2rem;">📖</span> Model Relat 100 anys
+          </a>
+          <a href="imprimible_tram1.html" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.6rem; padding:0.8rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; font-size:0.88rem; font-weight:600; transition:all 0.2s;">
+            <span style="font-size:1.2rem;">🗺️</span> Guia de creació Tram 1
+          </a>
+          <a href="imprimible_bastida_referents.html" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.6rem; padding:0.8rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; font-size:0.88rem; font-weight:600; transition:all 0.2s;">
+            <span style="font-size:1.2rem;">🗣️</span> Converses amb referents
+          </a>
+          <a href="imprimible_targeta_equipatge.html" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.6rem; padding:0.8rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; font-size:0.88rem; font-weight:600; transition:all 0.2s;">
+            <span style="font-size:1.2rem;">⚓</span> Targeta Àncora i Timó
+          </a>
+        </div>
+      </div>
+
+      <!-- PEU DE FLUX INICI -->
+      <div class="step-nav-footer">
+        <div></div>
+        <button class="btn btn-primary" onclick="switchTab('tab-metafora')">
+          Comença el viatge: Pas 1 · La metàfora fluvial ➔
+        </button>
+      </div>
+    </section>
+
+    <section id="tab-metafora" class="tab-content">
       <div class="route-breadcrumb"><span>📍 Estàs a:</span> <strong>Pas 1 · La metàfora fluvial</strong> · La galeria dels 10 rius i el diccionari simbòlic</div>
 
       <!-- Bloc explicatiu del Diari -->
@@ -711,7 +899,7 @@
       </div><!-- /card diccionari simbolic -->
       <!-- PEU DE FLUX METÀFORA -->
       <div class="step-nav-footer">
-        <div></div>
+        <button class="btn btn-secondary" onclick="switchTab('tab-inici')">⬅️ Tornar a l'Inici</button>
         <button class="btn btn-primary" onclick="switchTab('tab-trams'); showTramDetail(1);">
           Següent pas: El recorregut en 3 trams (Tram 1) ➔
         </button>
