@@ -788,8 +788,8 @@
                 <div style="padding:0.45rem 0.75rem; background:#faf5ff; border-left:3px solid #9333ea; border-radius:6px;">
                   <strong>2n Pas · Tram 2 (25-100 anys):</strong> Explorar el futur llunyà. Viatjar als 100 anys i escoltar referents per comprendre que les vides tenen meandres i que cap decisió és irreversible.
                 </div>
-                <div style="padding:0.45rem 0.75rem; background:#fffbeb; border-left:4px solid #f59e0b; border-radius:6px; box-shadow:0 2px 6px rgba(245,158,11,0.12);">
-                  <strong style="color:#b45309;">3r Pas · Tram 3 (16-25 anys) ⭐:</strong> <strong>El cor del projecte.</strong> Tornem al present amb serenor per decidir la cruïlla de 4t d'ESO i construir els Plans A, B i C.
+                <div style="padding:0.45rem 0.75rem; background:#f1f5f9; border-left:4px solid #64748b; border-radius:6px;">
+                  <strong style="color:#334155;">3r Pas · Tram 3 (16-25 anys) 🔒:</strong> <strong>Fase final (bloquejat).</strong> Tornarem al present per decidir la cruïlla de 4t d'ESO i construir els Plans A, B i C en les darreres sessions del projecte.
                 </div>
               </div>
             </div>
@@ -817,11 +817,14 @@
             <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.4;">Perspectiva llarga: Converses, mural, relat 100 anys (IA) i escena teatral dels 80.</p>
           </div>
           
-          <div class="tram-pill tram-pill-featured" id="pill-tram3" onclick="showTramDetail(3)">
-            <span class="roadmap-step-badge badge-step-3">3r Pas de treball · Clau</span>
-            <div class="tram-pill-tag" style="color:#d97706;">Tram 3 · El cor del projecte</div>
-            <h3 style="font-size:1.15rem; color:#92400e; margin-bottom:0.3rem;">Del present als 25 anys</h3>
-            <p style="font-size:0.85rem; color:#78350f; line-height:1.4;">La cruïlla de 4t d'ESO: Batxillerat, CFGM, PFI i la xarxa de Plans A, B i C.</p>
+          <div class="tram-pill tram-pill-locked" id="pill-tram3" onclick="showTramDetail(3)" style="border:2px dashed #94a3b8; background:#f8fafc; position:relative; cursor:pointer;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+              <span class="roadmap-step-badge" style="background:#e2e8f0; color:#475569;">3r Pas · Fase posterior</span>
+              <span style="font-size:1.1rem;">🔒</span>
+            </div>
+            <div class="tram-pill-tag" style="color:#64748b;">Tram 3 · Bloquejat</div>
+            <h3 style="font-size:1.15rem; color:#475569; margin-bottom:0.3rem;">Del present als 25 anys</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.4;">🔒 Bloquejat. S'activarà a classe per a les sessions finals del projecte.</p>
           </div>
         </div>
       </div>
@@ -1386,14 +1389,37 @@
         <!-- PEU DE FLUX TRAM 2 -->
         <div class="step-nav-footer">
           <button class="btn btn-secondary" onclick="showTramDetail(1)">⬅️ Pas anterior: Tram 1 (0-16 anys)</button>
-          <button class="btn btn-primary" style="background:#d97706; border-color:#d97706;" onclick="showTramDetail(3)">
-            Següent pas: Tram 3 (⭐ Cruïlla clau de 4t d'ESO) ➔
-          </button>
+          <div style="display:flex; gap:0.6rem; align-items:center; flex-wrap:wrap;">
+            <button class="btn btn-outline" style="border-style:dashed; color:#64748b;" onclick="showTramDetail(3)">🔒 Tram 3 (Bloquejat)</button>
+            <button class="btn btn-primary" onclick="switchTab('tab-habilitats')">Següent pas: Habilitats socioemocionals (Àncora i Timó) ➔</button>
+          </div>
         </div>
       </div>
 
       <!-- TRAM 3 (PROTAGONISTA I DESBLOQUEJAT) -->
-      <div id="tram-detail-3" class="card" style="display:none; position:relative;">
+      <div id="tram-detail-3" class="card" style="display:none; position:relative; min-height:480px;">
+        <!-- OVERLAY BLOQUEIG TRAM 3 (SOLID I INTRANSPARENT) -->
+        <div id="tram-lock-3" class="tram-lock-overlay" style="background:#f8fafc; z-index:50; border-radius:14px; padding:3.5rem 1.5rem; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+          <div style="font-size:3.8rem; margin-bottom:0.8rem; line-height:1;">🔒</div>
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; background:#fee2e2; color:#b91c1c; font-size:0.82rem; font-weight:800; padding:0.35rem 0.95rem; border-radius:9999px; margin-bottom:1rem; border:1px solid #fca5a5; letter-spacing:0.5px;">
+            ⛔ TRAM BLOQUEJAT · FASE POSTERIOR
+          </div>
+          <h3 style="font-family:'Outfit',sans-serif; color:var(--primary-deep); font-size:1.6rem; margin-bottom:0.6rem;">
+            🔍 Tram 3: «Del present als 25 anys»
+          </h3>
+          <p style="color:var(--text-muted); font-size:1.02rem; max-width:540px; line-height:1.7; margin:0 auto 1.5rem auto;">
+            La recerca a fons de la postobligatòria (Batxillerat, CFGM, PFI), la construcció dels <strong>Plans A, B i C</strong> i l'aturada 5 del diari es treballaran a les <strong>sessions finals del projecte</strong>.<br>
+            El professorat us indicarà quan arriba el moment d'activar aquest tram a l'aula!
+          </p>
+          <div style="display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap;">
+            <button class="btn btn-secondary" onclick="showTramDetail(2)">⬅️ Tornar al Tram 2 (25 a 100 anys)</button>
+            <button class="btn btn-primary" onclick="switchTab('tab-habilitats')">Anar a Habilitats socioemocionals ➔</button>
+            <button class="btn btn-sm" style="background:#d97706; color:white; border:none; margin-top:0.8rem; cursor:pointer;" onclick="unlockTram(3)">🔓 Desbloquejar Tram 3 (Mode docent / Vista d'aula)</button>
+          </div>
+        </div>
+
+        <!-- CONTINGUT REAL DEL TRAM 3 (OCULT QUAN ESTÀ BLOQUEJAT) -->
+        <div id="tram-content-3" style="display:none;">
         
         <!-- HERO BANNER TRAM 3 -->
         <div class="tram3-hero-header">
@@ -1595,9 +1621,8 @@
           <button class="btn btn-secondary" onclick="showTramDetail(2)">⬅️ Pas anterior: Tram 2 (25-100 anys)</button>
           <button class="btn btn-primary" onclick="switchTab('tab-habilitats')">Següent pas: Habilitats socioemocionals (Àncora i Timó) ➔</button>
         </div>
-
+        </div>
       </div>
-
     </section>
 
     <!-- ============================================================= -->
@@ -1798,7 +1823,7 @@
       </div>
       <!-- PEU DE FLUX HABILITATS -->
       <div class="step-nav-footer">
-        <button class="btn btn-secondary" onclick="switchTab('tab-trams'); showTramDetail(3);">⬅️ Pas anterior: Tram 3 (Plans A, B i C)</button>
+        <button class="btn btn-secondary" onclick="switchTab('tab-trams'); showTramDetail(2);">⬅️ Pas anterior: Tram 2 (25-100 anys)</button>
         <button class="btn btn-primary" onclick="switchTab('tab-diari')">Següent pas: El teu diari del viatge (Índex complet) ➔</button>
       </div>
 
@@ -1840,7 +1865,7 @@
               </p>
             </div>
             <div style="font-weight:700; color:#15803d; font-size:1rem;">
-              <span id="diari-completed-count">0</span> de 5 parades fetes (<span id="diari-completed-pct">0%</span>)
+              <span id="diari-completed-count">0</span> de 4 parades actives fetes (<span id="diari-completed-pct">0%</span>)
             </div>
           </div>
 
@@ -1964,30 +1989,23 @@
           </div>
         </div>
 
-        <!-- ATURADA 5 -->
-        <div class="aturada-card" id="aturada-card-5">
+        <!-- ATURADA 5 (BLOQUEJADA FASE POSTERIOR) -->
+        <div class="aturada-card" id="aturada-card-5" style="border:2px dashed #cbd5e1; background:#f8fafc;">
           <div class="aturada-card-header">
             <div style="display:flex; align-items:center; gap:0.6rem;">
-              <span class="aturada-badge" style="background:#d97706;">⭐ Aturada 5</span>
-              <h4 style="margin:0; font-size:1.1rem; color:#92400e;">La meva brúixola de futur i xarxa de seguretat · Tram 3 (16 a 25 anys)</h4>
+              <span class="aturada-badge" style="background:#64748b;">🔒 Aturada 5</span>
+              <h4 style="margin:0; font-size:1.1rem; color:#475569;">La meva brúixola de futur i xarxa de seguretat · Tram 3 (16 a 25 anys)</h4>
             </div>
             <div style="display:flex; align-items:center; gap:0.8rem;">
-              <span id="status-badge-5" class="status-badge pending">⏳ Pendent</span>
-              <label class="aturada-check-label">
-                <input type="checkbox" id="chk-aturada-5" onchange="toggleAturadaCheck(5)">
-                <span>Feta al quadern</span>
-              </label>
+              <span id="status-badge-5" class="status-badge" style="background:#f1f5f9; color:#64748b; border:1px solid #cbd5e1;">🔒 Bloquejada (Fase final)</span>
             </div>
           </div>
-          <ol style="font-size:0.92rem; color:var(--text-main); margin-left:1.3rem; line-height:1.8;">
-            <li>Quin és el teu <strong>Pla A</strong> per al curs vinent (Batxillerat, CFGM, PFI, etc.) i quins requisits o matèries clau has d'atendre des d'ara mateix?</li>
-            <li>Si el Pla A no fos possible d'entrada, com et protegeix el teu <strong>Pla B</strong>? Quin «afluent de retorn» té per continuar apropant-te al teu camp d'interès?</li>
-            <li>Quin és el teu <strong>Pla C</strong> com a xarxa de seguretat pràctica per mantenir el teu riu en moviment davant de qualsevol sequera? Com et dona tranquil·litat tenir-lo pensat?</li>
-            <li>Ara que has recorregut tots els trams del riu (del passat als 100 anys i tornant a 4t d'ESO), com ha canviat la teva seguretat i mirada respecte a les decisions que has de prendre properament?</li>
-          </ol>
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1rem; padding-top:0.8rem; border-top:1px solid #f1f5f9; flex-wrap:wrap; gap:0.5rem;">
-            <span class="aturada-ref">📍 Ubicació al web: Final del Tram 3 (cruïlla clau de 4t d'ESO)</span>
-            <button class="btn-jump" onclick="jumpToAturada(5)">Ves a l'activitat per treballar-la ➔</button>
+          <div style="background:#f1f5f9; border-radius:8px; padding:0.9rem 1.1rem; font-size:0.88rem; color:#475569; margin-bottom:0.8rem; border-left:3px solid #94a3b8;">
+            🔒 <strong>Aquesta parada de reflexió encara no està activa:</strong> Es desbloquejarà a les sessions finals del projecte juntament amb el Tram 3 (Plans A, B i C). De moment no cal que facis res!
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.8rem; padding-top:0.6rem; border-top:1px solid #e2e8f0; flex-wrap:wrap; gap:0.5rem;">
+            <span class="aturada-ref">📍 Ubicació al web: Tram 3 (actualment bloquejat per a fases posteriors)</span>
+            <button class="btn-jump" style="color:#64748b;" onclick="jumpToAturada(5)">Veure estat del Tram 3 ➔</button>
           </div>
         </div>
 
@@ -2253,7 +2271,7 @@
 
     function updateDiariProgress() {
       let count = 0;
-      for (let i = 1; i <= 5; i++) {
+      for (let i = 1; i <= 4; i++) {
         const chk = document.getElementById('chk-aturada-' + i);
         const badge = document.getElementById('status-badge-' + i);
         const card = document.getElementById('aturada-card-' + i);
@@ -2273,7 +2291,7 @@
         }
         if (isDone) count++;
       }
-      const pct = Math.round((count / 5) * 100);
+      const pct = Math.round((count / 4) * 100);
       const countEl = document.getElementById('diari-completed-count');
       const pctEl = document.getElementById('diari-completed-pct');
       const barEl = document.getElementById('diari-progress-bar');
@@ -2444,18 +2462,38 @@
     });
 
     // TRAM SWITCHER
-    window.tram2Unlocked = true; window.tram3Unlocked = true;
+    window.tram2Unlocked = true; window.tram3Unlocked = false;
     function showTramDetail(tramNum) {
       for (let i = 1; i <= 3; i++) {
-        const d = document.getElementById('tram-detail-' + i);
-        const p = document.getElementById('pill-tram' + i);
-        if (d) d.style.display = (i === tramNum) ? 'block' : 'none';
-        if (p) p.classList.toggle('active', i === tramNum);
+        const detail = document.getElementById('tram-detail-' + i);
+        const pill = document.getElementById('pill-tram' + i);
+        if (detail) detail.style.display = (i === tramNum) ? 'block' : 'none';
+        if (pill) pill.classList.toggle('active', i === tramNum);
       }
-      if (tramNum === 2 && !window.tram2Unlocked) { const l = document.getElementById('tram-lock-2'); if(l) l.style.display='flex'; }
-      if (tramNum === 3 && !window.tram3Unlocked) { const l = document.getElementById('tram-lock-3'); if(l) l.style.display='flex'; }
+      if (tramNum === 2) {
+        const lock = document.getElementById('tram-lock-2');
+        if (lock) lock.style.display = window.tram2Unlocked ? 'none' : 'flex';
+      }
+      if (tramNum === 3) {
+        const lock = document.getElementById('tram-lock-3');
+        const content = document.getElementById('tram-content-3');
+        if (lock) lock.style.display = window.tram3Unlocked ? 'none' : 'flex';
+        if (content) content.style.display = window.tram3Unlocked ? 'block' : 'none';
+      }
     }
-    function unlockTram(num) { window['tram'+num+'Unlocked']=true; const el=document.getElementById('tram-lock-'+num); if(el) el.style.display='none'; }
+    function unlockTram(num) {
+      window['tram' + num + 'Unlocked'] = true;
+      const lock = document.getElementById('tram-lock-' + num);
+      const content = document.getElementById('tram-content-' + num);
+      if (lock) lock.style.display = 'none';
+      if (content) content.style.display = 'block';
+      const pill = document.getElementById('pill-tram' + num);
+      if (pill) {
+        pill.classList.remove('tram-pill-locked');
+        pill.style.opacity = '1';
+        pill.style.borderStyle = 'solid';
+      }
+    }
 
     // BEHAVIORS
     const behaviorsData = {
