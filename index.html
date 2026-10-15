@@ -431,6 +431,201 @@
     }
     .relat-text-content p { margin-bottom: 1.2rem; }
     .relat-text-content p:last-child { margin-bottom: 0; }
+
+    /* ============================================================= */
+    /* DUA: DISSENY UNIVERSAL PER A L'APRENENTATGE & MODALITATS      */
+    /* ============================================================= */
+    .dua-mode-bar {
+      background: #ffffff;
+      border-bottom: 2px solid #e2e8f0;
+      padding: 0.65rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      transition: all 0.2s ease;
+    }
+    .dua-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .dua-title-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .dua-title-group .dua-icon {
+      font-size: 1.25rem;
+    }
+    .dua-title-group .dua-label {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--primary-deep);
+    }
+    .dua-buttons {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .dua-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      border: 1.5px solid #cbd5e1;
+      background: #f8fafc;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+    .dua-btn:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+    .dua-btn.active {
+      background: #eff6ff;
+      border-color: #0284c7;
+      box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.2);
+    }
+    .dua-btn .dua-btn-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .dua-btn.active .dua-btn-name {
+      color: #0369a1;
+    }
+    .dua-btn .dua-btn-desc {
+      font-size: 0.7rem;
+      color: #64748b;
+      line-height: 1.2;
+    }
+    .dua-btn.active .dua-btn-desc {
+      color: #0284c7;
+    }
+    .dua-mode-info-banner {
+      width: 100%;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.78rem;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-top: 0.25rem;
+    }
+
+    /* Targetes de suport DUA */
+    .dua-box {
+      border-radius: 12px;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 1.3rem;
+      border: 1px solid #e2e8f0;
+      transition: all 0.2s ease;
+    }
+    .dua-product-box {
+      background: #f0f9ff;
+      border-left: 5px solid #0284c7;
+      border-color: #bae6fd;
+    }
+    .dua-sentence-starters {
+      background: #fffbeb;
+      border-left: 5px solid #f59e0b;
+      border-color: #fde68a;
+    }
+    .dua-glossary-box {
+      background: #f0fdfa;
+      border-left: 5px solid #0d9488;
+      border-color: #99f6e4;
+    }
+    .dua-step-seq {
+      background: #faf5ff;
+      border-left: 5px solid #8b5cf6;
+      border-color: #ddd6fe;
+    }
+    .dua-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      margin-bottom: 0.4rem;
+    }
+    .hl-keyterm {
+      background-color: #fef08a;
+      color: #854d0e;
+      padding: 1px 4px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .dua-scaffold-details summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--primary-deep);
+      outline: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.2rem 0;
+      user-select: none;
+    }
+    .dua-scaffold-details summary::-webkit-details-marker {
+      display: none;
+    }
+    .dua-scaffold-details summary::after {
+      content: '▾ Desplegar suport';
+      font-size: 0.78rem;
+      color: #0284c7;
+      background: #e0f2fe;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      font-weight: 700;
+    }
+    .dua-scaffold-details[open] summary::after {
+      content: '▴ Plegar suport';
+      background: #f1f5f9;
+      color: #64748b;
+    }
+
+    /* Adaptacions segons la modalitat activa */
+    body.mode-pas-a-pas .dua-step-seq,
+    body.mode-pas-a-pas .dua-sentence-starters,
+    body.mode-pas-a-pas .dua-product-box {
+      box-shadow: 0 4px 14px rgba(139, 92, 246, 0.1);
+      border-width: 2px;
+    }
+    body.mode-lectura-guiada {
+      line-height: 1.85;
+    }
+    body.mode-lectura-guiada p {
+      margin-bottom: 1rem;
+    }
+    body.mode-lectura-guiada .hl-keyterm {
+      box-shadow: 0 1px 3px rgba(133, 77, 14, 0.2);
+    }
+    body.mode-lectura-guiada .dua-glossary-box {
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.12);
+      border-width: 2px;
+    }
+
   </style>
 </head>
 <body>
@@ -445,6 +640,39 @@
       </p>
     </div>
   </header>
+
+  <!-- ============================================================= -->
+  <!-- SELECTOR DE MODALITAT DUA (COMPLETA, PAS A PAS, LECTURA GUIADA) -->
+  <!-- ============================================================= -->
+  <div class="dua-mode-bar no-print" role="region" aria-label="Selector de modalitat de treball DUA">
+    <div class="dua-container">
+      <div class="dua-title-group">
+        <span class="dua-icon" aria-hidden="true">🧭</span>
+        <div>
+          <span class="dua-label">Com vols treballar avui?</span>
+          <span style="font-size:0.7rem; color:#64748b; display:block;">Pots canviar de modalitat en qualsevol moment sense perdre res</span>
+        </div>
+      </div>
+      <div class="dua-buttons" role="radiogroup" aria-label="Modalitat de treball">
+        <button type="button" class="dua-btn active" id="btn-mode-completa" onclick="setLearningMode('completa')" role="radio" aria-checked="true">
+          <span class="dua-btn-name">👁️ Completa</span>
+          <span class="dua-btn-desc">Autonomia i visió general</span>
+        </button>
+        <button type="button" class="dua-btn" id="btn-mode-pas-a-pas" onclick="setLearningMode('pas-a-pas')" role="radio" aria-checked="false">
+          <span class="dua-btn-name">👣 Pas a pas</span>
+          <span class="dua-btn-desc">Accions curtes, pistes i plantilles</span>
+        </button>
+        <button type="button" class="dua-btn" id="btn-mode-lectura-guiada" onclick="setLearningMode('lectura-guiada')" role="radio" aria-checked="false">
+          <span class="dua-btn-name">📖 Lectura guiada</span>
+          <span class="dua-btn-desc">Vocabulari explicat i idees clau</span>
+        </button>
+      </div>
+      <div class="dua-mode-info-banner" id="dua-mode-description">
+        <span>👁️ <strong>Modalitat Completa:</strong> Format original amb autonomia màxima i visió global.</span>
+        <span style="color:#64748b;">Pots desplegar les ajudes lliurement en qualsevol activitat.</span>
+      </div>
+    </div>
+  </div>
 
   <!-- NAV -->
   <nav class="main-nav no-print">
@@ -665,6 +893,64 @@
       </div>
 
       <!-- Card principal: Quin riu ets avui? -->
+      
+      <!-- DUA: GLOSARI DE SUPORT A LA METÀFORA FLUVIAL -->
+      <div class="dua-box dua-glossary-box" style="margin-bottom:1.5rem;">
+        <details class="dua-scaffold-details" open>
+          <summary>
+            <span style="display:flex; align-items:center; gap:0.5rem; font-size:1.05rem;">
+              <span>📖</span> <strong>Glosari i claus per entendre la metàfora del riu</strong>
+            </span>
+          </summary>
+          <p style="font-size:0.88rem; color:#0f766e; margin:0.6rem 0 1rem 0; line-height:1.6;">
+            Aquest projecte utilitza el riu com a mirall de la vida. Si trobes paraules poc habituals de geografia, no et preocupis: aquí tens la seva traducció a situacions quotidianes per entendre-les fàcilment:
+          </p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:0.8rem;">
+            <div style="background:#fff; border:1px solid #ccfbf1; border-radius:8px; padding:0.8rem 1rem;">
+              <strong style="color:#0f766e; font-size:0.9rem; display:block; margin-bottom:0.2rem;">💧 Gorg d'estiatge</strong>
+              <p style="font-size:0.82rem; color:#134e4a; margin:0; line-height:1.5;">
+                <strong>Geografia:</strong> Un toll d'aigua que es manté quiet quan no plou i el riu sembla sec.<br>
+                <strong>A la vida:</strong> Moments de pausa, reflexió o mandra en què sembla que no avances, però estàs guardant energia per a la següent etapa.
+              </p>
+            </div>
+            <div style="background:#fff; border:1px solid #ccfbf1; border-radius:8px; padding:0.8rem 1rem;">
+              <strong style="color:#0f766e; font-size:0.9rem; display:block; margin-bottom:0.2rem;">🌿 Riu trenat</strong>
+              <p style="font-size:0.82rem; color:#134e4a; margin:0; line-height:1.5;">
+                <strong>Geografia:</strong> Un curs d'aigua dividit en molts braços que s'entrecreuen.<br>
+                <strong>A la vida:</strong> Persones amb molts interessos diferents que no tenen una sola vocació fixa, sinó que exploren diversos camins alhora.
+              </p>
+            </div>
+            <div style="background:#fff; border:1px solid #ccfbf1; border-radius:8px; padding:0.8rem 1rem;">
+              <strong style="color:#0f766e; font-size:0.9rem; display:block; margin-bottom:0.2rem;">🏔️ Congost estret</strong>
+              <p style="font-size:0.82rem; color:#134e4a; margin:0; line-height:1.5;">
+                <strong>Geografia:</strong> Un pas estret i fosc entre parets de roca molt altes.<br>
+                <strong>A la vida:</strong> Una etapa feixuga o exigent (exàmens difícils, canvi d'escola o entrebancs) que requereix concentració i suport.
+              </p>
+            </div>
+            <div style="background:#fff; border:1px solid #ccfbf1; border-radius:8px; padding:0.8rem 1rem;">
+              <strong style="color:#0f766e; font-size:0.9rem; display:block; margin-bottom:0.2rem;">🤝 Aiguabarreig (confluència)</strong>
+              <p style="font-size:0.82rem; color:#134e4a; margin:0; line-height:1.5;">
+                <strong>Geografia:</strong> El lloc on dos rius diferents s'uneixen en un sol cabal.<br>
+                <strong>A la vida:</strong> Quan trobes persones clau, nous amics o connectes dues cultures que et fan sentir acompanyat/da i més fort/a.
+              </p>
+            </div>
+            <div style="background:#fff; border:1px solid #ccfbf1; border-radius:8px; padding:0.8rem 1rem;">
+              <strong style="color:#0f766e; font-size:0.9rem; display:block; margin-bottom:0.2rem;">🌊 Afluent</strong>
+              <p style="font-size:0.82rem; color:#134e4a; margin:0; line-height:1.5;">
+                <strong>Geografia:</strong> Riu secundari que aporta aigua al riu principal.<br>
+                <strong>A la vida:</strong> Una persona (mestre/a, familiar, amic) o una afició que arriba a la teva vida i t'aporta nova energia i aprenentatges.
+              </p>
+            </div>
+            <div style="background:#fff; border:1px solid #ccfbf1; border-radius:8px; padding:0.8rem 1rem;">
+              <strong style="color:#0f766e; font-size:0.9rem; display:block; margin-bottom:0.2rem;">🔄 Fil conductor</strong>
+              <p style="font-size:0.82rem; color:#134e4a; margin:0; line-height:1.5;">
+                <strong>Significat:</strong> El valor, la passió o el sentit comú que connecta totes les teves tries, fins i tot quan semblaven decisions inconnexes.
+              </p>
+            </div>
+          </div>
+        </details>
+      </div>
+
       <div class="card">
         <div class="card-header">
           <h2 class="card-title">🌊 Quin riu ets avui?</h2>
@@ -941,6 +1227,19 @@
             <li>Quina és la primera paraula o emoció que et ve al cap quan penses en prendre alguna decisió sobre què fer el curs vinent?</li>
             <li>Sobre el riu que has triat: <strong>enganxa la imatge del riu al teu diari</strong>. Després, explica per què l'has escollit, quina emoció et genera i respon UNA de les 3 preguntes que apareixen sota la imatge. Recorda que el requadre blau <strong>«Connexió amb el teu riu»</strong> que apareix en fer clic et dóna una pista sobre el que significa la teva tria!</li>
           </ol>
+          
+          <!-- DUA: INICIADORS DE FRASE ATURADA 1 -->
+          <div class="dua-box dua-sentence-starters" style="margin-top:1rem; padding:0.9rem 1.1rem;">
+            <details class="dua-scaffold-details">
+              <summary><span style="font-size:0.9rem;">💡 Et costa començar a escriure? Tria un d'aquests iniciadors de frase:</span></summary>
+              <ul style="font-size:0.85rem; color:#92400e; line-height:1.8; margin:0.6rem 0 0 1.2rem;">
+                <li><em>«Quan penso en les decisions del curs vinent, la primera emoció que em ve és... perquè...»</em></li>
+                <li><em>«He triat el riu [nom del riu] perquè em sento identificat/da amb la seva manera de fluir quan...»</em></li>
+                <li><em>«El requadre de connexió m'ha fet pensar que ara mateix necessito...»</em></li>
+              </ul>
+            </details>
+          </div>
+
           <p class="diari-cta">→ Escriu les teves respostes al Diari del teu viatge.</p>
         </div>
 
@@ -1070,6 +1369,53 @@
           <span class="tag-skill badge-resp">Fase individual i creativa</span>
         </div>
 
+        
+        <!-- DUA: PRODUCTE ESPERAT I SEQÜÈNCIA PAS A PAS -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1rem; margin-bottom:1.4rem;">
+          
+          <div class="dua-box dua-product-box" style="margin-bottom:0;">
+            <span class="dua-badge-pill" style="background:#e0f2fe; color:#0369a1;">📦 Producte final esperat</span>
+            <strong style="display:block; color:#0369a1; font-size:1rem; margin-bottom:0.3rem;">Què has d'elaborar exactament?</strong>
+            <p style="font-size:0.86rem; color:#0c4a6e; line-height:1.6; margin:0;">
+              Una làmina en <strong>paper o cartolina A3</strong> amb el dibuix o collage del teu riu dels <strong>0 als 16 anys</strong>, que inclogui com a mínim <strong>4 elements del diccionari fluvial</strong> (font, afluents, roques, gorgs) i una <strong>llegenda clara</strong> que n'expliqui els colors i símbols.
+            </p>
+          </div>
+
+          <div class="dua-box dua-step-seq" style="margin-bottom:0;">
+            <span class="dua-badge-pill" style="background:#ede9fe; color:#6d28d9;">👣 Què faig primer, després i al final?</span>
+            <ol style="font-size:0.83rem; color:#581c87; line-height:1.6; margin:0 0 0 1.2rem;">
+              <li><strong>1️⃣ Primer (Esborrany en brut):</strong> Fes una llista ràpida de 4 o 5 fets, pedres i persones clau.</li>
+              <li><strong>2️⃣ Després (Traç del riu):</strong> Dibuixa la línia de l'aigua a llapis (més ample quan estaves bé, estret quan hi havia dubtes).</li>
+              <li><strong>3️⃣ Després (Detalls i collage):</strong> Afegeix-hi els afluents, roques i enganxa fotos o petits objectes si en tens.</li>
+              <li><strong>4️⃣ Al final (Llegenda i revisió):</strong> Pinta, fes la llegenda i intercanvia feedback amb la parella amb la Papallona d'Austin.</li>
+            </ol>
+          </div>
+
+        </div>
+
+        <!-- DUA: INICIADORS DE FRASE TRAM 1 -->
+        <div class="dua-box dua-sentence-starters" style="margin-bottom:1.4rem;">
+          <details class="dua-scaffold-details">
+            <summary>
+              <span style="font-size:0.92rem;">💡 Iniciadors de frase per inspirar el teu dibuix i la teva reflexió:</span>
+            </summary>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:0.6rem; margin-top:0.6rem;">
+              <div style="background:#fff; padding:0.6rem 0.8rem; border-radius:6px; border:1px solid #fde68a; font-size:0.82rem; color:#78350f;">
+                <em>«El meu riu neix en un indret on...»</em>
+              </div>
+              <div style="background:#fff; padding:0.6rem 0.8rem; border-radius:6px; border:1px solid #fde68a; font-size:0.82rem; color:#78350f;">
+                <em>«Un afluent que em va aportar molta aigua i alegria va ser quan vaig descobrir...»</em>
+              </div>
+              <div style="background:#fff; padding:0.6rem 0.8rem; border-radius:6px; border:1px solid #fde68a; font-size:0.82rem; color:#78350f;">
+                <em>«Una roca o cascada difícil va ser... i me'n vaig sortir gràcies al suport de...»</em>
+              </div>
+              <div style="background:#fff; padding:0.6rem 0.8rem; border-radius:6px; border:1px solid #fde68a; font-size:0.82rem; color:#78350f;">
+                <em>«Ara mateix el riu arriba als 16 anys amb una aigua que és...»</em>
+              </div>
+            </div>
+          </details>
+        </div>
+
         <h4 style="color:var(--primary-deep); margin-bottom:0.8rem; font-size:1.05rem;">Instruccions de creació pas a pas</h4>
         <ol style="font-size:1.05rem; line-height:2.0; margin-left:1.3rem;">
           <li style="margin-bottom:1rem;"><strong>Pluja d'idees inicial:</strong> Escriu en brut: 3 moments feliços, 2 dificultats superades, 2 persones importants i 1 afició constant. <em>Per exemple: «La competició d'atletisme de 5è, quan vam canviar de pis, quan vaig descobrir la música...»</em></li>
@@ -1101,6 +1447,32 @@
             </div>
           </div>
           <p style="margin-top:1rem; font-size:0.9rem; color:#92400e; font-style:italic; border-top:1px solid #fde68a; padding-top:0.8rem;">Recorda: el feedback no és una crítica. És un regal que ajuda a créixer.</p>
+
+          <!-- DUA: PAUTES DE SEGURETAT, RESPECTE I PRIVADESA EMOCIONAL -->
+          <div style="background:#ffffff; border:1px solid #fcd34d; border-radius:10px; padding:1rem 1.2rem; margin-top:1.2rem;">
+            <strong style="color:#92400e; font-size:0.92rem; display:flex; align-items:center; gap:0.4rem; margin-bottom:0.4rem;">
+              <span>🛡️</span> Clima de confiança, seguretat i privadesa:
+            </strong>
+            <ul style="font-size:0.84rem; color:#78350f; line-height:1.6; margin:0 0 0.8rem 1.2rem;">
+              <li><strong>Tu decideixes què comparteixes:</strong> Cadascú és lliure d'ensenyar només els fragments del seu riu que se senti còmode/a explicant. No és obligatori exposar vivències privades o delicades.</li>
+              <li><strong>Respecte absolut:</strong> El que la parella comparteix amb tu és confidencial i mereix una escolta atenta i sense judicis.</li>
+              <li><strong>Opció alternativa DUA:</strong> Si en algun moment prefereixes no compartir el teu riu personal, pots realitzar la pràctica de feedback avaluant el riu d'un dels <strong>7 personatges model</strong> (com el de la Samira o el Nil).</li>
+            </ul>
+
+            <strong style="color:#92400e; font-size:0.88rem; display:block; margin-bottom:0.3rem;">💬 Iniciadors de preguntes per donar un bon feedback:</strong>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+              <span style="background:#fef3c7; color:#92400e; font-size:0.8rem; padding:0.3rem 0.65rem; border-radius:6px; border:1px solid #fde68a;">
+                <em>«M'ha agradat molt com has representat... perquè transmet...»</em>
+              </span>
+              <span style="background:#fef3c7; color:#92400e; font-size:0.8rem; padding:0.3rem 0.65rem; border-radius:6px; border:1px solid #fde68a;">
+                <em>«Aquesta roca negra, què va significar per a tu? Es podria posar una etiqueta a la llegenda?»</em>
+              </span>
+              <span style="background:#fef3c7; color:#92400e; font-size:0.8rem; padding:0.3rem 0.65rem; border-radius:6px; border:1px solid #fde68a;">
+                <em>«Si afegeixes una petita fletxa o nom a aquest afluent, s'entendrà encara millor.»</em>
+              </span>
+            </div>
+          </div>
+
         </div>
 
         <!-- DIARI ATURADA 2 -->
@@ -2458,6 +2830,20 @@
 
             <div style="background:#faf5ff; border:1px solid #e9d5ff; border-radius:8px; padding:1rem 1.2rem; margin-bottom:1rem;">
               <strong style="color:#6b21a8; font-size:0.9rem; display:block; margin-bottom:0.4rem;">❓ Preguntes per pensar la tria de cada objecte:</strong>
+
+            <!-- DUA: INICIADORS DE FRASE PER PRESENTAR ELS OBJECTES A L'ESCENA -->
+            <div class="dua-box dua-sentence-starters" style="margin-top:0.8rem; margin-bottom:0.8rem; padding:0.9rem 1.1rem;">
+              <details class="dua-scaffold-details">
+                <summary><span style="font-size:0.9rem;">💡 Com explicar els teus 3 objectes a l'escena? (Iniciadors de frase teatral)</span></summary>
+                <ul style="font-size:0.84rem; color:#78350f; line-height:1.7; margin:0.6rem 0 0 1.2rem;">
+                  <li><em>«Aquest objecte que veieu aquí és [nom de l'objecte]. El vaig guardar el dia que vaig decidir...»</em></li>
+                  <li><em>«Sembla una cosa senzilla o antiga, però per a mi té un valor immens perquè me'l va regalar... quan...»</em></li>
+                  <li><em>«Aquesta peça representa el moment més dur que vaig passar als [edat]: em recorda com me'n vaig sortir.»</em></li>
+                  <li><em>«Si algú obre la meva caixa de records als 100 anys, entendrà que tota la meva vida va anar al voltant de...»</em></li>
+                </ul>
+              </details>
+            </div>
+
               <ol style="font-size:0.88rem; color:#581c87; margin-left:1.2rem; line-height:1.8;">
                 <li>D'on vas treure aquest objecte i en quina etapa de la teva vida (quin any o quina edat aproximada tenies al teu relat)?</li>
                 <li>Quina història o decisió important representa dins de la teva evolució personal?</li>
@@ -2673,6 +3059,28 @@
               </div>
 
               <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1rem; margin-bottom:1.2rem;">
+
+                <!-- DUA: AJUDA CONTEXTUAL SOBRE BIAIXOS I DISSENY DEL PROMPT -->
+                <div class="dua-box dua-glossary-box" style="grid-column: 1 / -1; margin-bottom:0.8rem; padding:1rem 1.2rem;">
+                  <details class="dua-scaffold-details" open>
+                    <summary><span style="font-size:0.92rem;">💡 Com construir un prompt excel·lent i evitar els biaixos de la IA:</span></summary>
+                    <div style="font-size:0.85rem; color:#0f766e; line-height:1.6; margin-top:0.6rem;">
+                      <p style="margin-bottom:0.5rem;">
+                        <strong>Què és un biaix en termes senzills?</strong> La IA ha après a partir de milions d'imatges d'Internet on sovint les persones centenàries es mostren amb clixés (solitud, tristesa o malaltia). El vostre repte crític és <strong>ordenar-li a la IA detalls originals</strong> que trenquin aquests estereotips i mostrin la riquesa vital del vostre company/a.
+                      </p>
+                      <div style="background:white; border:1px solid #99f6e4; border-radius:8px; padding:0.8rem 1rem; margin-top:0.5rem;">
+                        <strong style="color:#0d9488; font-size:0.88rem; display:block; margin-bottom:0.3rem;">🧩 Estructura recomanada per al teu prompt:</strong>
+                        <div style="background:#f0fdfa; padding:0.5rem 0.8rem; border-radius:6px; font-family:monospace; font-size:0.8rem; color:#115e59; margin-bottom:0.5rem;">
+                          [ESTIL ARTÍSTIC] + [METÀFORA DEL RIU] + [OBSTACLES I AFLUENTS CLAU] + [EMOCIÓ I LLUM]
+                        </div>
+                        <p style="font-size:0.82rem; color:#134e4a; margin:0;">
+                          <em>Exemple concret:</em> «Il·lustració d'art digital d'un riu trenat amb afluents lluminosos, que passa per una gorga de muntanya verda i s'obre a una plana plena d'arbres florits, llum de posta de sol càlida, atmosfera d'esperança i celebració, alta resolució, estil aquarel·la contemporània.»
+                        </p>
+                      </div>
+                    </div>
+                  </details>
+                </div>
+
                 
                 <!-- Bloc 1: El Prompt -->
                 <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem 1.1rem;">
@@ -3690,6 +4098,53 @@
       }
     }
 
+
+    // =============================================================
+    // DUA: CONTROL DE LES 3 MODALITATS DE TREBALL
+    // =============================================================
+    function setLearningMode(mode, save = true) {
+      const validModes = ['completa', 'pas-a-pas', 'lectura-guiada'];
+      if (!validModes.includes(mode)) mode = 'completa';
+
+      document.body.classList.remove('mode-completa', 'mode-pas-a-pas', 'mode-lectura-guiada');
+      document.body.classList.add('mode-' + mode);
+      document.body.setAttribute('data-dua-mode', mode);
+
+      validModes.forEach(m => {
+        const btn = document.getElementById('btn-mode-' + m);
+        if (btn) {
+          const isActive = (m === mode);
+          btn.classList.toggle('active', isActive);
+          btn.setAttribute('aria-checked', isActive ? 'true' : 'false');
+        }
+      });
+
+      const infoEl = document.getElementById('dua-mode-description');
+      if (infoEl) {
+        if (mode === 'completa') {
+          infoEl.innerHTML = '<span>👁️ <strong>Modalitat Completa:</strong> Format original amb autonomia màxima i visió global.</span> <span style="color:#64748b;">Pots desplegar les ajudes lliurement en qualsevol activitat.</span>';
+        } else if (mode === 'pas-a-pas') {
+          infoEl.innerHTML = '<span>👣 <strong>Modalitat Pas a pas:</strong> Tasques dividides en accions curtes («què faig primer, després i al final»), iniciadors de frase i checklists.</span>';
+        } else if (mode === 'lectura-guiada') {
+          infoEl.innerHTML = '<span>📖 <strong>Modalitat Lectura guiada:</strong> Llenguatge directe, definicions de vocabulari i metàfores integrades, i conceptes clau ressaltats.</span>';
+        }
+      }
+
+      // En mode pas-a-pas o lectura-guiada, despleguem automàticament els blocs de suport
+      const allScaffolds = document.querySelectorAll('.dua-scaffold-details');
+      allScaffolds.forEach(det => {
+        if (mode === 'pas-a-pas' || mode === 'lectura-guiada') {
+          det.setAttribute('open', '');
+        }
+      });
+
+      if (save) {
+        try {
+          localStorage.setItem('riu_learning_mode', mode);
+        } catch(e) {}
+      }
+    }
+
     // SWITCHER PER ALS 7 RELATS MODEL DIVERSOS
     function switchModelRelat(num) {
       for (let i = 1; i <= 7; i++) {
@@ -3709,6 +4164,8 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
+      const savedMode = localStorage.getItem('riu_learning_mode') || 'completa';
+      setLearningMode(savedMode, false);
       initGroupSelectors();
       loadEquipatge();
     });
