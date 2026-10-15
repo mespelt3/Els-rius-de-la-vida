@@ -1585,6 +1585,690 @@
             </div>
           </div>
 
+          <!-- ============================================================= -->
+          <!-- GALERIA DE 7 RELATS MODEL DIVERSOS                            -->
+          <!-- ============================================================= -->
+          <div style="background:#fff; border:2px solid #cbd5e1; border-radius:16px; padding:1.8rem; margin-bottom:2.2rem; box-shadow:0 4px 16px rgba(0,0,0,0.04);">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.6rem; margin-bottom:1.2rem; border-bottom:2px solid #e2e8f0; padding-bottom:1rem;">
+              <div>
+                <div style="display:inline-flex; align-items:center; gap:0.4rem; background:#f0fdf4; color:#15803d; font-size:0.8rem; font-weight:800; padding:0.25rem 0.75rem; border-radius:9999px; margin-bottom:0.4rem; text-transform:uppercase;">
+                  📚 Banc de relats de referència
+                </div>
+                <h4 style="color:var(--primary-deep); font-size:1.35rem; margin:0; display:flex; align-items:center; gap:0.5rem;">
+                  <span>📖</span> Galeria de relats model: 7 trajectòries vitals diverses
+                </h4>
+                <p style="font-size:0.88rem; color:var(--text-muted); margin:0.3rem 0 0 0;">
+                  No hi ha una única manera correcta de viure ni un sol camí d'èxit. Explora aquests 7 exemples reals i diversos per inspirar el teu propi relat:
+                </p>
+              </div>
+              <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+                <span style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-right:0.3rem;">Codi d'anàlisi:</span>
+                <span class="hl-moment" style="font-size:0.8rem;">🔵 Moments</span>
+                <span class="hl-decision" style="font-size:0.8rem;">🟢 Decisions</span>
+                <span class="hl-person" style="font-size:0.8rem;">🟣 Persones</span>
+              </div>
+            </div>
+
+            <!-- SELECTOR DE PERSONATGES (PÍNDOLES NAVEGABLES) -->
+            <div style="margin-bottom:1.6rem;">
+              <span style="display:block; font-size:0.82rem; font-weight:700; text-transform:uppercase; letter-spacing:0.4px; color:var(--text-muted); margin-bottom:0.6rem;">
+                Tria un personatge per llegir la seva història i veure el mapa del seu riu:
+              </span>
+              <div class="relats-nav-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:0.6rem;">
+                <button type="button" class="relat-selector-btn active" id="btn-relat-1" onclick="switchModelRelat(1)">
+                  <span style="font-size:1.3rem;">🎭</span>
+                  <div style="text-align:left;">
+                    <strong style="display:block; font-size:0.88rem;">1. Maria Àngels (100)</strong>
+                    <span style="font-size:0.75rem; opacity:0.85;">Mestra rural & Teatre · El fil conductor</span>
+                  </div>
+                </button>
+
+                <button type="button" class="relat-selector-btn" id="btn-relat-2" onclick="switchModelRelat(2)">
+                  <span style="font-size:1.3rem;">🪵</span>
+                  <div style="text-align:left;">
+                    <strong style="display:block; font-size:0.88rem;">2. Nil (100)</strong>
+                    <span style="font-size:0.75rem; opacity:0.85;">Canvis d'interessos · Riu trenat</span>
+                  </div>
+                </button>
+
+                <button type="button" class="relat-selector-btn" id="btn-relat-3" onclick="switchModelRelat(3)">
+                  <span style="font-size:1.3rem;">🪨</span>
+                  <div style="text-align:left;">
+                    <strong style="display:block; font-size:0.88rem;">3. Samira (100)</strong>
+                    <span style="font-size:0.75rem; opacity:0.85;">Dificultats d'aprenentatge · Pedra seca</span>
+                  </div>
+                </button>
+
+                <button type="button" class="relat-selector-btn" id="btn-relat-4" onclick="switchModelRelat(4)">
+                  <span style="font-size:1.3rem;">🌍</span>
+                  <div style="text-align:left;">
+                    <strong style="display:block; font-size:0.88rem;">4. Youssef (100)</strong>
+                    <span style="font-size:0.75rem; opacity:0.85;">Migració & Arrels · Aiguabarreig</span>
+                  </div>
+                </button>
+
+                <button type="button" class="relat-selector-btn" id="btn-relat-5" onclick="switchModelRelat(5)">
+                  <span style="font-size:1.3rem;">🌻</span>
+                  <div style="text-align:left;">
+                    <strong style="display:block; font-size:0.88rem;">5. Clara (100)</strong>
+                    <span style="font-size:0.75rem; opacity:0.85;">Comunitat & Cures · Riu fèrtil</span>
+                  </div>
+                </button>
+
+                <button type="button" class="relat-selector-btn" id="btn-relat-6" onclick="switchModelRelat(6)">
+                  <span style="font-size:1.3rem;">🧭</span>
+                  <div style="text-align:left;">
+                    <strong style="display:block; font-size:0.88rem;">6. Pau (100)</strong>
+                    <span style="font-size:0.75rem; opacity:0.85;">Exploració sense vocació fixa · Llibertat</span>
+                  </div>
+                </button>
+
+                <button type="button" class="relat-selector-btn" id="btn-relat-7" onclick="switchModelRelat(7)">
+                  <span style="font-size:1.3rem;">🍂</span>
+                  <div style="text-align:left;">
+                    <strong style="display:block; font-size:0.88rem;">7. Mateu (100)</strong>
+                    <span style="font-size:0.75rem; opacity:0.85;">Trajectòria no lineal & Pauses · Rebrost</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <!-- CONTINGUT DELS 7 RELATS -->
+            <div id="relats-content-wrapper">
+
+              <!-- ======================================================= -->
+              <!-- RELAT 1: MARIA ÀNGELS                                   -->
+              <!-- ======================================================= -->
+              <div class="relat-detail-card" id="relat-card-1" style="display:block;">
+                <div class="relat-header-box" style="background:#eff6ff; border:1px solid #bfdbfe; border-left:5px solid #0284c7; border-radius:10px; padding:1.2rem; margin-bottom:1.4rem;">
+                  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem; margin-bottom:0.4rem;">
+                    <h5 style="color:#0369a1; font-size:1.2rem; margin:0;">🎭 Maria Àngels (100 anys) · Mestra d'escola rural i teatre</h5>
+                    <span style="background:#dbeafe; color:#0369a1; font-size:0.78rem; font-weight:800; padding:2px 8px; border-radius:9999px;">Metàfora: Riu de meandres reflexiu</span>
+                  </div>
+                  <p style="font-size:0.88rem; color:#0c4a6e; line-height:1.5; margin:0;">
+                    <strong>Perfil:</strong> Deixar la universitat per fer teatre itinerant, viure una fallida professional, reinventar-se a l'escola rural, renunciar a un càrrec directiu per vocació d'aula i acompanyar persones adultes en la vellesa.
+                  </p>
+                </div>
+
+                <!-- DIAGRAMA VISUAL DEL RIU -->
+                <div class="river-diagram-box">
+                  <div class="river-diagram-title">🗺️ Mapa cartogràfic del riu de la Maria Àngels:</div>
+                  <div class="river-flow-diagram">
+                    <div class="river-node node-origin">
+                      <span class="node-icon">🏔️</span>
+                      <strong>25 anys</strong>
+                      <span>Deixa Biologia</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-meander">
+                      <span class="node-icon">🎭</span>
+                      <strong>26-29 anys</strong>
+                      <span>Companyia de teatre itinerant (en Rashid)</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-rock">
+                      <span class="node-icon">⚠️</span>
+                      <strong>29 anys</strong>
+                      <span>Fallida de la companyia</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-decision">
+                      <span class="node-icon">🏫</span>
+                      <strong>34 anys</strong>
+                      <span>Mestra rural al Pirineu (la Júlia i l'Ona)</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-meander">
+                      <span class="node-icon">🌱</span>
+                      <strong>54 anys</strong>
+                      <span>Renúncia a la direcció</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-tributary">
+                      <span class="node-icon">📖</span>
+                      <strong>65-80 anys</strong>
+                      <span>Voluntariat alfabetització (en Mohamed)</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-delta">
+                      <span class="node-icon">🌊</span>
+                      <strong>100 anys</strong>
+                      <span>El fil invisible</span>
+                    </div>
+                  </div>
+                  <div class="river-text-equivalent">
+                    <strong>Versió textual equivalent del riu:</strong> Neix amb el gir sobtat de deixar Biologia per seguir el corrent del teatre popular. Pateix un salt brusc quan la companyia fa fallida, però el cabal es canalitza cap a una escola rural del Pirineu. Allà s'hi sumen dos afluents fonamentals: la Júlia i la seva filla Ona. A la meitat del curs pren la decisió d'abandonar el despatx de direcció per tornar a la riba dels alumnes. A la vellesa, el riu s'eixampla en un delta serè dedicat a ensenyar a llegir a persones grans.
+                  </div>
+                </div>
+
+                <!-- TEXT DEL RELAT -->
+                <div class="relat-text-content">
+                  <p>
+                    Avui faig 100 anys. Des de la finestra d'aquesta residència, amb una manta a les cames i un cafè que ja s'ha refredat, miro enrere i veig tot el riu que he recorregut. Durant molts anys vaig pensar que la meva vida havia estat un seguit de girs sense rumb. Avui, en canvi, hi veig una línia que ho travessa tot de principi a fi. Però això no ho vaig entendre fins al final.
+                  </p>
+                  <p>
+                    Als 25 anys jo era un desastre meravellós. Acabava de <span class="hl-decision">deixar la carrera de Biologia a mig fer</span> perquè m'havia enamorat del teatre. La meva mare va plorar; el meu pare va deixar de parlar-me durant mesos. Vaig passar tres anys fent gires per pobles amb una companyia que no cobrava quasi res, dormint en cases de gent desconeguda i muntant l'escenari sota la pluja. Va ser allà on vaig conèixer en <span class="hl-person">Rashid, el director</span>. Ell no ens ensenyava a actuar, ens ensenyava a mirar: deia que el teatre no anava de fingir, sinó d'ajudar algú a treure la veu que portava amagada a dins. Mai vaig oblidar aquella frase.
+                  </p>
+                  <p>
+                    Als 29 anys la <span class="hl-moment">companyia va fer fallida</span>. De cop em vaig quedar sense feina, sense diners i sense saber qui era. Vaig fer una cosa que encara avui no sé si va ser valenta o covarda: <span class="hl-decision">vaig tornar a la universitat, però no a Biologia, sinó a Educació</span>. Em deia a mi mateixa que el teatre s'havia acabat. Avui sé que no era veritat: només havia canviat d'escenari. Als 34 ja era mestra en una escola rural del Pirineu, i a l'aula feia exactament el mateix que a dalt d'un escenari: intentar que cada nen descobrís la seva pròpia veu.
+                  </p>
+                  <p>
+                    Allà vaig conèixer la <span class="hl-person">Júlia, la bibliotecària del poble i la meva companya de vida durant quaranta-dos anys</span>. Ens vam conèixer discutint per un llibre i no vam parar de parlar mai més. El dia que <span class="hl-moment">va néixer la nostra filla, l'Ona</span>, vaig entendre per primera vegada què volia dir tenir por i felicitat alhora: la por de no estar a l'altura i la felicitat de tenir, per fi, algú a qui acompanyar de debò.
+                  </p>
+                  <p>
+                    Als 48 em van oferir dirigir l'escola, i vaig acceptar. Durant uns anys em va agradar manar, decidir, que em fessin cas. Però, de mica en mica, em vaig adonar que ja no trepitjava mai una aula: em passava els dies signant papers i discutint amb l'administració. Als 54 vaig prendre la decisió més difícil i més important de la meva vida professional: <span class="hl-decision">vaig deixar la direcció i vaig tornar a ser una mestra d'aula qualsevol</span>. Vaig renunciar al sou més alt i al despatx amb finestra. Molts no ho van entendre. Però jo havia recordat per què m'havia fet mestra: per ser a prop dels nens que ningú escoltava.
+                  </p>
+                  <p>
+                    No tot van ser bons moments. Als 56 vaig <span class="hl-moment">perdre el meu pare</span>, i el pitjor van ser els anys de silenci des que vaig deixar Biologia. Vam fer les paus només uns mesos abans del final. Als 63 <span class="hl-moment">em vaig jubilar</span>, i em feia pànic el buit. Però <span class="hl-decision">vaig començar a fer voluntariat ensenyant a llegir a persones adultes nouvingudes</span>. Un d'ells, en <span class="hl-person">Mohamed</span>, va aprendre a llegir als 70 anys. El dia que va llegir sol una carta de la seva filla va plorar, dient que li havia regalat un món nou. Allà tornava a fer el mateix: ajudar algú a trobar la seva veu.
+                  </p>
+                  <p>
+                    Als 78 <span class="hl-moment">la Júlia va morir</span> agafant-me la mà. Va ser el tram més fosc de la meva vida. El que em va salvar va ser l'Ona, que em va dir que encara tenia coses per ensenyar als seus fills. <span class="hl-decision">Em vaig traslladar a viure a prop seu</span>. I ara, als 100, ho veig clar: vaig dedicar la vida a ajudar la gent a expressar-se. Aquell va ser el meu corrent invisible.
+                  </p>
+                </div>
+              </div>
+
+              <!-- ======================================================= -->
+              <!-- RELAT 2: NIL                                            -->
+              <!-- ======================================================= -->
+              <div class="relat-detail-card" id="relat-card-2" style="display:none;">
+                <div class="relat-header-box" style="background:#fefce8; border:1px solid #fef08a; border-left:5px solid #ca8a04; border-radius:10px; padding:1.2rem; margin-bottom:1.4rem;">
+                  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem; margin-bottom:0.4rem;">
+                    <h5 style="color:#854d0e; font-size:1.2rem; margin:0;">🪵 Nil (100 anys) · Fuster, creador digital, hortolà i apicultor</h5>
+                    <span style="background:#fef08a; color:#854d0e; font-size:0.78rem; font-weight:800; padding:2px 8px; border-radius:9999px;">Metàfora: Riu trenat (múltiples braços)</span>
+                  </div>
+                  <p style="font-size:0.88rem; color:#713f12; line-height:1.5; margin:0;">
+                    <strong>Perfil:</strong> Canvis freqüents d'interessos i objectius. Una persona curiosa que no es va conformar amb una sola etiqueta i va aprendre a connectar habilitats manuals, tecnològiques i naturals.
+                  </p>
+                </div>
+
+                <div class="river-diagram-box">
+                  <div class="river-diagram-title">🗺️ Mapa cartogràfic del riu d'en Nil:</div>
+                  <div class="river-flow-diagram">
+                    <div class="river-node node-origin">
+                      <span class="node-icon">🪚</span>
+                      <strong>25 anys</strong>
+                      <span>Fusteria artesanal</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-decision">
+                      <span class="node-icon">💻</span>
+                      <strong>33 anys</strong>
+                      <span>Salto al modelatge 3D</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-meander">
+                      <span class="node-icon">🎮</span>
+                      <strong>35-47 anys</strong>
+                      <span>Disseny d'escenaris virtuals</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-tributary">
+                      <span class="node-icon">🌱</span>
+                      <strong>48 anys</strong>
+                      <span>Horts comunitaris (en Bernat)</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-decision">
+                      <span class="node-icon">🐝</span>
+                      <strong>62 anys</strong>
+                      <span>Apicultura & Biodiversitat</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-delta">
+                      <span class="node-icon">🌊</span>
+                      <strong>100 anys</strong>
+                      <span>El delta de les connexions</span>
+                    </div>
+                  </div>
+                  <div class="river-text-equivalent">
+                    <strong>Versió textual equivalent del riu:</strong> El riu s'obre des del començament en un cabal trenat que no s'atura mai en un sol curs. Parteix del treball físic de la fusta, es ramifica cap al món digital del disseny tridimensional, torna a confluir amb la terra en un projecte agroecològic sostingut amb en Bernat, i culmina en l'apicultura pedagògica. Cap branca anul·la l'altra: totes aporten aigua a un cabal ampli i ric.
+                  </div>
+                </div>
+
+                <div class="relat-text-content">
+                  <p>
+                    Als 25 anys la gent em deia que era un home afortunat perquè "ja tenia la vida resolta". Treballava al taller de fusteria que havia fundat el meu avi. M'encantava la fusta: l'olor de la resina de pi acabada de tallar, el tacte suau de la polidora i la paciència d'acoblar dues peces sense ni un sol clau. Però a dins meu hi havia una petita veu inquieta que no s'apagava mai.
+                  </p>
+                  <p>
+                    Quan van aparèixer els primers programes potents de disseny per ordinador, cap als meus 32 anys, vaig quedar fascinat. <span class="hl-decision">Vaig començar a passar-me les nits aprenent modelatge en tres dimensions pel meu compte</span>. El meu oncle em deia que perdia el temps amb "joguines de nens". Però als 34 vaig prendre una decisió que a la família va sonar a sacrilegi: <span class="hl-decision">vaig deixar la fusteria per fer un cicle formatiu de desenvolupament digital</span>. Vaig passar més de deu anys dissenyant espais virtuals i textures per a estudis d'animació i videojocs. Tothom es pensava que havia renegat de la fusta; en realitat feia el mateix, però amb píxels en comptes de roure.
+                  </p>
+                  <p>
+                    Als 48 anys, el cos em va enviar un avís: <span class="hl-moment">una contractura crònica a les cervicals i una sensació d'asfíxia d'estar tot el dia assegut davant de tres pantalles</span>. Vaig conèixer en <span class="hl-person">Bernat en una assemblea veïnal</span>; ell buscava algú que l'ajudés a dissenyar una xarxa de reg sostenible per a uns horts urbans recuperats en un solar abandonat. Vaig tornar a embrutar-me les mans de terra. Vam començar a conrear hortalisses antigues i a muntar tallers per a joves del barri. La meva mare em va dir: "Nil, fill meu, mai t'estabilitzaràs?". Vaig trigar anys a entendre que la meva estabilitat no era estar quiet en un calaix, sinó saber saltar d'un calaix a l'altre sense por.
+                  </p>
+                  <p>
+                    Als 62 anys, un veí pagès, en <span class="hl-person">Jaume</span>, em va demanar un cop de mà amb les seves caixes d'abelles. <span class="hl-decision">Em vaig enamorar perdudament de l'apicultura</span>. La precisió mil·limètrica de les bresques em recordava el codi dels ordinadors; la fusta de les caixes em tornava al taller del meu avi; i la cura per les flors em connectava amb els horts. Durant els següents vint anys em vaig dedicar a cuidar ruscs i a fer visites escolars guiades perquè els nens veiessin com de fràgil és el món.
+                  </p>
+                  <p>
+                    Avui tinc 100 anys i no tinc cap títol daurat penjat a la paret. Molta gent creu que canviar de rumb és senyal d'inconstància o de fracàs. Jo miro enrere i veig el meu riu trenat: no va ser una autopista, va ser una xarxa viva de camins que es van alimentar mútuament. Tot el que vaig aprendre amb les mans ho vaig aprofitar amb el cap, i tot el que vaig aprendre amb el cap ho vaig posar al servei de la terra.
+                  </p>
+                </div>
+              </div>
+
+              <!-- ======================================================= -->
+              <!-- RELAT 3: SAMIRA                                         -->
+              <!-- ======================================================= -->
+              <div class="relat-detail-card" id="relat-card-3" style="display:none;">
+                <div class="relat-header-box" style="background:#fdf2f8; border:1px solid #fbcfe8; border-left:5px solid #db2777; border-radius:10px; padding:1.2rem; margin-bottom:1.4rem;">
+                  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem; margin-bottom:0.4rem;">
+                    <h5 style="color:#9d174d; font-size:1.2rem; margin:0;">🪨 Samira (100 anys) · Mestra artesana de la pedra seca i restauradora</h5>
+                    <span style="background:#fce7f3; color:#9d174d; font-size:0.78rem; font-weight:800; padding:2px 8px; border-radius:9999px;">Metàfora: Congost estret que s'obre a una plana</span>
+                  </div>
+                  <p style="font-size:0.88rem; color:#831843; line-height:1.5; margin:0;">
+                    <strong>Perfil:</strong> Dificultats d'aprenentatge severes (dislèxia) i necessitat de suports educatius durant l'ESO. Trobar una intel·ligència pròpia en la manipulació de la matèria i la restauració monumental.
+                  </p>
+                </div>
+
+                <div class="river-diagram-box">
+                  <div class="river-diagram-title">🗺️ Mapa cartogràfic del riu de la Samira:</div>
+                  <div class="river-flow-diagram">
+                    <div class="river-node node-rock">
+                      <span class="node-icon">🧱</span>
+                      <strong>14-16 anys</strong>
+                      <span>Murs de text i dislèxia</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-tributary">
+                      <span class="node-icon">🧭</span>
+                      <strong>17 anys</strong>
+                      <span>L'orientador Carles (PFI d'artesania)</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-meander">
+                      <span class="node-icon">🔨</span>
+                      <strong>24 anys</strong>
+                      <span>Descobriment de la pedra seca</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-decision">
+                      <span class="node-icon">🤝</span>
+                      <strong>38 anys</strong>
+                      <span>Equip de restauració amb en Pol</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-rock">
+                      <span class="node-icon">📋</span>
+                      <strong>50 anys</strong>
+                      <span>Acceptar límits i demanar suport</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-delta">
+                      <span class="node-icon">🌊</span>
+                      <strong>100 anys</strong>
+                      <span>La solidesa del temps</span>
+                    </div>
+                  </div>
+                  <div class="river-text-equivalent">
+                    <strong>Versió textual equivalent del riu:</strong> El naixement d'aquest riu transcorre per un congost rocós i estretíssim, on l'aigua xoca una vegada i una altra contra els murs de la lectoescriptura. La intervenció d'un afluent clau (en Carles) desvia el corrent cap a un terreny on les mans i la visió espacial tenen valor. A la maduresa, la Samira no "cura" la seva dificultat, sinó que aprèn a compartir el cabal associant-se amb persones que complementen les seves mancances administratives. El tram final és net, massís i indestructible.
+                  </div>
+                </div>
+
+                <div class="relat-text-content">
+                  <p>
+                    Recordo els 15 anys com una boira de vergonya. Cada vegada que un professor deia «Samira, obre el llibre per la pàgina 40 i llegeix en veu alta», el meu estómac es feia un puny. Les lletres no estaven quietes: ballaven, es giraven, es barrejaven. Jo tardava el triple que els altres a entendre un paràgraf. Treia males notes no perquè fos gandula, sinó perquè el sistema estava fet exclusivament per a qui processava el món en blanc i negre sobre un full.
+                  </p>
+                  <p>
+                    Als 17 anys estava a punt de llençar la tovallola. <span class="hl-person">En Carles, l'orientador del meu institut</span>, va ser la primera persona que no em va mirar amb condescendència. Em va asseure i em va dir: «Samira, que et costi desxifrar codis de lletres no vol dir que el teu cervell no funcioni. Com penses tu?». Li vaig dir que jo pensava en formes, en volums, que podia recordar exactament com estava construïda una casa només d'haver-la vist un cop. <span class="hl-decision">Ell em va animar a matricular-me a un programa pràctic d'oficis de construcció i escultura en pedra</span>.
+                  </p>
+                  <p>
+                    Aquell taller va ser la meva obertura al món. Quan vaig agafar un mall i una escarpra per primer cop, vaig sentir una pau que mai havia experimentat. Als 25 anys vaig aprendre la tècnica de la <span class="hl-moment">pedra seca</span> a la comarca del Priorat: aixecar marges i barraques sense cap ciment, només encaixant cada pedra pel seu pes, la seva gravetat i la seva geometria natural. On els altres veien un munt de roques informes, jo hi veia un trencaclosques perfecte.
+                  </p>
+                  <p>
+                    Als 38 anys em van encarregar la restauració de les muralles d'un castell medieval. <span class="hl-decision">Vaig decidir muntar la meva pròpia empresa de restauració patrimonial</span> juntament amb en <span class="hl-person">Pol, un aparellador meticulós</span>. Vam fer un pacte indestructible: ell redactava els informes tècnics, feia els pressupostos i lluitava amb els permisos oficials; jo interpretava la pedra, dirigia l'obra i trobava la manera d'aturar l'erosió dels monuments. Durant molts anys m'havia fet vergonya demanar ajuda per escriure un correu formal; amb en Pol vaig aprendre que la fortalesa no és saber fer-ho tot sol, sinó saber amb qui t'ajuntes per no enfonsar-te.
+                  </p>
+                  <p>
+                    Mai he dit que la dislèxia fos un «regal» o una «benedicció». Va ser un obstacle dur que em va fer plorar de ràbia moltes tardes. Però la dificultat em va obligar a desenvolupar una altra mirada: mentre els altres miraven les etiquetes, jo mirava l'estructura profunda de les coses. Avui tinc 100 anys. Els informes d'aquells inspectors de l'administració fa dècades que s'han rovellat als arxius; els meus arcs de pedra continuen aguantant el pas del vent i de la pluja.
+                  </p>
+                </div>
+              </div>
+
+              <!-- ======================================================= -->
+              <!-- RELAT 4: YOUSSEF                                        -->
+              <!-- ======================================================= -->
+              <div class="relat-detail-card" id="relat-card-4" style="display:none;">
+                <div class="relat-header-box" style="background:#f0fdfa; border:1px solid #99f6e4; border-left:5px solid #0d9488; border-radius:10px; padding:1.2rem; margin-bottom:1.4rem;">
+                  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem; margin-bottom:0.4rem;">
+                    <h5 style="color:#0f766e; font-size:1.2rem; margin:0;">🌍 Youssef (100 anys) · Maquinista ferroviari i líder comunitari</h5>
+                    <span style="background:#ccfbf1; color:#0f766e; font-size:0.78rem; font-weight:800; padding:2px 8px; border-radius:9999px;">Metàfora: Aiguabarreig de dues aigües</span>
+                  </div>
+                  <p style="font-size:0.88rem; color:#134e4a; line-height:1.5; margin:0;">
+                    <strong>Perfil:</strong> Migració als 23 anys, dol migratori, pèrdua d'estatus acadèmic temporal, treball en el sector del transport públic i creació de xarxes comunitàries per a la cohesió social.
+                  </p>
+                </div>
+
+                <div class="river-diagram-box">
+                  <div class="river-diagram-title">🗺️ Mapa cartogràfic del riu d'en Youssef:</div>
+                  <div class="river-flow-diagram">
+                    <div class="river-node node-origin">
+                      <span class="node-icon">🇲🇦</span>
+                      <strong>23 anys</strong>
+                      <span>Sortida de Tànger (el ferri)</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-rock">
+                      <span class="node-icon">📦</span>
+                      <strong>24-30 anys</strong>
+                      <span>Treballs precaris & Fred burocràtic</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-decision">
+                      <span class="node-icon">🚆</span>
+                      <strong>35 anys</strong>
+                      <span>Oposicions a maquinista de tren</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-tributary">
+                      <span class="node-icon">🤝</span>
+                      <strong>46 anys</strong>
+                      <span>Xarxa d'acollida de barri (la Fàtima)</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-meander">
+                      <span class="node-icon">🏡</span>
+                      <strong>70 anys</strong>
+                      <span>Construir ponts entre dues ribes</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-delta">
+                      <span class="node-icon">🌊</span>
+                      <strong>100 anys</strong>
+                      <span>L'aigua mestissa i ampla</span>
+                    </div>
+                  </div>
+                  <div class="river-text-equivalent">
+                    <strong>Versió textual equivalent del riu:</strong> Neix en una riba assolellada al sud de la Mediterrània. A la joventut travessa una fractura gegant: un trasllat geogràfic que parteix el llit en dos. Durant anys avança amb un cabal soterrat per la duresa de la burocràcia i la feina física intensa. Amb l'entrada al ferrocarril, el riu troba una via fèrmia i estable. Finalment, esdevé un aiguabarreig on l'aigua salada del record i l'aigua dolça de la terra d'acollida s'abracen sense haver de renunciar a cap de les dues identitats.
+                  </div>
+                </div>
+
+                <div class="relat-text-content">
+                  <p>
+                    Als 23 anys vaig pujar a la coberta d'un vaixell amb una bossa d'esport, dos llibres de càlcul matemàtic i el cor tremolant com una fulla. Deixava Tànger, la meva mare vídua i el títol d'enginyeria tècnica que m'havia costat cinc anys d'esforços i matins sense esmorzar. La meva família necessitava que algú enviés diners cada mes; no hi havia espai per a la poesia.
+                  </p>
+                  <p>
+                    Quan vaig arribar a Barcelona, el primer que em va colpejar va ser el fred, no el del carrer sinó el dels papers. <span class="hl-moment">Els meus títols no valien res aquí</span>; als ulls de la llei jo era només un número sense permís de treball. Vaig passar set anys netejant cuines de restaurants de nit, descarregant fruita a Mercabarna de matinada i enviant gairebé tot el sou a casa. Hi havia dies que sentia que el riu de la meva vida s'havia assecat en un túnel sense sortida. La nostàlgia és una pedra pesada que no es veu des de fora.
+                  </p>
+                  <p>
+                    El punt d'inflexió va arribar als 34 anys, quan un company de feina, en <span class="hl-person">Manel</span>, em va dir: «Youssef, tu tens un cap prodigiós per a la mecànica, per què no et presentes a les proves de maquinista de trens de Rodalies?». <span class="hl-decision">Vaig passar-me un any sencer estudiant cada nit després de la feina de magatzem</span>. El dia que vaig aprovar i em van donar la clau de la primera cabina de tren, em vaig asseure sol al seient del conductor i vaig plorar recordant la meva mare. Durant trenta anys vaig recórrer milers de quilòmetres transportant estudiants, treballadors i famílies d'una punta a l'altra del país. Sabia que la meva feina connectava persones.
+                  </p>
+                  <p>
+                    Als 46 anys, amb la meva dona, la <span class="hl-person">Fàtima</span>, vam veure arribar molts joves que feien el mateix trajecte que jo havia fet vint anys abans, desorientats i amb por. <span class="hl-decision">Vam fundar una associació de suport escolar i acompanyament administratiu al nostre barri</span>. Ajudar un noi de 16 anys a entendre com matricular-se a un cicle formatiu o ajudar una noia a fer el seu primer currículum era la meva manera de tornar tot el suport que jo havia rebut del Manel i de tanta bona gent.
+                  </p>
+                  <p>
+                    Ara que faig 100 anys, miro els meus fills i els meus néts, que parlen català, àrab i anglès amb la màxima naturalitat. El meu riu no va ser fàcil; va haver de canviar de llit i aprendre a córrer sobre una terra nova. Però mai va perdre la seva aigua: va esdevenir un aiguabarreig on dos rius diferents es van trobar per fer un corrent més ample, més fort i més generós.
+                  </p>
+                </div>
+              </div>
+
+              <!-- ======================================================= -->
+              <!-- RELAT 5: CLARA                                          -->
+              <!-- ======================================================= -->
+              <div class="relat-detail-card" id="relat-card-5" style="display:none;">
+                <div class="relat-header-box" style="background:#f0fdf4; border:1px solid #bbf7d0; border-left:5px solid #16a34a; border-radius:10px; padding:1.2rem; margin-bottom:1.4rem;">
+                  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem; margin-bottom:0.4rem;">
+                    <h5 style="color:#15803d; font-size:1.2rem; margin:0;">🌻 Clara (100 anys) · Llibretera de barri, cuidadora i activista veïnal</h5>
+                    <span style="background:#dcfce7; color:#15803d; font-size:0.78rem; font-weight:800; padding:2px 8px; border-radius:9999px;">Metàfora: Riu de plana que rega les hortes</span>
+                  </div>
+                  <p style="font-size:0.88rem; color:#14532d; line-height:1.5; margin:0;">
+                    <strong>Perfil:</strong> Trobar el sentit de la vida a través dels vincles comunitaris, l'amistat sincera i les cures mútues, sense buscar mai l'ascens social ni el poder econòmic.
+                  </p>
+                </div>
+
+                <div class="river-diagram-box">
+                  <div class="river-diagram-title">🗺️ Mapa cartogràfic del riu de la Clara:</div>
+                  <div class="river-flow-diagram">
+                    <div class="river-node node-origin">
+                      <span class="node-icon">📚</span>
+                      <strong>25 anys</strong>
+                      <span>Mostrador de la llibreria</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-tributary">
+                      <span class="node-icon">👭</span>
+                      <strong>30 anys</strong>
+                      <span>Habitatge cooperatiu (l'Alba i la Montse)</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-meander">
+                      <span class="node-icon">🍵</span>
+                      <strong>42 anys</strong>
+                      <span>Club de lectura i banc del temps</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-rock">
+                      <span class="node-icon">❤️‍🩹</span>
+                      <strong>58 anys</strong>
+                      <span>Cures de la germana malalta</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-decision">
+                      <span class="node-icon">🏡</span>
+                      <strong>65 anys</strong>
+                      <span>La xarxa intergeneracional</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-delta">
+                      <span class="node-icon">🌊</span>
+                      <strong>100 anys</strong>
+                      <span>La calidesa de la comunitat</span>
+                    </div>
+                  </div>
+                  <div class="river-text-equivalent">
+                    <strong>Versió textual equivalent del riu:</strong> Un riu tranquil, ample i serè, que no té preses ni salts gegants, però que mai s'asseca perquè té desenes de petits afluents subterranis fets de veïnatge, amistat i atenció als altres. Dedica la seva aigua a nodrir el barri i a sostenir la gent quan arriba la fragilitat de la malaltia. Desemboca en un mar acollidor, envoltat de mans que l'han sostingut.
+                  </div>
+                </div>
+
+                <div class="relat-text-content">
+                  <p>
+                    Quan jo tenia 25 anys, tothom semblava tenir una pressa tremolosa per triomfar. Els meus companys de classe parlaven de cotxes d'empresa, de comprar pisos i de tenir càrrecs que sonessin importants a les targetes de visita. Jo vaig entrar a treballar com a dependenta en una petita llibreria cooperativa del barri de Gràcia. Guanyava el just per viure, i el meu pare em deia: «Clara, que no tens ambició?».
+                  </p>
+                  <p>
+                    Tenia tota l'ambició del món, però no era la que ells entenien. La meva ambició era tenir temps per xerrar amb qui entrava a la botiga buscant un llibre per passar una pena. La meva ambició era poder dinar cada dia sense mirar el rellotge. Als 30 anys, <span class="hl-decision">vaig decidir anar a viure en un pis compartit de lloguer cooperatiu amb dues amigues del cor, l'Alba i la Montse</span>. Ens vam prometre que ens cuidaríem sempre, i vam complir la promesa durant més de mig segle.
+                  </p>
+                  <p>
+                    Als 42 anys vam fundar al barri una xarxa d'intercanvi de sabers i un club de lectura obert als avis que vivien sols. Vaig descobrir que la soledat és la pobresa més invisible que hi ha. Un cop per setmana, en comptes de quedar-me a casa, feia tallers de memòria i berenars comunitaris. El mostrador de la meva llibreria va esdevenir un punt de trobada on la gent deixava les claus de casa per si calia una urgència o passava a recollir la comanda d'una veïna malalta.
+                  </p>
+                  <p>
+                    Als 58 anys, la vida em va demanar parar. La meva germana petita, la <span class="hl-person">Mercè</span>, <span class="hl-moment">va caure malalta d'un càncer molt dur</span>. <span class="hl-decision">Vaig demanar reducció de jornada a la meitat per acompanyar-la als tractaments</span> i ser amb ella durant quatre anys. Molta gent em deia que allò era un sacrifici enorme que m'arruïnaria la jubilació. Mai ho vaig viure com un sacrifici: acompanyar algú que estimes quan té por és la cosa més humana i necessària que es pot fer. Quan la Mercè va marxar, em va quedar la pau d'haver estat allà a cada pas.
+                  </p>
+                  <p>
+                    Avui faig 100 anys i la meva habitació sembla una selva de flors, cartes de veïns, pastissos casolans i visites de tres generacions de persones a qui vaig recomanar un conte quan tenien set anys. Mai vaig tenir un sou alt ni vaig sortir als diaris. Però el meu riu va ser fèrtil: va regar tots els camps per on va passar i mai ningú que s'acostés a la meva riba va marxar amb set.
+                  </p>
+                </div>
+              </div>
+
+              <!-- ======================================================= -->
+              <!-- RELAT 6: PAU                                            -->
+              <!-- ======================================================= -->
+              <div class="relat-detail-card" id="relat-card-6" style="display:none;">
+                <div class="relat-header-box" style="background:#f1f5f9; border:1px solid #cbd5e1; border-left:5px solid #475569; border-radius:10px; padding:1.2rem; margin-bottom:1.4rem;">
+                  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem; margin-bottom:0.4rem;">
+                    <h5 style="color:#334155; font-size:1.2rem; margin:0;">🧭 Pau (100 anys) · Tècnic polivalent, cuiner de muntanya i amant de la vida</h5>
+                    <span style="background:#e2e8f0; color:#334155; font-size:0.78rem; font-weight:800; padding:2px 8px; border-radius:9999px;">Metàfora: Corrent lliure sense rumb prefixat</span>
+                  </div>
+                  <p style="font-size:0.88rem; color:#1e293b; line-height:1.5; margin:0;">
+                    <strong>Perfil:</strong> Avançar explorant possibilitats sense sentir una vocació única ni rígidament marcada. Alliberar-se de la pressió social de "trobar la teva gran passió" per viure amb curiositat i serenor.
+                  </p>
+                </div>
+
+                <div class="river-diagram-box">
+                  <div class="river-diagram-title">🗺️ Mapa cartogràfic del riu d'en Pau:</div>
+                  <div class="river-flow-diagram">
+                    <div class="river-node node-origin">
+                      <span class="node-icon">❓</span>
+                      <strong>16-20 anys</strong>
+                      <span>Dubtes & Cicle d'administració</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-meander">
+                      <span class="node-icon">📑</span>
+                      <strong>25 anys</strong>
+                      <span>Oficina d'assegurances</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-decision">
+                      <span class="node-icon">🏔️</span>
+                      <strong>32 anys</strong>
+                      <span>Cuina en un refugi dels Pirineus</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-tributary">
+                      <span class="node-icon">🚴</span>
+                      <strong>42 anys</strong>
+                      <span>Tècnic en botiga d'esports (en Sergi)</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-decision">
+                      <span class="node-icon">🌲</span>
+                      <strong>52 anys</strong>
+                      <span>Manteniment del Parc Natural</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-delta">
+                      <span class="node-icon">🌊</span>
+                      <strong>100 anys</strong>
+                      <span>La pau de viure sense presses</span>
+                    </div>
+                  </div>
+                  <div class="river-text-equivalent">
+                    <strong>Versió textual equivalent del riu:</strong> Un riu que mai va tenir mapa ni canal artificial. Flueix esquivant la pressió de buscar un destí grandiose, adaptant-se amb naturalitat al terreny que troba davant seu. Combina feines d'oficina amb estades a l'alta muntanya i cura de senders naturals. Demostra que l'aigua no necessita saber com és el mar per gaudir de cada meandre pel mig del bosc.
+                  </div>
+                </div>
+
+                <div class="relat-text-content">
+                  <p>
+                    Quan anava a 4t d'ESO, fer tests d'orientació professional em provocava una suor freda. Tots els meus companys tenien respostes contundents: «Seré cirurgiana», «seré advocat», «jo muntaré la meva discogràfica». Jo mirava la graella i pensava: «A mi m'agrada escoltar música, anar en bicicleta i llegir còmics, però no vull convertir res d'això en una obligació de quaranta hores a la setmana». Sentia que tenia una tara de fàbrica perquè no tenia «una passió».
+                  </p>
+                  <p>
+                    Vaig triar un cicle de gestió administrativa senzillament perquè era pràctic i estava a deu minuts en metro de casa meva. Als 25 anys treballava tramitant pòlisses en una companyia d'assegurances. La feina no era emocionant, però la feia bé, tenia bons companys i a les cinc de la tarda plegava amb el cap net. Durant anys vaig sentir xerrades motivacionals que deien «si no treballes en el que estimes estàs perdent la vida». A mi allò em semblava un engany: jo treballava per tenir un sou digne i poder estimar la meva vida fora de l'oficina.
+                  </p>
+                  <p>
+                    Als 32 anys, quan la rutina començava a pesar massa, <span class="hl-decision">vaig demanar una excedència d'un any i me'n vaig anar a fer d'ajudant de cuina a un refugi de muntanya al Pallars</span>. Vaig passar dos estius i dos hiverns tallant cebes, fent olles d'escudella per a excursionistes xops i mirant les estrelles des de dos mil metres d'alçada. Va ser allà on vaig conèixer en <span class="hl-person">Sergi</span>, amb qui vam fer una amistat de ferro que ha durat fins avui.
+                  </p>
+                  <p>
+                    Als 39 vaig tornar a la ciutat i vaig començar a treballar en la secció de bicicletes d'una cooperativa esportiva. M'agradava ajustar frens, canviar cadenes i recomanar rutes a qui començava. Més tard, als 52, <span class="hl-decision">vaig aconseguir una plaça de manteniment ambiental en un consorci de parcs naturals</span>: netejar camins, senyalitzar fonts i plantar arbres autòctons. Allà m'hi vaig quedar fins a la jubilació.
+                  </p>
+                  <p>
+                    Avui faig 100 anys i em fa molta gràcia quan veig que encara es demana als nois i noies de 16 anys que sàpiguen qui seran la resta de la seva vida. La vida no és un contracte blindat; és una exploració contínua. El riu no demana permís abans de girar una muntanya: simplement segueix la gravetat i gaudeix dels reflexos del sol a l'aigua. He tingut una vida tranquil·la, feliç, sense grans titulars i plena de bons moments. I això és molt més del que molts aconsegueixen amb tanta pressa.
+                  </p>
+                </div>
+              </div>
+
+              <!-- ======================================================= -->
+              <!-- RELAT 7: MATEU                                          -->
+              <!-- ======================================================= -->
+              <div class="relat-detail-card" id="relat-card-7" style="display:none;">
+                <div class="relat-header-box" style="background:#fff7ed; border:1px solid #fed7aa; border-left:5px solid #ea580c; border-radius:10px; padding:1.2rem; margin-bottom:1.4rem;">
+                  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem; margin-bottom:0.4rem;">
+                    <h5 style="color:#c2410c; font-size:1.2rem; margin:0;">🍂 Mateu (100 anys) · Restaurador gastronòmic, jardiner i botànic</h5>
+                    <span style="background:#ffedd5; color:#c2410c; font-size:0.78rem; font-weight:800; padding:2px 8px; border-radius:9999px;">Metàfora: Gorg d'estiatge que rebrota</span>
+                  </div>
+                  <p style="font-size:0.88rem; color:#7c2d12; line-height:1.5; margin:0;">
+                    <strong>Perfil:</strong> Trajectòria no lineal marcada per un èxit inicial, una fallida econòmica, una malaltia greu que obliga a una aturada llarga (estiatge) i un renaixement vital pausat i sòlid a la maduresa.
+                  </p>
+                </div>
+
+                <div class="river-diagram-box">
+                  <div class="river-diagram-title">🗺️ Mapa cartogràfic del riu d'en Mateu:</div>
+                  <div class="river-flow-diagram">
+                    <div class="river-node node-origin">
+                      <span class="node-icon">🍳</span>
+                      <strong>27 anys</strong>
+                      <span>Èxit i restaurant propi</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-rock">
+                      <span class="node-icon">💥</span>
+                      <strong>35 anys</strong>
+                      <span>Fallida del negoci</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-rock">
+                      <span class="node-icon">🏥</span>
+                      <strong>36-39 anys</strong>
+                      <span>L'estiatge: Malaltia greu i aturada</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-tributary">
+                      <span class="node-icon">🌱</span>
+                      <strong>42 anys</strong>
+                      <span>Treball al viver (la Montserrat)</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-decision">
+                      <span class="node-icon">🌿</span>
+                      <strong>53 anys</strong>
+                      <span>Disseny de jardins de secà</span>
+                    </div>
+                    <div class="river-arrow">➔</div>
+                    <div class="river-node node-delta">
+                      <span class="node-icon">🌊</span>
+                      <strong>100 anys</strong>
+                      <span>La paciència de les arrels</span>
+                    </div>
+                  </div>
+                  <div class="river-text-equivalent">
+                    <strong>Versió textual equivalent del riu:</strong> Comença amb un corrent acceleradíssim i impetuós, carregat d'ambició i energia. Als trenta-cinc anys pateix una sequera brutal: el cabal desapareix sota terra a causa d'un col·lapse econòmic i físic. Durant quatre anys el riu sembla una llera seca i morta. Però lentament, filtrant-se entre la terra humida d'un viver botànic, el corrent torna a emergir amb un ritme diferent: més pausat, més savi i profundament adaptat al clima.
+                  </div>
+                </div>
+
+                <div class="relat-text-content">
+                  <p>
+                    Als 28 anys em menjava el món. Havia obert el meu propi restaurant després d'anys de cremar-me les celles com a cap de partida a hotels de luxe. Treballava setze hores al dia, dormia cinc hores i em pensava que el meu cos era una màquina indestructible. El restaurant era ple cada cap de setmana i jo em sentia el rei del mambo. Menyspreava qualsevol que em parlés d'anar a poc a poc.
+                  </p>
+                  <p>
+                    L'hòstia —perquè no té cap altre nom— va arribar als 35 anys. <span class="hl-moment">Una combinació de deutes bancaris asfixiants i una infecció pulmonar greu que em va portar a la unitat de cures intensives</span>. En qüestió de vuit mesos vaig perdre el restaurant, els estalvis i la capacitat de respirar sense fatigar-me. Em vaig passar gairebé quatre anys entrant i sortint de consultes mèdiques, vivint a casa de la meva mare als 37 anys i sentint una vergonya immensa cada cop que em creuava amb un conegut pel carrer.
+                  </p>
+                  <p>
+                    No us cregueu aquells llibres barats que diuen que «tot passa per una bona raó» o que «el fracàs és una oportunitat disfressada». Aquella època va ser una merda espantosa. Vaig tenir enveja dels meus amics que prosperaven, vaig plorar d'amargor i vaig sentir que el meu riu s'havia convertit en un bassal podrit on ja no hi floriria res. Va ser el meu estiatge més cru.
+                  </p>
+                  <p>
+                    La sortida no va ser espectacular ni heroica; va ser diminuta. Als 42 anys, una tieta meva em va aconseguir una feina a mitja jornada en un viver de plantes autòctones propietat d'una dona sàvia anomenada <span class="hl-person">Montserrat</span>. La meva feina era treure males herbes, preparar sacs de terra i regar planter. Les primeres setmanes em feia vergonya cobrar per allò. Però la Montserrat em deia: «Mira aquella alzina, Mateu. Va passar dos anys glaçada i semblava morta. Les arrels estaven treballant per sota». <span class="hl-decision">Vaig començar a estudiar botànica mediterrània i paisatgisme sostenible</span>.
+                  </p>
+                  <p>
+                    Als 53 anys <span class="hl-decision">vaig obrir una petita assessoria de jardins de baix consum d'aigua per a municipis de secà</span>. Treballava amb plantes que sabien resistir mesos sense pluja: romaní, espígol, oliveres, garrofers. Allà vaig reconciliar-me amb la meva pròpia història. No vaig tornar a la cuina, però vaig recuperar la creativitat des d'un altre lloc: dissenyar espais verds que resistissin les sequeres com jo havia resistit la meva.
+                  </p>
+                  <p>
+                    Avui faig 100 anys. Tinc cicatrius als pulmons i a la memòria, i no les amago. Quan mireu el vostre riu, no tingueu por dels moments en què l'aigua desapareix entre les pedres. Hi haurà estiatges, sí; però si manteniu les arrels humides i deixeu que la gent que us estima us regui una mica cada dia, la pluja sempre torna.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- BASTIDA DE REDACCIÓ -->
+          <div style="background:#f8fafc; border:2px solid #cbd5e1; border-radius:12px; padding:1.5rem; margin-bottom:2rem;">
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+              <span style="font-size:1.5rem;">🧭</span>
+              <div>
+                <h4 style="color:var(--primary-deep); font-size:1.15rem; margin:0;">Bastida per a la redacció del relat</h4>
+                <p style="font-size:0.85rem; color:var(--text-muted); margin:0;">Etapes vitals i àmbits que has d'incloure al teu recorregut:</p>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:0.8rem; margin-top:1rem;">
+              <div style="background:#fff; border-left:4px solid #0284c7; padding:0.85rem 1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                <strong style="color:#0369a1; font-size:0.92rem; display:block; margin-bottom:0.2rem;">🌱 25 als 35 anys: Inicis i girs</strong>
+                <p style="font-size:0.83rem; color:var(--text-main); margin:0; line-height:1.5;">Primeres feines, independència, decisions formatives, descobriments personals, canvis de rumb o primers entrebancs superats.</p>
+              </div>
+              <div style="background:#fff; border-left:4px solid #16a34a; padding:0.85rem 1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                <strong style="color:#15803d; font-size:0.92rem; display:block; margin-bottom:0.2rem;">🌿 35 als 50 anys: Consolidació i noves veus</strong>
+                <p style="font-size:0.83rem; color:var(--text-main); margin:0; line-height:1.5;">Maduresa en l'àmbit professional o artístic, noves relacions i vincles, projectes personals o familiars, canvis de perspectiva.</p>
+              </div>
+              <div style="background:#fff; border-left:4px solid #d97706; padding:0.85rem 1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                <strong style="color:#b45309; font-size:0.92rem; display:block; margin-bottom:0.2rem;">🌳 50 als 65 anys: Reconciliació i propòsit</strong>
+                <p style="font-size:0.83rem; color:var(--text-main); margin:0; line-height:1.5;">Decisions valentes de maduresa, canvis de rol, renúncies a allò superficial per retrobar el que realment té valor, pèrdues i aprenentatges profunds.</p>
+              </div>
+              <div style="background:#fff; border-left:4px solid #9333ea; padding:0.85rem 1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                <strong style="color:#7e22ce; font-size:0.92rem; display:block; margin-bottom:0.2rem;">🍂 65 als 80 anys: Jubilació i transmissió</strong>
+                <p style="font-size:0.83rem; color:var(--text-main); margin:0; line-height:1.5;">El moment de jubilar-se i redefinir qui ets, voluntariat, suport a la comunitat, transmissió de valors a noves generacions, acceptació del pas del temps.</p>
+              </div>
+              <div style="background:#fff; border-left:4px solid #0d9488; padding:0.85rem 1rem; border-radius:8px; border:1px solid #e2e8f0; grid-column:1/-1;">
+                <strong style="color:#0f766e; font-size:0.92rem; display:block; margin-bottom:0.2rem;">🌊 80 als 100 anys: Vellesa serena i mirada panoràmica</strong>
+                <p style="font-size:0.83rem; color:var(--text-main); margin:0; line-height:1.5;">Mirar enrere des de la calma, comprensió que els revolts i errors tenien un sentit, trobar el fil conductor invisible que connectava tots els moments.</p>
+              </div>
+            </div>
+          </div>
+
           <!-- MODEL DE RELAT -->
           <div style="background:#fff; border:2px solid #e2e8f0; border-radius:14px; padding:1.6rem; margin-bottom:2rem; box-shadow:0 4px 14px rgba(0,0,0,0.04);">
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; border-bottom:1px solid #e2e8f0; padding-bottom:0.8rem;">
