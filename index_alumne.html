@@ -626,6 +626,174 @@
       border-width: 2px;
     }
 
+
+    /* ============================================================= */
+    /* RÚBRICA D'AVALUACIÓ DE L'ESCENA TEATRALITZADA                */
+    /* ============================================================= */
+    .rubric-box {
+      background: #ffffff;
+      border: 2px solid #cbd5e1;
+      border-top: 5px solid #7c3aed;
+      border-radius: 16px;
+      padding: 1.8rem;
+      margin: 2rem 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+    .rubric-levels-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.2rem;
+    }
+    .rubric-level-card {
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      border: 1px solid transparent;
+    }
+    .rubric-level-card.level-novell {
+      background: #fef2f2;
+      border-color: #fecaca;
+      color: #991b1b;
+    }
+    .rubric-level-card.level-aprenent {
+      background: #fffbeb;
+      border-color: #fde68a;
+      color: #92400e;
+    }
+    .rubric-level-card.level-avancat {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+      color: #166534;
+    }
+    .rubric-level-card.level-expert {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      color: #1e40af;
+    }
+    .rubric-level-card strong {
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .rubric-level-card span {
+      font-size: 0.76rem;
+      opacity: 0.9;
+      line-height: 1.3;
+    }
+
+    .rubric-container {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      margin-bottom: 1.2rem;
+      -webkit-overflow-scrolling: touch;
+    }
+    .rubric-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+      line-height: 1.55;
+      text-align: left;
+      min-width: 760px;
+    }
+    .rubric-table thead th {
+      padding: 0.85rem 1rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      border-bottom: 2px solid #cbd5e1;
+    }
+    .rubric-table th.col-crit {
+      background: #0f172a;
+      color: #ffffff;
+      width: 22%;
+    }
+    .rubric-table th.col-novell {
+      background: #fee2e2;
+      color: #991b1b;
+      border-bottom: 3px solid #ef4444;
+      width: 19.5%;
+    }
+    .rubric-table th.col-aprenent {
+      background: #fef3c7;
+      color: #92400e;
+      border-bottom: 3px solid #f59e0b;
+      width: 19.5%;
+    }
+    .rubric-table th.col-avancat {
+      background: #dcfce7;
+      color: #166534;
+      border-bottom: 3px solid #10b981;
+      width: 19.5%;
+    }
+    .rubric-table th.col-expert {
+      background: #e0f2fe;
+      color: #0369a1;
+      border-bottom: 3px solid #0284c7;
+      width: 19.5%;
+    }
+    .rubric-table tbody tr {
+      border-bottom: 1px solid #e2e8f0;
+      transition: background 0.15s ease;
+    }
+    .rubric-table tbody tr:last-child {
+      border-bottom: none;
+    }
+    .rubric-table tbody tr:nth-child(even) {
+      background: #fafafa;
+    }
+    .rubric-table tbody tr:hover {
+      background: #f1f5f9;
+    }
+    .rubric-table tbody td {
+      padding: 0.8rem 1rem;
+      vertical-align: top;
+      color: #334155;
+      border-right: 1px solid #f1f5f9;
+    }
+    .rubric-table tbody td:last-child {
+      border-right: none;
+    }
+    .rubric-table tbody td:first-child {
+      background: #f8fafc;
+      border-right: 2px solid #e2e8f0;
+    }
+    .rubric-table tbody tr:hover td:first-child {
+      background: #f1f5f9;
+    }
+    .rubric-crit-name {
+      display: block;
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 0.88rem;
+      margin-bottom: 0.2rem;
+    }
+    .rubric-crit-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: #ede9fe;
+      color: #6d28d9;
+      padding: 1px 6px;
+      border-radius: 4px;
+      margin-bottom: 0.2rem;
+    }
+    .rubric-tips-box {
+      background: #f5f3ff;
+      border: 1px solid #ddd6fe;
+      border-left: 4px solid #7c3aed;
+      border-radius: 10px;
+      padding: 1rem 1.3rem;
+      font-size: 0.86rem;
+      color: #5b21b6;
+      line-height: 1.6;
+    }
+
   </style>
 </head>
 <body>
@@ -2909,17 +3077,44 @@
               </ul>
             </div>
 
-            <!-- RÚBRICA D'AVALUACIÓ COMPLETA -->
-            <div style="margin-top:1.5rem; margin-bottom:1.5rem;">
-              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.6rem;">
-                <h4 style="color:#0f172a; font-size:1.1rem; margin:0; display:flex; align-items:center; gap:0.4rem;">
-                  <span>🎯</span> Rúbrica d'avaluació de l'escena teatralitzada
-                </h4>
-                <span style="font-size:0.82rem; color:var(--text-muted);">9 criteris · 4 nivells de progressió</span>
+            <!-- RÚBRICA D'AVALUACIÓ COMPLETA (REQUADRE VISUAL D'AULA) -->
+            <div class="rubric-box">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.6rem; margin-bottom:1rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.9rem;">
+                <div>
+                  <span class="dua-badge-pill" style="background:#ede9fe; color:#6d28d9;">📋 Pautes d'èxit de l'escena</span>
+                  <h4 style="color:#0f172a; font-size:1.3rem; margin:0.2rem 0; display:flex; align-items:center; gap:0.5rem;">
+                    <span>🎯</span> Rúbrica oficial d'avaluació de l'escena teatralitzada
+                  </h4>
+                  <p style="font-size:0.88rem; color:var(--text-muted); margin:0.3rem 0 0 0;">
+                    Els <strong>9 criteris pedagògics</strong> que utilitzarem tant el professorat com la resta de grups en el formulari oficial de coavaluació:
+                  </p>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.5rem;">
+                  <span style="background:#f1f5f9; color:#475569; font-size:0.8rem; font-weight:700; padding:0.3rem 0.8rem; border-radius:9999px; border:1px solid #cbd5e1;">
+                    ⏱️ Durada recomanada: ~10 minuts
+                  </span>
+                </div>
               </div>
-              <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:0.8rem;">
-                Tant l'equip docent com la resta de companys/es avaluarem l'escena tenint en compte aquests criteris exactes:
-              </p>
+
+              <!-- REQUADRES DELS 4 NIVELLS DE PROGRESSIÓ -->
+              <div class="rubric-levels-strip">
+                <div class="rubric-level-card level-novell">
+                  <strong>🌱 Novell</strong>
+                  <span>En procés inicial. L'expressió o ús d'objectes és irregular i requereix suport.</span>
+                </div>
+                <div class="rubric-level-card level-aprenent">
+                  <strong>🌿 Aprenent</strong>
+                  <span>Progrés evident. Elements clau presents però amb aspectes a polir i consolidar.</span>
+                </div>
+                <div class="rubric-level-card level-avancat">
+                  <strong>🌳 Avançat</strong>
+                  <span>Nivell assolit. Representació clara, segura, coherent i ben treballada en equip.</span>
+                </div>
+                <div class="rubric-level-card level-expert">
+                  <strong>⭐ Expert</strong>
+                  <span>Excel·lència teatral. Projecció vocal impecable, fil conductor nítid i alta expressivitat.</span>
+                </div>
+              </div>
 
               <div class="rubric-container">
                 <table class="rubric-table">
@@ -3025,6 +3220,18 @@
                     </tr>
                   </tbody>
                 </table>
+              </div>
+
+              <!-- CLAU PER A L'ÈXIT -->
+              <div class="rubric-tips-box">
+                <strong style="display:flex; align-items:center; gap:0.4rem; font-size:0.92rem; margin-bottom:0.4rem;">
+                  <span>💡</span> Claus d'equip per assolir el nivell Avançat o Expert:
+                </strong>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:0.6rem; font-size:0.82rem;">
+                  <div>• <strong>No llegiu:</strong> Interioritzeu el guió per mirar els companys i el públic amb naturalitat i expressivitat.</div>
+                  <div>• <strong>Els 3 objectes són protagonistes:</strong> Mostreu-los, feu-los servir i connecteu-los directament amb la vostra història.</div>
+                  <div>• <strong>Cohesió de grup:</strong> Escolteu-vos activament mentre l'altre parla; la reacció corporal també és teatre!</div>
+                </div>
               </div>
             </div>
 
