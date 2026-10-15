@@ -385,7 +385,53 @@
       animation: flashGlow 2s ease;
     }
 
-</style>
+    /* GALERIA DE 7 RELATS MODEL */
+    .relats-nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.6rem; }
+    .relat-selector-btn {
+      display: flex; align-items: center; gap: 0.7rem; background: #f8fafc; border: 2px solid #e2e8f0;
+      border-radius: 10px; padding: 0.75rem 0.9rem; cursor: pointer; transition: all 0.2s ease;
+      color: var(--text-main); font-family: inherit; width: 100%; text-align: left;
+    }
+    .relat-selector-btn:hover { background: #f1f5f9; border-color: #cbd5e1; transform: translateY(-1px); }
+    .relat-selector-btn.active {
+      background: #eff6ff !important; border-color: #0284c7 !important; box-shadow: 0 4px 12px rgba(2,132,199,0.15);
+      color: #0369a1 !important;
+    }
+    .relat-selector-btn.active strong { color: #0284c7 !important; }
+    .river-diagram-box {
+      background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.2rem; margin-bottom: 1.4rem;
+    }
+    .river-diagram-title {
+      font-size: 0.88rem; font-weight: 700; color: var(--primary-deep); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.4rem;
+    }
+    .river-flow-diagram {
+      display: flex; align-items: center; gap: 0.5rem; overflow-x: auto; padding: 0.8rem 0.4rem; margin-bottom: 0.8rem;
+    }
+    .river-node {
+      flex: 0 0 auto; background: #fff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 0.6rem 0.8rem;
+      text-align: center; min-width: 120px; box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    .river-node .node-icon { font-size: 1.2rem; display: block; margin-bottom: 0.2rem; }
+    .river-node strong { display: block; font-size: 0.78rem; color: #0369a1; margin-bottom: 0.1rem; }
+    .river-node span { font-size: 0.72rem; color: var(--text-muted); line-height: 1.3; display: block; }
+    .river-arrow { color: #94a3b8; font-weight: 800; font-size: 1rem; flex: 0 0 auto; }
+    .node-origin { border-top: 3px solid #0284c7; }
+    .node-meander { border-top: 3px solid #059669; }
+    .node-rock { border-top: 3px solid #dc2626; background: #fff5f5; }
+    .node-decision { border-top: 3px solid #d97706; }
+    .node-tributary { border-top: 3px solid #7c3aed; }
+    .node-delta { border-top: 3px solid #0d9488; background: #f0fdfa; }
+    .river-text-equivalent {
+      background: #fff; padding: 0.75rem 1rem; border-radius: 6px;
+      font-size: 0.84rem; color: #334155; line-height: 1.6; border: 1px solid #e2e8f0; border-left: 3px solid #0284c7;
+    }
+    .relat-text-content {
+      background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1.5rem;
+      font-size: 0.95rem; line-height: 2.0; color: #1e293b;
+    }
+    .relat-text-content p { margin-bottom: 1.2rem; }
+    .relat-text-content p:last-child { margin-bottom: 0; }
+  </style>
 </head>
 <body>
 
@@ -3641,6 +3687,24 @@
             evTimo.value = data.evidenceTimo;
           }
         } catch(e) {}
+      }
+    }
+
+    // SWITCHER PER ALS 7 RELATS MODEL DIVERSOS
+    function switchModelRelat(num) {
+      for (let i = 1; i <= 7; i++) {
+        const card = document.getElementById('relat-card-' + i);
+        const btn = document.getElementById('btn-relat-' + i);
+        if (card) {
+          card.style.display = (i === num) ? 'block' : 'none';
+        }
+        if (btn) {
+          if (i === num) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        }
       }
     }
 
