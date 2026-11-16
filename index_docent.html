@@ -408,6 +408,7 @@
       <button class="nav-btn" onclick="switchTab('tab-trams')">🗺️ Els 3 trams</button>
       <button class="nav-btn" onclick="switchTab('tab-habilitats')">⚓ Habilitats socioemocionals</button>
       <button class="nav-btn" onclick="switchTab('tab-diari')">📒 El teu diari</button>
+      <button class="nav-btn" onclick="switchTab('tab-cloenda')">🏆 Producte col·lectiu</button>
       <button class="nav-btn" onclick="switchTab('tab-docent')">📋 Eina docent</button>
       <button class="nav-btn" onclick="switchTab('tab-print')">🖨️ Materials imprimibles</button>
       <button class="nav-btn" onclick="switchTab('tab-referents')" style="display:none">🗣️ Converses amb referents</button>
@@ -1876,9 +1877,6 @@
 
           <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.6rem; margin-top:0.6rem;">
             <span style="font-size:0.8rem; color:#166534;">💾 El progrés es guarda automàticament al teu dispositiu</span>
-            <a href="imprimible_diari_aturades.html" class="btn-jump" style="background:white; color:#15803d; border-color:#86efac;">
-              🖨️ Descarrega el full d'aturades imprimible ➔
-            </a>
           </div>
         </div>
 
@@ -2015,6 +2013,357 @@
         <div class="step-nav-footer">
           <button class="btn btn-secondary" onclick="switchTab('tab-habilitats')">⬅️ Anar a Habilitats socioemocionals</button>
           <button class="btn btn-outline" onclick="window.scrollTo({top:0, behavior:'smooth'})">⬆️ Tornar a dalt de tot</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- TAB CLOENDA: PRODUCTE COL·LECTIU                             -->
+    <!-- ============================================================= -->
+    <section id="tab-cloenda" class="tab-content" style="display:none;">
+      <div class="route-breadcrumb"><span>🧭 Estàs a:</span> <strong>Pas 5 · Cloenda del projecte</strong> — El Producte Final Col·lectiu</div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="tag-skill" style="background:#fef3c7; color:#b45309; border:1px solid #fde68a; font-weight:800; font-size:0.8rem; padding:0.25rem 0.75rem; border-radius:9999px; display:inline-block; margin-bottom:0.4rem;">
+              🏆 CLOENDA DEL PROJECTE · FASE FINAL
+            </span>
+            <h2 class="card-title" style="color:#b45309; font-size:1.6rem; margin:0;">
+              🏆 El Producte Final Col·lectiu: On desemboquen tots els rius de la vida
+            </h2>
+          </div>
+        </div>
+
+        <!-- NOTA ORIENTACIÓ DOCENT -->
+        <div style="background:#fefce8; border:2px solid #fde68a; border-left:6px solid #ca8a04; border-radius:14px; padding:1.4rem 1.6rem; margin-bottom:1.5rem;">
+          <h4 style="color:#854d0e; margin-bottom:0.4rem; font-size:1.05rem;">👩‍🏫 Orientacions pedagògiques per a l'equip docent</h4>
+          <p style="font-size:0.92rem; color:#713f12; line-height:1.6; margin:0 0 0.6rem 0;">
+            Durant les 3 hores de la dinàmica de producte col·lectiu, el paper del professorat és exclusivament <strong>observador i avaluador de processos</strong>, mai jutge ni director de la idea creativa. L'alumnat s'autogestiona íntegrament per consensuar la idea, crear les comissions de treball i produir l'obra.
+          </p>
+          <p style="font-size:0.88rem; color:#854d0e; margin:0;">
+            Podeu registrar les evidències d'aula dels 4 comportaments (<strong>C4</strong> perseverança, <strong>C1</strong> connexió, <strong>C27</strong> assumir errors i <strong>C29</strong> autoreflexió) directament a la pestanya <button type="button" class="btn btn-sm btn-outline" style="border-color:#ca8a04; color:#854d0e; padding:2px 8px;" onclick="switchTab('tab-docent')">📋 Eina docent</button> o imprimint la graella des de <button type="button" class="btn btn-sm btn-outline" style="border-color:#ca8a04; color:#854d0e; padding:2px 8px;" onclick="switchTab('tab-print')">🖨️ Materials imprimibles</button>.
+          </p>
+        </div>
+
+        <div style="background:linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border:2px solid #fde68a; border-radius:14px; padding:1.5rem 1.7rem; margin-bottom:2rem;">
+          <p style="font-size:1.05rem; font-weight:600; color:#92400e; line-height:1.7; margin:0 0 0.8rem 0;">
+            🌊 <strong>La confluència de tot el viatge de 4t d'ESO:</strong><br>
+            Hem mirat enrere cap al nostre passat per conèixer les nostres arrels i pedres (<strong>Tram 1</strong>: 0-16 anys), hem viatjat a la vellesa per perdre la por d'equivocar-nos (<strong>Tram 3</strong>: 25-100 anys) i hem après a dissenyar xarxes flexibles per a la nostra cruïlla d'orientació amb els afluents acadèmics, laborals i personals (<strong>Tram 2</strong>: 16-25 anys).
+          </p>
+          <p style="font-size:0.95rem; color:#78350f; line-height:1.6; margin:0;">
+            Ara arriba el moment de la <strong>cloenda col·lectiva</strong>: organitzar-nos com a grup per unir totes les trajectòries individuals de la classe en una <strong>única gran obra o instal·lació compartida</strong> que transmeti allò que hem après i que puguem compartir amb orgull amb les nostres famílies i la comunitat educativa.
+          </p>
+        </div>
+
+        <!-- BLOC 1: ELS 6 CRITERIS DEL PRODUCTE FINAL -->
+        <div style="margin-bottom:2.5rem;">
+          <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+            <span style="font-size:1.4rem;">📋</span>
+            <h3 style="color:#b45309; font-size:1.3rem; margin:0;">Els 6 Criteris imprescindibles del Producte Final</h3>
+          </div>
+          <p style="font-size:0.95rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.2rem;">
+            Tota la classe ha de tenir present que qualsevol idea, format o proposta de producte final ha de complir de manera <strong>innegociable aquests 6 criteris</strong>:
+          </p>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(310px, 1fr)); gap:1.2rem;">
+            
+            <!-- Criteri 1 -->
+            <div style="background:#fff; border:2px solid #cbd5e1; border-left:6px solid #0284c7; padding:1.2rem 1.4rem; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+              <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.4rem;">
+                <span style="font-size:1.3rem;">⏱️</span>
+                <strong style="color:#0369a1; font-size:1.05rem;">1. S’ha de poder fer en 3h dins l’aula</strong>
+              </div>
+              <p style="font-size:0.88rem; color:var(--text-main); line-height:1.6; margin:0;">
+                És un repte àgil, intens i eficaç. Tota la ideació, l'organització, l'elaboració de les peces i el muntatge final s'han d'executar estrictament dins d'aquestes <strong>3 hores de classe</strong>.
+              </p>
+            </div>
+
+            <!-- Criteri 2 -->
+            <div style="background:#fff; border:2px solid #cbd5e1; border-left:6px solid #16a34a; padding:1.2rem 1.4rem; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+              <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.4rem;">
+                <span style="font-size:1.3rem;">👥</span>
+                <strong style="color:#15803d; font-size:1.05rem;">2. Ha de poder-se mostrar en públic</strong>
+              </div>
+              <p style="font-size:0.88rem; color:var(--text-main); line-height:1.6; margin:0;">
+                No pot quedar desat en una carpeta privada o un arxiu ocult. Ha de ser una creació física, visual, espacial o performativa <strong>exposable i visible</strong> per a altres persones a l'espai del centre.
+              </p>
+            </div>
+
+            <!-- Criteri 3 -->
+            <div style="background:#fff; border:2px solid #cbd5e1; border-left:6px solid #f59e0b; padding:1.2rem 1.4rem; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+              <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.4rem;">
+                <span style="font-size:1.3rem;">👨‍👩‍👧‍👦</span>
+                <strong style="color:#b45309; font-size:1.05rem;">3. Hem de poder-ho compartir amb les famílies</strong>
+              </div>
+              <p style="font-size:0.88rem; color:var(--text-main); line-height:1.6; margin:0;">
+                Les famílies són destinatàries protagonistes de la cloenda. L'obra ha de permetre que les famílies s'hi acostin, la visitin, la comprenguin, la llegeixin o hi interactuïn de forma significativa.
+              </p>
+            </div>
+
+            <!-- Criteri 4 -->
+            <div style="background:#fff; border:2px solid #cbd5e1; border-left:6px solid #9333ea; padding:1.2rem 1.4rem; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+              <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.4rem;">
+                <span style="font-size:1.3rem;">🎨</span>
+                <strong style="color:#7e22ce; font-size:1.05rem;">4. Ha de tenir un component artístic</strong>
+              </div>
+              <p style="font-size:0.88rem; color:var(--text-main); line-height:1.6; margin:0;">
+                Ha d'anar més enllà d'un simple resum acadèmic: ha d'emprar llenguatges expressius i estètics (instal·lació espacial, arts plàstiques, collage, creació escènica, disseny editorial, llums, objectes o poesia visual).
+              </p>
+            </div>
+
+            <!-- Criteri 5 -->
+            <div style="background:#fff; border:2px solid #cbd5e1; border-left:6px solid #0d9488; padding:1.2rem 1.4rem; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+              <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.4rem;">
+                <span style="font-size:1.3rem;">🌊</span>
+                <strong style="color:#0f766e; font-size:1.05rem;">5. Ha de transmetre “per si mateix” els aprenentatges (Trams 1, 2 i 3)</strong>
+              </div>
+              <p style="font-size:0.88rem; color:var(--text-main); line-height:1.6; margin:0;">
+                Ha de transmetre «per si mateix» els aprenentatges realitzats en el projecte (<strong>Tram 1</strong>: passat, <strong>Tram 2</strong>: cruïlla del present i afluents, i <strong>Tram 3</strong>: mirada als 100 anys) de manera <strong>interconnectada, seguint un relat</strong> o fil conductor clar.
+              </p>
+            </div>
+
+            <!-- Criteri 6 -->
+            <div style="background:#fff; border:2px solid #cbd5e1; border-left:6px solid #e11d48; padding:1.2rem 1.4rem; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+              <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.4rem;">
+                <span style="font-size:1.3rem;">🔗</span>
+                <strong style="color:#be123c; font-size:1.05rem;">6. Ha de ser un únic producte final integrat</strong>
+              </div>
+              <p style="font-size:0.88rem; color:var(--text-main); line-height:1.6; margin:0;">
+                Ha de ser un únic producte final per a tota la classe. Si fem productes intermedis o peces dividides per equips, <strong>han d’estar connectats entre si</strong> perquè la proposta tingui un sentit global i unitari.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- BLOC 2: DINÀMICA AUTOGESTIONADA PER L'ALUMNAT -->
+        <div style="background:#f8fafc; border:2px solid #cbd5e1; border-radius:14px; padding:1.6rem; margin-bottom:2.5rem;">
+          <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+            <span style="font-size:1.5rem;">🤝</span>
+            <div>
+              <h3 style="color:var(--primary-deep); font-size:1.3rem; margin:0;">Dinàmica de classe autogestionada per l’alumnat</h3>
+              <p style="font-size:0.88rem; color:var(--text-muted); margin:0.2rem 0 0 0;">Com s'organitzarà la classe per donar forma al producte final:</p>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:1.2rem; margin-top:1.2rem;">
+            
+            <div style="background:#fff; border:1px solid #e2e8f0; border-top:4px solid #0284c7; padding:1.2rem; border-radius:10px;">
+              <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.5rem;">
+                <span style="font-size:1.2rem;">🧭</span>
+                <strong style="color:#0369a1; font-size:1rem;">Autonomia de l'alumnat:</strong>
+              </div>
+              <p style="font-size:0.88rem; color:var(--text-main); line-height:1.6; margin:0;">
+                L’alumnat s'ha d'organitzar de manera <strong>autònoma per dissenyar i elaborar la idea de producte final</strong>. Sereu vosaltres qui obrirà el debat a l'aula, proposarà alternatives, votarà o consensuarà la decisió final, crearà subcomissions de treball i gestionarà el temps i els materials disponibles.
+              </p>
+            </div>
+
+            <div style="background:#fff; border:1px solid #e2e8f0; border-top:4px solid #16a34a; padding:1.2rem; border-radius:10px;">
+              <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.5rem;">
+                <span style="font-size:1.2rem;">👁️</span>
+                <strong style="color:#15803d; font-size:1rem;">El rol dels docents (Observació):</strong>
+              </div>
+              <p style="font-size:0.88rem; color:var(--text-main); line-height:1.6; margin:0;">
+                La funció dels docents serà principalment <strong>observar i avaluar els comportaments, no la idea de producte final</strong>. El professorat no us dirà quina idea heu de triar ni us dirigirà el procés creatiu; observarà amb atenció com us coordineu, afronteu els imprevistos i treballeu en equip.
+              </p>
+            </div>
+
+            <div style="background:#fff; border:1px solid #e2e8f0; border-top:4px solid #f59e0b; padding:1.2rem; border-radius:10px;">
+              <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.5rem;">
+                <span style="font-size:1.2rem;">📊</span>
+                <strong style="color:#b45309; font-size:1rem;">Transparència prèvia de la rúbrica:</strong>
+              </div>
+              <p style="font-size:0.88rem; color:var(--text-main); line-height:1.6; margin:0;">
+                Abans de començar, <strong>compartirem amb l’alumnat la rúbrica</strong> perquè sapigueu amb exactitud quins comportaments observarem i valorarem durant tot el procés. Així tothom coneix les regles del joc des del primer minut.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- BLOC 3: RÚBRICA DELS 4 COMPORTAMENTS -->
+        <div style="margin-bottom:2.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">
+            <div style="display:flex; align-items:center; gap:0.6rem;">
+              <span style="font-size:1.4rem;">🎯</span>
+              <h3 style="color:var(--primary-deep); font-size:1.3rem; margin:0;">Rúbrica oficial d'observació docent: Els 4 comportaments clau</h3>
+            </div>
+            <span style="background:#ede9fe; color:#6d28d9; font-weight:800; font-size:0.8rem; padding:0.3rem 0.8rem; border-radius:9999px;">
+              Avaluació formativa docent
+            </span>
+          </div>
+
+          <p style="font-size:0.95rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.2rem;">
+            Durant les 3 hores de la dinàmica, l'equip docent registrarà a la graella d'aula les evidències d'aquests 4 comportaments:
+          </p>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:1.2rem;">
+            
+            <!-- C4 -->
+            <div style="background:#fff; border:2px solid #fed7aa; border-top:5px solid #f97316; border-radius:12px; padding:1.3rem; box-shadow:0 3px 10px rgba(249,115,22,0.06);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                <span style="background:#ffedd5; color:#c2410c; font-weight:800; font-size:0.78rem; padding:0.25rem 0.7rem; border-radius:9999px;">
+                  Comportament C4
+                </span>
+                <span style="font-size:1.2rem;">💪</span>
+              </div>
+              <h4 style="color:#c2410c; font-size:1.1rem; margin-bottom:0.5rem;">Persevera davant les dificultats</h4>
+              <p style="font-size:0.92rem; color:var(--text-main); font-weight:600; line-height:1.6; margin-bottom:0.8rem;">
+                «Afronta els obstacles amb iniciativa, prova estratègies alternatives i manté la constància fins a assolir l'objectiu.»
+              </p>
+              <div style="background:#fff7ed; border:1px solid #ffedd5; border-radius:8px; padding:0.8rem; font-size:0.83rem; color:#9a3412; line-height:1.5;">
+                🔍 <strong>Què s'observarà a l'aula:</strong> Quan una idea no encaixa, falten materials o el temps s'esgota, no es desanima ni es bloqueja; busca solucions ràpides i manté l'esforç col·lectiu actiu.
+              </div>
+            </div>
+
+            <!-- C1 -->
+            <div style="background:#fff; border:2px solid #bfdbfe; border-top:5px solid #0284c7; border-radius:12px; padding:1.3rem; box-shadow:0 3px 10px rgba(2,132,199,0.06);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                <span style="background:#dbeafe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:0.25rem 0.7rem; border-radius:9999px;">
+                  Comportament C1
+                </span>
+                <span style="font-size:1.2rem;">⏱️</span>
+              </div>
+              <h4 style="color:#0369a1; font-size:1.1rem; margin-bottom:0.5rem;">Es manté connectat/ada a l'activitat</h4>
+              <p style="font-size:0.92rem; color:var(--text-main); font-weight:600; line-height:1.6; margin-bottom:0.8rem;">
+                «Manté una implicació constant, gestiona autònomament el temps i els materials i contribueix activament al desenvolupament de l'activitat.»
+              </p>
+              <div style="background:#eff6ff; border:1px solid #dbeafe; border-radius:8px; padding:0.8rem; font-size:0.83rem; color:#0c4a6e; line-height:1.5;">
+                🔍 <strong>Què s'observarà a l'aula:</strong> No necessita recordatoris docents; gestiona el ritme de treball, té cura dels recursos comuns i aporta valor continu sense dispersar-se.
+              </div>
+            </div>
+
+            <!-- C27 -->
+            <div style="background:#fff; border:2px solid #bbf7d0; border-top:5px solid #16a34a; border-radius:12px; padding:1.3rem; box-shadow:0 3px 10px rgba(22,163,74,0.06);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                <span style="background:#dcfce7; color:#15803d; font-weight:800; font-size:0.78rem; padding:0.25rem 0.7rem; border-radius:9999px;">
+                  Comportament C27
+                </span>
+                <span style="font-size:1.2rem;">🌱</span>
+              </div>
+              <h4 style="color:#15803d; font-size:1.1rem; margin-bottom:0.5rem;">Assumeix la possibilitat d'equivocar-se</h4>
+              <p style="font-size:0.92rem; color:var(--text-main); font-weight:600; line-height:1.6; margin-bottom:0.8rem;">
+                «Accepta els errors amb naturalitat, escolta les aportacions, regula la seva resposta i les transforma en oportunitats concretes de millora.»
+              </p>
+              <div style="background:#f0fdf4; border:1px solid #dcfce7; border-radius:8px; padding:0.8rem; font-size:0.83rem; color:#14532d; line-height:1.5;">
+                🔍 <strong>Què s'observarà a l'aula:</strong> Si una proposta no convenç al grup o un assaig falla, no es posa a la defensiva; accepta les aportacions de la classe amb empatia i flexibilitat.
+              </div>
+            </div>
+
+            <!-- C29 -->
+            <div style="background:#fff; border:2px solid #e9d5ff; border-top:5px solid #9333ea; border-radius:12px; padding:1.3rem; box-shadow:0 3px 10px rgba(147,51,234,0.06);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                <span style="background:#f3e8ff; color:#7e22ce; font-weight:800; font-size:0.78rem; padding:0.25rem 0.7rem; border-radius:9999px;">
+                  Comportament C29
+                </span>
+                <span style="font-size:1.2rem;">🧠</span>
+              </div>
+              <h4 style="color:#7e22ce; font-size:1.1rem; margin-bottom:0.5rem;">Reflexiona sobre els seus processos personals interns</h4>
+              <p style="font-size:0.92rem; color:var(--text-main); font-weight:600; line-height:1.6; margin-bottom:0.8rem;">
+                «Relaciona pensaments, emocions i decisions, identifica patrons personals i proposa estratègies per millorar la seva manera d'actuar i aprendre.»
+              </p>
+              <div style="background:#faf5ff; border:1px solid #f3e8ff; border-radius:8px; padding:0.8rem; font-size:0.83rem; color:#581c87; line-height:1.5;">
+                🔍 <strong>Què s'observarà a l'aula:</strong> Identifica com se sent davant la pressió o el debat, reconeix els seus biaixos o impulsos i regula conscientment la seva actuació en benefici del projecte.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- BLOC 4: GUIÓ DE LES 3 HORES D'AULA -->
+        <div style="background:#fffbeb; border:1px solid #fde68a; border-left:5px solid #d97706; border-radius:14px; padding:1.6rem; margin-bottom:2.5rem;">
+          <h3 style="color:#92400e; font-size:1.25rem; margin-bottom:0.6rem; display:flex; align-items:center; gap:0.5rem;">
+            <span>⏱️</span> Cronograma recomanat per a les 3 hores d'aula
+          </h3>
+          <p style="font-size:0.92rem; color:#78350f; margin-bottom:1.2rem;">
+            Per complir el criteri d'elaboració en 3 hores, us suggerim aquesta seqüència de treball àgil:
+          </p>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1rem;">
+            <div style="background:#fff; border:1px solid #fed7aa; border-radius:10px; padding:1.1rem;">
+              <span style="background:#fef3c7; color:#92400e; font-weight:800; font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:9999px;">1a HORA (60 min)</span>
+              <h4 style="color:#b45309; margin:0.4rem 0 0.3rem 0; font-size:1rem;">Ideació, contrast i consens de grup</h4>
+              <ul style="font-size:0.84rem; color:var(--text-main); line-height:1.6; margin-left:1.1rem; padding:0;">
+                <li>Pluja d'idees oberta de propostes de producte.</li>
+                <li>Filtratge estricte: compleix els 6 criteris innegociables?</li>
+                <li>Votació o consens per escollir la <strong>idea única</strong>.</li>
+                <li>Creació de <strong>comissions de treball</strong> (guió/relat, muntatge artístic, espai, difusió a famílies).</li>
+              </ul>
+            </div>
+
+            <div style="background:#fff; border:1px solid #fed7aa; border-radius:10px; padding:1.1rem;">
+              <span style="background:#fef3c7; color:#92400e; font-weight:800; font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:9999px;">2a HORA (60 min)</span>
+              <h4 style="color:#b45309; margin:0.4rem 0 0.3rem 0; font-size:1rem;">Producció activa per comissions</h4>
+              <ul style="font-size:0.84rem; color:var(--text-main); line-height:1.6; margin-left:1.1rem; padding:0;">
+                <li>Cada comissió produeix la seva part del producte.</li>
+                <li>Els representants fan una breu reunió de coordinació als 30 min per assegurar la coherència del relat comú.</li>
+                <li>Integració dels aprenentatges dels 3 trams (0-16, 16-25, 25-100).</li>
+                <li>Gestió autònoma de materials i del cronòmetre.</li>
+              </ul>
+            </div>
+
+            <div style="background:#fff; border:1px solid #fed7aa; border-radius:10px; padding:1.1rem;">
+              <span style="background:#fef3c7; color:#92400e; font-weight:800; font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:9999px;">3a HORA (60 min)</span>
+              <h4 style="color:#b45309; margin:0.4rem 0 0.3rem 0; font-size:1rem;">Muntatge, connexió i obertura</h4>
+              <ul style="font-size:0.84rem; color:var(--text-main); line-height:1.6; margin-left:1.1rem; padding:0;">
+                <li>Acoblament de totes les peces en un únic producte final.</li>
+                <li>Revisió general del recorregut i del relat visual/escènic.</li>
+                <li>Assaig general i preparació de l'espai per al públic.</li>
+                <li><strong>Obertura a les famílies</strong> i reflexió final col·lectiva.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOC 5: INSPIRACIÓ DE FORMATS -->
+        <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:14px; padding:1.6rem; margin-bottom:2rem;">
+          <h3 style="color:#15803d; font-size:1.25rem; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+            <span>💡</span> Formats inspiradors per a la decisió de classe
+          </h3>
+          <p style="font-size:0.9rem; color:#166534; margin-bottom:1.2rem;">
+            Aquests són alguns exemples de formats que altres grups han explorat amb èxit; podeu triar-ne un d'ells o inventar-ne un de nou, sempre que compleixi els 6 criteris:
+          </p>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem;">
+            <div style="background:#fff; border:1px solid #86efac; border-radius:8px; padding:1rem;">
+              <strong style="color:#166534; font-size:0.95rem; display:block; margin-bottom:0.3rem;">🏛️ Instal·lació artística espacial / Museu immersiu</strong>
+              <p style="font-size:0.84rem; color:#14532d; margin:0; line-height:1.5;">
+                Transformar l'aula o el passadís en un museu dels rius: camins traçats al terra, racons dels 100 anys amb les capses de records i objectes reals, balança de decisions i arbre de fulles amb desitjos de futur per a les famílies.
+              </p>
+            </div>
+
+            <div style="background:#fff; border:1px solid #86efac; border-radius:8px; padding:1rem;">
+              <strong style="color:#166534; font-size:0.95rem; display:block; margin-bottom:0.3rem;">📖 Revista monogràfica o Llibre col·lectiu</strong>
+              <p style="font-size:0.84rem; color:#14532d; margin:0; line-height:1.5;">
+                Una gran publicació editorial única dissenyada per tota la classe, amb índex conjunt, capítols interconnectats de cada tram vital, imatges artístiques dels rius amb IA i codis QR als relats personals.
+              </p>
+            </div>
+
+            <div style="background:#fff; border:1px solid #86efac; border-radius:8px; padding:1rem;">
+              <strong style="color:#166534; font-size:0.95rem; display:block; margin-bottom:0.3rem;">🎙️ Documental o Podcast coral de vida</strong>
+              <p style="font-size:0.84rem; color:#14532d; margin:0; line-height:1.5;">
+                Un muntatge audiovisual o sonor comunitari amb guió unificat (inici, nus, desenllaç) on s'entrecreuen fragments de les entrevistes, reflexions dels 100 anys i declaracions de futur, projectat a les famílies.
+              </p>
+            </div>
+
+            <div style="background:#fff; border:1px solid #86efac; border-radius:8px; padding:1rem;">
+              <strong style="color:#166534; font-size:0.95rem; display:block; margin-bottom:0.3rem;">🎭 Performance i circuit teatralitzat guiat</strong>
+              <p style="font-size:0.84rem; color:#14532d; margin:0; line-height:1.5;">
+                Una visita guiada escènica on els visitants i les famílies fan un viatge immersiu conduït pels personatges centenaris, passant per estacions que representen les pedres superades, les cruïlles i els meandres.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PEU DE FLUX CLOENDA -->
+        <div class="step-nav-footer">
+          <button class="btn btn-secondary" onclick="switchTab('tab-diari')">⬅️ Anar al Diari del viatge</button>
+          <div style="display:flex; gap:0.6rem; align-items:center; flex-wrap:wrap;">
+            <button class="btn btn-outline" onclick="switchTab('tab-trams')">🗺️ Tornar als 3 Trams</button>
+            <button class="btn btn-primary" onclick="switchTab('tab-docent')">📋 Anar a l'Eina docent ➔</button>
+          </div>
         </div>
 
       </div>
